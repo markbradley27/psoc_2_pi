@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 1
 
 
    1              		.syntax unified
@@ -33,11 +33,11 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
    4:.\mem1.c      **** *        all components included in the build. It will do so according to
    5:.\mem1.c      **** *        sets of instructions provided by a Master Device.
    6:.\mem1.c      **** *
-   7:.\mem1.c      **** * Version 1.0.5
+   7:.\mem1.c      **** * Version 1.1.2
    8:.\mem1.c      **** *
    9:.\mem1.c      **** * \author Brian Bradley
   10:.\mem1.c      **** *
-  11:.\mem1.c      **** * \bug No known bugs, but the VDAC's and IDAC's are currently untested.
+  11:.\mem1.c      **** * \bug No known bugs
   12:.\mem1.c      **** *
   13:.\mem1.c      **** *
   14:.\mem1.c      **** * Copyright Embedit Electronics
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
   29:.\mem1.c      **** *  @param addr: 8-bit number describing the address of the component being accessed
   30:.\mem1.c      **** *  @param cmd: 8-bit number describing a desired usage of a function associated with that component
   31:.\mem1.c      **** *  @param dat: 16-bit number containing a value that is to be written to that function, if applicab
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 2
 
 
   32:.\mem1.c      **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
   75 0042 3ED0     		beq	.L9
   76 0044 0A2B     		cmp	r3, #10
   77 0046 43D0     		beq	.L10
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 3
 
 
   78 0048 84E0     		b	.L1
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
   54:.\mem1.c      ****         //VDAC1
   55:.\mem1.c      ****         #ifdef CY_VDAC8_VDAC8_1_H
   56:.\mem1.c      ****             case VDAC0_CONTROL: VDAC0_Control(cmd, dat); break;        
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 4
 
 
  116              		.loc 1 56 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
   79:.\mem1.c      ****         //first PWM
   80:.\mem1.c      ****         #ifdef CY_PWM_PWM_1_H
   81:.\mem1.c      ****             case PWM_REGISTER0: PWM_Control_0(cmd, dat); break;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 5
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 5
 
 
  148              		.loc 1 81 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  182 00fc BB88     		ldrh	r3, [r7, #4]
  183 00fe 1046     		mov	r0, r2
  184 0100 1946     		mov	r1, r3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 6
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 6
 
 
  185 0102 FFF7FEFF 		bl	PWM_Control_4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  121:.\mem1.c      ****         #endif
  122:.\mem1.c      ****         
  123:.\mem1.c      ****         case GPIO_REGISTER: GPIO_Control(cmd,dat); break;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 7
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 7
 
 
  220              		.loc 1 123 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  255              		.cfi_offset 14, -4
  256 0002 84B0     		sub	sp, sp, #16
  257              	.LCFI4:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 8
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 8
 
 
  258              		.cfi_def_cfa_offset 24
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  305 0084 6AE0     		b	.L26
  306              	.L28:
  150:.\mem1.c      ****                 case 0x01: ADC_DelSig_1_Stop(); break;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 9
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 9
 
 
  307              		.loc 1 150 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  160:.\mem1.c      ****                 case 0x03: ADC_DelSig_1_StartConvert(); break;
  352              		.loc 1 160 0
  353 00e6 FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 10
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 10
 
 
  354 00ea 37E0     		b	.L26
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  401 0142 0346     		mov	r3, r0
  402 0144 FB60     		str	r3, [r7, #12]
  403 0146 4FF00103 		mov	r3, #1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 11
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 11
 
 
  404 014a FB72     		strb	r3, [r7, #11]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  184:.\mem1.c      **** *  @param cmd: 8-bit number describing a desired usage of a function associated 
  185:.\mem1.c      **** *              with the first SAR ADC
  186:.\mem1.c      **** *  @param val: 16-bit number containing a value that is to be written to that 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 12
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 12
 
 
  187:.\mem1.c      **** *              function, or modify the component's operation, if applicable.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  485 0054 DB000000 		.word	.L58+1
  486 0058 E7000000 		.word	.L59+1
  487 005c F3000000 		.word	.L60+1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 13
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 13
 
 
  488 0060 15010000 		.word	.L50+1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  529 00aa FFF7FEFF 		bl	ADC_SAR_1_StartConvert
  530 00ae 31E0     		b	.L50
  531              	.L55:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 14
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 14
 
 
  210:.\mem1.c      ****                 case 0x05: ADC_SAR_1_StopConvert(); break;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  579 0108 FFF7FEFF 		bl	ADC_SAR_1_Sleep
  580 010c 02E0     		b	.L50
  581              	.L62:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 15
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 15
 
 
  217:.\mem1.c      ****                 case 0x11: ADC_SAR_1_Wakeup(); break;       
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  244:.\mem1.c      ****                 case 0x03: 
  245:.\mem1.c      ****                     switch(val)
  246:.\mem1.c      ****                     {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 16
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 16
 
 
  247:.\mem1.c      ****                         case 8: ADC_SAR_2_SetResolution(ADC_SAR_2__BITS_8); break;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  627 000c BB80     		strh	r3, [r7, #4]	@ movhi
  283:.\mem1.c      ****             uint32 result = MAX_32;
  628              		.loc 1 283 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 17
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 17
 
 
  629 000e 4FF0FF33 		mov	r3, #-1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  673 006a FFF7FEFF 		bl	VDAC8_1_SetSpeed
  674 006e 00BF     		nop
  675              	.L79:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 18
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 18
 
 
  294:.\mem1.c      ****                         }
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  715              		.loc 1 308 0
  716 00ac FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
  717 00ae 002B     		cmp	r3, #0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 19
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 19
 
 
  718 00b0 02D0     		beq	.L69
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  754 0008 0B46     		mov	r3, r1
  755 000a FA71     		strb	r2, [r7, #7]
  756 000c BB80     		strh	r3, [r7, #4]	@ movhi
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 20
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 20
 
 
  327:.\mem1.c      ****             uint32 result = MAX_32;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  800              		.loc 1 337 0
  801 0066 4FF00200 		mov	r0, #2
  802 006a FFF7FEFF 		bl	VDAC8_2_SetSpeed
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 21
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 21
 
 
  803 006e 00BF     		nop
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  351:.\mem1.c      ****                 }
  352:.\mem1.c      ****             if (return_flag)
  844              		.loc 1 352 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 22
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 22
 
 
  845 00ac FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  880              	.LCFI17:
  881              		.cfi_def_cfa_register 7
  882 0006 0246     		mov	r2, r0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 23
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 23
 
 
  883 0008 0B46     		mov	r3, r1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  927 0064 FFF7FEFF 		bl	IDAC8_1_SetSpeed
  928 0068 04E0     		b	.L114
  929              	.L116:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 24
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 24
 
 
  382:.\mem1.c      ****                             case 1: IDAC8_1_SetSpeed(IDAC8_1_HIGHSPEED); break;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  970 00aa FFF7FEFF 		bl	IDAC8_1_SetRange
  971 00ae 09E0     		b	.L120
  972              	.L122:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 25
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 25
 
 
  396:.\mem1.c      ****                             case 1: IDAC8_1_SetRange(IDAC8_1_RANGE_255uA); break;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1013              		.cfi_endproc
  1014              	.LFE61:
  1015              		.size	IDAC0_Control, .-IDAC0_Control
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 26
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 26
 
 
  1016 00f2 00BF     		.section	.text.WAVEDAC_Control,"ax",%progbits
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  456:.\mem1.c      ****                     
  457:.\mem1.c      ****                 }
  458:.\mem1.c      ****                 if (return_flag)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 27
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 27
 
 
  459:.\mem1.c      ****                 {
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1055 0024 012B     		cmp	r3, #1
  1056 0026 1AD0     		beq	.L128
  1057 0028 012B     		cmp	r3, #1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 28
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 28
 
 
  1058 002a 02DC     		bgt	.L138
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  489:.\mem1.c      ****                         case 0: WaveDAC8_1_SetSpeed(WaveDAC8_1_LOWSPEED); break;
  1105              		.loc 1 489 0
  1106 0076 4FF00000 		mov	r0, #0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 29
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 29
 
 
  1107 007a FFF7FEFF 		bl	WaveDAC8_1_VDAC8_SetSpeed
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1152 00ce FB72     		strb	r3, [r7, #11]
  1153 00d0 00BF     		nop
  1154              	.L126:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 30
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 30
 
 
  499:.\mem1.c      ****                         
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1199 0014 BC       		.byte	-68
  1200 0015 BF       		.byte	-65
  1201 0016 C1       		.byte	-63
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 31
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 31
 
 
  1202 0017 C4       		.byte	-60
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1256 004d F9       		.byte	-7
  1257 004e F8       		.byte	-8
  1258 004f F7       		.byte	-9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 32
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 32
 
 
  1259 0050 F6       		.byte	-10
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1313 0086 6D       		.byte	109
  1314 0087 6A       		.byte	106
  1315 0088 67       		.byte	103
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 33
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 33
 
 
  1316 0089 63       		.byte	99
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1370 00bf 00       		.byte	0
  1371 00c0 00       		.byte	0
  1372 00c1 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 34
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 34
 
 
  1373 00c2 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1427 00f8 67       		.byte	103
  1428 00f9 6A       		.byte	106
  1429 00fa 6D       		.byte	109
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 35
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 35
 
 
  1430 00fb 70       		.byte	112
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1484 0130 01       		.byte	1
  1485 0131 01       		.byte	1
  1486 0132 01       		.byte	1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 36
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 36
 
 
  1487 0133 01       		.byte	1
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1541 0169 01       		.byte	1
  1542 016a 01       		.byte	1
  1543 016b 01       		.byte	1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 37
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 37
 
 
  1544 016c 01       		.byte	1
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1598 01a2 FF       		.byte	-1
  1599 01a3 FF       		.byte	-1
  1600 01a4 FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 38
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 38
 
 
  1601 01a5 FF       		.byte	-1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1655 01db FF       		.byte	-1
  1656 01dc FF       		.byte	-1
  1657 01dd FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 39
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 39
 
 
  1658 01de FF       		.byte	-1
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1712 0213 26       		.byte	38
  1713 0214 28       		.byte	40
  1714 0215 2A       		.byte	42
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 40
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 40
 
 
  1715 0216 2C       		.byte	44
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1769 024c 98       		.byte	-104
  1770 024d 9A       		.byte	-102
  1771 024e 9C       		.byte	-100
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 41
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 41
 
 
  1772 024f 9E       		.byte	-98
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1826 0285 F6       		.byte	-10
  1827 0286 F4       		.byte	-12
  1828 0287 F2       		.byte	-14
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 42
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 42
 
 
  1829 0288 F0       		.byte	-16
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1883 02be 84       		.byte	-124
  1884 02bf 82       		.byte	-126
  1885 02c0 80       		.byte	-128
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 43
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 43
 
 
  1886 02c1 7E       		.byte	126
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1940 02f7 12       		.byte	18
  1941 02f8 10       		.byte	16
  1942 02f9 0E       		.byte	14
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 44
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 44
 
 
  1943 02fa 0C       		.byte	12
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  1997 032f 30       		.byte	48
  1998 0330 31       		.byte	49
  1999 0331 32       		.byte	50
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 45
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 45
 
 
  2000 0332 33       		.byte	51
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2054 0368 69       		.byte	105
  2055 0369 6A       		.byte	106
  2056 036a 6B       		.byte	107
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 46
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 46
 
 
  2057 036b 6C       		.byte	108
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2111 03a1 A2       		.byte	-94
  2112 03a2 A3       		.byte	-93
  2113 03a3 A4       		.byte	-92
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 47
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 47
 
 
  2114 03a4 A5       		.byte	-91
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2168 03da DB       		.byte	-37
  2169 03db DC       		.byte	-36
  2170 03dc DD       		.byte	-35
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 48
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 48
 
 
  2171 03dd DE       		.byte	-34
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2214              		.cfi_startproc
  2215              		@ args = 0, pretend = 0, frame = 1320
  2216              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 49
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 49
 
 
  2217 0000 B0B5     		push	{r4, r5, r7, lr}
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  533:.\mem1.c      ****             #define SQUARE 0x03
  534:.\mem1.c      ****             #define TRIANGLE 0x05
  535:.\mem1.c      ****             #define SAWTOOTH 0x07
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 50
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 50
 
 
  536:.\mem1.c      ****             
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  568:.\mem1.c      ****                         255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 
  569:.\mem1.c      ****                         255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255};
  570:.\mem1.c      ****                         
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 51
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 51
 
 
  571:.\mem1.c      ****             uint8 TRIANGLEWave[WAVE_SIZE] = {
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  603:.\mem1.c      ****                     	};
  604:.\mem1.c      ****             
  605:.\mem1.c      ****             /*
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 52
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 52
 
 
  606:.\mem1.c      ****             if (waveType == SINE)
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  641:.\mem1.c      ****                     val = (((double)SINEWave[i]) * (((double)amp)/255.0)) + (double)dcB;
  2321              		.loc 1 641 0
  2322 00fe 07F20442 		addw	r2, r7, #1028
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 53
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 53
 
 
  2323 0102 D7F81C35 		ldr	r3, [r7, #1308]
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2376              	.L147:
  643:.\mem1.c      ****                     newVal = (uint8)val; 
  2377              		.loc 1 643 0 is_stmt 1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 54
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 54
 
 
  2378 018c 07F5A463 		add	r3, r7, #1312
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2418 01e4 FFF7FEFF 		bl	__aeabi_ui2d
  2419 01e8 0446     		mov	r4, r0
  2420 01ea 0D46     		mov	r5, r1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 55
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 55
 
 
  2421 01ec 97F80A35 		ldrb	r3, [r7, #1290]	@ zero_extendqisi2
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2473 0272 87F80635 		strb	r3, [r7, #1286]
  657:.\mem1.c      ****                     newWave[i] = newVal;
  2474              		.loc 1 657 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 56
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 56
 
 
  2475 0276 07F10402 		add	r2, r7, #4
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2517 02d4 2CA3     		adr	r3, .L169
  2518 02d6 D3E90023 		ldrd	r2, [r3]
  2519 02da FFF7FEFF 		bl	__aeabi_ddiv
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 57
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 57
 
 
  2520 02de 0246     		mov	r2, r0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2570 035c D7F81435 		ldr	r3, [r7, #1300]
  2571 0360 03F10103 		add	r3, r3, #1
  2572 0364 C7F81435 		str	r3, [r7, #1300]
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 58
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 58
 
 
  2573              	.L156:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2615 03c4 0B46     		mov	r3, r1
  2616 03c6 2046     		mov	r0, r4
  2617 03c8 2946     		mov	r1, r5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 59
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 59
 
 
  2618 03ca FFF7FEFF 		bl	__aeabi_dmul
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  678:.\mem1.c      ****               for(i = 0; i < WAVE_SIZE; i++)
  2668              		.loc 1 678 0 is_stmt 0 discriminator 1
  2669 044c D7F81035 		ldr	r3, [r7, #1296]
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 60
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 60
 
 
  2670 0450 FE2B     		cmp	r3, #254
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2700              		.loc 1 707 0
  2701              		.cfi_startproc
  2702              		@ args = 0, pretend = 0, frame = 16
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 61
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 61
 
 
  2703              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2753 004c 3EE0     		b	.L174
  2754              	.L187:
  2755 004e 1A2B     		cmp	r3, #26
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 62
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 62
 
 
  2756 0050 28D0     		beq	.L183
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2798 0098 FFF7FEFF 		bl	PWM_1_ClearFIFO
  2799 009c 16E0     		b	.L174
  2800              	.L182:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 63
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 63
 
 
  724:.\mem1.c      ****                 case 0x19: PWM_1_Sleep(); break; 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2844              	PWM_Control_1:
  2845              	.LFB65:
  735:.\mem1.c      ****     #endif
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 64
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 64
 
 
  736:.\mem1.c      **** /****************************************************************************************//**
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2883 0030 4CE0     		b	.L190
  2884              	.L202:
  2885 0032 0C2B     		cmp	r3, #12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 65
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 65
 
 
  2886 0034 16D0     		beq	.L193
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2934              	.L196:
  759:.\mem1.c      ****                 case 0x0F: result  = PWM_2_ReadCompare(); return_flag = 1; break;
  2935              		.loc 1 759 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 66
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 66
 
 
  2936 0088 FFF7FEFF 		bl	PWM_2_ReadCompare
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  2976              	.L189:
  774:.\mem1.c      ****                 } 
  775:.\mem1.c      ****         }
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 67
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 67
 
 
  2977              		.loc 1 775 0
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3016 0018 FB72     		strb	r3, [r7, #11]
  791:.\mem1.c      ****             
  792:.\mem1.c      ****             switch(cmd)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 68
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 68
 
 
  3017              		.loc 1 792 0
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  797:.\mem1.c      ****                 case 0x0D: result = PWM_3_ReadPeriod(); return_flag = 1; break;
  3067              		.loc 1 797 0
  3068 006e FFF7FEFF 		bl	PWM_3_ReadPeriod
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 69
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 69
 
 
  3069 0072 0346     		mov	r3, r0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3113 00ca 00BF     		nop
  3114              	.L206:
  808:.\mem1.c      ****                 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 70
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 70
 
 
  809:.\mem1.c      ****             }
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3149              		.cfi_def_cfa_offset 24
  3150 0004 00AF     		add	r7, sp, #0
  3151              	.LCFI35:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 71
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 71
 
 
  3152              		.cfi_def_cfa_register 7
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3200 0058 FFF7FEFF 		bl	PWM_4_Start
  3201 005c 36E0     		b	.L222
  3202              	.L224:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 72
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 72
 
 
  835:.\mem1.c      ****                 case 0x01: PWM_4_Stop(); break;
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3245 00a8 10E0     		b	.L222
  3246              	.L232:
  847:.\mem1.c      ****                 case 0xFF: PWM_3_4_clk_SetDividerValue(val); result = PWM_3_4_clk_GetDividerRegiste
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 73
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 73
 
 
  3247              		.loc 1 847 0
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  865:.\mem1.c      **** *
  866:.\mem1.c      **** *********************************************************************************************/
  867:.\mem1.c      ****     
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 74
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 74
 
 
  868:.\mem1.c      ****      #ifdef CY_PWM_PWM_5_H
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3331 0040 192B     		cmp	r3, #25
  3332 0042 04DC     		bgt	.L251
  3333 0044 0F2B     		cmp	r3, #15
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 75
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 75
 
 
  3334 0046 1FD0     		beq	.L244
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  882:.\mem1.c      ****                 //case 0x14: PWM_5_WriteDeadTime(val); break;
  883:.\mem1.c      ****                 //case 0x15: result = PWM_5_ReadDeadTime(); break; 
  884:.\mem1.c      ****                 // 0x16: PWM_5_WriteKillTime(val); break;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 76
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 76
 
 
  885:.\mem1.c      ****                 //case 0x17: result = PWM_5_ReadKillTime(); break; 
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3422              		.section	.text.PWM_Control_5,"ax",%progbits
  3423              		.align	2
  3424              		.global	PWM_Control_5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 77
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 77
 
 
  3425              		.thumb
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3460 0022 0BDC     		bgt	.L265
  3461 0024 012B     		cmp	r3, #1
  3462 0026 1AD0     		beq	.L256
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 78
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 78
 
 
  3463 0028 012B     		cmp	r3, #1
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3512              	.L259:
  922:.\mem1.c      ****                 case 0x0E: PWM_6_WriteCompare(val); break;
  3513              		.loc 1 922 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 79
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 79
 
 
  3514 007e BB88     		ldrh	r3, [r7, #4]
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3556 00d0 02D0     		beq	.L253
  935:.\mem1.c      ****                 {
  936:.\mem1.c      ****                     WriteTo_Pi(result);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 80
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 80
 
 
  3557              		.loc 1 936 0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3594 000c BB80     		strh	r3, [r7, #4]	@ movhi
  954:.\mem1.c      ****             uint32 result = MAX_32;
  3595              		.loc 1 954 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 81
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 81
 
 
  3596 000e 4FF0FF33 		mov	r3, #-1
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3644              	.L273:
  961:.\mem1.c      ****                 case 0x0C: PWM_7_WritePeriod(val); break;
  3645              		.loc 1 961 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 82
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 82
 
 
  3646 0064 BB88     		ldrh	r3, [r7, #4]
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3689 00b2 1846     		mov	r0, r3
  3690 00b4 4FF00101 		mov	r1, #1
  3691 00b8 FFF7FEFF 		bl	PWM_7_8_clk_SetDividerRegister
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 83
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 83
 
 
  3692 00bc FFF7FEFF 		bl	PWM_7_8_clk_GetDividerRegister
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3726 0000 80B5     		push	{r7, lr}
  3727              	.LCFI45:
  3728              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 84
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 84
 
 
  3729              		.cfi_offset 7, -8
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3779 0052 FF2B     		cmp	r3, #255
  3780 0054 29D0     		beq	.L296
  3781 0056 39E0     		b	.L286
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 85
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 85
 
 
  3782              	.L287:
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3823              		.loc 1 1009 0
  3824 009e FFF7FEFF 		bl	PWM_8_Sleep
  3825 00a2 13E0     		b	.L286
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 86
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 86
 
 
  3826              	.L295:
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
 1022:.\mem1.c      ****     {
  3868              		.loc 1 1022 0
  3869              		.cfi_startproc
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 87
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 87
 
 
  3870              		@ args = 0, pretend = 0, frame = 24
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3916              		.loc 1 1030 0
  3917 004e 4FF0FF33 		mov	r3, #-1
  3918 0052 3B61     		str	r3, [r7, #16]
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 88
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 88
 
 
 1031:.\mem1.c      ****         bool return_flag = 0;
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3961 00be 3B61     		str	r3, [r7, #16]
  3962 00c0 4FF00103 		mov	r3, #1
  3963 00c4 FB73     		strb	r3, [r7, #15]
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 89
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 89
 
 
  3964 00c6 17E0     		b	.L306
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  3999 0106 52F823F0 		ldr	pc, [r2, r3, lsl #2]
  4000 010a 00BF     		.align	2
  4001              	.L317:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 90
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 90
 
 
  4002 010c 39010000 		.word	.L313+1
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
 1080:.\mem1.c      ****                             if (val == 1)
  4038              		.loc 1 1080 0
  4039 0160 3B7B     		ldrb	r3, [r7, #12]	@ zero_extendqisi2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 91
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 91
 
 
  4040 0162 012B     		cmp	r3, #1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4085 01cc 03050000 		.word	.L384+1
  4086 01d0 03050000 		.word	.L384+1
  4087 01d4 03050000 		.word	.L384+1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 92
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 92
 
 
  4088 01d8 FB010000 		.word	.L324+1
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4120 020c 072B     		cmp	r3, #7
  4121 020e 33D8     		bhi	.L326
  4122 0210 01A2     		adr	r2, .L335
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 93
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 93
 
 
  4123 0212 52F823F0 		ldr	pc, [r2, r3, lsl #2]
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4169              	.L334:
 1120:.\mem1.c      ****                                     case 0x08: config_MASK = PIN_DM_RES_UPDWN; break;
  4170              		.loc 1 1120 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 94
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 94
 
 
  4171 0270 4FF00E03 		mov	r3, #14
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4214 02e8 FB8A     		ldrh	r3, [r7, #22]	@ movhi
  4215 02ea DBB2     		uxtb	r3, r3
  4216 02ec 1846     		mov	r0, r3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 95
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 95
 
 
  4217 02ee FFF7FEFF 		bl	GPIO_2_0_SetDriveMode
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
 1148:.\mem1.c      ****                                             #ifdef CY_PINS_GPIO_2_6_H 
 1149:.\mem1.c      ****                                                 case 0x06: GPIO_2_6_SetDriveMode(config_MASK); brea
  4255              		.loc 1 1149 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 96
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 96
 
 
  4256 0330 FB8A     		ldrh	r3, [r7, #22]	@ movhi
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4295              		.loc 1 1164 0
  4296 0380 FB8A     		ldrh	r3, [r7, #22]	@ movhi
  4297 0382 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 97
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 97
 
 
  4298 0384 1846     		mov	r0, r3
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
 1180:.\mem1.c      ****                                             #endif
 1181:.\mem1.c      ****                                         }
 1182:.\mem1.c      ****                                         break;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 98
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 98
 
 
  4337              		.loc 1 1182 0
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
 1196:.\mem1.c      ****                                             #ifdef CY_PINS_GPIO_5_3_H 
 1197:.\mem1.c      ****                                                 case 0x03: GPIO_5_3_SetDriveMode(config_MASK); brea
  4378              		.loc 1 1197 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 99
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 99
 
 
  4379 041c FB8A     		ldrh	r3, [r7, #22]	@ movhi
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
 1215:.\mem1.c      ****                                         switch(pin)
 1216:.\mem1.c      ****                                         {   
 1217:.\mem1.c      ****                                             #ifdef CY_PINS_GPIO_6_0_H 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 100
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 100
 
 
 1218:.\mem1.c      ****                                                 case 0x00: GPIO_6_0_SetDriveMode(config_MASK); brea
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4439              	.L374:
 1249:.\mem1.c      ****                                             #endif
 1250:.\mem1.c      ****                                             #ifdef CY_PINS_GPIO_12_1_H 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 101
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 101
 
 
 1251:.\mem1.c      ****                                                 case 0x01: GPIO_12_1_SetDriveMode(config_MASK); bre
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4478 04d4 1846     		mov	r0, r3
  4479 04d6 FFF7FEFF 		bl	GPIO_12_6_SetDriveMode
  4480 04da 05E0     		b	.L372
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 102
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 102
 
 
  4481              	.L380:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4520 0504 00E0     		b	.L302
  4521              	.L385:
  4522              		.loc 1 1275 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 103
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 103
 
 
  4523 0506 00BF     		nop
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4562              		.cfi_def_cfa_register 7
  4563 0006 0246     		mov	r2, r0
  4564 0008 0B46     		mov	r3, r1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 104
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 104
 
 
  4565 000a FA71     		strb	r2, [r7, #7]
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
 1303:.\mem1.c      ****             {
 1304:.\mem1.c      ****                 case 0x00: WriteTo_Pi(result); break;
  4607              		.loc 1 1304 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 105
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 105
 
 
  4608 005c FB89     		ldrh	r3, [r7, #14]
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
 1313:.\mem1.c      ****                         
 1314:.\mem1.c      ****                     }
 1315:.\mem1.c      ****                     ADC_SAR_Seq_1_Stop();
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 106
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 106
 
 
  4654              		.loc 1 1315 0
@@ -6329,10 +6329,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4675 0006 00000000 		.4byte	.Ldebug_abbrev0
  4676 000a 04       		.byte	0x4
  4677 000b 01       		.uleb128 0x1
- 4678 000c 0D020000 		.4byte	.LASF54
+ 4678 000c 03020000 		.4byte	.LASF54
  4679 0010 01       		.byte	0x1
- 4680 0011 CF000000 		.4byte	.LASF55
- 4681 0015 4D000000 		.4byte	.LASF56
+ 4680 0011 C5000000 		.4byte	.LASF55
+ 4681 0015 81000000 		.4byte	.LASF56
  4682 0019 00000000 		.4byte	.Ldebug_ranges0+0
  4683 001d 00000000 		.4byte	0
  4684 0021 00000000 		.4byte	0
@@ -6340,11 +6340,11 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4686 0029 02       		.uleb128 0x2
  4687 002a 01       		.byte	0x1
  4688 002b 06       		.byte	0x6
- 4689 002c B3010000 		.4byte	.LASF0
+ 4689 002c A9010000 		.4byte	.LASF0
  4690 0030 02       		.uleb128 0x2
  4691 0031 01       		.byte	0x1
  4692 0032 08       		.byte	0x8
- 4693 0033 A5010000 		.4byte	.LASF1
+ 4693 0033 9B010000 		.4byte	.LASF1
  4694 0037 02       		.uleb128 0x2
  4695 0038 02       		.byte	0x2
  4696 0039 05       		.byte	0x5
@@ -6352,31 +6352,31 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4698 003e 02       		.uleb128 0x2
  4699 003f 02       		.byte	0x2
  4700 0040 07       		.byte	0x7
- 4701 0041 56020000 		.4byte	.LASF3
+ 4701 0041 4C020000 		.4byte	.LASF3
  4702 0045 03       		.uleb128 0x3
- 4703 0046 6E020000 		.4byte	.LASF9
+ 4703 0046 64020000 		.4byte	.LASF9
  4704 004a 02       		.byte	0x2
  4705 004b 4F       		.byte	0x4f
  4706 004c 50000000 		.4byte	0x50
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 107
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 107
 
 
  4707 0050 02       		.uleb128 0x2
  4708 0051 04       		.byte	0x4
  4709 0052 05       		.byte	0x5
- 4710 0053 0E010000 		.4byte	.LASF4
+ 4710 0053 04010000 		.4byte	.LASF4
  4711 0057 02       		.uleb128 0x2
  4712 0058 04       		.byte	0x4
  4713 0059 07       		.byte	0x7
- 4714 005a B0020000 		.4byte	.LASF5
+ 4714 005a A6020000 		.4byte	.LASF5
  4715 005e 02       		.uleb128 0x2
  4716 005f 08       		.byte	0x8
  4717 0060 05       		.byte	0x5
- 4718 0061 E7000000 		.4byte	.LASF6
+ 4718 0061 DD000000 		.4byte	.LASF6
  4719 0065 02       		.uleb128 0x2
  4720 0066 08       		.byte	0x8
  4721 0067 07       		.byte	0x7
- 4722 0068 BF010000 		.4byte	.LASF7
+ 4722 0068 B5010000 		.4byte	.LASF7
  4723 006c 04       		.uleb128 0x4
  4724 006d 04       		.byte	0x4
  4725 006e 05       		.byte	0x5
@@ -6384,44 +6384,44 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4727 0073 02       		.uleb128 0x2
  4728 0074 04       		.byte	0x4
  4729 0075 07       		.byte	0x7
- 4730 0076 E4010000 		.4byte	.LASF8
+ 4730 0076 DA010000 		.4byte	.LASF8
  4731 007a 03       		.uleb128 0x3
- 4732 007b C9000000 		.4byte	.LASF10
+ 4732 007b 7B000000 		.4byte	.LASF10
  4733 007f 03       		.byte	0x3
  4734 0080 5B       		.byte	0x5b
  4735 0081 30000000 		.4byte	0x30
  4736 0085 03       		.uleb128 0x3
- 4737 0086 C2000000 		.4byte	.LASF11
+ 4737 0086 74000000 		.4byte	.LASF11
  4738 008a 03       		.byte	0x3
  4739 008b 5C       		.byte	0x5c
  4740 008c 3E000000 		.4byte	0x3e
  4741 0090 03       		.uleb128 0x3
- 4742 0091 A9020000 		.4byte	.LASF12
+ 4742 0091 9F020000 		.4byte	.LASF12
  4743 0095 03       		.byte	0x3
  4744 0096 5D       		.byte	0x5d
  4745 0097 57000000 		.4byte	0x57
  4746 009b 02       		.uleb128 0x2
  4747 009c 04       		.byte	0x4
  4748 009d 04       		.byte	0x4
- 4749 009e D8000000 		.4byte	.LASF13
+ 4749 009e CE000000 		.4byte	.LASF13
  4750 00a2 02       		.uleb128 0x2
  4751 00a3 08       		.byte	0x8
  4752 00a4 04       		.byte	0x4
- 4753 00a5 C2020000 		.4byte	.LASF14
+ 4753 00a5 B8020000 		.4byte	.LASF14
  4754 00a9 02       		.uleb128 0x2
  4755 00aa 01       		.byte	0x1
  4756 00ab 08       		.byte	0x8
- 4757 00ac 69020000 		.4byte	.LASF15
+ 4757 00ac 5F020000 		.4byte	.LASF15
  4758 00b0 02       		.uleb128 0x2
  4759 00b1 04       		.byte	0x4
  4760 00b2 07       		.byte	0x7
  4761 00b3 44000000 		.4byte	.LASF16
  4762 00b7 05       		.uleb128 0x5
  4763 00b8 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 108
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 108
 
 
- 4764 00b9 DE000000 		.4byte	.LASF18
+ 4764 00b9 D4000000 		.4byte	.LASF18
  4765 00bd 01       		.byte	0x1
  4766 00be 23       		.byte	0x23
  4767 00bf 01       		.byte	0x1
@@ -6431,7 +6431,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4771 00cc 01       		.byte	0x1
  4772 00cd FC000000 		.4byte	0xfc
  4773 00d1 06       		.uleb128 0x6
- 4774 00d2 17010000 		.4byte	.LASF17
+ 4774 00d2 0D010000 		.4byte	.LASF17
  4775 00d6 01       		.byte	0x1
  4776 00d7 23       		.byte	0x23
  4777 00d8 7A000000 		.4byte	0x7a
@@ -6457,7 +6457,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4797 00fb 00       		.byte	0
  4798 00fc 05       		.uleb128 0x5
  4799 00fd 01       		.byte	0x1
- 4800 00fe 85020000 		.4byte	.LASF19
+ 4800 00fe 7B020000 		.4byte	.LASF19
  4801 0102 01       		.byte	0x1
  4802 0103 8D       		.byte	0x8d
  4803 0104 01       		.byte	0x1
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4818 0125 76616C00 		.ascii	"val\000"
  4819 0129 01       		.byte	0x1
  4820 012a 8D       		.byte	0x8d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 109
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 109
 
 
  4821 012b 85000000 		.4byte	0x85
@@ -6494,7 +6494,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4831 013e 91       		.byte	0x91
  4832 013f 74       		.sleb128 -12
  4833 0140 08       		.uleb128 0x8
- 4834 0141 9D020000 		.4byte	.LASF21
+ 4834 0141 93020000 		.4byte	.LASF21
  4835 0145 01       		.byte	0x1
  4836 0146 90       		.byte	0x90
  4837 0147 4F010000 		.4byte	0x14f
@@ -6505,10 +6505,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4842 014f 02       		.uleb128 0x2
  4843 0150 01       		.byte	0x1
  4844 0151 02       		.byte	0x2
- 4845 0152 76020000 		.4byte	.LASF22
+ 4845 0152 6C020000 		.4byte	.LASF22
  4846 0156 05       		.uleb128 0x5
  4847 0157 01       		.byte	0x1
- 4848 0158 94010000 		.4byte	.LASF23
+ 4848 0158 8A010000 		.4byte	.LASF23
  4849 015c 01       		.byte	0x1
  4850 015d C0       		.byte	0xc0
  4851 015e 01       		.byte	0x1
@@ -6538,14 +6538,14 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4875 0191 01       		.byte	0x1
  4876 0192 C2       		.byte	0xc2
  4877 0193 90000000 		.4byte	0x90
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 110
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 110
 
 
  4878 0197 02       		.byte	0x2
  4879 0198 91       		.byte	0x91
  4880 0199 74       		.sleb128 -12
  4881 019a 08       		.uleb128 0x8
- 4882 019b 9D020000 		.4byte	.LASF21
+ 4882 019b 93020000 		.4byte	.LASF21
  4883 019f 01       		.byte	0x1
  4884 01a0 C3       		.byte	0xc3
  4885 01a1 4F010000 		.4byte	0x14f
@@ -6555,7 +6555,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4889 01a8 00       		.byte	0
  4890 01a9 09       		.uleb128 0x9
  4891 01aa 01       		.byte	0x1
- 4892 01ab D6010000 		.4byte	.LASF24
+ 4892 01ab CC010000 		.4byte	.LASF24
  4893 01af 01       		.byte	0x1
  4894 01b0 1901     		.2byte	0x119
  4895 01b2 01       		.byte	0x1
@@ -6589,7 +6589,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4923 01ef 91       		.byte	0x91
  4924 01f0 74       		.sleb128 -12
  4925 01f1 0B       		.uleb128 0xb
- 4926 01f2 9D020000 		.4byte	.LASF21
+ 4926 01f2 93020000 		.4byte	.LASF21
  4927 01f6 01       		.byte	0x1
  4928 01f7 1C01     		.2byte	0x11c
  4929 01f9 4F010000 		.4byte	0x14f
@@ -6598,11 +6598,11 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4932 01ff 73       		.sleb128 -13
  4933 0200 00       		.byte	0
  4934 0201 09       		.uleb128 0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 111
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 111
 
 
  4935 0202 01       		.byte	0x1
- 4936 0203 FF010000 		.4byte	.LASF25
+ 4936 0203 F5010000 		.4byte	.LASF25
  4937 0207 01       		.byte	0x1
  4938 0208 4501     		.2byte	0x145
  4939 020a 01       		.byte	0x1
@@ -6636,7 +6636,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4967 0247 91       		.byte	0x91
  4968 0248 74       		.sleb128 -12
  4969 0249 0B       		.uleb128 0xb
- 4970 024a 9D020000 		.4byte	.LASF21
+ 4970 024a 93020000 		.4byte	.LASF21
  4971 024e 01       		.byte	0x1
  4972 024f 4801     		.2byte	0x148
  4973 0251 4F010000 		.4byte	0x14f
@@ -6646,7 +6646,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4977 0258 00       		.byte	0
  4978 0259 09       		.uleb128 0x9
  4979 025a 01       		.byte	0x1
- 4980 025b F1010000 		.4byte	.LASF26
+ 4980 025b E7010000 		.4byte	.LASF26
  4981 025f 01       		.byte	0x1
  4982 0260 7201     		.2byte	0x172
  4983 0262 01       		.byte	0x1
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  4989 0274 0A       		.uleb128 0xa
  4990 0275 636D6400 		.ascii	"cmd\000"
  4991 0279 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 112
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 112
 
 
  4992 027a 7201     		.2byte	0x172
@@ -6683,7 +6683,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5011 029f 91       		.byte	0x91
  5012 02a0 74       		.sleb128 -12
  5013 02a1 0B       		.uleb128 0xb
- 5014 02a2 9D020000 		.4byte	.LASF21
+ 5014 02a2 93020000 		.4byte	.LASF21
  5015 02a6 01       		.byte	0x1
  5016 02a7 7501     		.2byte	0x175
  5017 02a9 4F010000 		.4byte	0x14f
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5046 02e7 02       		.byte	0x2
  5047 02e8 91       		.byte	0x91
  5048 02e9 6C       		.sleb128 -20
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 113
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 113
 
 
  5049 02ea 0B       		.uleb128 0xb
@@ -6730,7 +6730,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5055 02f7 91       		.byte	0x91
  5056 02f8 74       		.sleb128 -12
  5057 02f9 0B       		.uleb128 0xb
- 5058 02fa 9D020000 		.4byte	.LASF21
+ 5058 02fa 93020000 		.4byte	.LASF21
  5059 02fe 01       		.byte	0x1
  5060 02ff DF01     		.2byte	0x1df
  5061 0301 4F010000 		.4byte	0x14f
@@ -6758,7 +6758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5083 0331 91       		.byte	0x91
  5084 0332 54       		.sleb128 -44
  5085 0333 0B       		.uleb128 0xb
- 5086 0334 1C010000 		.4byte	.LASF30
+ 5086 0334 12010000 		.4byte	.LASF30
  5087 0338 01       		.byte	0x1
  5088 0339 0B02     		.2byte	0x20b
  5089 033b 7A000000 		.4byte	0x7a
@@ -6774,18 +6774,18 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5099 034f 91       		.byte	0x91
  5100 0350 52       		.sleb128 -46
  5101 0351 0B       		.uleb128 0xb
- 5102 0352 DA020000 		.4byte	.LASF31
+ 5102 0352 D0020000 		.4byte	.LASF31
  5103 0356 01       		.byte	0x1
  5104 0357 0D02     		.2byte	0x20d
  5105 0359 7A000000 		.4byte	0x7a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 114
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 114
 
 
  5106 035d 02       		.byte	0x2
  5107 035e 91       		.byte	0x91
  5108 035f 51       		.sleb128 -47
  5109 0360 0B       		.uleb128 0xb
- 5110 0361 D4020000 		.4byte	.LASF32
+ 5110 0361 CA020000 		.4byte	.LASF32
  5111 0365 01       		.byte	0x1
  5112 0366 0E02     		.2byte	0x20e
  5113 0368 7A000000 		.4byte	0x7a
@@ -6801,7 +6801,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5123 037c 91       		.byte	0x91
  5124 037d 4F       		.sleb128 -49
  5125 037e 0B       		.uleb128 0xb
- 5126 037f 7C020000 		.4byte	.LASF33
+ 5126 037f 72020000 		.4byte	.LASF33
  5127 0383 01       		.byte	0x1
  5128 0384 1A02     		.2byte	0x21a
  5129 0386 55040000 		.4byte	0x455
@@ -6809,7 +6809,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5131 038b 91       		.byte	0x91
  5132 038c CC7D     		.sleb128 -308
  5133 038e 0B       		.uleb128 0xb
- 5134 038f C9020000 		.4byte	.LASF34
+ 5134 038f BF020000 		.4byte	.LASF34
  5135 0393 01       		.byte	0x1
  5136 0394 2C02     		.2byte	0x22c
  5137 0396 55040000 		.4byte	0x455
@@ -6817,7 +6817,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5139 039b 91       		.byte	0x91
  5140 039c CC7B     		.sleb128 -564
  5141 039e 0B       		.uleb128 0xb
- 5142 039f 01010000 		.4byte	.LASF35
+ 5142 039f F7000000 		.4byte	.LASF35
  5143 03a3 01       		.byte	0x1
  5144 03a4 3B02     		.2byte	0x23b
  5145 03a6 55040000 		.4byte	0x455
@@ -6825,7 +6825,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5147 03ab 91       		.byte	0x91
  5148 03ac CC79     		.sleb128 -820
  5149 03ae 0B       		.uleb128 0xb
- 5150 03af B5000000 		.4byte	.LASF36
+ 5150 03af 67000000 		.4byte	.LASF36
  5151 03b3 01       		.byte	0x1
  5152 03b4 4B02     		.2byte	0x24b
  5153 03b6 55040000 		.4byte	0x455
@@ -6833,12 +6833,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5155 03bb 91       		.byte	0x91
  5156 03bc CC77     		.sleb128 -1076
  5157 03be 0B       		.uleb128 0xb
- 5158 03bf FD020000 		.4byte	.LASF37
+ 5158 03bf F3020000 		.4byte	.LASF37
  5159 03c3 01       		.byte	0x1
  5160 03c4 7702     		.2byte	0x277
  5161 03c6 55040000 		.4byte	0x455
  5162 03ca 03       		.byte	0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 115
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 115
 
 
  5163 03cb 91       		.byte	0x91
@@ -6852,7 +6852,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5171 03db 91       		.byte	0x91
  5172 03dc 68       		.sleb128 -24
  5173 03dd 0B       		.uleb128 0xb
- 5174 03de A7000000 		.4byte	.LASF38
+ 5174 03de 59000000 		.4byte	.LASF38
  5175 03e2 01       		.byte	0x1
  5176 03e3 7A02     		.2byte	0x27a
  5177 03e5 7A000000 		.4byte	0x7a
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5217 043a 91       		.byte	0x91
  5218 043b 5C       		.sleb128 -36
  5219 043c 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 116
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 116
 
 
  5220 043d 0E       		.uleb128 0xe
@@ -6923,7 +6923,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5239 0464 00       		.byte	0
  5240 0465 09       		.uleb128 0x9
  5241 0466 01       		.byte	0x1
- 5242 0467 32010000 		.4byte	.LASF39
+ 5242 0467 28010000 		.4byte	.LASF39
  5243 046b 01       		.byte	0x1
  5244 046c C202     		.2byte	0x2c2
  5245 046e 01       		.byte	0x1
@@ -6957,8 +6957,8 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5273 04ab 91       		.byte	0x91
  5274 04ac 74       		.sleb128 -12
  5275 04ad 0B       		.uleb128 0xb
- 5276 04ae 9D020000 		.4byte	.LASF21
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 117
+ 5276 04ae 93020000 		.4byte	.LASF21
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 117
 
 
  5277 04b2 01       		.byte	0x1
@@ -6970,7 +6970,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5283 04bc 00       		.byte	0
  5284 04bd 09       		.uleb128 0x9
  5285 04be 01       		.byte	0x1
- 5286 04bf 40010000 		.4byte	.LASF40
+ 5286 04bf 36010000 		.4byte	.LASF40
  5287 04c3 01       		.byte	0x1
  5288 04c4 EB02     		.2byte	0x2eb
  5289 04c6 01       		.byte	0x1
@@ -7004,7 +7004,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5317 0503 91       		.byte	0x91
  5318 0504 74       		.sleb128 -12
  5319 0505 0B       		.uleb128 0xb
- 5320 0506 9D020000 		.4byte	.LASF21
+ 5320 0506 93020000 		.4byte	.LASF21
  5321 050a 01       		.byte	0x1
  5322 050b EE02     		.2byte	0x2ee
  5323 050d 4F010000 		.4byte	0x14f
@@ -7014,11 +7014,11 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5327 0514 00       		.byte	0
  5328 0515 09       		.uleb128 0x9
  5329 0516 01       		.byte	0x1
- 5330 0517 4E010000 		.4byte	.LASF41
+ 5330 0517 44010000 		.4byte	.LASF41
  5331 051b 01       		.byte	0x1
  5332 051c 1303     		.2byte	0x313
  5333 051e 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 118
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 118
 
 
  5334 051f 00000000 		.4byte	.LFB66
@@ -7051,7 +7051,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5361 055b 91       		.byte	0x91
  5362 055c 74       		.sleb128 -12
  5363 055d 0B       		.uleb128 0xb
- 5364 055e 9D020000 		.4byte	.LASF21
+ 5364 055e 93020000 		.4byte	.LASF21
  5365 0562 01       		.byte	0x1
  5366 0563 1603     		.2byte	0x316
  5367 0565 4F010000 		.4byte	0x14f
@@ -7061,7 +7061,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5371 056c 00       		.byte	0
  5372 056d 09       		.uleb128 0x9
  5373 056e 01       		.byte	0x1
- 5374 056f 5C010000 		.4byte	.LASF42
+ 5374 056f 52010000 		.4byte	.LASF42
  5375 0573 01       		.byte	0x1
  5376 0574 3B03     		.2byte	0x33b
  5377 0576 01       		.byte	0x1
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5388 0594 02       		.byte	0x2
  5389 0595 91       		.byte	0x91
  5390 0596 6F       		.sleb128 -17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 119
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 119
 
 
  5391 0597 0A       		.uleb128 0xa
@@ -7098,7 +7098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5405 05b3 91       		.byte	0x91
  5406 05b4 74       		.sleb128 -12
  5407 05b5 0B       		.uleb128 0xb
- 5408 05b6 9D020000 		.4byte	.LASF21
+ 5408 05b6 93020000 		.4byte	.LASF21
  5409 05ba 01       		.byte	0x1
  5410 05bb 3E03     		.2byte	0x33e
  5411 05bd 4F010000 		.4byte	0x14f
@@ -7108,7 +7108,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5415 05c4 00       		.byte	0
  5416 05c5 09       		.uleb128 0x9
  5417 05c6 01       		.byte	0x1
- 5418 05c7 6A010000 		.4byte	.LASF43
+ 5418 05c7 60010000 		.4byte	.LASF43
  5419 05cb 01       		.byte	0x1
  5420 05cc 6503     		.2byte	0x365
  5421 05ce 01       		.byte	0x1
@@ -7138,14 +7138,14 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5445 0603 01       		.byte	0x1
  5446 0604 6703     		.2byte	0x367
  5447 0606 90000000 		.4byte	0x90
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 120
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 120
 
 
  5448 060a 02       		.byte	0x2
  5449 060b 91       		.byte	0x91
  5450 060c 74       		.sleb128 -12
  5451 060d 0B       		.uleb128 0xb
- 5452 060e 9D020000 		.4byte	.LASF21
+ 5452 060e 93020000 		.4byte	.LASF21
  5453 0612 01       		.byte	0x1
  5454 0613 6803     		.2byte	0x368
  5455 0615 4F010000 		.4byte	0x14f
@@ -7155,7 +7155,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5459 061c 00       		.byte	0
  5460 061d 09       		.uleb128 0x9
  5461 061e 01       		.byte	0x1
- 5462 061f 78010000 		.4byte	.LASF44
+ 5462 061f 6E010000 		.4byte	.LASF44
  5463 0623 01       		.byte	0x1
  5464 0624 8F03     		.2byte	0x38f
  5465 0626 01       		.byte	0x1
@@ -7189,7 +7189,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5493 0663 91       		.byte	0x91
  5494 0664 74       		.sleb128 -12
  5495 0665 0B       		.uleb128 0xb
- 5496 0666 9D020000 		.4byte	.LASF21
+ 5496 0666 93020000 		.4byte	.LASF21
  5497 066a 01       		.byte	0x1
  5498 066b 9203     		.2byte	0x392
  5499 066d 4F010000 		.4byte	0x14f
@@ -7198,11 +7198,11 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5502 0673 73       		.sleb128 -13
  5503 0674 00       		.byte	0
  5504 0675 09       		.uleb128 0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 121
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 121
 
 
  5505 0676 01       		.byte	0x1
- 5506 0677 86010000 		.4byte	.LASF45
+ 5506 0677 7C010000 		.4byte	.LASF45
  5507 067b 01       		.byte	0x1
  5508 067c B803     		.2byte	0x3b8
  5509 067e 01       		.byte	0x1
@@ -7236,7 +7236,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5537 06bb 91       		.byte	0x91
  5538 06bc 74       		.sleb128 -12
  5539 06bd 0B       		.uleb128 0xb
- 5540 06be 9D020000 		.4byte	.LASF21
+ 5540 06be 93020000 		.4byte	.LASF21
  5541 06c2 01       		.byte	0x1
  5542 06c3 BB03     		.2byte	0x3bb
  5543 06c5 4F010000 		.4byte	0x14f
@@ -7246,7 +7246,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5547 06cc 00       		.byte	0
  5548 06cd 09       		.uleb128 0x9
  5549 06ce 01       		.byte	0x1
- 5550 06cf 05030000 		.4byte	.LASF46
+ 5550 06cf FB020000 		.4byte	.LASF46
  5551 06d3 01       		.byte	0x1
  5552 06d4 DF03     		.2byte	0x3df
  5553 06d6 01       		.byte	0x1
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5559 06e8 0A       		.uleb128 0xa
  5560 06e9 636D6400 		.ascii	"cmd\000"
  5561 06ed 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 122
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 122
 
 
  5562 06ee DF03     		.2byte	0x3df
@@ -7283,7 +7283,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5581 0713 91       		.byte	0x91
  5582 0714 74       		.sleb128 -12
  5583 0715 0B       		.uleb128 0xb
- 5584 0716 9D020000 		.4byte	.LASF21
+ 5584 0716 93020000 		.4byte	.LASF21
  5585 071a 01       		.byte	0x1
  5586 071b E203     		.2byte	0x3e2
  5587 071d 4F010000 		.4byte	0x14f
@@ -7293,7 +7293,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5591 0724 00       		.byte	0
  5592 0725 09       		.uleb128 0x9
  5593 0726 01       		.byte	0x1
- 5594 0727 25010000 		.4byte	.LASF47
+ 5594 0727 1B010000 		.4byte	.LASF47
  5595 072b 01       		.byte	0x1
  5596 072c FD03     		.2byte	0x3fd
  5597 072e 01       		.byte	0x1
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5616 075b 02       		.byte	0x2
  5617 075c 91       		.byte	0x91
  5618 075d 64       		.sleb128 -28
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 123
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 123
 
 
  5619 075e 0C       		.uleb128 0xc
@@ -7338,7 +7338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5633 077a 91       		.byte	0x91
  5634 077b 6B       		.sleb128 -21
  5635 077c 0B       		.uleb128 0xb
- 5636 077d 98020000 		.4byte	.LASF48
+ 5636 077d 8E020000 		.4byte	.LASF48
  5637 0781 01       		.byte	0x1
  5638 0782 0104     		.2byte	0x401
  5639 0784 7A000000 		.4byte	0x7a
@@ -7346,7 +7346,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5641 0789 91       		.byte	0x91
  5642 078a 6A       		.sleb128 -22
  5643 078b 0B       		.uleb128 0xb
- 5644 078c AE000000 		.4byte	.LASF49
+ 5644 078c 60000000 		.4byte	.LASF49
  5645 0790 01       		.byte	0x1
  5646 0791 0204     		.2byte	0x402
  5647 0793 7A000000 		.4byte	0x7a
@@ -7354,7 +7354,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5649 0798 91       		.byte	0x91
  5650 0799 69       		.sleb128 -23
  5651 079a 0B       		.uleb128 0xb
- 5652 079b 9B000000 		.4byte	.LASF50
+ 5652 079b 4D000000 		.4byte	.LASF50
  5653 079f 01       		.byte	0x1
  5654 07a0 0404     		.2byte	0x404
  5655 07a2 85000000 		.4byte	0x85
@@ -7370,7 +7370,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5665 07b6 91       		.byte	0x91
  5666 07b7 70       		.sleb128 -16
  5667 07b8 0B       		.uleb128 0xb
- 5668 07b9 9D020000 		.4byte	.LASF21
+ 5668 07b9 93020000 		.4byte	.LASF21
  5669 07bd 01       		.byte	0x1
  5670 07be 0704     		.2byte	0x407
  5671 07c0 4F010000 		.4byte	0x14f
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5673 07c5 91       		.byte	0x91
  5674 07c6 6F       		.sleb128 -17
  5675 07c7 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 124
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 124
 
 
  5676 07c8 17000000 		.4byte	.LASF51
@@ -7389,7 +7389,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5681 07d4 91       		.byte	0x91
  5682 07d5 6E       		.sleb128 -18
  5683 07d6 0B       		.uleb128 0xb
- 5684 07d7 ED020000 		.4byte	.LASF52
+ 5684 07d7 E3020000 		.4byte	.LASF52
  5685 07db 01       		.byte	0x1
  5686 07dc 0904     		.2byte	0x409
  5687 07de 7A000000 		.4byte	0x7a
@@ -7399,7 +7399,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5691 07e5 00       		.byte	0
  5692 07e6 09       		.uleb128 0x9
  5693 07e7 01       		.byte	0x1
- 5694 07e8 F5000000 		.4byte	.LASF53
+ 5694 07e8 EB000000 		.4byte	.LASF53
  5695 07ec 01       		.byte	0x1
  5696 07ed 0905     		.2byte	0x509
  5697 07ef 01       		.byte	0x1
@@ -7434,11 +7434,11 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5726 082d 76       		.sleb128 -10
  5727 082e 00       		.byte	0
  5728 082f 11       		.uleb128 0x11
- 5729 0830 E0020000 		.4byte	.LASF57
+ 5729 0830 D6020000 		.4byte	.LASF57
  5730 0834 04       		.byte	0x4
  5731 0835 1606     		.2byte	0x616
  5732 0837 3D080000 		.4byte	0x83d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 125
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 125
 
 
  5733 083b 01       		.byte	0x1
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5787 002f 00       		.byte	0
  5788 0030 0B       		.uleb128 0xb
  5789 0031 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 126
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 126
 
 
  5790 0032 3E       		.uleb128 0x3e
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5844 0069 0B       		.uleb128 0xb
  5845 006a 49       		.uleb128 0x49
  5846 006b 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 127
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 127
 
 
  5847 006c 02       		.uleb128 0x2
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5901 00a3 13       		.uleb128 0x13
  5902 00a4 02       		.uleb128 0x2
  5903 00a5 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 128
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 128
 
 
  5904 00a6 00       		.byte	0
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  5958 00dc 01       		.byte	0x1
  5959 00dd 49       		.uleb128 0x49
  5960 00de 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 129
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 129
 
 
  5961 00df 01       		.uleb128 0x1
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6015 0022 7D       		.byte	0x7d
  6016 0023 10       		.sleb128 16
  6017 0024 06000000 		.4byte	.LCFI2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 130
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 130
 
 
  6018 0028 5C010000 		.4byte	.LFE56
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6072 00ac 02000000 		.4byte	.LCFI9
  6073 00b0 0200     		.2byte	0x2
  6074 00b2 7D       		.byte	0x7d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 131
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 131
 
 
  6075 00b3 00       		.sleb128 0
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6129 0138 0200     		.2byte	0x2
  6130 013a 7D       		.byte	0x7d
  6131 013b 18       		.sleb128 24
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 132
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 132
 
 
  6132 013c 06000000 		.4byte	.LCFI17
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6186 01c2 00000000 		.4byte	.LFB64
  6187 01c6 02000000 		.4byte	.LCFI24
  6188 01ca 0200     		.2byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 133
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 133
 
 
  6189 01cc 7D       		.byte	0x7d
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6243 024e 06000000 		.4byte	.LCFI32
  6244 0252 0200     		.2byte	0x2
  6245 0254 7D       		.byte	0x7d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 134
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 134
 
 
  6246 0255 18       		.sleb128 24
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6300              	.LLST13:
  6301 02da 00000000 		.4byte	.LFB69
  6302 02de 02000000 		.4byte	.LCFI39
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 135
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 135
 
 
  6303 02e2 0200     		.2byte	0x2
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6357 0362 04000000 		.4byte	.LCFI46
  6358 0366 06000000 		.4byte	.LCFI47
  6359 036a 0200     		.2byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 136
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 136
 
 
  6360 036c 7D       		.byte	0x7d
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6414 03ee 00000000 		.4byte	0
  6415              		.section	.debug_aranges,"",%progbits
  6416 0000 A4000000 		.4byte	0xa4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 137
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 137
 
 
  6417 0004 0200     		.2byte	0x2
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6471 0020 00000000 		.4byte	.LFB60
  6472 0024 C0000000 		.4byte	.LFE60
  6473 0028 00000000 		.4byte	.LFB61
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 138
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 138
 
 
  6474 002c F2000000 		.4byte	.LFE61
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6513      7420696E 
  6513      7400
  6514              	.LASF29:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 139
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 139
 
 
  6515 003e 696E7075 		.ascii	"input\000"
@@ -8287,247 +8287,247 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 1
  6517 0044 73697A65 		.ascii	"sizetype\000"
  6517      74797065 
  6517      00
- 6518              	.LASF56:
- 6519 004d 433A5C55 		.ascii	"C:\\Users\\Brian\\Dropbox\\RPiSoC\\Projects\\PSoC_2"
- 6519      73657273 
- 6519      5C427269 
- 6519      616E5C44 
- 6519      726F7062 
- 6520 007a 5F50695C 		.ascii	"_Pi\\PSoC Creator\\PSoC_2_Pi.cydsn\000"
- 6520      50536F43 
- 6520      20437265 
- 6520      61746F72 
- 6520      5C50536F 
- 6521              	.LASF50:
- 6522 009b 636F6E66 		.ascii	"config_MASK\000"
- 6522      69675F4D 
- 6522      41534B00 
- 6523              	.LASF38:
- 6524 00a7 6E657756 		.ascii	"newVal\000"
- 6524      616C00
- 6525              	.LASF49:
- 6526 00ae 636F6E66 		.ascii	"config\000"
- 6526      696700
- 6527              	.LASF36:
- 6528 00b5 53415754 		.ascii	"SAWTOOTHWave\000"
- 6528      4F4F5448 
- 6528      57617665 
- 6528      00
- 6529              	.LASF11:
- 6530 00c2 75696E74 		.ascii	"uint16\000"
- 6530      313600
- 6531              	.LASF10:
- 6532 00c9 75696E74 		.ascii	"uint8\000"
- 6532      3800
+ 6518              	.LASF50:
+ 6519 004d 636F6E66 		.ascii	"config_MASK\000"
+ 6519      69675F4D 
+ 6519      41534B00 
+ 6520              	.LASF38:
+ 6521 0059 6E657756 		.ascii	"newVal\000"
+ 6521      616C00
+ 6522              	.LASF49:
+ 6523 0060 636F6E66 		.ascii	"config\000"
+ 6523      696700
+ 6524              	.LASF36:
+ 6525 0067 53415754 		.ascii	"SAWTOOTHWave\000"
+ 6525      4F4F5448 
+ 6525      57617665 
+ 6525      00
+ 6526              	.LASF11:
+ 6527 0074 75696E74 		.ascii	"uint16\000"
+ 6527      313600
+ 6528              	.LASF10:
+ 6529 007b 75696E74 		.ascii	"uint8\000"
+ 6529      3800
+ 6530              	.LASF56:
+ 6531 0081 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\PSoCCreatorWo"
+ 6531      73657273 
+ 6531      5C4D6172 
+ 6531      6B5C446F 
+ 6531      63756D65 
+ 6532 00af 726B696E 		.ascii	"rking\\PSoC_2_Pi.cydsn\000"
+ 6532      675C5053 
+ 6532      6F435F32 
+ 6532      5F50692E 
+ 6532      63796473 
  6533              	.LASF55:
- 6534 00cf 2E5C6D65 		.ascii	".\\mem1.c\000"
+ 6534 00c5 2E5C6D65 		.ascii	".\\mem1.c\000"
  6534      6D312E63 
  6534      00
  6535              	.LASF13:
- 6536 00d8 666C6F61 		.ascii	"float\000"
+ 6536 00ce 666C6F61 		.ascii	"float\000"
  6536      7400
  6537              	.LASF18:
- 6538 00de 72656164 		.ascii	"readData\000"
+ 6538 00d4 72656164 		.ascii	"readData\000"
  6538      44617461 
  6538      00
  6539              	.LASF6:
- 6540 00e7 6C6F6E67 		.ascii	"long long int\000"
+ 6540 00dd 6C6F6E67 		.ascii	"long long int\000"
  6540      206C6F6E 
  6540      6720696E 
  6540      7400
  6541              	.LASF53:
- 6542 00f5 416E616C 		.ascii	"Analog_Read\000"
+ 6542 00eb 416E616C 		.ascii	"Analog_Read\000"
  6542      6F675F52 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 140
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 140
 
 
  6542      65616400 
  6543              	.LASF35:
- 6544 0101 54524941 		.ascii	"TRIANGLEWave\000"
+ 6544 00f7 54524941 		.ascii	"TRIANGLEWave\000"
  6544      4E474C45 
  6544      57617665 
  6544      00
  6545              	.LASF4:
- 6546 010e 6C6F6E67 		.ascii	"long int\000"
+ 6546 0104 6C6F6E67 		.ascii	"long int\000"
  6546      20696E74 
  6546      00
  6547              	.LASF17:
- 6548 0117 61646472 		.ascii	"addr\000"
+ 6548 010d 61646472 		.ascii	"addr\000"
  6548      00
  6549              	.LASF30:
- 6550 011c 77617665 		.ascii	"waveType\000"
+ 6550 0112 77617665 		.ascii	"waveType\000"
  6550      54797065 
  6550      00
  6551              	.LASF47:
- 6552 0125 4750494F 		.ascii	"GPIO_Control\000"
+ 6552 011b 4750494F 		.ascii	"GPIO_Control\000"
  6552      5F436F6E 
  6552      74726F6C 
  6552      00
  6553              	.LASF39:
- 6554 0132 50574D5F 		.ascii	"PWM_Control_0\000"
+ 6554 0128 50574D5F 		.ascii	"PWM_Control_0\000"
  6554      436F6E74 
  6554      726F6C5F 
  6554      3000
  6555              	.LASF40:
- 6556 0140 50574D5F 		.ascii	"PWM_Control_1\000"
+ 6556 0136 50574D5F 		.ascii	"PWM_Control_1\000"
  6556      436F6E74 
  6556      726F6C5F 
  6556      3100
  6557              	.LASF41:
- 6558 014e 50574D5F 		.ascii	"PWM_Control_2\000"
+ 6558 0144 50574D5F 		.ascii	"PWM_Control_2\000"
  6558      436F6E74 
  6558      726F6C5F 
  6558      3200
  6559              	.LASF42:
- 6560 015c 50574D5F 		.ascii	"PWM_Control_3\000"
+ 6560 0152 50574D5F 		.ascii	"PWM_Control_3\000"
  6560      436F6E74 
  6560      726F6C5F 
  6560      3300
  6561              	.LASF43:
- 6562 016a 50574D5F 		.ascii	"PWM_Control_4\000"
+ 6562 0160 50574D5F 		.ascii	"PWM_Control_4\000"
  6562      436F6E74 
  6562      726F6C5F 
  6562      3400
  6563              	.LASF44:
- 6564 0178 50574D5F 		.ascii	"PWM_Control_5\000"
+ 6564 016e 50574D5F 		.ascii	"PWM_Control_5\000"
  6564      436F6E74 
  6564      726F6C5F 
  6564      3500
  6565              	.LASF45:
- 6566 0186 50574D5F 		.ascii	"PWM_Control_6\000"
+ 6566 017c 50574D5F 		.ascii	"PWM_Control_6\000"
  6566      436F6E74 
  6566      726F6C5F 
  6566      3600
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 141
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 141
 
 
  6567              	.LASF23:
- 6568 0194 53415230 		.ascii	"SAR0_ADC_Control\000"
+ 6568 018a 53415230 		.ascii	"SAR0_ADC_Control\000"
  6568      5F414443 
  6568      5F436F6E 
  6568      74726F6C 
  6568      00
  6569              	.LASF1:
- 6570 01a5 756E7369 		.ascii	"unsigned char\000"
+ 6570 019b 756E7369 		.ascii	"unsigned char\000"
  6570      676E6564 
  6570      20636861 
  6570      7200
  6571              	.LASF0:
- 6572 01b3 7369676E 		.ascii	"signed char\000"
+ 6572 01a9 7369676E 		.ascii	"signed char\000"
  6572      65642063 
  6572      68617200 
  6573              	.LASF7:
- 6574 01bf 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 6574 01b5 6C6F6E67 		.ascii	"long long unsigned int\000"
  6574      206C6F6E 
  6574      6720756E 
  6574      7369676E 
  6574      65642069 
  6575              	.LASF24:
- 6576 01d6 56444143 		.ascii	"VDAC0_Control\000"
+ 6576 01cc 56444143 		.ascii	"VDAC0_Control\000"
  6576      305F436F 
  6576      6E74726F 
  6576      6C00
  6577              	.LASF8:
- 6578 01e4 756E7369 		.ascii	"unsigned int\000"
+ 6578 01da 756E7369 		.ascii	"unsigned int\000"
  6578      676E6564 
  6578      20696E74 
  6578      00
  6579              	.LASF26:
- 6580 01f1 49444143 		.ascii	"IDAC0_Control\000"
+ 6580 01e7 49444143 		.ascii	"IDAC0_Control\000"
  6580      305F436F 
  6580      6E74726F 
  6580      6C00
  6581              	.LASF25:
- 6582 01ff 56444143 		.ascii	"VDAC1_Control\000"
+ 6582 01f5 56444143 		.ascii	"VDAC1_Control\000"
  6582      315F436F 
  6582      6E74726F 
  6582      6C00
  6583              	.LASF54:
- 6584 020d 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 6584 0203 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
  6584      4320342E 
  6584      372E3320 
  6584      32303133 
  6584      30333132 
- 6585 0240 616E6368 		.ascii	"anch revision 196615]\000"
+ 6585 0236 616E6368 		.ascii	"anch revision 196615]\000"
  6585      20726576 
  6585      6973696F 
  6585      6E203139 
  6585      36363135 
  6586              	.LASF3:
- 6587 0256 73686F72 		.ascii	"short unsigned int\000"
+ 6587 024c 73686F72 		.ascii	"short unsigned int\000"
  6587      7420756E 
  6587      7369676E 
  6587      65642069 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 142
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 142
 
 
  6587      6E7400
  6588              	.LASF15:
- 6589 0269 63686172 		.ascii	"char\000"
+ 6589 025f 63686172 		.ascii	"char\000"
  6589      00
  6590              	.LASF9:
- 6591 026e 696E7433 		.ascii	"int32_t\000"
+ 6591 0264 696E7433 		.ascii	"int32_t\000"
  6591      325F7400 
  6592              	.LASF22:
- 6593 0276 5F426F6F 		.ascii	"_Bool\000"
+ 6593 026c 5F426F6F 		.ascii	"_Bool\000"
  6593      6C00
  6594              	.LASF33:
- 6595 027c 53494E45 		.ascii	"SINEWave\000"
+ 6595 0272 53494E45 		.ascii	"SINEWave\000"
  6595      57617665 
  6595      00
  6596              	.LASF19:
- 6597 0285 44454C53 		.ascii	"DELSIG_ADC_Control\000"
+ 6597 027b 44454C53 		.ascii	"DELSIG_ADC_Control\000"
  6597      49475F41 
  6597      44435F43 
  6597      6F6E7472 
  6597      6F6C00
  6598              	.LASF48:
- 6599 0298 706F7274 		.ascii	"port\000"
+ 6599 028e 706F7274 		.ascii	"port\000"
  6599      00
  6600              	.LASF21:
- 6601 029d 72657475 		.ascii	"return_flag\000"
+ 6601 0293 72657475 		.ascii	"return_flag\000"
  6601      726E5F66 
  6601      6C616700 
  6602              	.LASF12:
- 6603 02a9 75696E74 		.ascii	"uint32\000"
+ 6603 029f 75696E74 		.ascii	"uint32\000"
  6603      333200
  6604              	.LASF5:
- 6605 02b0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 6605 02a6 6C6F6E67 		.ascii	"long unsigned int\000"
  6605      20756E73 
  6605      69676E65 
  6605      6420696E 
  6605      7400
  6606              	.LASF14:
- 6607 02c2 646F7562 		.ascii	"double\000"
+ 6607 02b8 646F7562 		.ascii	"double\000"
  6607      6C6500
  6608              	.LASF34:
- 6609 02c9 53515541 		.ascii	"SQUAREWave\000"
+ 6609 02bf 53515541 		.ascii	"SQUAREWave\000"
  6609      52455761 
  6609      766500
  6610              	.LASF32:
- 6611 02d4 6463425F 		.ascii	"dcB_h\000"
+ 6611 02ca 6463425F 		.ascii	"dcB_h\000"
  6611      6800
  6612              	.LASF31:
- 6613 02da 6463425F 		.ascii	"dcB_l\000"
+ 6613 02d0 6463425F 		.ascii	"dcB_l\000"
  6613      6C00
  6614              	.LASF57:
- 6615 02e0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 6615 02d6 49544D5F 		.ascii	"ITM_RxBuffer\000"
  6615      52784275 
  6615      66666572 
  6615      00
  6616              	.LASF52:
- 6617 02ed 70726576 		.ascii	"prev_reg_status\000"
+ 6617 02e3 70726576 		.ascii	"prev_reg_status\000"
  6617      5F726567 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccHjPWqd.s 			page 143
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cceIJYLt.s 			page 143
 
 
  6617      5F737461 
  6617      74757300 
  6618              	.LASF37:
- 6619 02fd 6E657757 		.ascii	"newWave\000"
+ 6619 02f3 6E657757 		.ascii	"newWave\000"
  6619      61766500 
  6620              	.LASF46:
- 6621 0305 50574D5F 		.ascii	"PWM_Control_7\000"
+ 6621 02fb 50574D5F 		.ascii	"PWM_Control_7\000"
  6621      436F6E74 
  6621      726F6C5F 
  6621      3700

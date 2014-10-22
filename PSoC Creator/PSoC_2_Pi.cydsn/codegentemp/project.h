@@ -102,7 +102,6 @@
 #include <GPIO_12_7.h>
 #include <Port_12_Status.h>
 #include <Port_12_Control.h>
-#include <GPIO_clk.h>
 #include <GPIO_2_0_aliases.h>
 #include <GPIO_2_0.h>
 #include <GPIO_2_1_aliases.h>
@@ -176,7 +175,15 @@
 #include <Clock_1.h>
 #include <analog_in_1_aliases.h>
 #include <analog_in_1.h>
+#include <USBUART.h>
+#include <USBUART_audio.h>
+#include <USBUART_cdc.h>
+#include <USBUART_hid.h>
+#include <USBUART_midi.h>
+#include <USBUART_pvt.h>
+#include <DEBUG_UART.h>
 #include <SPIS_1_IntClock.h>
+#include <WaveDAC8_1_DacClk.h>
 #include <WaveDAC8_1_Wave1_DMA_dma.h>
 #include <WaveDAC8_1_Wave2_DMA_dma.h>
 #include <WaveDAC8_1_VDAC8.h>
@@ -193,6 +200,11 @@
 #include <ADC_SAR_Seq_1_TempBuf_dma.h>
 #include <ADC_SAR_Seq_1_FinalBuf_dma.h>
 #include <ADC_SAR_Seq_1_IRQ.h>
+#include <USBUART_Dm_aliases.h>
+#include <USBUART_Dm.h>
+#include <USBUART_Dp_aliases.h>
+#include <USBUART_Dp.h>
+#include <DEBUG_UART_IntClock.h>
 #include <ADC_SAR_Seq_1_SAR_Bypass_aliases.h>
 #include <ADC_SAR_Seq_1_SAR_Bypass.h>
 #include <core_cm3_psoc5.h>

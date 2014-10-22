@@ -66,7 +66,7 @@
 
 #define WaveDAC8_1_CLOCK_INT      (1u)
 #define WaveDAC8_1_CLOCK_EXT      (0u)
-#define WaveDAC8_1_CLOCK_SRC      (0u)
+#define WaveDAC8_1_CLOCK_SRC      (1u)
 
 #if(WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT)  
 	#include <WaveDAC8_1_DacClk.h>

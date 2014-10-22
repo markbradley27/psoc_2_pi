@@ -2,7 +2,7 @@
 --	Conversion of PSoC_2_Pi.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Sep 17 11:51:18 2014
+--	Tue Oct 21 13:31:30 2014
 --
 
 USE cypress.cypress.all;
@@ -626,6 +626,7 @@ SIGNAL tmpINTERRUPT_0__WaveDAC_out_net_0 : bit;
 SIGNAL Net_1100 : bit;
 SIGNAL Net_1184 : bit;
 TERMINAL \WaveDAC8_1:Net_211\ : bit;
+SIGNAL \WaveDAC8_1:Net_279\ : bit;
 TERMINAL \WaveDAC8_1:Net_189\ : bit;
 TERMINAL \WaveDAC8_1:Net_256\ : bit;
 TERMINAL \WaveDAC8_1:Net_190\ : bit;
@@ -645,7 +646,6 @@ TERMINAL \WaveDAC8_1:VDAC8:Net_77\ : bit;
 TERMINAL \WaveDAC8_1:BuffAmp:Net_29\ : bit;
 TERMINAL \WaveDAC8_1:Net_247\ : bit;
 SIGNAL \WaveDAC8_1:Net_280\ : bit;
-SIGNAL \WaveDAC8_1:Net_279\ : bit;
 SIGNAL \WaveDAC8_1:Net_80\ : bit;
 SIGNAL \WaveDAC8_1:cydff_1\ : bit;
 TERMINAL \ADC_SAR_1:Net_248\ : bit;
@@ -4452,6 +4452,177 @@ SIGNAL tmpFB_0__analog_in_1_net_0 : bit;
 SIGNAL tmpIO_0__analog_in_1_net_0 : bit;
 TERMINAL tmpSIOVREF__analog_in_1_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__analog_in_1_net_0 : bit;
+SIGNAL \USBUART:dma_nrq_0\ : bit;
+SIGNAL \USBUART:Net_1800\ : bit;
+SIGNAL \USBUART:ept_int_0\ : bit;
+SIGNAL \USBUART:dma_nrq_3\ : bit;
+SIGNAL \USBUART:Net_1803\ : bit;
+SIGNAL \USBUART:Net_1801\ : bit;
+SIGNAL \USBUART:dma_nrq_1\ : bit;
+SIGNAL \USBUART:dma_nrq_4\ : bit;
+SIGNAL \USBUART:Net_1804\ : bit;
+SIGNAL \USBUART:dma_nrq_5\ : bit;
+SIGNAL \USBUART:Net_1805\ : bit;
+SIGNAL \USBUART:dma_nrq_6\ : bit;
+SIGNAL \USBUART:Net_1806\ : bit;
+SIGNAL \USBUART:dma_nrq_7\ : bit;
+SIGNAL \USBUART:Net_1807\ : bit;
+SIGNAL \USBUART:Net_81\ : bit;
+SIGNAL \USBUART:Net_79\ : bit;
+SIGNAL \USBUART:ept_int_2\ : bit;
+SIGNAL \USBUART:ept_int_1\ : bit;
+SIGNAL \USBUART:Net_1784\ : bit;
+SIGNAL \USBUART:dma_nrq_2\ : bit;
+SIGNAL \USBUART:Net_1802\ : bit;
+SIGNAL \USBUART:Net_1010\ : bit;
+SIGNAL \USBUART:tmpOE__Dm_net_0\ : bit;
+SIGNAL \USBUART:tmpFB_0__Dm_net_0\ : bit;
+TERMINAL \USBUART:Net_597\ : bit;
+SIGNAL \USBUART:tmpIO_0__Dm_net_0\ : bit;
+TERMINAL \USBUART:tmpSIOVREF__Dm_net_0\ : bit;
+SIGNAL \USBUART:tmpINTERRUPT_0__Dm_net_0\ : bit;
+SIGNAL \USBUART:tmpOE__Dp_net_0\ : bit;
+SIGNAL \USBUART:tmpFB_0__Dp_net_0\ : bit;
+TERMINAL \USBUART:Net_1000\ : bit;
+SIGNAL \USBUART:tmpIO_0__Dp_net_0\ : bit;
+TERMINAL \USBUART:tmpSIOVREF__Dp_net_0\ : bit;
+SIGNAL Net_3290 : bit;
+SIGNAL \USBUART:ept_int_8\ : bit;
+SIGNAL \USBUART:ept_int_7\ : bit;
+SIGNAL \USBUART:ept_int_6\ : bit;
+SIGNAL \USBUART:ept_int_5\ : bit;
+SIGNAL \USBUART:ept_int_4\ : bit;
+SIGNAL \USBUART:ept_int_3\ : bit;
+SIGNAL \USBUART:Net_95\ : bit;
+SIGNAL \USBUART:dma_req_7\ : bit;
+SIGNAL \USBUART:dma_req_6\ : bit;
+SIGNAL \USBUART:dma_req_5\ : bit;
+SIGNAL \USBUART:dma_req_4\ : bit;
+SIGNAL \USBUART:dma_req_3\ : bit;
+SIGNAL \USBUART:dma_req_2\ : bit;
+SIGNAL \USBUART:dma_req_1\ : bit;
+SIGNAL \USBUART:dma_req_0\ : bit;
+SIGNAL \USBUART:Net_824\ : bit;
+SIGNAL \DEBUG_UART:Net_9\ : bit;
+SIGNAL \DEBUG_UART:Net_61\ : bit;
+SIGNAL \DEBUG_UART:BUART:clock_op\ : bit;
+SIGNAL \DEBUG_UART:BUART:reset_reg\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_hd_send_break\ : bit;
+SIGNAL \DEBUG_UART:BUART:HalfDuplexSend\ : bit;
+SIGNAL \DEBUG_UART:BUART:FinalParityType_1\ : bit;
+SIGNAL \DEBUG_UART:BUART:FinalParityType_0\ : bit;
+SIGNAL \DEBUG_UART:BUART:FinalAddrMode_2\ : bit;
+SIGNAL \DEBUG_UART:BUART:FinalAddrMode_1\ : bit;
+SIGNAL \DEBUG_UART:BUART:FinalAddrMode_0\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_ctrl_mark\ : bit;
+SIGNAL \DEBUG_UART:BUART:reset_reg_dp\ : bit;
+SIGNAL \DEBUG_UART:BUART:reset_sr\ : bit;
+SIGNAL \DEBUG_UART:BUART:HalfDuplexSend_last\ : bit;
+SIGNAL Net_3293 : bit;
+SIGNAL \DEBUG_UART:BUART:txn\ : bit;
+SIGNAL Net_3395 : bit;
+SIGNAL \DEBUG_UART:BUART:tx_interrupt_out\ : bit;
+SIGNAL Net_3396 : bit;
+SIGNAL \DEBUG_UART:BUART:tx_state_1\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_state_0\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_bitclk_enable_pre\ : bit;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ce0\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ce0\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:cl0\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:cl0\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:z0\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:z0\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ff0\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ff0\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ce1\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ce1\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:cl1\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:cl1\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:z1\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:z1\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ff1\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ff1\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ov_msb\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ov_msb\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:co_msb\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:co_msb\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:cmsb\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:cmsb\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:tx_shift_out\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_fifo_notfull\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_fifo_empty\ : bit;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:f1_bus_stat\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:f1_bus_stat\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:f1_blk_stat\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:f1_blk_stat\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ce0_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ce0_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:cl0_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:cl0_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:z0_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:z0_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ff0_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ff0_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ce1_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ce1_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:cl1_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:cl1_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:z1_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:z1_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ff1_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ff1_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:ov_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:ov_msb_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:co_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:co_msb_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:cmsb_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:cmsb_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:so_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:so_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:f0_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:f0_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:f0_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:f0_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:f1_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:f1_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:sTX:TxShifter:f1_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \DEBUG_UART:BUART:sTX:TxShifter:f1_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \DEBUG_UART:BUART:counter_load\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_state_2\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_bitclk\ : bit;
+SIGNAL \DEBUG_UART:BUART:counter_load_not\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_bitclk_dp\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_counter_dp\ : bit;
+SIGNAL \DEBUG_UART:BUART:sc_out_7\ : bit;
+SIGNAL \DEBUG_UART:BUART:sc_out_6\ : bit;
+SIGNAL \DEBUG_UART:BUART:sc_out_5\ : bit;
+SIGNAL \DEBUG_UART:BUART:sc_out_4\ : bit;
+SIGNAL \DEBUG_UART:BUART:sc_out_3\ : bit;
+SIGNAL \DEBUG_UART:BUART:sc_out_2\ : bit;
+SIGNAL \DEBUG_UART:BUART:sc_out_1\ : bit;
+SIGNAL \DEBUG_UART:BUART:sc_out_0\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_counter_tc\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_status_6\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_status_5\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_status_4\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_status_0\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_status_1\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_status_2\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_status_3\ : bit;
+SIGNAL Net_3391 : bit;
+SIGNAL \DEBUG_UART:BUART:tx_ctrl_mark_last\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_mark\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_parity_bit\ : bit;
+SIGNAL tmpOE__Rx_1_net_0 : bit;
+SIGNAL Net_3345 : bit;
+SIGNAL tmpIO_0__Rx_1_net_0 : bit;
+TERMINAL tmpSIOVREF__Rx_1_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__Rx_1_net_0 : bit;
+SIGNAL tmpOE__Tx_1_net_0 : bit;
+SIGNAL tmpFB_0__Tx_1_net_0 : bit;
+SIGNAL tmpIO_0__Tx_1_net_0 : bit;
+TERMINAL tmpSIOVREF__Tx_1_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__Tx_1_net_0 : bit;
 SIGNAL \SPIS_1:BSPIS:es3:SPISlave:dpcounter_one_reg\\D\ : bit;
 SIGNAL \SPIS_1:BSPIS:es3:SPISlave:mosi_buf_overrun_fin\\D\ : bit;
 SIGNAL \SPIS_1:BSPIS:es3:SPISlave:mosi_tmp\\D\ : bit;
@@ -4656,6 +4827,16 @@ SIGNAL \ADC_SAR_Seq_1:AMuxHw_2_Decoder_one_hot_62\\D\ : bit;
 SIGNAL \ADC_SAR_Seq_1:AMuxHw_2_Decoder_one_hot_63\\D\ : bit;
 SIGNAL \ADC_SAR_Seq_1:bSAR_SEQ:comp_clk_reg\\D\ : bit;
 SIGNAL \ADC_SAR_Seq_1:bSAR_SEQ:bus_clk_reg\\D\ : bit;
+SIGNAL \DEBUG_UART:BUART:reset_reg\\D\ : bit;
+SIGNAL \DEBUG_UART:BUART:txn\\D\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_state_1\\D\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_state_0\\D\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_state_2\\D\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_bitclk\\D\ : bit;
+SIGNAL Net_3391D : bit;
+SIGNAL \DEBUG_UART:BUART:tx_ctrl_mark_last\\D\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_mark\\D\ : bit;
+SIGNAL \DEBUG_UART:BUART:tx_parity_bit\\D\ : bit;
 BEGIN
 
 zero <=  ('0') ;
@@ -4699,9 +4880,9 @@ tmpOE__GPIO_12_1_net_0 <=  ('1') ;
 
 \PWM_1:PWMUDB:pwm_i\ <= ((\PWM_1:PWMUDB:control_7\ and \PWM_1:PWMUDB:cmp1_less\));
 
-\WaveDAC8_1:Net_183\ <= ((not \WaveDAC8_1:Net_134\ and Net_1100));
+\WaveDAC8_1:Net_183\ <= ((not \WaveDAC8_1:Net_134\ and \WaveDAC8_1:Net_279\));
 
-\WaveDAC8_1:Net_107\ <= ((Net_1100 and \WaveDAC8_1:Net_134\));
+\WaveDAC8_1:Net_107\ <= ((\WaveDAC8_1:Net_279\ and \WaveDAC8_1:Net_134\));
 
 \PWM_2:PWMUDB:sc_kill_tmp\\D\ <= (not \PWM_2:PWMUDB:tc_i\);
 
@@ -5052,6 +5233,51 @@ tmpOE__GPIO_12_1_net_0 <=  ('1') ;
 	OR (not \ADC_SAR_Seq_1:AMuxHw_2_Decoder_old_id_1\ and \ADC_SAR_Seq_1:ch_addr_2\ and \ADC_SAR_Seq_1:ch_addr_1\)
 	OR (not \ADC_SAR_Seq_1:AMuxHw_2_Decoder_old_id_2\ and not \ADC_SAR_Seq_1:AMuxHw_2_Decoder_old_id_1\ and \ADC_SAR_Seq_1:ch_addr_1\)
 	OR (not \ADC_SAR_Seq_1:AMuxHw_2_Decoder_old_id_2\ and \ADC_SAR_Seq_1:ch_addr_2\));
+
+Net_3293 <= (not \DEBUG_UART:BUART:txn\);
+
+\DEBUG_UART:BUART:counter_load_not\ <= ((not \DEBUG_UART:BUART:tx_bitclk\ and \DEBUG_UART:BUART:tx_state_2\)
+	OR \DEBUG_UART:BUART:tx_state_0\
+	OR \DEBUG_UART:BUART:tx_state_1\);
+
+\DEBUG_UART:BUART:tx_bitclk_enable_pre\ <= (not \DEBUG_UART:BUART:tx_bitclk_dp\);
+
+\DEBUG_UART:BUART:tx_status_0\ <= ((not \DEBUG_UART:BUART:tx_state_1\ and not \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_fifo_empty\ and \DEBUG_UART:BUART:tx_state_2\ and \DEBUG_UART:BUART:tx_bitclk\));
+
+\DEBUG_UART:BUART:tx_status_2\ <= (not \DEBUG_UART:BUART:tx_fifo_notfull\);
+
+Net_3391D <= ((not \DEBUG_UART:BUART:reset_reg\ and \DEBUG_UART:BUART:tx_state_2\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and \DEBUG_UART:BUART:tx_state_0\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and \DEBUG_UART:BUART:tx_state_1\));
+
+\DEBUG_UART:BUART:tx_mark\\D\ <= ((not \DEBUG_UART:BUART:reset_reg\ and \DEBUG_UART:BUART:tx_mark\));
+
+\DEBUG_UART:BUART:tx_state_2\\D\ <= ((not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_2\ and not \DEBUG_UART:BUART:tx_counter_dp\ and \DEBUG_UART:BUART:tx_state_1\ and \DEBUG_UART:BUART:tx_bitclk\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_2\ and \DEBUG_UART:BUART:tx_state_1\ and \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_bitclk\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_1\ and \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_state_2\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_state_1\ and \DEBUG_UART:BUART:tx_state_2\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_bitclk\ and \DEBUG_UART:BUART:tx_state_2\));
+
+\DEBUG_UART:BUART:tx_state_1\\D\ <= ((not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_1\ and not \DEBUG_UART:BUART:tx_state_2\ and \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_bitclk\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_state_1\ and \DEBUG_UART:BUART:tx_counter_dp\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_state_1\ and \DEBUG_UART:BUART:tx_state_2\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_bitclk\ and \DEBUG_UART:BUART:tx_state_1\));
+
+\DEBUG_UART:BUART:tx_state_0\\D\ <= ((not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_1\ and not \DEBUG_UART:BUART:tx_fifo_empty\ and not \DEBUG_UART:BUART:tx_state_2\ and not \DEBUG_UART:BUART:tx_bitclk\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_1\ and not \DEBUG_UART:BUART:tx_state_0\ and not \DEBUG_UART:BUART:tx_fifo_empty\ and \DEBUG_UART:BUART:tx_bitclk\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_fifo_empty\ and \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_state_2\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_1\ and \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_state_2\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_bitclk\ and \DEBUG_UART:BUART:tx_state_0\));
+
+\DEBUG_UART:BUART:txn\\D\ <= ((not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_0\ and not \DEBUG_UART:BUART:tx_shift_out\ and not \DEBUG_UART:BUART:tx_state_2\ and \DEBUG_UART:BUART:tx_state_1\ and \DEBUG_UART:BUART:tx_bitclk\ and \DEBUG_UART:BUART:tx_counter_dp\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_1\ and not \DEBUG_UART:BUART:tx_state_2\ and not \DEBUG_UART:BUART:tx_bitclk\ and \DEBUG_UART:BUART:tx_state_0\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_state_1\ and not \DEBUG_UART:BUART:tx_shift_out\ and not \DEBUG_UART:BUART:tx_state_2\ and \DEBUG_UART:BUART:tx_state_0\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and not \DEBUG_UART:BUART:tx_bitclk\ and \DEBUG_UART:BUART:txn\ and \DEBUG_UART:BUART:tx_state_1\)
+	OR (not \DEBUG_UART:BUART:reset_reg\ and \DEBUG_UART:BUART:txn\ and \DEBUG_UART:BUART:tx_state_2\));
+
+\DEBUG_UART:BUART:tx_parity_bit\\D\ <= ((not \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:txn\ and \DEBUG_UART:BUART:tx_parity_bit\)
+	OR (not \DEBUG_UART:BUART:tx_state_1\ and not \DEBUG_UART:BUART:tx_state_0\ and \DEBUG_UART:BUART:tx_parity_bit\)
+	OR \DEBUG_UART:BUART:tx_parity_bit\);
 
 GPIO_12_1:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"3b9c8f4a-7e6d-44a9-afe9-c15b1e795005",
@@ -6108,6 +6334,16 @@ WaveDAC_clk:cy_clock_v1_0
 		dig_domain_out=>open);
 \WaveDAC8_1:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\WaveDAC8_1:Net_211\);
+\WaveDAC8_1:DacClk\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"6ebe1955-7d0c-4723-9b62-f5a78e6b2fd8/77086516-855e-4b7b-abbe-47b22f8543de",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"4000000000",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>\WaveDAC8_1:Net_279\,
+		dig_domain_out=>open);
 \WaveDAC8_1:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
@@ -6141,8 +6377,8 @@ WaveDAC_clk:cy_clock_v1_0
 		ioff=>zero,
 		data=>(zero, zero, zero, zero,
 			zero, zero, zero, zero),
-		strobe=>Net_1100,
-		strobe_udb=>Net_1100,
+		strobe=>\WaveDAC8_1:Net_279\,
+		strobe_udb=>\WaveDAC8_1:Net_279\,
 		vout=>\WaveDAC8_1:Net_189\,
 		iout=>\WaveDAC8_1:VDAC8:Net_77\);
 \WaveDAC8_1:VDAC8:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
@@ -9381,10 +9617,10 @@ GPIO_12_7:cy_psoc3_pins_v1_10
 GPIO_clk:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"9047a15a-c5b6-4d25-9af5-99f675e25548",
-		source_clock_id=>"61737EF6-3B74-48f9-8B91-F7473A442AE7",
-		divisor=>1,
+		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
+		divisor=>0,
 		period=>"0",
-		is_direct=>'0',
+		is_direct=>'1',
 		is_digital=>'1')
 	PORT MAP(clock_out=>GPIO_clk_net,
 		dig_domain_out=>open);
@@ -11594,6 +11830,511 @@ analog_in_1:cy_psoc3_pins_v1_10
 		out_clock_en=>tmpOE__GPIO_12_1_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__analog_in_1_net_0);
+\USBUART:ep_0\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:ept_int_0\);
+\USBUART:bus_reset\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:Net_81\);
+\USBUART:arb_int\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:Net_79\);
+\USBUART:ep_2\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:ept_int_2\);
+\USBUART:ep_1\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:ept_int_1\);
+\USBUART:Clock_vbus\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"2b269b96-47a4-4e9a-937e-76d4080bb211/03f503a7-085a-4304-b786-de885b1c2f21",
+		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
+		divisor=>0,
+		period=>"0",
+		is_direct=>'1',
+		is_digital=>'1')
+	PORT MAP(clock_out=>\USBUART:Net_1784\,
+		dig_domain_out=>open);
+\USBUART:dp_int\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:Net_1010\);
+\USBUART:Dm\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"2b269b96-47a4-4e9a-937e-76d4080bb211/8b77a6c4-10a0-4390-971c-672353e2a49c",
+		drive_mode=>"000",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"NONCONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"A",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"0",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'1',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1)
+	PORT MAP(oe=>(tmpOE__GPIO_12_1_net_0),
+		y=>(zero),
+		fb=>(\USBUART:tmpFB_0__Dm_net_0\),
+		analog=>\USBUART:Net_597\,
+		io=>(\USBUART:tmpIO_0__Dm_net_0\),
+		siovref=>(\USBUART:tmpSIOVREF__Dm_net_0\),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>tmpOE__GPIO_12_1_net_0,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>tmpOE__GPIO_12_1_net_0,
+		out_reset=>zero,
+		interrupt=>\USBUART:tmpINTERRUPT_0__Dm_net_0\);
+\USBUART:Dp\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"2b269b96-47a4-4e9a-937e-76d4080bb211/618a72fc-5ddd-4df5-958f-a3d55102db42",
+		drive_mode=>"000",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"10",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"0",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1)
+	PORT MAP(oe=>(tmpOE__GPIO_12_1_net_0),
+		y=>(zero),
+		fb=>(\USBUART:tmpFB_0__Dp_net_0\),
+		analog=>\USBUART:Net_1000\,
+		io=>(\USBUART:tmpIO_0__Dp_net_0\),
+		siovref=>(\USBUART:tmpSIOVREF__Dp_net_0\),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>tmpOE__GPIO_12_1_net_0,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>tmpOE__GPIO_12_1_net_0,
+		out_reset=>zero,
+		interrupt=>\USBUART:Net_1010\);
+\USBUART:USB\:cy_psoc3_usb_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(dp=>\USBUART:Net_1000\,
+		dm=>\USBUART:Net_597\,
+		sof_int=>Net_3290,
+		arb_int=>\USBUART:Net_79\,
+		usb_int=>\USBUART:Net_81\,
+		ept_int=>(\USBUART:ept_int_8\, \USBUART:ept_int_7\, \USBUART:ept_int_6\, \USBUART:ept_int_5\,
+			\USBUART:ept_int_4\, \USBUART:ept_int_3\, \USBUART:ept_int_2\, \USBUART:ept_int_1\,
+			\USBUART:ept_int_0\),
+		ord_int=>\USBUART:Net_95\,
+		dma_req=>(\USBUART:dma_req_7\, \USBUART:dma_req_6\, \USBUART:dma_req_5\, \USBUART:dma_req_4\,
+			\USBUART:dma_req_3\, \USBUART:dma_req_2\, \USBUART:dma_req_1\, \USBUART:dma_req_0\),
+		dma_termin=>\USBUART:Net_824\);
+\USBUART:ep_3\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:ept_int_3\);
+\USBUART:sof_int\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_3290);
+\DEBUG_UART:IntClock\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"13020833333.3333",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>\DEBUG_UART:Net_9\,
+		dig_domain_out=>open);
+\DEBUG_UART:BUART:ClkSync\:cy_psoc3_udb_clock_enable_v1_0
+	GENERIC MAP(sync_mode=>'1')
+	PORT MAP(clock_in=>\DEBUG_UART:Net_9\,
+		enable=>tmpOE__GPIO_12_1_net_0,
+		clock_out=>\DEBUG_UART:BUART:clock_op\);
+\DEBUG_UART:BUART:sTX:TxShifter:u0\:cy_psoc3_dp
+	GENERIC MAP(cy_dpconfig=>"0000000000000000000000000000000000000000000000000000000011000000000000000000000000000010010000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001100",
+		d0_init=>"00000000",
+		d1_init=>"00000000",
+		a0_init=>"00000000",
+		a1_init=>"00000000",
+		ce0_sync=>'1',
+		cl0_sync=>'1',
+		z0_sync=>'1',
+		ff0_sync=>'1',
+		ce1_sync=>'1',
+		cl1_sync=>'1',
+		z1_sync=>'1',
+		ff1_sync=>'1',
+		ov_msb_sync=>'1',
+		co_msb_sync=>'1',
+		cmsb_sync=>'1',
+		so_sync=>'1',
+		f0_bus_sync=>'1',
+		f0_blk_sync=>'1',
+		f1_bus_sync=>'1',
+		f1_blk_sync=>'1')
+	PORT MAP(reset=>\DEBUG_UART:BUART:reset_reg\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		cs_addr=>(\DEBUG_UART:BUART:tx_state_1\, \DEBUG_UART:BUART:tx_state_0\, \DEBUG_UART:BUART:tx_bitclk_enable_pre\),
+		route_si=>zero,
+		route_ci=>zero,
+		f0_load=>zero,
+		f1_load=>zero,
+		d0_load=>zero,
+		d1_load=>zero,
+		ce0=>open,
+		cl0=>open,
+		z0=>open,
+		ff0=>open,
+		ce1=>open,
+		cl1=>open,
+		z1=>open,
+		ff1=>open,
+		ov_msb=>open,
+		co_msb=>open,
+		cmsb=>open,
+		so=>\DEBUG_UART:BUART:tx_shift_out\,
+		f0_bus_stat=>\DEBUG_UART:BUART:tx_fifo_notfull\,
+		f0_blk_stat=>\DEBUG_UART:BUART:tx_fifo_empty\,
+		f1_bus_stat=>open,
+		f1_blk_stat=>open,
+		ce0_reg=>open,
+		cl0_reg=>open,
+		z0_reg=>open,
+		ff0_reg=>open,
+		ce1_reg=>open,
+		cl1_reg=>open,
+		z1_reg=>open,
+		ff1_reg=>open,
+		ov_msb_reg=>open,
+		co_msb_reg=>open,
+		cmsb_reg=>open,
+		so_reg=>open,
+		f0_bus_stat_reg=>open,
+		f0_blk_stat_reg=>open,
+		f1_bus_stat_reg=>open,
+		f1_blk_stat_reg=>open,
+		ci=>zero,
+		co=>open,
+		sir=>zero,
+		sor=>open,
+		sil=>zero,
+		sol=>open,
+		msbi=>zero,
+		msbo=>open,
+		cei=>(zero, zero),
+		ceo=>open,
+		cli=>(zero, zero),
+		clo=>open,
+		zi=>(zero, zero),
+		zo=>open,
+		fi=>(zero, zero),
+		fo=>open,
+		capi=>(zero, zero),
+		capo=>open,
+		cfbi=>zero,
+		cfbo=>open,
+		pi=>(zero, zero, zero, zero,
+			zero, zero, zero, zero),
+		po=>open);
+\DEBUG_UART:BUART:sTX:sCLOCK:TxBitClkGen\:cy_psoc3_dp
+	GENERIC MAP(cy_dpconfig=>"1010100001000000001000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111100000111001000000100000000000101111100000000000000001000",
+		d0_init=>"00000000",
+		d1_init=>"00000000",
+		a0_init=>"00000000",
+		a1_init=>"00000000",
+		ce0_sync=>'1',
+		cl0_sync=>'1',
+		z0_sync=>'1',
+		ff0_sync=>'1',
+		ce1_sync=>'1',
+		cl1_sync=>'1',
+		z1_sync=>'1',
+		ff1_sync=>'1',
+		ov_msb_sync=>'1',
+		co_msb_sync=>'1',
+		cmsb_sync=>'1',
+		so_sync=>'1',
+		f0_bus_sync=>'1',
+		f0_blk_sync=>'1',
+		f1_bus_sync=>'1',
+		f1_blk_sync=>'1')
+	PORT MAP(reset=>\DEBUG_UART:BUART:reset_reg\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		cs_addr=>(zero, zero, \DEBUG_UART:BUART:counter_load_not\),
+		route_si=>zero,
+		route_ci=>zero,
+		f0_load=>zero,
+		f1_load=>zero,
+		d0_load=>zero,
+		d1_load=>zero,
+		ce0=>open,
+		cl0=>\DEBUG_UART:BUART:tx_bitclk_dp\,
+		z0=>open,
+		ff0=>open,
+		ce1=>open,
+		cl1=>\DEBUG_UART:BUART:tx_counter_dp\,
+		z1=>open,
+		ff1=>open,
+		ov_msb=>open,
+		co_msb=>open,
+		cmsb=>open,
+		so=>open,
+		f0_bus_stat=>open,
+		f0_blk_stat=>open,
+		f1_bus_stat=>open,
+		f1_blk_stat=>open,
+		ce0_reg=>open,
+		cl0_reg=>open,
+		z0_reg=>open,
+		ff0_reg=>open,
+		ce1_reg=>open,
+		cl1_reg=>open,
+		z1_reg=>open,
+		ff1_reg=>open,
+		ov_msb_reg=>open,
+		co_msb_reg=>open,
+		cmsb_reg=>open,
+		so_reg=>open,
+		f0_bus_stat_reg=>open,
+		f0_blk_stat_reg=>open,
+		f1_bus_stat_reg=>open,
+		f1_blk_stat_reg=>open,
+		ci=>zero,
+		co=>open,
+		sir=>zero,
+		sor=>open,
+		sil=>zero,
+		sol=>open,
+		msbi=>zero,
+		msbo=>open,
+		cei=>(zero, zero),
+		ceo=>open,
+		cli=>(zero, zero),
+		clo=>open,
+		zi=>(zero, zero),
+		zo=>open,
+		fi=>(zero, zero),
+		fo=>open,
+		capi=>(zero, zero),
+		capo=>open,
+		cfbi=>zero,
+		cfbo=>open,
+		pi=>(zero, zero, zero, zero,
+			zero, zero, zero, zero),
+		po=>(\DEBUG_UART:BUART:sc_out_7\, \DEBUG_UART:BUART:sc_out_6\, \DEBUG_UART:BUART:sc_out_5\, \DEBUG_UART:BUART:sc_out_4\,
+			\DEBUG_UART:BUART:sc_out_3\, \DEBUG_UART:BUART:sc_out_2\, \DEBUG_UART:BUART:sc_out_1\, \DEBUG_UART:BUART:sc_out_0\));
+\DEBUG_UART:BUART:sTX:TxSts\:cy_psoc3_statusi
+	GENERIC MAP(cy_force_order=>'1',
+		cy_md_select=>"0000001",
+		cy_int_mask=>"1111111")
+	PORT MAP(reset=>\DEBUG_UART:BUART:reset_reg\,
+		clock=>\DEBUG_UART:BUART:clock_op\,
+		status=>(zero, zero, zero, \DEBUG_UART:BUART:tx_fifo_notfull\,
+			\DEBUG_UART:BUART:tx_status_2\, \DEBUG_UART:BUART:tx_fifo_empty\, \DEBUG_UART:BUART:tx_status_0\),
+		interrupt=>\DEBUG_UART:BUART:tx_interrupt_out\);
+Rx_1:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"1425177d-0d0e-4468-8bcc-e638e5509a9b",
+		drive_mode=>"001",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"0",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1)
+	PORT MAP(oe=>(tmpOE__GPIO_12_1_net_0),
+		y=>(zero),
+		fb=>Net_3345,
+		analog=>(open),
+		io=>(tmpIO_0__Rx_1_net_0),
+		siovref=>(tmpSIOVREF__Rx_1_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>tmpOE__GPIO_12_1_net_0,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>tmpOE__GPIO_12_1_net_0,
+		out_reset=>zero,
+		interrupt=>tmpINTERRUPT_0__Rx_1_net_0);
+Tx_1:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"ed092b9b-d398-4703-be89-cebf998501f6",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"0",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1)
+	PORT MAP(oe=>(tmpOE__GPIO_12_1_net_0),
+		y=>Net_3293,
+		fb=>(tmpFB_0__Tx_1_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Tx_1_net_0),
+		siovref=>(tmpSIOVREF__Tx_1_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>tmpOE__GPIO_12_1_net_0,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>tmpOE__GPIO_12_1_net_0,
+		out_reset=>zero,
+		interrupt=>tmpINTERRUPT_0__Tx_1_net_0);
 \SPIS_1:BSPIS:es3:SPISlave:dpcounter_one_reg\:cy_dff
 	PORT MAP(d=>\SPIS_1:BSPIS:es3:SPISlave:dpcounter_one_fin\,
 		clk=>\SPIS_1:BSPIS:es3:SPISlave:clock_fin\,
@@ -11688,7 +12429,7 @@ analog_in_1:cy_psoc3_pins_v1_10
 		q=>\PWM_1:PWMUDB:tc_reg_i\);
 \WaveDAC8_1:cydff_1\:cy_dff
 	PORT MAP(d=>tmpOE__GPIO_12_1_net_0,
-		clk=>Net_1100,
+		clk=>\WaveDAC8_1:Net_279\,
 		q=>\WaveDAC8_1:Net_134\);
 \PWM_2:PWMUDB:min_kill_reg\:cy_dsrff
 	PORT MAP(d=>tmpOE__GPIO_12_1_net_0,
@@ -12538,5 +13279,45 @@ analog_in_1:cy_psoc3_pins_v1_10
 	PORT MAP(d=>\ADC_SAR_Seq_1:bSAR_SEQ:comb_logic\,
 		clk=>\ADC_SAR_Seq_1:Net_3710\,
 		q=>\ADC_SAR_Seq_1:bSAR_SEQ:bus_clk_reg\);
+\DEBUG_UART:BUART:reset_reg\:cy_dff
+	PORT MAP(d=>zero,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:reset_reg\);
+\DEBUG_UART:BUART:txn\:cy_dff
+	PORT MAP(d=>\DEBUG_UART:BUART:txn\\D\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:txn\);
+\DEBUG_UART:BUART:tx_state_1\:cy_dff
+	PORT MAP(d=>\DEBUG_UART:BUART:tx_state_1\\D\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:tx_state_1\);
+\DEBUG_UART:BUART:tx_state_0\:cy_dff
+	PORT MAP(d=>\DEBUG_UART:BUART:tx_state_0\\D\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:tx_state_0\);
+\DEBUG_UART:BUART:tx_state_2\:cy_dff
+	PORT MAP(d=>\DEBUG_UART:BUART:tx_state_2\\D\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:tx_state_2\);
+\DEBUG_UART:BUART:tx_bitclk\:cy_dff
+	PORT MAP(d=>\DEBUG_UART:BUART:tx_bitclk_enable_pre\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:tx_bitclk\);
+Net_3391:cy_dff
+	PORT MAP(d=>Net_3391D,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>Net_3391);
+\DEBUG_UART:BUART:tx_ctrl_mark_last\:cy_dff
+	PORT MAP(d=>\DEBUG_UART:BUART:tx_ctrl_mark_last\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:tx_ctrl_mark_last\);
+\DEBUG_UART:BUART:tx_mark\:cy_dff
+	PORT MAP(d=>\DEBUG_UART:BUART:tx_mark\\D\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:tx_mark\);
+\DEBUG_UART:BUART:tx_parity_bit\:cy_dff
+	PORT MAP(d=>\DEBUG_UART:BUART:tx_parity_bit\\D\,
+		clk=>\DEBUG_UART:BUART:clock_op\,
+		q=>\DEBUG_UART:BUART:tx_parity_bit\);
 
 END R_T_L;

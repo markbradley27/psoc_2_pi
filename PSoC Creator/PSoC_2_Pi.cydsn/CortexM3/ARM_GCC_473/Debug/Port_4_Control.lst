@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
   29:.\Generated_Source\PSoC5/Port_4_Control.c **** *  control:  The value to be assigned to the Control Register.
   30:.\Generated_Source\PSoC5/Port_4_Control.c **** *
   31:.\Generated_Source\PSoC5/Port_4_Control.c **** * Return:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Port_4_Control.c **** *  None.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
   48:.\Generated_Source\PSoC5/Port_4_Control.c **** * Parameters:
   49:.\Generated_Source\PSoC5/Port_4_Control.c **** *  None.
   50:.\Generated_Source\PSoC5/Port_4_Control.c **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 3
 
 
   51:.\Generated_Source\PSoC5/Port_4_Control.c **** * Return:
@@ -164,10 +164,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
   97 0006 00000000 		.4byte	.Ldebug_abbrev0
   98 000a 04       		.byte	0x4
   99 000b 01       		.uleb128 0x1
- 100 000c 21010000 		.4byte	.LASF14
+ 100 000c D3000000 		.4byte	.LASF14
  101 0010 01       		.byte	0x1
- 102 0011 B0000000 		.4byte	.LASF15
- 103 0015 15000000 		.4byte	.LASF16
+ 102 0011 62000000 		.4byte	.LASF15
+ 103 0015 25010000 		.4byte	.LASF16
  104 0019 00000000 		.4byte	.Ldebug_ranges0+0
  105 001d 00000000 		.4byte	0
  106 0021 00000000 		.4byte	0
@@ -175,38 +175,38 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  108 0029 02       		.uleb128 0x2
  109 002a 01       		.byte	0x1
  110 002b 06       		.byte	0x6
- 111 002c 87010000 		.4byte	.LASF0
+ 111 002c 7D010000 		.4byte	.LASF0
  112 0030 02       		.uleb128 0x2
  113 0031 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 4
 
 
  114 0032 08       		.byte	0x8
- 115 0033 70000000 		.4byte	.LASF1
+ 115 0033 22000000 		.4byte	.LASF1
  116 0037 02       		.uleb128 0x2
  117 0038 02       		.byte	0x2
  118 0039 05       		.byte	0x5
- 119 003a 11010000 		.4byte	.LASF2
+ 119 003a C3000000 		.4byte	.LASF2
  120 003e 02       		.uleb128 0x2
  121 003f 02       		.byte	0x2
  122 0040 07       		.byte	0x7
- 123 0041 95000000 		.4byte	.LASF3
+ 123 0041 47000000 		.4byte	.LASF3
  124 0045 02       		.uleb128 0x2
  125 0046 04       		.byte	0x4
  126 0047 05       		.byte	0x5
- 127 0048 6A010000 		.4byte	.LASF4
+ 127 0048 1C010000 		.4byte	.LASF4
  128 004c 02       		.uleb128 0x2
  129 004d 04       		.byte	0x4
  130 004e 07       		.byte	0x7
- 131 004f 83000000 		.4byte	.LASF5
+ 131 004f 35000000 		.4byte	.LASF5
  132 0053 02       		.uleb128 0x2
  133 0054 08       		.byte	0x8
  134 0055 05       		.byte	0x5
- 135 0056 FE000000 		.4byte	.LASF6
+ 135 0056 B0000000 		.4byte	.LASF6
  136 005a 02       		.uleb128 0x2
  137 005b 08       		.byte	0x8
  138 005c 07       		.byte	0x7
- 139 005d E7000000 		.4byte	.LASF7
+ 139 005d 99000000 		.4byte	.LASF7
  140 0061 03       		.uleb128 0x3
  141 0062 04       		.byte	0x4
  142 0063 05       		.byte	0x5
@@ -214,31 +214,31 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  144 0068 02       		.uleb128 0x2
  145 0069 04       		.byte	0x4
  146 006a 07       		.byte	0x7
- 147 006b DA000000 		.4byte	.LASF8
+ 147 006b 8C000000 		.4byte	.LASF8
  148 006f 04       		.uleb128 0x4
- 149 0070 1B010000 		.4byte	.LASF12
+ 149 0070 CD000000 		.4byte	.LASF12
  150 0074 02       		.byte	0x2
  151 0075 5B       		.byte	0x5b
  152 0076 30000000 		.4byte	0x30
  153 007a 02       		.uleb128 0x2
  154 007b 04       		.byte	0x4
  155 007c 04       		.byte	0x4
- 156 007d 6A000000 		.4byte	.LASF9
+ 156 007d 1C000000 		.4byte	.LASF9
  157 0081 02       		.uleb128 0x2
  158 0082 08       		.byte	0x8
  159 0083 04       		.byte	0x4
- 160 0084 63000000 		.4byte	.LASF10
+ 160 0084 15000000 		.4byte	.LASF10
  161 0088 02       		.uleb128 0x2
  162 0089 01       		.byte	0x1
  163 008a 08       		.byte	0x8
- 164 008b 0C010000 		.4byte	.LASF11
+ 164 008b BE000000 		.4byte	.LASF11
  165 008f 04       		.uleb128 0x4
- 166 0090 7E000000 		.4byte	.LASF13
+ 166 0090 30000000 		.4byte	.LASF13
  167 0094 02       		.byte	0x2
  168 0095 F0       		.byte	0xf0
  169 0096 9A000000 		.4byte	0x9a
  170 009a 05       		.uleb128 0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 5
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 5
 
 
  171 009b 6F000000 		.4byte	0x6f
@@ -254,7 +254,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  181 00b4 01       		.byte	0x1
  182 00b5 C8000000 		.4byte	0xc8
  183 00b9 07       		.uleb128 0x7
- 184 00ba A8000000 		.4byte	.LASF18
+ 184 00ba 5A000000 		.4byte	.LASF18
  185 00be 01       		.byte	0x1
  186 00bf 23       		.byte	0x23
  187 00c0 6F000000 		.4byte	0x6f
@@ -264,7 +264,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  191 00c7 00       		.byte	0
  192 00c8 08       		.uleb128 0x8
  193 00c9 01       		.byte	0x1
- 194 00ca 73010000 		.4byte	.LASF19
+ 194 00ca 69010000 		.4byte	.LASF19
  195 00ce 01       		.byte	0x1
  196 00cf 37       		.byte	0x37
  197 00d0 01       		.byte	0x1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  225 0013 00       		.byte	0
  226 0014 00       		.byte	0
  227 0015 02       		.uleb128 0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 6
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 6
 
 
  228 0016 24       		.uleb128 0x24
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  282 004c 11       		.uleb128 0x11
  283 004d 01       		.uleb128 0x1
  284 004e 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 7
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 7
 
 
  285 004f 01       		.uleb128 0x1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  339 0004 02000000 		.4byte	.LCFI0
  340 0008 0200     		.2byte	0x2
  341 000a 7D       		.byte	0x7d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 8
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 8
 
 
  342 000b 00       		.sleb128 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  396 0008 00000000 		.4byte	.LFB1
  397 000c 18000000 		.4byte	.LFE1
  398 0010 00000000 		.4byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 9
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 9
 
 
  399 0014 00000000 		.4byte	0
@@ -495,104 +495,104 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 1
  404      6F6E7472 
  404      6F6C5F57 
  404      72697465 
- 405              	.LASF16:
- 406 0015 433A5C55 		.ascii	"C:\\Users\\Brian\\Dropbox\\RPiSoC\\Projects\\PSoC_2"
- 406      73657273 
- 406      5C427269 
- 406      616E5C44 
- 406      726F7062 
- 407 0042 5F50695C 		.ascii	"_Pi\\PSoC Creator\\PSoC_2_Pi.cydsn\000"
- 407      50536F43 
- 407      20437265 
- 407      61746F72 
- 407      5C50536F 
- 408              	.LASF10:
- 409 0063 646F7562 		.ascii	"double\000"
- 409      6C6500
- 410              	.LASF9:
- 411 006a 666C6F61 		.ascii	"float\000"
- 411      7400
- 412              	.LASF1:
- 413 0070 756E7369 		.ascii	"unsigned char\000"
- 413      676E6564 
- 413      20636861 
- 413      7200
- 414              	.LASF13:
- 415 007e 72656738 		.ascii	"reg8\000"
- 415      00
- 416              	.LASF5:
- 417 0083 6C6F6E67 		.ascii	"long unsigned int\000"
- 417      20756E73 
- 417      69676E65 
- 417      6420696E 
- 417      7400
- 418              	.LASF3:
- 419 0095 73686F72 		.ascii	"short unsigned int\000"
- 419      7420756E 
- 419      7369676E 
- 419      65642069 
- 419      6E7400
- 420              	.LASF18:
- 421 00a8 636F6E74 		.ascii	"control\000"
- 421      726F6C00 
- 422              	.LASF15:
- 423 00b0 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Port_4_Control.c\000"
- 423      6E657261 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoi1orv.s 			page 10
+ 405              	.LASF10:
+ 406 0015 646F7562 		.ascii	"double\000"
+ 406      6C6500
+ 407              	.LASF9:
+ 408 001c 666C6F61 		.ascii	"float\000"
+ 408      7400
+ 409              	.LASF1:
+ 410 0022 756E7369 		.ascii	"unsigned char\000"
+ 410      676E6564 
+ 410      20636861 
+ 410      7200
+ 411              	.LASF13:
+ 412 0030 72656738 		.ascii	"reg8\000"
+ 412      00
+ 413              	.LASF5:
+ 414 0035 6C6F6E67 		.ascii	"long unsigned int\000"
+ 414      20756E73 
+ 414      69676E65 
+ 414      6420696E 
+ 414      7400
+ 415              	.LASF3:
+ 416 0047 73686F72 		.ascii	"short unsigned int\000"
+ 416      7420756E 
+ 416      7369676E 
+ 416      65642069 
+ 416      6E7400
+ 417              	.LASF18:
+ 418 005a 636F6E74 		.ascii	"control\000"
+ 418      726F6C00 
+ 419              	.LASF15:
+ 420 0062 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Port_4_Control.c\000"
+ 420      6E657261 
+ 420      7465645F 
+ 420      536F7572 
+ 420      63655C50 
+ 421              	.LASF8:
+ 422 008c 756E7369 		.ascii	"unsigned int\000"
+ 422      676E6564 
+ 422      20696E74 
+ 422      00
+ 423              	.LASF7:
+ 424 0099 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 424      206C6F6E 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc00D3bg.s 			page 10
 
 
- 423      7465645F 
- 423      536F7572 
- 423      63655C50 
- 424              	.LASF8:
- 425 00da 756E7369 		.ascii	"unsigned int\000"
- 425      676E6564 
- 425      20696E74 
- 425      00
- 426              	.LASF7:
- 427 00e7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 427      206C6F6E 
- 427      6720756E 
- 427      7369676E 
- 427      65642069 
- 428              	.LASF6:
- 429 00fe 6C6F6E67 		.ascii	"long long int\000"
- 429      206C6F6E 
- 429      6720696E 
- 429      7400
- 430              	.LASF11:
- 431 010c 63686172 		.ascii	"char\000"
- 431      00
- 432              	.LASF2:
- 433 0111 73686F72 		.ascii	"short int\000"
- 433      7420696E 
- 433      7400
- 434              	.LASF12:
- 435 011b 75696E74 		.ascii	"uint8\000"
- 435      3800
- 436              	.LASF14:
- 437 0121 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 437      4320342E 
- 437      372E3320 
- 437      32303133 
- 437      30333132 
- 438 0154 616E6368 		.ascii	"anch revision 196615]\000"
- 438      20726576 
- 438      6973696F 
- 438      6E203139 
- 438      36363135 
- 439              	.LASF4:
- 440 016a 6C6F6E67 		.ascii	"long int\000"
- 440      20696E74 
- 440      00
+ 424      6720756E 
+ 424      7369676E 
+ 424      65642069 
+ 425              	.LASF6:
+ 426 00b0 6C6F6E67 		.ascii	"long long int\000"
+ 426      206C6F6E 
+ 426      6720696E 
+ 426      7400
+ 427              	.LASF11:
+ 428 00be 63686172 		.ascii	"char\000"
+ 428      00
+ 429              	.LASF2:
+ 430 00c3 73686F72 		.ascii	"short int\000"
+ 430      7420696E 
+ 430      7400
+ 431              	.LASF12:
+ 432 00cd 75696E74 		.ascii	"uint8\000"
+ 432      3800
+ 433              	.LASF14:
+ 434 00d3 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 434      4320342E 
+ 434      372E3320 
+ 434      32303133 
+ 434      30333132 
+ 435 0106 616E6368 		.ascii	"anch revision 196615]\000"
+ 435      20726576 
+ 435      6973696F 
+ 435      6E203139 
+ 435      36363135 
+ 436              	.LASF4:
+ 437 011c 6C6F6E67 		.ascii	"long int\000"
+ 437      20696E74 
+ 437      00
+ 438              	.LASF16:
+ 439 0125 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\PSoCCreatorWo"
+ 439      73657273 
+ 439      5C4D6172 
+ 439      6B5C446F 
+ 439      63756D65 
+ 440 0153 726B696E 		.ascii	"rking\\PSoC_2_Pi.cydsn\000"
+ 440      675C5053 
+ 440      6F435F32 
+ 440      5F50692E 
+ 440      63796473 
  441              	.LASF19:
- 442 0173 506F7274 		.ascii	"Port_4_Control_Read\000"
+ 442 0169 506F7274 		.ascii	"Port_4_Control_Read\000"
  442      5F345F43 
  442      6F6E7472 
  442      6F6C5F52 
  442      65616400 
  443              	.LASF0:
- 444 0187 7369676E 		.ascii	"signed char\000"
+ 444 017d 7369676E 		.ascii	"signed char\000"
  444      65642063 
  444      68617200 
  445              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

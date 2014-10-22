@@ -19,6 +19,7 @@
 //#include <device.h>
 #include <stdio.h>
 #include <mem1.h>
+#include <LINX.h>
 
 #ifdef CY_I2C_I2C_1_H
     uint8 WR_buf[I2C_BUFFER_SIZE]; 
@@ -43,19 +44,38 @@ int main()
     
     CyGlobalIntEnable;  /* enable global interrupts. */
     
+    #ifdef LINX_H
+        LINX_Initialize();
+        
+        uint8 command[LINX_COMMAND_BUFFER_SIZE];
+        uint8 command_len;
+    #endif
+    
     /* Gets data from the Pi and send it to mem1.c*/
     for(;;)
     {
-      
-        uint32 input = ReadFrom_Pi();
-        
-        uint8 addr = (input & 0xFF000000)>>24;
-        uint8 cmd = (input & 0x00FF0000)>>16;
-        uint8 dat_lo = (input & 0x0000FF00)>>8;
-        uint8 dat_hi = input & 0x000000FF;
-        uint16 dat = (dat_hi<<8) | dat_lo;
-      
-        readData(addr,cmd,dat); 
+        #ifdef LINX_H
+            if(USBUART_DataIsReady()) {
+                if (LINX_GetCommand(command, &command_len)) {
+                    LINX_ProcessCommand(command, command_len);
+                }
+                else {
+                    #ifdef DEBUG_LINX
+                        DEBUG_UART_PutString("Get command FAILED\r\n");
+                    #endif
+                }
+            }
+        #else
+            uint32 input = ReadFrom_Pi();
+            
+            uint8 addr = (input & 0xFF000000)>>24;
+            uint8 cmd = (input & 0x00FF0000)>>16;
+            uint8 dat_lo = (input & 0x0000FF00)>>8;
+            uint8 dat_hi = input & 0x000000FF;
+            uint16 dat = (dat_hi<<8) | dat_lo;
+          
+            readData(addr,cmd,dat); 
+        #endif
         
         /*          Add your code here            */
         
