@@ -47,8 +47,8 @@ int main()
     #ifdef LINX_H
         LINX_Initialize();
         
-        uint8 command[LINX_COMMAND_BUFFER_SIZE];
-        uint8 command_len;
+        uint8 LINX_Command[LINX_COMMAND_BUFFER_SIZE];
+        uint8 LINX_Response[LINX_RESPONSE_BUFFER_SIZE];
     #endif
     
     /* Gets data from the Pi and send it to mem1.c*/
@@ -56,8 +56,9 @@ int main()
     {
         #ifdef LINX_H
             if(USBUART_DataIsReady()) {
-                if (LINX_GetCommand(command, &command_len)) {
-                    LINX_ProcessCommand(command, command_len);
+                if (LINX_GetCommand(LINX_Command)) {
+                    LINX_ProcessCommand(LINX_Command, LINX_Response);
+                    LINX_SendResponse(LINX_Response);
                 }
                 else {
                     #ifdef DEBUG_LINX

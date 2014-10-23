@@ -24,6 +24,8 @@
     
 // Firmware-specific constants
 #define LINX_COMMAND_BUFFER_SIZE 16
+#define LINX_RESPONSE_BUFFER_SIZE 16
+#define LINX_RESPONSE_DATA_SIZE 4
 #define LINX_DEBUG_STR_SIZE 64
 
 // LINX Common Statuses
@@ -46,12 +48,17 @@
 #define LUART_READ_FAIL (0x83)
 #define LUART_WRITE_FAIL (0x84)
 #define LUART_CLOSE_FAIL (0x85)
+    
+// LINX Device constants
+#define LINX_MAX_BAUD_RATE (9600u)
+#define LINX_DEVICE_FAMILY (0x00)
+#define LINX_DEVICE_ID (0x00)
 
 void LINX_Initialize();
-bool LINX_GetCommand(uint8 *command, uint8 *command_len);
+bool LINX_GetCommand(uint8 *command);
 uint8 LINX_CalculateChecksum(uint8 *command, uint8 command_len);
-void LINX_ProcessCommand(uint8 *command, uint8 command_len);
-void LINX_SendResponse();
+void LINX_ProcessCommand(uint8 *command, uint8 *response);
+void LINX_SendResponse(uint8 *response);
     
 #endif
 /* [] END OF FILE */

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
   29:.\Generated_Source\PSoC5/Port_4_Status.c **** *
   30:.\Generated_Source\PSoC5/Port_4_Status.c **** * Parameters:
   31:.\Generated_Source\PSoC5/Port_4_Status.c **** *  None.
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Port_4_Status.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
   53:.\Generated_Source\PSoC5/Port_4_Status.c **** * Return:
   54:.\Generated_Source\PSoC5/Port_4_Status.c **** *  None.
   55:.\Generated_Source\PSoC5/Port_4_Status.c **** *
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 3
 
 
   56:.\Generated_Source\PSoC5/Port_4_Status.c **** *******************************************************************************/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  106              	Port_4_Status_InterruptDisable:
  107              	.LFB2:
   64:.\Generated_Source\PSoC5/Port_4_Status.c **** 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 4
 
 
   65:.\Generated_Source\PSoC5/Port_4_Status.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
   86:.\Generated_Source\PSoC5/Port_4_Status.c **** }
  141              		.loc 1 86 0
  142 0032 07F10807 		add	r7, r7, #8
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 5
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 5
 
 
  143 0036 BD46     		mov	sp, r7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  175 000e C4F20003 		movt	r3, 16384
  176 0012 FA79     		ldrb	r2, [r7, #7]
  177 0014 1A70     		strb	r2, [r3, #0]
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 6
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 6
 
 
  109:.\Generated_Source\PSoC5/Port_4_Status.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  211              		.loc 1 129 0
  212 0010 1846     		mov	r0, r3
  213 0012 BD46     		mov	sp, r7
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 7
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 7
 
 
  214 0014 80BC     		pop	{r7}
@@ -376,10 +376,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  226 0006 00000000 		.4byte	.Ldebug_abbrev0
  227 000a 04       		.byte	0x4
  228 000b 01       		.uleb128 0x1
- 229 000c 5F000000 		.4byte	.LASF21
+ 229 000c 1B000000 		.4byte	.LASF21
  230 0010 01       		.byte	0x1
- 231 0011 F6000000 		.4byte	.LASF22
- 232 0015 1B000000 		.4byte	.LASF23
+ 231 0011 B2000000 		.4byte	.LASF22
+ 232 0015 32010000 		.4byte	.LASF23
  233 0019 00000000 		.4byte	.Ldebug_ranges0+0
  234 001d 00000000 		.4byte	0
  235 0021 00000000 		.4byte	0
@@ -387,27 +387,27 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  237 0029 02       		.uleb128 0x2
  238 002a 01       		.byte	0x1
  239 002b 06       		.byte	0x6
- 240 002c 89010000 		.4byte	.LASF0
+ 240 002c 95010000 		.4byte	.LASF0
  241 0030 02       		.uleb128 0x2
  242 0031 01       		.byte	0x1
  243 0032 08       		.byte	0x8
- 244 0033 3B010000 		.4byte	.LASF1
+ 244 0033 F7000000 		.4byte	.LASF1
  245 0037 02       		.uleb128 0x2
  246 0038 02       		.byte	0x2
  247 0039 05       		.byte	0x5
- 248 003a B9010000 		.4byte	.LASF2
+ 248 003a C5010000 		.4byte	.LASF2
  249 003e 02       		.uleb128 0x2
  250 003f 02       		.byte	0x2
  251 0040 07       		.byte	0x7
- 252 0041 76010000 		.4byte	.LASF3
+ 252 0041 82010000 		.4byte	.LASF3
  253 0045 02       		.uleb128 0x2
  254 0046 04       		.byte	0x4
  255 0047 05       		.byte	0x5
- 256 0048 4E010000 		.4byte	.LASF4
+ 256 0048 0A010000 		.4byte	.LASF4
  257 004c 02       		.uleb128 0x2
  258 004d 04       		.byte	0x4
  259 004e 07       		.byte	0x7
- 260 004f AE000000 		.4byte	.LASF5
+ 260 004f 6A000000 		.4byte	.LASF5
  261 0053 02       		.uleb128 0x2
  262 0054 08       		.byte	0x8
  263 0055 05       		.byte	0x5
@@ -415,10 +415,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  265 005a 02       		.uleb128 0x2
  266 005b 08       		.byte	0x8
  267 005c 07       		.byte	0x7
- 268 005d DF000000 		.4byte	.LASF7
+ 268 005d 9B000000 		.4byte	.LASF7
  269 0061 03       		.uleb128 0x3
  270 0062 04       		.byte	0x4
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 8
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 8
 
 
  271 0063 05       		.byte	0x5
@@ -428,24 +428,24 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  275 006a 07       		.byte	0x7
  276 006b 0E000000 		.4byte	.LASF8
  277 006f 04       		.uleb128 0x4
- 278 0070 A8000000 		.4byte	.LASF12
+ 278 0070 64000000 		.4byte	.LASF12
  279 0074 02       		.byte	0x2
  280 0075 5B       		.byte	0x5b
  281 0076 30000000 		.4byte	0x30
  282 007a 02       		.uleb128 0x2
  283 007b 04       		.byte	0x4
  284 007c 04       		.byte	0x4
- 285 007d 95010000 		.4byte	.LASF9
+ 285 007d A1010000 		.4byte	.LASF9
  286 0081 02       		.uleb128 0x2
  287 0082 08       		.byte	0x8
  288 0083 04       		.byte	0x4
- 289 0084 57010000 		.4byte	.LASF10
+ 289 0084 13010000 		.4byte	.LASF10
  290 0088 02       		.uleb128 0x2
  291 0089 01       		.byte	0x1
  292 008a 08       		.byte	0x8
- 293 008b 49010000 		.4byte	.LASF11
+ 293 008b 05010000 		.4byte	.LASF11
  294 008f 04       		.uleb128 0x4
- 295 0090 C3010000 		.4byte	.LASF13
+ 295 0090 CF010000 		.4byte	.LASF13
  296 0094 02       		.byte	0x2
  297 0095 F0       		.byte	0xf0
  298 0096 9A000000 		.4byte	0x9a
@@ -454,10 +454,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  301 009f 02       		.uleb128 0x2
  302 00a0 04       		.byte	0x4
  303 00a1 07       		.byte	0x7
- 304 00a2 DB010000 		.4byte	.LASF14
+ 304 00a2 E7010000 		.4byte	.LASF14
  305 00a6 06       		.uleb128 0x6
  306 00a7 01       		.byte	0x1
- 307 00a8 C8010000 		.4byte	.LASF19
+ 307 00a8 D4010000 		.4byte	.LASF19
  308 00ac 01       		.byte	0x1
  309 00ad 25       		.byte	0x25
  310 00ae 01       		.byte	0x1
@@ -468,7 +468,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  315 00bf 01       		.byte	0x1
  316 00c0 07       		.uleb128 0x7
  317 00c1 01       		.byte	0x1
- 318 00c2 9B010000 		.4byte	.LASF15
+ 318 00c2 A7010000 		.4byte	.LASF15
  319 00c6 01       		.byte	0x1
  320 00c7 39       		.byte	0x39
  321 00c8 01       		.byte	0x1
@@ -478,10 +478,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  325 00d5 01       		.byte	0x1
  326 00d6 E9000000 		.4byte	0xe9
  327 00da 08       		.uleb128 0x8
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 9
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 9
 
 
- 328 00db E4010000 		.4byte	.LASF17
+ 328 00db F0010000 		.4byte	.LASF17
  329 00df 01       		.byte	0x1
  330 00e0 3B       		.byte	0x3b
  331 00e1 6F000000 		.4byte	0x6f
@@ -491,7 +491,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  335 00e8 00       		.byte	0
  336 00e9 07       		.uleb128 0x7
  337 00ea 01       		.byte	0x1
- 338 00eb C0000000 		.4byte	.LASF16
+ 338 00eb 7C000000 		.4byte	.LASF16
  339 00ef 01       		.byte	0x1
  340 00f0 50       		.byte	0x50
  341 00f1 01       		.byte	0x1
@@ -501,7 +501,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  345 00fe 01       		.byte	0x1
  346 00ff 12010000 		.4byte	0x112
  347 0103 08       		.uleb128 0x8
- 348 0104 E4010000 		.4byte	.LASF17
+ 348 0104 F0010000 		.4byte	.LASF17
  349 0108 01       		.byte	0x1
  350 0109 52       		.byte	0x52
  351 010a 6F000000 		.4byte	0x6f
@@ -511,7 +511,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  355 0111 00       		.byte	0
  356 0112 09       		.uleb128 0x9
  357 0113 01       		.byte	0x1
- 358 0114 5E010000 		.4byte	.LASF18
+ 358 0114 1A010000 		.4byte	.LASF18
  359 0118 01       		.byte	0x1
  360 0119 67       		.byte	0x67
  361 011a 01       		.byte	0x1
@@ -521,7 +521,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  365 0127 01       		.byte	0x1
  366 0128 3B010000 		.4byte	0x13b
  367 012c 0A       		.uleb128 0xa
- 368 012d 36010000 		.4byte	.LASF24
+ 368 012d F2000000 		.4byte	.LASF24
  369 0131 01       		.byte	0x1
  370 0132 67       		.byte	0x67
  371 0133 6F000000 		.4byte	0x6f
@@ -531,14 +531,14 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  375 013a 00       		.byte	0
  376 013b 06       		.uleb128 0x6
  377 013c 01       		.byte	0x1
- 378 013d 1F010000 		.4byte	.LASF20
+ 378 013d DB000000 		.4byte	.LASF20
  379 0141 01       		.byte	0x1
  380 0142 7E       		.byte	0x7e
  381 0143 01       		.byte	0x1
  382 0144 6F000000 		.4byte	0x6f
  383 0148 00000000 		.4byte	.LFB4
  384 014c 18000000 		.4byte	.LFE4
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 10
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 10
 
 
  385 0150 D4000000 		.4byte	.LLST4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  439 0031 0B       		.uleb128 0xb
  440 0032 3B       		.uleb128 0x3b
  441 0033 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 11
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 11
 
 
  442 0034 49       		.uleb128 0x49
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  496 006b 06       		.uleb128 0x6
  497 006c 9642     		.uleb128 0x2116
  498 006e 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 12
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 12
 
 
  499 006f 01       		.uleb128 0x1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  553 00a6 13       		.uleb128 0x13
  554 00a7 02       		.uleb128 0x2
  555 00a8 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 13
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 13
 
 
  556 00a9 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  610 0078 0200     		.2byte	0x2
  611 007a 7D       		.byte	0x7d
  612 007b 08       		.sleb128 8
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 14
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 14
 
 
  613 007c 04000000 		.4byte	.LCFI6
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  667 0000 3C000000 		.4byte	0x3c
  668 0004 0200     		.2byte	0x2
  669 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 15
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 15
 
 
  670 000a 04       		.byte	0x4
@@ -888,129 +888,129 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 1
  706      676E6564 
  706      20696E74 
  706      00
- 707              	.LASF23:
- 708 001b 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\PSoCCreatorWo"
- 708      73657273 
- 708      5C4D6172 
- 708      6B5C446F 
- 708      63756D65 
- 709 0049 726B696E 		.ascii	"rking\\PSoC_2_Pi.cydsn\000"
- 709      675C5053 
- 709      6F435F32 
- 709      5F50692E 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 16
+ 707              	.LASF21:
+ 708 001b 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 708      4320342E 
+ 708      372E3320 
+ 708      32303133 
+ 708      30333132 
+ 709 004e 616E6368 		.ascii	"anch revision 196615]\000"
+ 709      20726576 
+ 709      6973696F 
+ 709      6E203139 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 16
 
 
- 709      63796473 
- 710              	.LASF21:
- 711 005f 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 711      4320342E 
- 711      372E3320 
- 711      32303133 
- 711      30333132 
- 712 0092 616E6368 		.ascii	"anch revision 196615]\000"
- 712      20726576 
- 712      6973696F 
- 712      6E203139 
- 712      36363135 
- 713              	.LASF12:
- 714 00a8 75696E74 		.ascii	"uint8\000"
- 714      3800
- 715              	.LASF5:
- 716 00ae 6C6F6E67 		.ascii	"long unsigned int\000"
- 716      20756E73 
- 716      69676E65 
- 716      6420696E 
- 716      7400
- 717              	.LASF16:
- 718 00c0 506F7274 		.ascii	"Port_4_Status_InterruptDisable\000"
- 718      5F345F53 
- 718      74617475 
- 718      735F496E 
- 718      74657272 
- 719              	.LASF7:
- 720 00df 6C6F6E67 		.ascii	"long long unsigned int\000"
- 720      206C6F6E 
- 720      6720756E 
- 720      7369676E 
- 720      65642069 
- 721              	.LASF22:
- 722 00f6 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Port_4_Status.c\000"
- 722      6E657261 
- 722      7465645F 
- 722      536F7572 
- 722      63655C50 
- 723              	.LASF20:
- 724 011f 506F7274 		.ascii	"Port_4_Status_ReadMask\000"
- 724      5F345F53 
- 724      74617475 
- 724      735F5265 
- 724      61644D61 
- 725              	.LASF24:
- 726 0136 6D61736B 		.ascii	"mask\000"
- 726      00
- 727              	.LASF1:
- 728 013b 756E7369 		.ascii	"unsigned char\000"
- 728      676E6564 
- 728      20636861 
- 728      7200
- 729              	.LASF11:
- 730 0149 63686172 		.ascii	"char\000"
- 730      00
- 731              	.LASF4:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSAfpMY.s 			page 17
+ 709      36363135 
+ 710              	.LASF12:
+ 711 0064 75696E74 		.ascii	"uint8\000"
+ 711      3800
+ 712              	.LASF5:
+ 713 006a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 713      20756E73 
+ 713      69676E65 
+ 713      6420696E 
+ 713      7400
+ 714              	.LASF16:
+ 715 007c 506F7274 		.ascii	"Port_4_Status_InterruptDisable\000"
+ 715      5F345F53 
+ 715      74617475 
+ 715      735F496E 
+ 715      74657272 
+ 716              	.LASF7:
+ 717 009b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 717      206C6F6E 
+ 717      6720756E 
+ 717      7369676E 
+ 717      65642069 
+ 718              	.LASF22:
+ 719 00b2 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Port_4_Status.c\000"
+ 719      6E657261 
+ 719      7465645F 
+ 719      536F7572 
+ 719      63655C50 
+ 720              	.LASF20:
+ 721 00db 506F7274 		.ascii	"Port_4_Status_ReadMask\000"
+ 721      5F345F53 
+ 721      74617475 
+ 721      735F5265 
+ 721      61644D61 
+ 722              	.LASF24:
+ 723 00f2 6D61736B 		.ascii	"mask\000"
+ 723      00
+ 724              	.LASF1:
+ 725 00f7 756E7369 		.ascii	"unsigned char\000"
+ 725      676E6564 
+ 725      20636861 
+ 725      7200
+ 726              	.LASF11:
+ 727 0105 63686172 		.ascii	"char\000"
+ 727      00
+ 728              	.LASF4:
+ 729 010a 6C6F6E67 		.ascii	"long int\000"
+ 729      20696E74 
+ 729      00
+ 730              	.LASF10:
+ 731 0113 646F7562 		.ascii	"double\000"
+ 731      6C6500
+ 732              	.LASF18:
+ 733 011a 506F7274 		.ascii	"Port_4_Status_WriteMask\000"
+ 733      5F345F53 
+ 733      74617475 
+ 733      735F5772 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccUTTs74.s 			page 17
 
 
- 732 014e 6C6F6E67 		.ascii	"long int\000"
- 732      20696E74 
- 732      00
- 733              	.LASF10:
- 734 0157 646F7562 		.ascii	"double\000"
- 734      6C6500
- 735              	.LASF18:
- 736 015e 506F7274 		.ascii	"Port_4_Status_WriteMask\000"
- 736      5F345F53 
- 736      74617475 
- 736      735F5772 
- 736      6974654D 
+ 733      6974654D 
+ 734              	.LASF23:
+ 735 0132 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\GitRepo\\psoc"
+ 735      73657273 
+ 735      5C4D6172 
+ 735      6B5C446F 
+ 735      63756D65 
+ 736 015f 5F325F70 		.ascii	"_2_pi\\PSoC Creator\\PSoC_2_Pi.cydsn\000"
+ 736      695C5053 
+ 736      6F432043 
+ 736      72656174 
+ 736      6F725C50 
  737              	.LASF3:
- 738 0176 73686F72 		.ascii	"short unsigned int\000"
+ 738 0182 73686F72 		.ascii	"short unsigned int\000"
  738      7420756E 
  738      7369676E 
  738      65642069 
  738      6E7400
  739              	.LASF0:
- 740 0189 7369676E 		.ascii	"signed char\000"
+ 740 0195 7369676E 		.ascii	"signed char\000"
  740      65642063 
  740      68617200 
  741              	.LASF9:
- 742 0195 666C6F61 		.ascii	"float\000"
+ 742 01a1 666C6F61 		.ascii	"float\000"
  742      7400
  743              	.LASF15:
- 744 019b 506F7274 		.ascii	"Port_4_Status_InterruptEnable\000"
+ 744 01a7 506F7274 		.ascii	"Port_4_Status_InterruptEnable\000"
  744      5F345F53 
  744      74617475 
  744      735F496E 
  744      74657272 
  745              	.LASF2:
- 746 01b9 73686F72 		.ascii	"short int\000"
+ 746 01c5 73686F72 		.ascii	"short int\000"
  746      7420696E 
  746      7400
  747              	.LASF13:
- 748 01c3 72656738 		.ascii	"reg8\000"
+ 748 01cf 72656738 		.ascii	"reg8\000"
  748      00
  749              	.LASF19:
- 750 01c8 506F7274 		.ascii	"Port_4_Status_Read\000"
+ 750 01d4 506F7274 		.ascii	"Port_4_Status_Read\000"
  750      5F345F53 
  750      74617475 
  750      735F5265 
  750      616400
  751              	.LASF14:
- 752 01db 73697A65 		.ascii	"sizetype\000"
+ 752 01e7 73697A65 		.ascii	"sizetype\000"
  752      74797065 
  752      00
  753              	.LASF17:
- 754 01e4 696E7465 		.ascii	"interruptState\000"
+ 754 01f0 696E7465 		.ascii	"interruptState\000"
  754      72727570 
  754      74537461 
  754      746500

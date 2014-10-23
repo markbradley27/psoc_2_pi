@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
   29:.\Generated_Source\PSoC5/USBUART_std.c **** #if defined(USBUART_ENABLE_FWSN_STRING)
   30:.\Generated_Source\PSoC5/USBUART_std.c ****     static volatile uint8 *USBUART_fwSerialNumberStringDescriptor;
   31:.\Generated_Source\PSoC5/USBUART_std.c ****     static volatile uint8 USBUART_snStringConfirm = USBUART_FALSE;
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/USBUART_std.c **** #endif  /* USBUART_ENABLE_FWSN_STRING */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
   86:.\Generated_Source\PSoC5/USBUART_std.c **** *
   87:.\Generated_Source\PSoC5/USBUART_std.c **** *******************************************************************************/
   88:.\Generated_Source\PSoC5/USBUART_std.c **** uint8 USBUART_HandleStandardRqst(void) 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 3
 
 
   89:.\Generated_Source\PSoC5/USBUART_std.c **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
   62              		.loc 1 107 0
   63 0036 46F20103 		movw	r3, #24577
   64 003a C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 4
 
 
   65 003e 1B78     		ldrb	r3, [r3, #0]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  117:.\Generated_Source\PSoC5/USBUART_std.c ****                 else if (CY_GET_REG8(USBUART_wValueHi) == USBUART_DESCR_CONFIG)
  118:.\Generated_Source\PSoC5/USBUART_std.c ****                 {
  119:.\Generated_Source\PSoC5/USBUART_std.c ****                     pTmp = USBUART_GetConfigTablePtr(CY_GET_REG8(USBUART_wValueLo));
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 5
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 5
 
 
  120:.\Generated_Source\PSoC5/USBUART_std.c ****                     if( pTmp != NULL )  /* Verify that requested descriptor exists */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  174:.\Generated_Source\PSoC5/USBUART_std.c ****                             #endif  /* defined(USBUART_ENABLE_IDSN_STRING) */
  175:.\Generated_Source\PSoC5/USBUART_std.c ****                         }
  176:.\Generated_Source\PSoC5/USBUART_std.c ****                     #endif    /*  USBUART_ENABLE_SN_STRING */
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 6
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 6
 
 
  177:.\Generated_Source\PSoC5/USBUART_std.c ****                     if (*pStr != 0u)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  145              		.loc 1 124 0
  146 0104 4FEA0323 		lsl	r3, r3, #8
  123:.\Generated_Source\PSoC5/USBUART_std.c ****                         USBUART_currentTD.count = ((uint16)(USBUART_currentTD.pData)[ \
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 7
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 7
 
 
  147              		.loc 1 123 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  192 015e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  193 0160 3A69     		ldr	r2, [r7, #16]
  194 0162 D318     		adds	r3, r2, r3
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 8
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 8
 
 
  195 0164 3B61     		str	r3, [r7, #16]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  241 01c0 40F20003 		movw	r3, #:lower16:USBUART_DEVICE0_DESCR
  242 01c4 C0F20003 		movt	r3, #:upper16:USBUART_DEVICE0_DESCR
  243 01c8 1B7C     		ldrb	r3, [r3, #16]	@ zero_extendqisi2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 9
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 9
 
 
  154:.\Generated_Source\PSoC5/USBUART_std.c ****                         if( (CY_GET_REG8(USBUART_wValueLo) != 0u) &&
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  191:.\Generated_Source\PSoC5/USBUART_std.c ****                 switch ((CY_GET_REG8(USBUART_bmRequestType) & USBUART_RQST_RCPT_MASK))
  289              		.loc 1 191 0
  290 0222 4FF4C043 		mov	r3, #24576
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 10
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 10
 
 
  291 0226 C4F20003 		movt	r3, 16384
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  336 029c FFF7FEFF 		bl	USBUART_InitControlRead
  337 02a0 0346     		mov	r3, r0
  338 02a2 FB75     		strb	r3, [r7, #23]
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 11
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 11
 
 
  200:.\Generated_Source\PSoC5/USBUART_std.c ****                         break;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  379              		.loc 1 213 0
  380 02f8 40F20003 		movw	r3, #:lower16:USBUART_currentTD
  381 02fc C0F20003 		movt	r3, #:upper16:USBUART_currentTD
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 12
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 12
 
 
  382 0300 4FF00102 		mov	r2, #1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  226:.\Generated_Source\PSoC5/USBUART_std.c ****     }
  227:.\Generated_Source\PSoC5/USBUART_std.c ****     else {
  228:.\Generated_Source\PSoC5/USBUART_std.c ****         /* Control Write */
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 13
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 13
 
 
  229:.\Generated_Source\PSoC5/USBUART_std.c ****         switch (CY_GET_REG8(USBUART_bRequest))
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  468 03d4 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  469 03d6 002B     		cmp	r3, #0
  470 03d8 07D0     		beq	.L31
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 14
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 14
 
 
  238:.\Generated_Source\PSoC5/USBUART_std.c ****                 {   /* Verify that configuration descriptor exists */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  513 042e FFF7FEFF 		bl	USBUART_Config
  514              	.L35:
  250:.\Generated_Source\PSoC5/USBUART_std.c ****                     }
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 15
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 15
 
 
  251:.\Generated_Source\PSoC5/USBUART_std.c ****                     requestHandled = USBUART_InitNoDataControlTransfer();
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  551 0480 D9B2     		uxtb	r1, r3
  267:.\Generated_Source\PSoC5/USBUART_std.c ****                     USBUART_interfaceSetting_last[interfaceNumber] =
  552              		.loc 1 267 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 16
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 16
 
 
  553 0482 40F20003 		movw	r3, #:lower16:USBUART_interfaceSetting_last
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  592 04d0 C4F20003 		movt	r3, 16384
  593 04d4 1B78     		ldrb	r3, [r3, #0]
  594 04d6 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 17
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 17
 
 
  595 04d8 012B     		cmp	r3, #1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  638 053e DBB2     		uxtb	r3, r3
  293:.\Generated_Source\PSoC5/USBUART_std.c ****                             USBUART_interfaceStatus[CY_GET_REG8(USBUART_wIndexLo)] &=
  639              		.loc 1 293 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 18
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 18
 
 
  640 0540 0B40     		ands	r3, r3, r1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  304:.\Generated_Source\PSoC5/USBUART_std.c ****                 {
  305:.\Generated_Source\PSoC5/USBUART_std.c ****                     case USBUART_RQST_RCPT_EP:
  306:.\Generated_Source\PSoC5/USBUART_std.c ****                         if (CY_GET_REG8(USBUART_wValueLo) == USBUART_ENDPOINT_HALT)
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 19
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 19
 
 
  682              		.loc 1 306 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  721 05d2 46F20403 		movw	r3, #24580
  722 05d6 C4F20003 		movt	r3, 16384
  723 05da 1B78     		ldrb	r3, [r3, #0]
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 20
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 20
 
 
  724 05dc DBB2     		uxtb	r3, r3
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  767 0630 00E0     		b	.L50
  768              	.L67:
  327:.\Generated_Source\PSoC5/USBUART_std.c ****                         break;
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 21
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 21
 
 
  769              		.loc 1 327 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  807      00
  808 0011 000000   		.section	.text.USBUART_ReadDieID,"ax",%progbits
  809              		.align	2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 22
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 22
 
 
  810              		.global	USBUART_ReadDieID
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  837 000e 40F20003 		movw	r3, #:lower16:.LC0
  838 0012 C0F20003 		movt	r3, #:upper16:.LC0
  839 0016 07F10C04 		add	r4, r7, #12
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 23
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 23
 
 
  840 001a 0FCB     		ldmia	r3, {r0, r1, r2, r3}
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  378:.\Generated_Source\PSoC5/USBUART_std.c ****                 descr[i + 2u] = (uint8)hex[value & 0x0Fu];
  881              		.loc 1 378 0 discriminator 2
  882 0072 FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 24
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 24
 
 
  883 0074 03F10203 		add	r3, r3, #2
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  396:.\Generated_Source\PSoC5/USBUART_std.c **** *  None.
  397:.\Generated_Source\PSoC5/USBUART_std.c **** *
  398:.\Generated_Source\PSoC5/USBUART_std.c **** * Return:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 25
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 25
 
 
  399:.\Generated_Source\PSoC5/USBUART_std.c **** *  None.
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  950 002a C0F20002 		movt	r2, #:upper16:USBUART_EP
  951 002e 0B46     		mov	r3, r1
  952 0030 4FEA4303 		lsl	r3, r3, #1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 26
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 26
 
 
  953 0034 5B18     		adds	r3, r3, r1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  435:.\Generated_Source\PSoC5/USBUART_std.c ****         else
  436:.\Generated_Source\PSoC5/USBUART_std.c ****         {
  437:.\Generated_Source\PSoC5/USBUART_std.c ****             CY_SET_REG8((reg8 *)(USBUART_SIE_EP1_CR0_IND + i), USBUART_MODE_STALL_DATA_EP);
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 27
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 27
 
 
  993              		.loc 1 437 0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  444:.\Generated_Source\PSoC5/USBUART_std.c ****             CY_SET_REG8((reg8 *)(USBUART_ARB_RW1_RA_IND + i),     USBUART_EP[ep].buffOffset & 0xFFu
  1041              		.loc 1 444 0
  1042 010c BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 28
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 28
 
 
  1043 010e 46F28603 		movw	r3, #24710
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1095 0198 DBB2     		uxtb	r3, r3
  1096 019a 0370     		strb	r3, [r0, #0]
  447:.\Generated_Source\PSoC5/USBUART_std.c ****             CY_SET_REG8((reg8 *)(USBUART_ARB_RW1_WA_MSB_IND + i), USBUART_EP[ep].buffOffset >> 8u);
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 29
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 29
 
 
  1097              		.loc 1 447 0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  466:.\Generated_Source\PSoC5/USBUART_std.c **** 
  467:.\Generated_Source\PSoC5/USBUART_std.c ****     CY_SET_REG8(USBUART_SIE_EP_INT_EN_PTR, 0xFFu);
  1131              		.loc 1 467 0 is_stmt 1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 30
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 30
 
 
  1132 01ea 46F20A03 		movw	r3, #24586
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1159              		.cfi_offset 7, -8
  1160              		.cfi_offset 14, -4
  1161 0002 88B0     		sub	sp, sp, #32
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 31
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 31
 
 
  1162              	.LCFI10:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  512:.\Generated_Source\PSoC5/USBUART_std.c ****         USBUART_EP[ep].apiEpState = USBUART_NO_EVENT_PENDING;
  1199              		.loc 1 512 0 discriminator 2
  1200 0054 F97F     		ldrb	r1, [r7, #31]	@ zero_extendqisi2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 32
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 32
 
 
  1201 0056 40F20002 		movw	r2, #:lower16:USBUART_EP
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1251 00e2 4FEA8303 		lsl	r3, r3, #2
  1252 00e6 D318     		adds	r3, r2, r3
  1253 00e8 03F10803 		add	r3, r3, #8
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 33
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 33
 
 
  1254 00ec 4FF00002 		mov	r2, #0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1294 013a E8D9     		bls	.L83
  1295              	.L81:
  527:.\Generated_Source\PSoC5/USBUART_std.c ****         }
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 34
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 34
 
 
  528:.\Generated_Source\PSoC5/USBUART_std.c ****     }
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  542:.\Generated_Source\PSoC5/USBUART_std.c ****             USBUART_deviceStatus &=  (uint8)~USBUART_DEVICE_STATUS_SELF_POWERED;
  1336              		.loc 1 542 0
  1337 019c 40F20003 		movw	r3, #:lower16:USBUART_deviceStatus
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 35
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 35
 
 
  1338 01a0 C0F20003 		movt	r3, #:upper16:USBUART_deviceStatus
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  580:.\Generated_Source\PSoC5/USBUART_std.c ****                             }
  581:.\Generated_Source\PSoC5/USBUART_std.c ****                         #endif  /*  USBUART_ENABLE_MIDI_STREAMING*/
  582:.\Generated_Source\PSoC5/USBUART_std.c ****                     }
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 36
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 36
 
 
  583:.\Generated_Source\PSoC5/USBUART_std.c ****                     else
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1369              		.loc 1 622 0
  1370 01dc 7A7F     		ldrb	r2, [r7, #29]	@ zero_extendqisi2
  1371 01de 7B69     		ldr	r3, [r7, #20]
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 37
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 37
 
 
  1372 01e0 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  630:.\Generated_Source\PSoC5/USBUART_std.c ****                         {
  631:.\Generated_Source\PSoC5/USBUART_std.c ****                             epType = pEP->attributes & USBUART_EP_TYPE_MASK;
  1419              		.loc 1 631 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 38
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 38
 
 
  1420 0254 7B69     		ldr	r3, [r7, #20]
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1465 02b4 7B69     		ldr	r3, [r7, #20]
  1466 02b6 9B79     		ldrb	r3, [r3, #6]	@ zero_extendqisi2
  1467 02b8 0A2B     		cmp	r3, #10
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 39
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 39
 
 
  1468 02ba 03D0     		beq	.L94
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1501 02fa 012B     		cmp	r3, #1
  1502 02fc 02D1     		bne	.L96
  1503              		.loc 1 660 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 40
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 40
 
 
  1504 02fe 4FF00501 		mov	r1, #5
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  676:.\Generated_Source\PSoC5/USBUART_std.c ****                                         USBUART_midi_out_ep = i;
  677:.\Generated_Source\PSoC5/USBUART_std.c ****                                     }
  678:.\Generated_Source\PSoC5/USBUART_std.c ****                                 #endif  /*  USBUART_ENABLE_MIDI_STREAMING*/
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 41
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 41
 
 
  679:.\Generated_Source\PSoC5/USBUART_std.c ****                             }
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1583              		.loc 1 613 0 is_stmt 1
  1584 039e 7B7F     		ldrb	r3, [r7, #29]
  1585 03a0 03F10103 		add	r3, r3, #1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 42
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 42
 
 
  1586 03a4 7B77     		strb	r3, [r7, #29]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1623 03f0 03F10103 		add	r3, r3, #1
  1624 03f4 7B77     		strb	r3, [r7, #29]
  1625              	.L101:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 43
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 43
 
 
  699:.\Generated_Source\PSoC5/USBUART_std.c ****         for (i = 0u; i < ep; i++)
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1668              		.loc 1 710 0 discriminator 2
  1669 0458 FB7F     		ldrb	r3, [r7, #31]
  1670 045a 03F10103 		add	r3, r3, #1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 44
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 44
 
 
  1671 045e FB77     		strb	r3, [r7, #31]
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1695              		.loc 1 742 0
  1696              		.cfi_startproc
  1697              		@ args = 0, pretend = 0, frame = 16
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 45
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 45
 
 
  1698              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  760:.\Generated_Source\PSoC5/USBUART_std.c ****         /* Do not touch EP which doesn't need reconfiguration */
  761:.\Generated_Source\PSoC5/USBUART_std.c ****         /* When Alt setting changed, the only required endpoints need to be reconfigured */
  762:.\Generated_Source\PSoC5/USBUART_std.c ****         /* p_list points the endpoint setting table. */
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 46
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 46
 
 
  763:.\Generated_Source\PSoC5/USBUART_std.c ****         pEP = (const T_USBUART_EP_SETTINGS_BLOCK CYCODE *) pTmp->p_list;
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1779 0098 46F20403 		movw	r3, #24580
  1780 009c C4F20003 		movt	r3, 16384
  1781 00a0 1B78     		ldrb	r3, [r3, #0]
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 47
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 47
 
 
  1782 00a2 DBB2     		uxtb	r3, r3
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1826 00fe 4FF00701 		mov	r1, #7
  1827 0102 01E0     		b	.L111
  1828              	.L110:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 48
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 48
 
 
  1829              		.loc 1 779 0 discriminator 2
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1876 016c 5A71     		strb	r2, [r3, #5]
  1877              	.L112:
  787:.\Generated_Source\PSoC5/USBUART_std.c ****                                                 USBUART_MODE_ISO_OUT : USBUART_MODE_ACK_OUT;
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 49
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 49
 
 
  788:.\Generated_Source\PSoC5/USBUART_std.c ****                 }
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  795:.\Generated_Source\PSoC5/USBUART_std.c ****                 /* Clear the data toggle */
  796:.\Generated_Source\PSoC5/USBUART_std.c ****                 USBUART_EP[cur_ep].epToggle = 0u;
  1925              		.loc 1 796 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 50
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 50
 
 
  1926 01e4 B978     		ldrb	r1, [r7, #2]	@ zero_extendqisi2
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1944 0216 C0F20002 		movt	r2, #:upper16:USBUART_EP
  1945 021a 0B46     		mov	r3, r1
  1946 021c 4FEA4303 		lsl	r3, r3, #1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 51
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 51
 
 
  1947 0220 5B18     		adds	r3, r3, r1
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  1995 029a 7A78     		ldrb	r2, [r7, #1]	@ zero_extendqisi2
  1996 029c 46F28703 		movw	r3, #24711
  1997 02a0 C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 52
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 52
 
 
  1998 02a4 D318     		adds	r3, r2, r3
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2048 0326 4FEA1323 		lsr	r3, r3, #8
  2049 032a 9BB2     		uxth	r3, r3
  2050 032c DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 53
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 53
 
 
  2051 032e 0370     		strb	r3, [r0, #0]
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  863:.\Generated_Source\PSoC5/USBUART_std.c **** * Return:
  864:.\Generated_Source\PSoC5/USBUART_std.c **** *  Device Descriptor pointer or NULL when descriptor isn't exists.
  865:.\Generated_Source\PSoC5/USBUART_std.c **** *
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 54
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 54
 
 
  866:.\Generated_Source\PSoC5/USBUART_std.c **** *******************************************************************************/
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  882:.\Generated_Source\PSoC5/USBUART_std.c ****     {
  883:.\Generated_Source\PSoC5/USBUART_std.c ****         pTmp = (const T_USBUART_LUT CYCODE *) NULL;
  2121              		.loc 1 883 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 55
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 55
 
 
  2122 003a 4FF00003 		mov	r3, #0
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  907:.\Generated_Source\PSoC5/USBUART_std.c **** *******************************************************************************/
  908:.\Generated_Source\PSoC5/USBUART_std.c **** const T_USBUART_LUT CYCODE *USBUART_GetDeviceTablePtr(void)
  909:.\Generated_Source\PSoC5/USBUART_std.c ****                                                             
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 56
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 56
 
 
  910:.\Generated_Source\PSoC5/USBUART_std.c **** {
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  926:.\Generated_Source\PSoC5/USBUART_std.c **** *
  927:.\Generated_Source\PSoC5/USBUART_std.c **** * Return:
  928:.\Generated_Source\PSoC5/USBUART_std.c **** *  Interface Class table pointer.
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 57
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 57
 
 
  929:.\Generated_Source\PSoC5/USBUART_std.c **** *
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2229 0038 BA68     		ldr	r2, [r7, #8]
  2230 003a D318     		adds	r3, r2, r3
  2231 003c BB60     		str	r3, [r7, #8]
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 58
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 58
 
 
  945:.\Generated_Source\PSoC5/USBUART_std.c ****         pInterfaceClass = (const uint8 CYCODE *) pTmp->p_list;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  971:.\Generated_Source\PSoC5/USBUART_std.c **** *  No.
  972:.\Generated_Source\PSoC5/USBUART_std.c **** *
  973:.\Generated_Source\PSoC5/USBUART_std.c **** *******************************************************************************/
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 59
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 59
 
 
  974:.\Generated_Source\PSoC5/USBUART_std.c **** void USBUART_TerminateEP(uint8 ep) 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2303 0040 4FEA8303 		lsl	r3, r3, #2
  2304 0044 D318     		adds	r3, r2, r3
  2305 0046 9B78     		ldrb	r3, [r3, #2]
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 60
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 60
 
 
  2306 0048 DBB2     		uxtb	r3, r3
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2354 00c8 09DA     		bge	.L128
  991:.\Generated_Source\PSoC5/USBUART_std.c ****         {
  992:.\Generated_Source\PSoC5/USBUART_std.c ****             /* IN Endpoint */
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 61
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 61
 
 
  993:.\Generated_Source\PSoC5/USBUART_std.c ****             CY_SET_REG8((reg8 *)(USBUART_SIE_EP1_CR0_IND + ri), USBUART_MODE_NAK_IN);
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
 1014:.\Generated_Source\PSoC5/USBUART_std.c **** * Return:
 1015:.\Generated_Source\PSoC5/USBUART_std.c **** *  requestHandled.
 1016:.\Generated_Source\PSoC5/USBUART_std.c **** *
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 62
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 62
 
 
 1017:.\Generated_Source\PSoC5/USBUART_std.c **** * Reentrant:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
 1032:.\Generated_Source\PSoC5/USBUART_std.c ****     {
 1033:.\Generated_Source\PSoC5/USBUART_std.c ****         /* Set the endpoint Halt */
 1034:.\Generated_Source\PSoC5/USBUART_std.c ****         USBUART_EP[ep].hwEpState |= (USBUART_ENDPOINT_STATUS_HALT);
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 63
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 63
 
 
  2427              		.loc 1 1034 0 is_stmt 1
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2477 00c0 0B46     		mov	r3, r1
  2478 00c2 4FEA4303 		lsl	r3, r3, #1
  2479 00c6 5B18     		adds	r3, r3, r1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 64
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 64
 
 
  2480 00c8 4FEA8303 		lsl	r3, r3, #2
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2520              	.L130:
 1053:.\Generated_Source\PSoC5/USBUART_std.c ****     }
 1054:.\Generated_Source\PSoC5/USBUART_std.c **** 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 65
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 65
 
 
 1055:.\Generated_Source\PSoC5/USBUART_std.c ****     return(requestHandled);
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2552              	.LCFI31:
  2553              		.cfi_def_cfa_register 7
 1078:.\Generated_Source\PSoC5/USBUART_std.c ****     uint8 ep;
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 66
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 66
 
 
 1079:.\Generated_Source\PSoC5/USBUART_std.c ****     uint8 ri;
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2597 0070 4FEA8303 		lsl	r3, r3, #2
  2598 0074 D318     		adds	r3, r2, r3
  2599 0076 0246     		mov	r2, r0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 67
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 67
 
 
  2600 0078 9A70     		strb	r2, [r3, #2]
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2646 00f2 4FEA8303 		lsl	r3, r3, #2
  2647 00f6 D318     		adds	r3, r2, r3
  2648 00f8 0246     		mov	r2, r0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 68
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 68
 
 
  2649 00fa 5A70     		strb	r2, [r3, #1]
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2692 0160 4FF00D02 		mov	r2, #13
  2693 0164 1A70     		strb	r2, [r3, #0]
  2694 0166 22E0     		b	.L138
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 69
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 69
 
 
  2695              	.L136:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2731              		.loc 1 1126 0
  2732 01b6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
 1127:.\Generated_Source\PSoC5/USBUART_std.c **** }
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 70
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 70
 
 
  2733              		.loc 1 1127 0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2765 0006 4FF00103 		mov	r3, #1
  2766 000a FB73     		strb	r3, [r7, #15]
 1150:.\Generated_Source\PSoC5/USBUART_std.c ****     uint8 interfaceNum;
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 71
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 71
 
 
 1151:.\Generated_Source\PSoC5/USBUART_std.c ****     const T_USBUART_LUT CYCODE *pTmp;
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2805 0054 40F20003 		movw	r3, #:lower16:USBUART_interfaceSetting
  2806 0058 C0F20003 		movt	r3, #:upper16:USBUART_interfaceSetting
  2807 005c 5B5C     		ldrb	r3, [r3, r1]
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 72
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 72
 
 
  2808 005e D9B2     		uxtb	r1, r3
@@ -4307,10 +4307,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2846 0006 00000000 		.4byte	.Ldebug_abbrev0
  2847 000a 04       		.byte	0x4
  2848 000b 01       		.uleb128 0x1
- 2849 000c 19040000 		.4byte	.LASF89
+ 2849 000c D5030000 		.4byte	.LASF89
  2850 0010 01       		.byte	0x1
- 2851 0011 5F020000 		.4byte	.LASF90
- 2852 0015 29000000 		.4byte	.LASF91
+ 2851 0011 1B020000 		.4byte	.LASF90
+ 2852 0015 5A040000 		.4byte	.LASF91
  2853 0019 00000000 		.4byte	.Ldebug_ranges0+0
  2854 001d 00000000 		.4byte	0
  2855 0021 00000000 		.4byte	0
@@ -4318,38 +4318,38 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2857 0029 02       		.uleb128 0x2
  2858 002a 01       		.byte	0x1
  2859 002b 06       		.byte	0x6
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 73
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 73
 
 
- 2860 002c CD000000 		.4byte	.LASF0
+ 2860 002c 89000000 		.4byte	.LASF0
  2861 0030 02       		.uleb128 0x2
  2862 0031 01       		.byte	0x1
  2863 0032 08       		.byte	0x8
- 2864 0033 86040000 		.4byte	.LASF1
+ 2864 0033 42040000 		.4byte	.LASF1
  2865 0037 02       		.uleb128 0x2
  2866 0038 02       		.byte	0x2
  2867 0039 05       		.byte	0x5
- 2868 003a 94040000 		.4byte	.LASF2
+ 2868 003a 50040000 		.4byte	.LASF2
  2869 003e 02       		.uleb128 0x2
  2870 003f 02       		.byte	0x2
  2871 0040 07       		.byte	0x7
- 2872 0041 BB020000 		.4byte	.LASF3
+ 2872 0041 77020000 		.4byte	.LASF3
  2873 0045 02       		.uleb128 0x2
  2874 0046 04       		.byte	0x4
  2875 0047 05       		.byte	0x5
- 2876 0048 29010000 		.4byte	.LASF4
+ 2876 0048 E5000000 		.4byte	.LASF4
  2877 004c 02       		.uleb128 0x2
  2878 004d 04       		.byte	0x4
  2879 004e 07       		.byte	0x7
- 2880 004f 4D020000 		.4byte	.LASF5
+ 2880 004f 09020000 		.4byte	.LASF5
  2881 0053 02       		.uleb128 0x2
  2882 0054 08       		.byte	0x8
  2883 0055 05       		.byte	0x5
- 2884 0056 BF000000 		.4byte	.LASF6
+ 2884 0056 7B000000 		.4byte	.LASF6
  2885 005a 02       		.uleb128 0x2
  2886 005b 08       		.byte	0x8
  2887 005c 07       		.byte	0x7
- 2888 005d 77000000 		.4byte	.LASF7
+ 2888 005d 33000000 		.4byte	.LASF7
  2889 0061 03       		.uleb128 0x3
  2890 0062 04       		.byte	0x4
  2891 0063 05       		.byte	0x5
@@ -4357,9 +4357,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2893 0068 02       		.uleb128 0x2
  2894 0069 04       		.byte	0x4
  2895 006a 07       		.byte	0x7
- 2896 006b 30020000 		.4byte	.LASF8
+ 2896 006b EC010000 		.4byte	.LASF8
  2897 006f 04       		.uleb128 0x4
- 2898 0070 5A010000 		.4byte	.LASF9
+ 2898 0070 16010000 		.4byte	.LASF9
  2899 0074 02       		.byte	0x2
  2900 0075 5B       		.byte	0x5b
  2901 0076 30000000 		.4byte	0x30
@@ -4371,14 +4371,14 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2907 0085 02       		.uleb128 0x2
  2908 0086 04       		.byte	0x4
  2909 0087 04       		.byte	0x4
- 2910 0088 E0030000 		.4byte	.LASF11
+ 2910 0088 9C030000 		.4byte	.LASF11
  2911 008c 02       		.uleb128 0x2
  2912 008d 08       		.byte	0x8
  2913 008e 04       		.byte	0x4
- 2914 008f 90010000 		.4byte	.LASF12
+ 2914 008f 4C010000 		.4byte	.LASF12
  2915 0093 04       		.uleb128 0x4
- 2916 0094 56050000 		.4byte	.LASF13
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 74
+ 2916 0094 62050000 		.4byte	.LASF13
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 74
 
 
  2917 0098 02       		.byte	0x2
@@ -4387,9 +4387,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2920 009e 02       		.uleb128 0x2
  2921 009f 01       		.byte	0x1
  2922 00a0 08       		.byte	0x8
- 2923 00a1 15050000 		.4byte	.LASF14
+ 2923 00a1 21050000 		.4byte	.LASF14
  2924 00a5 04       		.uleb128 0x4
- 2925 00a6 62040000 		.4byte	.LASF15
+ 2925 00a6 1E040000 		.4byte	.LASF15
  2926 00aa 02       		.byte	0x2
  2927 00ab F0       		.byte	0xf0
  2928 00ac B0000000 		.4byte	0xb0
@@ -4398,14 +4398,14 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2931 00b5 02       		.uleb128 0x2
  2932 00b6 04       		.byte	0x4
  2933 00b7 07       		.byte	0x7
- 2934 00b8 3B030000 		.4byte	.LASF16
+ 2934 00b8 F7020000 		.4byte	.LASF16
  2935 00bc 06       		.uleb128 0x6
  2936 00bd 0C       		.byte	0xc
  2937 00be 03       		.byte	0x3
  2938 00bf 7A       		.byte	0x7a
  2939 00c0 43010000 		.4byte	0x143
  2940 00c4 07       		.uleb128 0x7
- 2941 00c5 73030000 		.4byte	.LASF17
+ 2941 00c5 2F030000 		.4byte	.LASF17
  2942 00c9 03       		.byte	0x3
  2943 00ca 7C       		.byte	0x7c
  2944 00cb 6F000000 		.4byte	0x6f
@@ -4413,7 +4413,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2946 00d0 23       		.byte	0x23
  2947 00d1 00       		.uleb128 0
  2948 00d2 07       		.uleb128 0x7
- 2949 00d3 E6030000 		.4byte	.LASF18
+ 2949 00d3 A2030000 		.4byte	.LASF18
  2950 00d7 03       		.byte	0x3
  2951 00d8 7D       		.byte	0x7d
  2952 00d9 6F000000 		.4byte	0x6f
@@ -4421,7 +4421,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2954 00de 23       		.byte	0x23
  2955 00df 01       		.uleb128 0x1
  2956 00e0 07       		.uleb128 0x7
- 2957 00e1 25030000 		.4byte	.LASF19
+ 2957 00e1 E1020000 		.4byte	.LASF19
  2958 00e5 03       		.byte	0x3
  2959 00e6 7E       		.byte	0x7e
  2960 00e7 6F000000 		.4byte	0x6f
@@ -4429,7 +4429,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2962 00ec 23       		.byte	0x23
  2963 00ed 02       		.uleb128 0x2
  2964 00ee 07       		.uleb128 0x7
- 2965 00ef 60010000 		.4byte	.LASF20
+ 2965 00ef 1C010000 		.4byte	.LASF20
  2966 00f3 03       		.byte	0x3
  2967 00f4 7F       		.byte	0x7f
  2968 00f5 6F000000 		.4byte	0x6f
@@ -4437,8 +4437,8 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2970 00fa 23       		.byte	0x23
  2971 00fb 03       		.uleb128 0x3
  2972 00fc 07       		.uleb128 0x7
- 2973 00fd 8E000000 		.4byte	.LASF21
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 75
+ 2973 00fd 4A000000 		.4byte	.LASF21
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 75
 
 
  2974 0101 03       		.byte	0x3
@@ -4448,7 +4448,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2978 0108 23       		.byte	0x23
  2979 0109 04       		.uleb128 0x4
  2980 010a 07       		.uleb128 0x7
- 2981 010b E6010000 		.4byte	.LASF22
+ 2981 010b A2010000 		.4byte	.LASF22
  2982 010f 03       		.byte	0x3
  2983 0110 81       		.byte	0x81
  2984 0111 6F000000 		.4byte	0x6f
@@ -4456,7 +4456,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2986 0116 23       		.byte	0x23
  2987 0117 05       		.uleb128 0x5
  2988 0118 07       		.uleb128 0x7
- 2989 0119 4B050000 		.4byte	.LASF23
+ 2989 0119 57050000 		.4byte	.LASF23
  2990 011d 03       		.byte	0x3
  2991 011e 82       		.byte	0x82
  2992 011f 7A000000 		.4byte	0x7a
@@ -4464,7 +4464,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  2994 0124 23       		.byte	0x23
  2995 0125 06       		.uleb128 0x6
  2996 0126 07       		.uleb128 0x7
- 2997 0127 1A050000 		.4byte	.LASF24
+ 2997 0127 26050000 		.4byte	.LASF24
  2998 012b 03       		.byte	0x3
  2999 012c 83       		.byte	0x83
  3000 012d 7A000000 		.4byte	0x7a
@@ -4472,7 +4472,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3002 0132 23       		.byte	0x23
  3003 0133 08       		.uleb128 0x8
  3004 0134 07       		.uleb128 0x7
- 3005 0135 E5020000 		.4byte	.LASF25
+ 3005 0135 A1020000 		.4byte	.LASF25
  3006 0139 03       		.byte	0x3
  3007 013a 84       		.byte	0x84
  3008 013b 6F000000 		.4byte	0x6f
@@ -4481,7 +4481,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3011 0141 0A       		.uleb128 0xa
  3012 0142 00       		.byte	0
  3013 0143 04       		.uleb128 0x4
- 3014 0144 34050000 		.4byte	.LASF26
+ 3014 0144 40050000 		.4byte	.LASF26
  3015 0148 03       		.byte	0x3
  3016 0149 85       		.byte	0x85
  3017 014a BC000000 		.4byte	0xbc
@@ -4491,18 +4491,18 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3021 0151 87       		.byte	0x87
  3022 0152 AB010000 		.4byte	0x1ab
  3023 0156 07       		.uleb128 0x7
- 3024 0157 E5020000 		.4byte	.LASF25
+ 3024 0157 A1020000 		.4byte	.LASF25
  3025 015b 03       		.byte	0x3
  3026 015c 89       		.byte	0x89
  3027 015d 6F000000 		.4byte	0x6f
  3028 0161 02       		.byte	0x2
  3029 0162 23       		.byte	0x23
  3030 0163 00       		.uleb128 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 76
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 76
 
 
  3031 0164 07       		.uleb128 0x7
- 3032 0165 0A050000 		.4byte	.LASF27
+ 3032 0165 16050000 		.4byte	.LASF27
  3033 0169 03       		.byte	0x3
  3034 016a 8A       		.byte	0x8a
  3035 016b 6F000000 		.4byte	0x6f
@@ -4510,7 +4510,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3037 0170 23       		.byte	0x23
  3038 0171 01       		.uleb128 0x1
  3039 0172 07       		.uleb128 0x7
- 3040 0173 8E000000 		.4byte	.LASF21
+ 3040 0173 4A000000 		.4byte	.LASF21
  3041 0177 03       		.byte	0x3
  3042 0178 8B       		.byte	0x8b
  3043 0179 6F000000 		.4byte	0x6f
@@ -4518,7 +4518,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3045 017e 23       		.byte	0x23
  3046 017f 02       		.uleb128 0x2
  3047 0180 07       		.uleb128 0x7
- 3048 0181 E5040000 		.4byte	.LASF28
+ 3048 0181 F1040000 		.4byte	.LASF28
  3049 0185 03       		.byte	0x3
  3050 0186 8C       		.byte	0x8c
  3051 0187 6F000000 		.4byte	0x6f
@@ -4526,7 +4526,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3053 018c 23       		.byte	0x23
  3054 018d 03       		.uleb128 0x3
  3055 018e 07       		.uleb128 0x7
- 3056 018f 1A050000 		.4byte	.LASF24
+ 3056 018f 26050000 		.4byte	.LASF24
  3057 0193 03       		.byte	0x3
  3058 0194 8D       		.byte	0x8d
  3059 0195 7A000000 		.4byte	0x7a
@@ -4534,7 +4534,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3061 019a 23       		.byte	0x23
  3062 019b 04       		.uleb128 0x4
  3063 019c 07       		.uleb128 0x7
- 3064 019d C0050000 		.4byte	.LASF29
+ 3064 019d CC050000 		.4byte	.LASF29
  3065 01a1 03       		.byte	0x3
  3066 01a2 8E       		.byte	0x8e
  3067 01a3 6F000000 		.4byte	0x6f
@@ -4543,7 +4543,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3070 01a9 06       		.uleb128 0x6
  3071 01aa 00       		.byte	0
  3072 01ab 04       		.uleb128 0x4
- 3073 01ac 5C050000 		.4byte	.LASF30
+ 3073 01ac 68050000 		.4byte	.LASF30
  3074 01b0 03       		.byte	0x3
  3075 01b1 8F       		.byte	0x8f
  3076 01b2 4E010000 		.4byte	0x14e
@@ -4553,18 +4553,18 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3080 01b9 91       		.byte	0x91
  3081 01ba DB010000 		.4byte	0x1db
  3082 01be 07       		.uleb128 0x7
- 3083 01bf A3050000 		.4byte	.LASF31
+ 3083 01bf AF050000 		.4byte	.LASF31
  3084 01c3 03       		.byte	0x3
  3085 01c4 93       		.byte	0x93
  3086 01c5 6F000000 		.4byte	0x6f
  3087 01c9 02       		.byte	0x2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 77
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 77
 
 
  3088 01ca 23       		.byte	0x23
  3089 01cb 00       		.uleb128 0
  3090 01cc 07       		.uleb128 0x7
- 3091 01cd 90050000 		.4byte	.LASF32
+ 3091 01cd 9C050000 		.4byte	.LASF32
  3092 01d1 03       		.byte	0x3
  3093 01d2 94       		.byte	0x94
  3094 01d3 7A000000 		.4byte	0x7a
@@ -4573,7 +4573,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3097 01d9 02       		.uleb128 0x2
  3098 01da 00       		.byte	0
  3099 01db 04       		.uleb128 0x4
- 3100 01dc A3000000 		.4byte	.LASF33
+ 3100 01dc 5F000000 		.4byte	.LASF33
  3101 01e0 03       		.byte	0x3
  3102 01e1 95       		.byte	0x95
  3103 01e2 B6010000 		.4byte	0x1b6
@@ -4591,7 +4591,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3115 01fa 23       		.byte	0x23
  3116 01fb 00       		.uleb128 0
  3117 01fc 07       		.uleb128 0x7
- 3118 01fd E0010000 		.4byte	.LASF35
+ 3118 01fd 9C010000 		.4byte	.LASF35
  3119 0201 03       		.byte	0x3
  3120 0202 9A       		.byte	0x9a
  3121 0203 19020000 		.4byte	0x219
@@ -4614,11 +4614,11 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3138 0220 04       		.byte	0x4
  3139 0221 DB010000 		.4byte	0x1db
  3140 0225 04       		.uleb128 0x4
- 3141 0226 C0040000 		.4byte	.LASF37
+ 3141 0226 CC040000 		.4byte	.LASF37
  3142 022a 03       		.byte	0x3
  3143 022b 9C       		.byte	0x9c
  3144 022c E6010000 		.4byte	0x1e6
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 78
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 78
 
 
  3145 0230 06       		.uleb128 0x6
@@ -4635,7 +4635,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3156 0242 23       		.byte	0x23
  3157 0243 00       		.uleb128 0
  3158 0244 07       		.uleb128 0x7
- 3159 0245 62030000 		.4byte	.LASF38
+ 3159 0245 1E030000 		.4byte	.LASF38
  3160 0249 03       		.byte	0x3
  3161 024a A2       		.byte	0xa2
  3162 024b 53020000 		.4byte	0x253
@@ -4648,13 +4648,13 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3169 0255 59020000 		.4byte	0x259
  3170 0259 0A       		.uleb128 0xa
  3171 025a 04       		.uleb128 0x4
- 3172 025b 01030000 		.4byte	.LASF39
+ 3172 025b BD020000 		.4byte	.LASF39
  3173 025f 03       		.byte	0x3
  3174 0260 A3       		.byte	0xa3
  3175 0261 30020000 		.4byte	0x230
  3176 0265 0B       		.uleb128 0xb
  3177 0266 01       		.byte	0x1
- 3178 0267 86020000 		.4byte	.LASF59
+ 3178 0267 42020000 		.4byte	.LASF59
  3179 026b 01       		.byte	0x1
  3180 026c 58       		.byte	0x58
  3181 026d 01       		.byte	0x1
@@ -4665,7 +4665,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3186 027e 01       		.byte	0x1
  3187 027f F7020000 		.4byte	0x2f7
  3188 0283 0C       		.uleb128 0xc
- 3189 0284 25050000 		.4byte	.LASF40
+ 3189 0284 31050000 		.4byte	.LASF40
  3190 0288 01       		.byte	0x1
  3191 0289 5A       		.byte	0x5a
  3192 028a 6F000000 		.4byte	0x6f
@@ -4673,18 +4673,18 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3194 028f 91       		.byte	0x91
  3195 0290 77       		.sleb128 -9
  3196 0291 0C       		.uleb128 0xc
- 3197 0292 93000000 		.4byte	.LASF41
+ 3197 0292 4F000000 		.4byte	.LASF41
  3198 0296 01       		.byte	0x1
  3199 0297 5B       		.byte	0x5b
  3200 0298 6F000000 		.4byte	0x6f
  3201 029c 02       		.byte	0x2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 79
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 79
 
 
  3202 029d 91       		.byte	0x91
  3203 029e 65       		.sleb128 -27
  3204 029f 0C       		.uleb128 0xc
- 3205 02a0 05040000 		.4byte	.LASF42
+ 3205 02a0 C1030000 		.4byte	.LASF42
  3206 02a4 01       		.byte	0x1
  3207 02a5 5C       		.byte	0x5c
  3208 02a6 6F000000 		.4byte	0x6f
@@ -4692,7 +4692,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3210 02ab 91       		.byte	0x91
  3211 02ac 66       		.sleb128 -26
  3212 02ad 0C       		.uleb128 0xc
- 3213 02ae 14040000 		.4byte	.LASF43
+ 3213 02ae D0030000 		.4byte	.LASF43
  3214 02b2 01       		.byte	0x1
  3215 02b3 5E       		.byte	0x5e
  3216 02b4 19020000 		.4byte	0x219
@@ -4700,7 +4700,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3218 02b9 91       		.byte	0x91
  3219 02ba 70       		.sleb128 -16
  3220 02bb 0C       		.uleb128 0xc
- 3221 02bc 97050000 		.4byte	.LASF44
+ 3221 02bc A3050000 		.4byte	.LASF44
  3222 02c0 01       		.byte	0x1
  3223 02c1 60       		.byte	0x60
  3224 02c2 6F000000 		.4byte	0x6f
@@ -4708,7 +4708,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3226 02c7 91       		.byte	0x91
  3227 02c8 6F       		.sleb128 -17
  3228 02c9 0C       		.uleb128 0xc
- 3229 02ca 2F030000 		.4byte	.LASF45
+ 3229 02ca EB020000 		.4byte	.LASF45
  3230 02ce 01       		.byte	0x1
  3231 02cf 61       		.byte	0x61
  3232 02d0 6F000000 		.4byte	0x6f
@@ -4716,7 +4716,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3234 02d5 91       		.byte	0x91
  3235 02d6 67       		.sleb128 -25
  3236 02d7 0C       		.uleb128 0xc
- 3237 02d8 3D020000 		.4byte	.LASF46
+ 3237 02d8 F9010000 		.4byte	.LASF46
  3238 02dc 01       		.byte	0x1
  3239 02dd 64       		.byte	0x64
  3240 02de 07030000 		.4byte	0x307
@@ -4724,7 +4724,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3242 02e3 03       		.byte	0x3
  3243 02e4 00000000 		.4byte	USBUART_tBuffer.4976
  3244 02e8 0C       		.uleb128 0xc
- 3245 02e9 5D030000 		.4byte	.LASF47
+ 3245 02e9 19030000 		.4byte	.LASF47
  3246 02ed 01       		.byte	0x1
  3247 02ee 65       		.byte	0x65
  3248 02ef 0C030000 		.4byte	0x30c
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3256 0300 0E       		.uleb128 0xe
  3257 0301 B5000000 		.4byte	0xb5
  3258 0305 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 80
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 80
 
 
  3259 0306 00       		.byte	0
@@ -4751,7 +4751,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3266 0313 5A020000 		.4byte	0x25a
  3267 0317 10       		.uleb128 0x10
  3268 0318 01       		.byte	0x1
- 3269 0319 48010000 		.4byte	.LASF49
+ 3269 0319 04010000 		.4byte	.LASF49
  3270 031d 01       		.byte	0x1
  3271 031e 6701     		.2byte	0x167
  3272 0320 01       		.byte	0x1
@@ -4761,7 +4761,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3276 032d 01       		.byte	0x1
  3277 032e 7A030000 		.4byte	0x37a
  3278 0332 11       		.uleb128 0x11
- 3279 0333 80040000 		.4byte	.LASF52
+ 3279 0333 3C040000 		.4byte	.LASF52
  3280 0337 01       		.byte	0x1
  3281 0338 6701     		.2byte	0x167
  3282 033a 7A030000 		.4byte	0x37a
@@ -4785,7 +4785,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3300 0359 91       		.byte	0x91
  3301 035a 76       		.sleb128 -10
  3302 035b 13       		.uleb128 0x13
- 3303 035c 15020000 		.4byte	.LASF48
+ 3303 035c D1010000 		.4byte	.LASF48
  3304 0360 01       		.byte	0x1
  3305 0361 6B01     		.2byte	0x16b
  3306 0363 6F000000 		.4byte	0x6f
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3313 0370 6C01     		.2byte	0x16c
  3314 0372 90030000 		.4byte	0x390
  3315 0376 02       		.byte	0x2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 81
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 81
 
 
  3316 0377 91       		.byte	0x91
@@ -4818,7 +4818,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3330 0391 80030000 		.4byte	0x380
  3331 0395 10       		.uleb128 0x10
  3332 0396 01       		.byte	0x1
- 3333 0397 EF020000 		.4byte	.LASF50
+ 3333 0397 AB020000 		.4byte	.LASF50
  3334 039b 01       		.byte	0x1
  3335 039c 9201     		.2byte	0x192
  3336 039e 01       		.byte	0x1
@@ -4846,7 +4846,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3358 03cb 00       		.byte	0
  3359 03cc 14       		.uleb128 0x14
  3360 03cd 01       		.byte	0x1
- 3361 03ce F7000000 		.4byte	.LASF51
+ 3361 03ce B3000000 		.4byte	.LASF51
  3362 03d2 01       		.byte	0x1
  3363 03d3 ED01     		.2byte	0x1ed
  3364 03d5 01       		.byte	0x1
@@ -4856,9 +4856,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3368 03e2 01       		.byte	0x1
  3369 03e3 6C040000 		.4byte	0x46c
  3370 03e7 11       		.uleb128 0x11
- 3371 03e8 E7000000 		.4byte	.LASF53
+ 3371 03e8 A3000000 		.4byte	.LASF53
  3372 03ec 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 82
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 82
 
 
  3373 03ed ED01     		.2byte	0x1ed
@@ -4875,7 +4875,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3384 0402 91       		.byte	0x91
  3385 0403 77       		.sleb128 -9
  3386 0404 13       		.uleb128 0x13
- 3387 0405 9C050000 		.4byte	.LASF54
+ 3387 0405 A8050000 		.4byte	.LASF54
  3388 0409 01       		.byte	0x1
  3389 040a F001     		.2byte	0x1f0
  3390 040c 6F000000 		.4byte	0x6f
@@ -4891,7 +4891,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3400 041e 91       		.byte	0x91
  3401 041f 75       		.sleb128 -11
  3402 0420 13       		.uleb128 0x13
- 3403 0421 ED010000 		.4byte	.LASF55
+ 3403 0421 A9010000 		.4byte	.LASF55
  3404 0425 01       		.byte	0x1
  3405 0426 F201     		.2byte	0x1f2
  3406 0428 6F000000 		.4byte	0x6f
@@ -4899,7 +4899,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3408 042d 91       		.byte	0x91
  3409 042e 63       		.sleb128 -29
  3410 042f 13       		.uleb128 0x13
- 3411 0430 CE020000 		.4byte	.LASF56
+ 3411 0430 8A020000 		.4byte	.LASF56
  3412 0434 01       		.byte	0x1
  3413 0435 F301     		.2byte	0x1f3
  3414 0437 6C040000 		.4byte	0x46c
@@ -4907,7 +4907,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3416 043c 91       		.byte	0x91
  3417 043d 64       		.sleb128 -28
  3418 043e 13       		.uleb128 0x13
- 3419 043f 69030000 		.4byte	.LASF57
+ 3419 043f 25030000 		.4byte	.LASF57
  3420 0443 01       		.byte	0x1
  3421 0444 F501     		.2byte	0x1f5
  3422 0446 7A000000 		.4byte	0x7a
@@ -4915,10 +4915,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3424 044b 91       		.byte	0x91
  3425 044c 72       		.sleb128 -14
  3426 044d 13       		.uleb128 0x13
- 3427 044e 5D030000 		.4byte	.LASF47
+ 3427 044e 19030000 		.4byte	.LASF47
  3428 0452 01       		.byte	0x1
  3429 0453 F801     		.2byte	0x1f8
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 83
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 83
 
 
  3430 0455 0C030000 		.4byte	0x30c
@@ -4946,7 +4946,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3452 047e AB010000 		.4byte	0x1ab
  3453 0482 14       		.uleb128 0x14
  3454 0483 01       		.byte	0x1
- 3455 0484 44030000 		.4byte	.LASF58
+ 3455 0484 00030000 		.4byte	.LASF58
  3456 0488 01       		.byte	0x1
  3457 0489 E502     		.2byte	0x2e5
  3458 048b 01       		.byte	0x1
@@ -4964,7 +4964,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3470 04a9 91       		.byte	0x91
  3471 04aa 6B       		.sleb128 -21
  3472 04ab 13       		.uleb128 0x13
- 3473 04ac 9C050000 		.4byte	.LASF54
+ 3473 04ac A8050000 		.4byte	.LASF54
  3474 04b0 01       		.byte	0x1
  3475 04b1 E802     		.2byte	0x2e8
  3476 04b3 6F000000 		.4byte	0x6f
@@ -4978,12 +4978,12 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3484 04c0 6F000000 		.4byte	0x6f
  3485 04c4 02       		.byte	0x2
  3486 04c5 91       		.byte	0x91
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 84
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 84
 
 
  3487 04c6 77       		.sleb128 -9
  3488 04c7 13       		.uleb128 0x13
- 3489 04c8 ED010000 		.4byte	.LASF55
+ 3489 04c8 A9010000 		.4byte	.LASF55
  3490 04cc 01       		.byte	0x1
  3491 04cd EA02     		.2byte	0x2ea
  3492 04cf 6F000000 		.4byte	0x6f
@@ -4999,7 +4999,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3502 04e2 91       		.byte	0x91
  3503 04e3 69       		.sleb128 -23
  3504 04e4 13       		.uleb128 0x13
- 3505 04e5 5D030000 		.4byte	.LASF47
+ 3505 04e5 19030000 		.4byte	.LASF47
  3506 04e9 01       		.byte	0x1
  3507 04ea ED02     		.2byte	0x2ed
  3508 04ec 0C030000 		.4byte	0x30c
@@ -5017,7 +5017,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3520 0502 00       		.byte	0
  3521 0503 15       		.uleb128 0x15
  3522 0504 01       		.byte	0x1
- 3523 0505 C6010000 		.4byte	.LASF60
+ 3523 0505 82010000 		.4byte	.LASF60
  3524 0509 01       		.byte	0x1
  3525 050a 6303     		.2byte	0x363
  3526 050c 01       		.byte	0x1
@@ -5028,7 +5028,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3531 051d 01       		.byte	0x1
  3532 051e 41050000 		.4byte	0x541
  3533 0522 11       		.uleb128 0x11
- 3534 0523 6D000000 		.4byte	.LASF61
+ 3534 0523 29000000 		.4byte	.LASF61
  3535 0527 01       		.byte	0x1
  3536 0528 6303     		.2byte	0x363
  3537 052a 6F000000 		.4byte	0x6f
@@ -5036,9 +5036,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3539 052f 91       		.byte	0x91
  3540 0530 6F       		.sleb128 -17
  3541 0531 13       		.uleb128 0x13
- 3542 0532 5D030000 		.4byte	.LASF47
+ 3542 0532 19030000 		.4byte	.LASF47
  3543 0536 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 85
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 85
 
 
  3544 0537 6703     		.2byte	0x367
@@ -5049,7 +5049,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3549 0540 00       		.byte	0
  3550 0541 16       		.uleb128 0x16
  3551 0542 01       		.byte	0x1
- 3552 0543 A1020000 		.4byte	.LASF92
+ 3552 0543 5D020000 		.4byte	.LASF92
  3553 0547 01       		.byte	0x1
  3554 0548 8C03     		.2byte	0x38c
  3555 054a 01       		.byte	0x1
@@ -5060,7 +5060,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3560 055b 01       		.byte	0x1
  3561 055c 17       		.uleb128 0x17
  3562 055d 01       		.byte	0x1
- 3563 055e 9E040000 		.4byte	.LASF62
+ 3563 055e AA040000 		.4byte	.LASF62
  3564 0562 01       		.byte	0x1
  3565 0563 A303     		.2byte	0x3a3
  3566 0565 01       		.byte	0x1
@@ -5071,7 +5071,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3571 0576 01       		.byte	0x1
  3572 0577 A9050000 		.4byte	0x5a9
  3573 057b 13       		.uleb128 0x13
- 3574 057c 5D030000 		.4byte	.LASF47
+ 3574 057c 19030000 		.4byte	.LASF47
  3575 0580 01       		.byte	0x1
  3576 0581 A603     		.2byte	0x3a6
  3577 0583 0C030000 		.4byte	0x30c
@@ -5079,7 +5079,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3579 0588 91       		.byte	0x91
  3580 0589 70       		.sleb128 -16
  3581 058a 13       		.uleb128 0x13
- 3582 058b D5020000 		.4byte	.LASF63
+ 3582 058b 91020000 		.4byte	.LASF63
  3583 058f 01       		.byte	0x1
  3584 0590 A703     		.2byte	0x3a7
  3585 0592 6C040000 		.4byte	0x46c
@@ -5087,7 +5087,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3587 0597 91       		.byte	0x91
  3588 0598 74       		.sleb128 -12
  3589 0599 13       		.uleb128 0x13
- 3590 059a A3030000 		.4byte	.LASF64
+ 3590 059a 5F030000 		.4byte	.LASF64
  3591 059e 01       		.byte	0x1
  3592 059f A803     		.2byte	0x3a8
  3593 05a1 6F000000 		.4byte	0x6f
@@ -5097,8 +5097,8 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3597 05a8 00       		.byte	0
  3598 05a9 10       		.uleb128 0x10
  3599 05aa 01       		.byte	0x1
- 3600 05ab F1030000 		.4byte	.LASF65
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 86
+ 3600 05ab AD030000 		.4byte	.LASF65
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 86
 
 
  3601 05af 01       		.byte	0x1
@@ -5128,7 +5128,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3625 05e0 00       		.byte	0
  3626 05e1 17       		.uleb128 0x17
  3627 05e2 01       		.byte	0x1
- 3628 05e3 E4050000 		.4byte	.LASF66
+ 3628 05e3 F0050000 		.4byte	.LASF66
  3629 05e7 01       		.byte	0x1
  3630 05e8 FD03     		.2byte	0x3fd
  3631 05ea 01       		.byte	0x1
@@ -5155,10 +5155,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3652 061a 91       		.byte	0x91
  3653 061b 75       		.sleb128 -11
  3654 061c 13       		.uleb128 0x13
- 3655 061d 25050000 		.4byte	.LASF40
+ 3655 061d 31050000 		.4byte	.LASF40
  3656 0621 01       		.byte	0x1
  3657 0622 0104     		.2byte	0x401
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 87
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 87
 
 
  3658 0624 6F000000 		.4byte	0x6f
@@ -5168,7 +5168,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3662 062b 00       		.byte	0
  3663 062c 17       		.uleb128 0x17
  3664 062d 01       		.byte	0x1
- 3665 062e F0040000 		.4byte	.LASF67
+ 3665 062e FC040000 		.4byte	.LASF67
  3666 0632 01       		.byte	0x1
  3667 0633 3404     		.2byte	0x434
  3668 0635 01       		.byte	0x1
@@ -5195,7 +5195,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3689 0665 91       		.byte	0x91
  3690 0666 75       		.sleb128 -11
  3691 0667 13       		.uleb128 0x13
- 3692 0668 25050000 		.4byte	.LASF40
+ 3692 0668 31050000 		.4byte	.LASF40
  3693 066c 01       		.byte	0x1
  3694 066d 3804     		.2byte	0x438
  3695 066f 6F000000 		.4byte	0x6f
@@ -5205,7 +5205,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3699 0676 00       		.byte	0
  3700 0677 17       		.uleb128 0x17
  3701 0678 01       		.byte	0x1
- 3702 0679 F4010000 		.4byte	.LASF68
+ 3702 0679 B0010000 		.4byte	.LASF68
  3703 067d 01       		.byte	0x1
  3704 067e 7B04     		.2byte	0x47b
  3705 0680 01       		.byte	0x1
@@ -5216,9 +5216,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3710 0691 01       		.byte	0x1
  3711 0692 D3060000 		.4byte	0x6d3
  3712 0696 13       		.uleb128 0x13
- 3713 0697 25050000 		.4byte	.LASF40
+ 3713 0697 31050000 		.4byte	.LASF40
  3714 069b 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 88
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 88
 
 
  3715 069c 7D04     		.2byte	0x47d
@@ -5227,7 +5227,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3718 06a3 91       		.byte	0x91
  3719 06a4 77       		.sleb128 -9
  3720 06a5 13       		.uleb128 0x13
- 3721 06a6 D3030000 		.4byte	.LASF69
+ 3721 06a6 8F030000 		.4byte	.LASF69
  3722 06aa 01       		.byte	0x1
  3723 06ab 7E04     		.2byte	0x47e
  3724 06ad 6F000000 		.4byte	0x6f
@@ -5235,7 +5235,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3726 06b2 91       		.byte	0x91
  3727 06b3 76       		.sleb128 -10
  3728 06b4 13       		.uleb128 0x13
- 3729 06b5 5D030000 		.4byte	.LASF47
+ 3729 06b5 19030000 		.4byte	.LASF47
  3730 06b9 01       		.byte	0x1
  3731 06ba 7F04     		.2byte	0x47f
  3732 06bc 0C030000 		.4byte	0x30c
@@ -5243,7 +5243,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3734 06c1 91       		.byte	0x91
  3735 06c2 70       		.sleb128 -16
  3736 06c3 13       		.uleb128 0x13
- 3737 06c4 A3030000 		.4byte	.LASF64
+ 3737 06c4 5F030000 		.4byte	.LASF64
  3738 06c8 01       		.byte	0x1
  3739 06c9 8004     		.2byte	0x480
  3740 06cb 6F000000 		.4byte	0x6f
@@ -5259,38 +5259,38 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3750 06df 01       		.byte	0x1
  3751 06e0 01       		.byte	0x1
  3752 06e1 19       		.uleb128 0x19
- 3753 06e2 AA050000 		.4byte	.LASF71
+ 3753 06e2 B6050000 		.4byte	.LASF71
  3754 06e6 03       		.byte	0x3
  3755 06e7 4E02     		.2byte	0x24e
  3756 06e9 B0000000 		.4byte	0xb0
  3757 06ed 01       		.byte	0x1
  3758 06ee 01       		.byte	0x1
  3759 06ef 19       		.uleb128 0x19
- 3760 06f0 FC050000 		.4byte	.LASF72
+ 3760 06f0 08060000 		.4byte	.LASF72
  3761 06f4 03       		.byte	0x3
  3762 06f5 4F02     		.2byte	0x24f
  3763 06f7 B0000000 		.4byte	0xb0
  3764 06fb 01       		.byte	0x1
  3765 06fc 01       		.byte	0x1
  3766 06fd 19       		.uleb128 0x19
- 3767 06fe 1B020000 		.4byte	.LASF73
+ 3767 06fe D7010000 		.4byte	.LASF73
  3768 0702 03       		.byte	0x3
  3769 0703 5002     		.2byte	0x250
  3770 0705 B0000000 		.4byte	0xb0
  3771 0709 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 89
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 89
 
 
  3772 070a 01       		.byte	0x1
  3773 070b 1A       		.uleb128 0x1a
- 3774 070c AF010000 		.4byte	.LASF74
+ 3774 070c 6B010000 		.4byte	.LASF74
  3775 0710 04       		.byte	0x4
  3776 0711 59       		.byte	0x59
  3777 0712 B0000000 		.4byte	0xb0
  3778 0716 01       		.byte	0x1
  3779 0717 01       		.byte	0x1
  3780 0718 1A       		.uleb128 0x1a
- 3781 0719 97010000 		.4byte	.LASF75
+ 3781 0719 53010000 		.4byte	.LASF75
  3782 071d 04       		.byte	0x4
  3783 071e 5A       		.byte	0x5a
  3784 071f B0000000 		.4byte	0xb0
@@ -5304,7 +5304,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3792 0733 11       		.byte	0x11
  3793 0734 00       		.byte	0
  3794 0735 1A       		.uleb128 0x1a
- 3795 0736 32010000 		.4byte	.LASF76
+ 3795 0736 EE000000 		.4byte	.LASF76
  3796 073a 05       		.byte	0x5
  3797 073b 1C       		.byte	0x1c
  3798 073c 42070000 		.4byte	0x742
@@ -5320,7 +5320,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3808 0755 00       		.byte	0
  3809 0756 00       		.byte	0
  3810 0757 1A       		.uleb128 0x1a
- 3811 0758 D9000000 		.4byte	.LASF77
+ 3811 0758 95000000 		.4byte	.LASF77
  3812 075c 05       		.byte	0x5
  3813 075d 22       		.byte	0x22
  3814 075e 64070000 		.4byte	0x764
@@ -5336,9 +5336,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3824 0777 9E       		.byte	0x9e
  3825 0778 00       		.byte	0
  3826 0779 1A       		.uleb128 0x1a
- 3827 077a B8030000 		.4byte	.LASF78
+ 3827 077a 74030000 		.4byte	.LASF78
  3828 077e 05       		.byte	0x5
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 90
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 90
 
 
  3829 077f 24       		.byte	0x24
@@ -5348,7 +5348,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3833 0786 0F       		.uleb128 0xf
  3834 0787 69070000 		.4byte	0x769
  3835 078b 1A       		.uleb128 0x1a
- 3836 078c 11010000 		.4byte	.LASF79
+ 3836 078c CD000000 		.4byte	.LASF79
  3837 0790 05       		.byte	0x5
  3838 0791 27       		.byte	0x27
  3839 0792 98070000 		.4byte	0x798
@@ -5364,21 +5364,21 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3849 07ab 21       		.byte	0x21
  3850 07ac 00       		.byte	0
  3851 07ad 1A       		.uleb128 0x1a
- 3852 07ae 69010000 		.4byte	.LASF80
+ 3852 07ae 25010000 		.4byte	.LASF80
  3853 07b2 05       		.byte	0x5
  3854 07b3 2A       		.byte	0x2a
  3855 07b4 9D070000 		.4byte	0x79d
  3856 07b8 01       		.byte	0x1
  3857 07b9 01       		.byte	0x1
  3858 07ba 1A       		.uleb128 0x1a
- 3859 07bb 78050000 		.4byte	.LASF81
+ 3859 07bb 84050000 		.4byte	.LASF81
  3860 07bf 05       		.byte	0x5
  3861 07c0 2D       		.byte	0x2d
  3862 07c1 B0000000 		.4byte	0xb0
  3863 07c5 01       		.byte	0x1
  3864 07c6 01       		.byte	0x1
  3865 07c7 1A       		.uleb128 0x1a
- 3866 07c8 67040000 		.4byte	.LASF82
+ 3866 07c8 23040000 		.4byte	.LASF82
  3867 07cc 05       		.byte	0x5
  3868 07cd 2E       		.byte	0x2e
  3869 07ce D4070000 		.4byte	0x7d4
@@ -5387,7 +5387,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3872 07d4 05       		.uleb128 0x5
  3873 07d5 F7020000 		.4byte	0x2f7
  3874 07d9 1A       		.uleb128 0x1a
- 3875 07da C6050000 		.4byte	.LASF83
+ 3875 07da D2050000 		.4byte	.LASF83
  3876 07de 05       		.byte	0x5
  3877 07df 2F       		.byte	0x2f
  3878 07e0 E6070000 		.4byte	0x7e6
@@ -5396,9 +5396,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3881 07e6 05       		.uleb128 0x5
  3882 07e7 F7020000 		.4byte	0x2f7
  3883 07eb 1A       		.uleb128 0x1a
- 3884 07ec 0F030000 		.4byte	.LASF84
+ 3884 07ec CB020000 		.4byte	.LASF84
  3885 07f0 05       		.byte	0x5
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 91
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 91
 
 
  3886 07f1 30       		.byte	0x30
@@ -5406,7 +5406,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3888 07f6 01       		.byte	0x1
  3889 07f7 01       		.byte	0x1
  3890 07f8 1A       		.uleb128 0x1a
- 3891 07f9 CD040000 		.4byte	.LASF85
+ 3891 07f9 D9040000 		.4byte	.LASF85
  3892 07fd 05       		.byte	0x5
  3893 07fe 31       		.byte	0x31
  3894 07ff 05080000 		.4byte	0x805
@@ -5415,7 +5415,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3897 0805 05       		.uleb128 0x5
  3898 0806 F7020000 		.4byte	0x2f7
  3899 080a 1A       		.uleb128 0x1a
- 3900 080b 7A030000 		.4byte	.LASF86
+ 3900 080b 36030000 		.4byte	.LASF86
  3901 080f 05       		.byte	0x5
  3902 0810 32       		.byte	0x32
  3903 0811 6C040000 		.4byte	0x46c
@@ -5429,7 +5429,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3911 0825 08       		.byte	0x8
  3912 0826 00       		.byte	0
  3913 0827 1A       		.uleb128 0x1a
- 3914 0828 06010000 		.4byte	.LASF87
+ 3914 0828 C2000000 		.4byte	.LASF87
  3915 082c 05       		.byte	0x5
  3916 082d 34       		.byte	0x34
  3917 082e 34080000 		.4byte	0x834
@@ -5438,7 +5438,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3920 0834 05       		.uleb128 0x5
  3921 0835 17080000 		.4byte	0x817
  3922 0839 1A       		.uleb128 0x1a
- 3923 083a 91030000 		.4byte	.LASF88
+ 3923 083a 4D030000 		.4byte	.LASF88
  3924 083e 05       		.byte	0x5
  3925 083f 35       		.byte	0x35
  3926 0840 46080000 		.4byte	0x846
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3940 0006 0B       		.uleb128 0xb
  3941 0007 03       		.uleb128 0x3
  3942 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 92
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 92
 
 
  3943 0009 1B       		.uleb128 0x1b
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  3997 003f 06       		.uleb128 0x6
  3998 0040 13       		.uleb128 0x13
  3999 0041 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 93
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 93
 
 
  4000 0042 0B       		.uleb128 0xb
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4054 0078 0B       		.uleb128 0xb
  4055 0079 2E       		.uleb128 0x2e
  4056 007a 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 94
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 94
 
 
  4057 007b 3F       		.uleb128 0x3f
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4111 00b2 0B       		.uleb128 0xb
  4112 00b3 00       		.byte	0
  4113 00b4 00       		.byte	0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 95
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 95
 
 
  4114 00b5 0F       		.uleb128 0xf
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4168 00ec 3B       		.uleb128 0x3b
  4169 00ed 05       		.uleb128 0x5
  4170 00ee 49       		.uleb128 0x49
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 96
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 96
 
 
  4171 00ef 13       		.uleb128 0x13
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4225 0126 3B       		.uleb128 0x3b
  4226 0127 05       		.uleb128 0x5
  4227 0128 27       		.uleb128 0x27
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 97
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 97
 
 
  4228 0129 0C       		.uleb128 0xc
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4282 0161 13       		.uleb128 0x13
  4283 0162 11       		.uleb128 0x11
  4284 0163 01       		.uleb128 0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 98
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 98
 
 
  4285 0164 12       		.uleb128 0x12
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4339 019b 0C       		.uleb128 0xc
  4340 019c 3C       		.uleb128 0x3c
  4341 019d 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 99
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 99
 
 
  4342 019e 00       		.byte	0
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4396 0078 0200     		.2byte	0x2
  4397 007a 7D       		.byte	0x7d
  4398 007b 00       		.sleb128 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 100
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 100
 
 
  4399 007c 02000000 		.4byte	.LCFI6
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4453 0102 7D       		.byte	0x7d
  4454 0103 18       		.sleb128 24
  4455 0104 06000000 		.4byte	.LCFI14
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 101
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 101
 
 
  4456 0108 52030000 		.4byte	.LFE4
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4510 018c 04000000 		.4byte	.LCFI21
  4511 0190 0200     		.2byte	0x2
  4512 0192 7D       		.byte	0x7d
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 102
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 102
 
 
  4513 0193 08       		.sleb128 8
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4567 0218 0200     		.2byte	0x2
  4568 021a 77       		.byte	0x77
  4569 021b 10       		.sleb128 16
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 103
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 103
 
 
  4570 021c 00000000 		.4byte	0
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4624 000c 0000     		.2byte	0
  4625 000e 0000     		.2byte	0
  4626 0010 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 104
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 104
 
 
  4627 0014 54060000 		.4byte	.LFE0-.LFB0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4681              	.Ldebug_line0:
  4682 0000 2D040000 		.section	.debug_str,"MS",%progbits,1
  4682      02007900 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 105
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 105
 
 
  4682      00000201 
@@ -6260,455 +6260,455 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 1
  4690      4152545F 
  4690      64657669 
  4690      636500
- 4691              	.LASF91:
- 4692 0029 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\PSoCCreatorWo"
- 4692      73657273 
- 4692      5C4D6172 
- 4692      6B5C446F 
- 4692      63756D65 
- 4693 0057 726B696E 		.ascii	"rking\\PSoC_2_Pi.cydsn\000"
- 4693      675C5053 
- 4693      6F435F32 
- 4693      5F50692E 
- 4693      63796473 
- 4694              	.LASF61:
- 4695 006d 636F6E66 		.ascii	"confIndex\000"
- 4695      496E6465 
- 4695      7800
- 4696              	.LASF7:
- 4697 0077 6C6F6E67 		.ascii	"long long unsigned int\000"
- 4697      206C6F6E 
- 4697      6720756E 
- 4697      7369676E 
- 4697      65642069 
- 4698              	.LASF21:
- 4699 008e 61646472 		.ascii	"addr\000"
- 4699      00
- 4700              	.LASF41:
- 4701 0093 696E7465 		.ascii	"interfaceNumber\000"
- 4701      72666163 
- 4701      654E756D 
- 4701      62657200 
- 4702              	.LASF33:
- 4703 00a3 545F5553 		.ascii	"T_USBUART_XFER_STATUS_BLOCK\000"
- 4703      42554152 
- 4703      545F5846 
- 4703      45525F53 
- 4703      54415455 
- 4704              	.LASF6:
- 4705 00bf 6C6F6E67 		.ascii	"long long int\000"
- 4705      206C6F6E 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 106
+ 4691              	.LASF61:
+ 4692 0029 636F6E66 		.ascii	"confIndex\000"
+ 4692      496E6465 
+ 4692      7800
+ 4693              	.LASF7:
+ 4694 0033 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4694      206C6F6E 
+ 4694      6720756E 
+ 4694      7369676E 
+ 4694      65642069 
+ 4695              	.LASF21:
+ 4696 004a 61646472 		.ascii	"addr\000"
+ 4696      00
+ 4697              	.LASF41:
+ 4698 004f 696E7465 		.ascii	"interfaceNumber\000"
+ 4698      72666163 
+ 4698      654E756D 
+ 4698      62657200 
+ 4699              	.LASF33:
+ 4700 005f 545F5553 		.ascii	"T_USBUART_XFER_STATUS_BLOCK\000"
+ 4700      42554152 
+ 4700      545F5846 
+ 4700      45525F53 
+ 4700      54415455 
+ 4701              	.LASF6:
+ 4702 007b 6C6F6E67 		.ascii	"long long int\000"
+ 4702      206C6F6E 
+ 4702      6720696E 
+ 4702      7400
+ 4703              	.LASF0:
+ 4704 0089 7369676E 		.ascii	"signed char\000"
+ 4704      65642063 
+ 4704      68617200 
+ 4705              	.LASF77:
+ 4706 0095 55534255 		.ascii	"USBUART_TABLE\000"
+ 4706      4152545F 
+ 4706      5441424C 
+ 4706      4500
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 106
 
 
- 4705      6720696E 
- 4705      7400
- 4706              	.LASF0:
- 4707 00cd 7369676E 		.ascii	"signed char\000"
- 4707      65642063 
- 4707      68617200 
- 4708              	.LASF77:
- 4709 00d9 55534255 		.ascii	"USBUART_TABLE\000"
- 4709      4152545F 
- 4709      5441424C 
- 4709      4500
- 4710              	.LASF53:
- 4711 00e7 636C6561 		.ascii	"clearAltSetting\000"
- 4711      72416C74 
- 4711      53657474 
- 4711      696E6700 
- 4712              	.LASF51:
- 4713 00f7 55534255 		.ascii	"USBUART_Config\000"
- 4713      4152545F 
- 4713      436F6E66 
- 4713      696700
- 4714              	.LASF87:
- 4715 0106 55534255 		.ascii	"USBUART_EP\000"
- 4715      4152545F 
- 4715      455000
- 4716              	.LASF79:
- 4717 0111 55534255 		.ascii	"USBUART_MSOS_DESCRIPTOR\000"
- 4717      4152545F 
- 4717      4D534F53 
- 4717      5F444553 
- 4717      43524950 
- 4718              	.LASF4:
- 4719 0129 6C6F6E67 		.ascii	"long int\000"
- 4719      20696E74 
- 4719      00
- 4720              	.LASF76:
- 4721 0132 55534255 		.ascii	"USBUART_DEVICE0_DESCR\000"
- 4721      4152545F 
- 4721      44455649 
- 4721      4345305F 
- 4721      44455343 
- 4722              	.LASF49:
- 4723 0148 55534255 		.ascii	"USBUART_ReadDieID\000"
- 4723      4152545F 
- 4723      52656164 
- 4723      44696549 
- 4723      4400
- 4724              	.LASF9:
- 4725 015a 75696E74 		.ascii	"uint8\000"
- 4725      3800
- 4726              	.LASF20:
- 4727 0160 6570546F 		.ascii	"epToggle\000"
- 4727      67676C65 
- 4727      00
- 4728              	.LASF80:
- 4729 0169 55534255 		.ascii	"USBUART_idSerialNumberStringDescriptor\000"
- 4729      4152545F 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 107
+ 4707              	.LASF53:
+ 4708 00a3 636C6561 		.ascii	"clearAltSetting\000"
+ 4708      72416C74 
+ 4708      53657474 
+ 4708      696E6700 
+ 4709              	.LASF51:
+ 4710 00b3 55534255 		.ascii	"USBUART_Config\000"
+ 4710      4152545F 
+ 4710      436F6E66 
+ 4710      696700
+ 4711              	.LASF87:
+ 4712 00c2 55534255 		.ascii	"USBUART_EP\000"
+ 4712      4152545F 
+ 4712      455000
+ 4713              	.LASF79:
+ 4714 00cd 55534255 		.ascii	"USBUART_MSOS_DESCRIPTOR\000"
+ 4714      4152545F 
+ 4714      4D534F53 
+ 4714      5F444553 
+ 4714      43524950 
+ 4715              	.LASF4:
+ 4716 00e5 6C6F6E67 		.ascii	"long int\000"
+ 4716      20696E74 
+ 4716      00
+ 4717              	.LASF76:
+ 4718 00ee 55534255 		.ascii	"USBUART_DEVICE0_DESCR\000"
+ 4718      4152545F 
+ 4718      44455649 
+ 4718      4345305F 
+ 4718      44455343 
+ 4719              	.LASF49:
+ 4720 0104 55534255 		.ascii	"USBUART_ReadDieID\000"
+ 4720      4152545F 
+ 4720      52656164 
+ 4720      44696549 
+ 4720      4400
+ 4721              	.LASF9:
+ 4722 0116 75696E74 		.ascii	"uint8\000"
+ 4722      3800
+ 4723              	.LASF20:
+ 4724 011c 6570546F 		.ascii	"epToggle\000"
+ 4724      67676C65 
+ 4724      00
+ 4725              	.LASF80:
+ 4726 0125 55534255 		.ascii	"USBUART_idSerialNumberStringDescriptor\000"
+ 4726      4152545F 
+ 4726      69645365 
+ 4726      7269616C 
+ 4726      4E756D62 
+ 4727              	.LASF12:
+ 4728 014c 646F7562 		.ascii	"double\000"
+ 4728      6C6500
+ 4729              	.LASF75:
+ 4730 0153 55534255 		.ascii	"USBUART_cdc_data_out_ep\000"
+ 4730      4152545F 
+ 4730      6364635F 
+ 4730      64617461 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 107
 
 
- 4729      69645365 
- 4729      7269616C 
- 4729      4E756D62 
- 4730              	.LASF12:
- 4731 0190 646F7562 		.ascii	"double\000"
- 4731      6C6500
- 4732              	.LASF75:
- 4733 0197 55534255 		.ascii	"USBUART_cdc_data_out_ep\000"
- 4733      4152545F 
- 4733      6364635F 
- 4733      64617461 
- 4733      5F6F7574 
- 4734              	.LASF74:
- 4735 01af 55534255 		.ascii	"USBUART_cdc_data_in_ep\000"
- 4735      4152545F 
- 4735      6364635F 
- 4735      64617461 
- 4735      5F696E5F 
- 4736              	.LASF60:
- 4737 01c6 55534255 		.ascii	"USBUART_GetConfigTablePtr\000"
- 4737      4152545F 
- 4737      47657443 
- 4737      6F6E6669 
- 4737      67546162 
- 4738              	.LASF35:
- 4739 01e0 70446174 		.ascii	"pData\000"
- 4739      6100
- 4740              	.LASF22:
- 4741 01e6 65704D6F 		.ascii	"epMode\000"
- 4741      646500
- 4742              	.LASF55:
- 4743 01ed 65705479 		.ascii	"epType\000"
- 4743      706500
- 4744              	.LASF68:
- 4745 01f4 55534255 		.ascii	"USBUART_ValidateAlternateSetting\000"
- 4745      4152545F 
- 4745      56616C69 
- 4745      64617465 
- 4745      416C7465 
- 4746              	.LASF48:
- 4747 0215 76616C75 		.ascii	"value\000"
- 4747      6500
- 4748              	.LASF73:
- 4749 021b 55534255 		.ascii	"USBUART_deviceStatus\000"
- 4749      4152545F 
- 4749      64657669 
- 4749      63655374 
- 4749      61747573 
- 4750              	.LASF8:
- 4751 0230 756E7369 		.ascii	"unsigned int\000"
- 4751      676E6564 
- 4751      20696E74 
- 4751      00
- 4752              	.LASF46:
- 4753 023d 55534255 		.ascii	"USBUART_tBuffer\000"
- 4753      4152545F 
- 4753      74427566 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 108
+ 4730      5F6F7574 
+ 4731              	.LASF74:
+ 4732 016b 55534255 		.ascii	"USBUART_cdc_data_in_ep\000"
+ 4732      4152545F 
+ 4732      6364635F 
+ 4732      64617461 
+ 4732      5F696E5F 
+ 4733              	.LASF60:
+ 4734 0182 55534255 		.ascii	"USBUART_GetConfigTablePtr\000"
+ 4734      4152545F 
+ 4734      47657443 
+ 4734      6F6E6669 
+ 4734      67546162 
+ 4735              	.LASF35:
+ 4736 019c 70446174 		.ascii	"pData\000"
+ 4736      6100
+ 4737              	.LASF22:
+ 4738 01a2 65704D6F 		.ascii	"epMode\000"
+ 4738      646500
+ 4739              	.LASF55:
+ 4740 01a9 65705479 		.ascii	"epType\000"
+ 4740      706500
+ 4741              	.LASF68:
+ 4742 01b0 55534255 		.ascii	"USBUART_ValidateAlternateSetting\000"
+ 4742      4152545F 
+ 4742      56616C69 
+ 4742      64617465 
+ 4742      416C7465 
+ 4743              	.LASF48:
+ 4744 01d1 76616C75 		.ascii	"value\000"
+ 4744      6500
+ 4745              	.LASF73:
+ 4746 01d7 55534255 		.ascii	"USBUART_deviceStatus\000"
+ 4746      4152545F 
+ 4746      64657669 
+ 4746      63655374 
+ 4746      61747573 
+ 4747              	.LASF8:
+ 4748 01ec 756E7369 		.ascii	"unsigned int\000"
+ 4748      676E6564 
+ 4748      20696E74 
+ 4748      00
+ 4749              	.LASF46:
+ 4750 01f9 55534255 		.ascii	"USBUART_tBuffer\000"
+ 4750      4152545F 
+ 4750      74427566 
+ 4750      66657200 
+ 4751              	.LASF5:
+ 4752 0209 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4752      20756E73 
+ 4752      69676E65 
+ 4752      6420696E 
+ 4752      7400
+ 4753              	.LASF90:
+ 4754 021b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\USBUART_std.c\000"
+ 4754      6E657261 
+ 4754      7465645F 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 108
 
 
- 4753      66657200 
- 4754              	.LASF5:
- 4755 024d 6C6F6E67 		.ascii	"long unsigned int\000"
- 4755      20756E73 
- 4755      69676E65 
- 4755      6420696E 
- 4755      7400
- 4756              	.LASF90:
- 4757 025f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\USBUART_std.c\000"
- 4757      6E657261 
- 4757      7465645F 
- 4757      536F7572 
- 4757      63655C50 
- 4758              	.LASF59:
- 4759 0286 55534255 		.ascii	"USBUART_HandleStandardRqst\000"
- 4759      4152545F 
- 4759      48616E64 
- 4759      6C655374 
- 4759      616E6461 
- 4760              	.LASF92:
- 4761 02a1 55534255 		.ascii	"USBUART_GetDeviceTablePtr\000"
- 4761      4152545F 
- 4761      47657444 
- 4761      65766963 
- 4761      65546162 
- 4762              	.LASF3:
- 4763 02bb 73686F72 		.ascii	"short unsigned int\000"
- 4763      7420756E 
- 4763      7369676E 
- 4763      65642069 
- 4763      6E7400
- 4764              	.LASF56:
- 4765 02ce 70446573 		.ascii	"pDescr\000"
- 4765      637200
- 4766              	.LASF63:
- 4767 02d5 70496E74 		.ascii	"pInterfaceClass\000"
- 4767      65726661 
- 4767      6365436C 
- 4767      61737300 
- 4768              	.LASF25:
- 4769 02e5 696E7465 		.ascii	"interface\000"
- 4769      72666163 
- 4769      6500
- 4770              	.LASF50:
- 4771 02ef 55534255 		.ascii	"USBUART_ConfigReg\000"
- 4771      4152545F 
- 4771      436F6E66 
- 4771      69675265 
- 4771      6700
- 4772              	.LASF39:
- 4773 0301 545F5553 		.ascii	"T_USBUART_LUT\000"
- 4773      42554152 
- 4773      545F4C55 
- 4773      5400
- 4774              	.LASF84:
- 4775 030f 55534255 		.ascii	"USBUART_deviceAddress\000"
- 4775      4152545F 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 109
+ 4754      536F7572 
+ 4754      63655C50 
+ 4755              	.LASF59:
+ 4756 0242 55534255 		.ascii	"USBUART_HandleStandardRqst\000"
+ 4756      4152545F 
+ 4756      48616E64 
+ 4756      6C655374 
+ 4756      616E6461 
+ 4757              	.LASF92:
+ 4758 025d 55534255 		.ascii	"USBUART_GetDeviceTablePtr\000"
+ 4758      4152545F 
+ 4758      47657444 
+ 4758      65766963 
+ 4758      65546162 
+ 4759              	.LASF3:
+ 4760 0277 73686F72 		.ascii	"short unsigned int\000"
+ 4760      7420756E 
+ 4760      7369676E 
+ 4760      65642069 
+ 4760      6E7400
+ 4761              	.LASF56:
+ 4762 028a 70446573 		.ascii	"pDescr\000"
+ 4762      637200
+ 4763              	.LASF63:
+ 4764 0291 70496E74 		.ascii	"pInterfaceClass\000"
+ 4764      65726661 
+ 4764      6365436C 
+ 4764      61737300 
+ 4765              	.LASF25:
+ 4766 02a1 696E7465 		.ascii	"interface\000"
+ 4766      72666163 
+ 4766      6500
+ 4767              	.LASF50:
+ 4768 02ab 55534255 		.ascii	"USBUART_ConfigReg\000"
+ 4768      4152545F 
+ 4768      436F6E66 
+ 4768      69675265 
+ 4768      6700
+ 4769              	.LASF39:
+ 4770 02bd 545F5553 		.ascii	"T_USBUART_LUT\000"
+ 4770      42554152 
+ 4770      545F4C55 
+ 4770      5400
+ 4771              	.LASF84:
+ 4772 02cb 55534255 		.ascii	"USBUART_deviceAddress\000"
+ 4772      4152545F 
+ 4772      64657669 
+ 4772      63654164 
+ 4772      64726573 
+ 4773              	.LASF19:
+ 4774 02e1 68774570 		.ascii	"hwEpState\000"
+ 4774      53746174 
+ 4774      6500
+ 4775              	.LASF45:
+ 4776 02eb 64657363 		.ascii	"descrLength\000"
+ 4776      724C656E 
+ 4776      67746800 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 109
 
 
- 4775      64657669 
- 4775      63654164 
- 4775      64726573 
- 4776              	.LASF19:
- 4777 0325 68774570 		.ascii	"hwEpState\000"
- 4777      53746174 
- 4777      6500
- 4778              	.LASF45:
- 4779 032f 64657363 		.ascii	"descrLength\000"
- 4779      724C656E 
- 4779      67746800 
- 4780              	.LASF16:
- 4781 033b 73697A65 		.ascii	"sizetype\000"
- 4781      74797065 
- 4781      00
- 4782              	.LASF58:
- 4783 0344 55534255 		.ascii	"USBUART_ConfigAltChanged\000"
- 4783      4152545F 
- 4783      436F6E66 
- 4783      6967416C 
- 4783      74436861 
- 4784              	.LASF47:
- 4785 035d 70546D70 		.ascii	"pTmp\000"
- 4785      00
- 4786              	.LASF38:
- 4787 0362 705F6C69 		.ascii	"p_list\000"
- 4787      737400
- 4788              	.LASF57:
- 4789 0369 62756666 		.ascii	"buffCount\000"
- 4789      436F756E 
- 4789      7400
- 4790              	.LASF17:
- 4791 0373 61747472 		.ascii	"attrib\000"
- 4791      696200
- 4792              	.LASF86:
- 4793 037a 55534255 		.ascii	"USBUART_interfaceClass\000"
- 4793      4152545F 
- 4793      696E7465 
- 4793      72666163 
- 4793      65436C61 
- 4794              	.LASF88:
- 4795 0391 55534255 		.ascii	"USBUART_currentTD\000"
- 4795      4152545F 
- 4795      63757272 
- 4795      656E7454 
- 4795      4400
- 4796              	.LASF64:
- 4797 03a3 63757272 		.ascii	"currentInterfacesNum\000"
- 4797      656E7449 
- 4797      6E746572 
- 4797      66616365 
- 4797      734E756D 
- 4798              	.LASF78:
- 4799 03b8 55534255 		.ascii	"USBUART_STRING_DESCRIPTORS\000"
- 4799      4152545F 
- 4799      53545249 
- 4799      4E475F44 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 110
+ 4777              	.LASF16:
+ 4778 02f7 73697A65 		.ascii	"sizetype\000"
+ 4778      74797065 
+ 4778      00
+ 4779              	.LASF58:
+ 4780 0300 55534255 		.ascii	"USBUART_ConfigAltChanged\000"
+ 4780      4152545F 
+ 4780      436F6E66 
+ 4780      6967416C 
+ 4780      74436861 
+ 4781              	.LASF47:
+ 4782 0319 70546D70 		.ascii	"pTmp\000"
+ 4782      00
+ 4783              	.LASF38:
+ 4784 031e 705F6C69 		.ascii	"p_list\000"
+ 4784      737400
+ 4785              	.LASF57:
+ 4786 0325 62756666 		.ascii	"buffCount\000"
+ 4786      436F756E 
+ 4786      7400
+ 4787              	.LASF17:
+ 4788 032f 61747472 		.ascii	"attrib\000"
+ 4788      696200
+ 4789              	.LASF86:
+ 4790 0336 55534255 		.ascii	"USBUART_interfaceClass\000"
+ 4790      4152545F 
+ 4790      696E7465 
+ 4790      72666163 
+ 4790      65436C61 
+ 4791              	.LASF88:
+ 4792 034d 55534255 		.ascii	"USBUART_currentTD\000"
+ 4792      4152545F 
+ 4792      63757272 
+ 4792      656E7454 
+ 4792      4400
+ 4793              	.LASF64:
+ 4794 035f 63757272 		.ascii	"currentInterfacesNum\000"
+ 4794      656E7449 
+ 4794      6E746572 
+ 4794      66616365 
+ 4794      734E756D 
+ 4795              	.LASF78:
+ 4796 0374 55534255 		.ascii	"USBUART_STRING_DESCRIPTORS\000"
+ 4796      4152545F 
+ 4796      53545249 
+ 4796      4E475F44 
+ 4796      45534352 
+ 4797              	.LASF69:
+ 4798 038f 696E7465 		.ascii	"interfaceNum\000"
+ 4798      72666163 
+ 4798      654E756D 
+ 4798      00
+ 4799              	.LASF11:
+ 4800 039c 666C6F61 		.ascii	"float\000"
+ 4800      7400
+ 4801              	.LASF18:
+ 4802 03a2 61706945 		.ascii	"apiEpState\000"
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 110
 
 
- 4799      45534352 
- 4800              	.LASF69:
- 4801 03d3 696E7465 		.ascii	"interfaceNum\000"
- 4801      72666163 
- 4801      654E756D 
- 4801      00
- 4802              	.LASF11:
- 4803 03e0 666C6F61 		.ascii	"float\000"
- 4803      7400
- 4804              	.LASF18:
- 4805 03e6 61706945 		.ascii	"apiEpState\000"
- 4805      70537461 
- 4805      746500
- 4806              	.LASF65:
- 4807 03f1 55534255 		.ascii	"USBUART_TerminateEP\000"
- 4807      4152545F 
- 4807      5465726D 
- 4807      696E6174 
- 4807      65455000 
- 4808              	.LASF42:
- 4809 0405 636F6E66 		.ascii	"configurationN\000"
- 4809      69677572 
- 4809      6174696F 
- 4809      6E4E00
- 4810              	.LASF43:
- 4811 0414 70537472 		.ascii	"pStr\000"
- 4811      00
- 4812              	.LASF89:
- 4813 0419 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 4813      4320342E 
- 4813      372E3320 
- 4813      32303133 
- 4813      30333132 
- 4814 044c 616E6368 		.ascii	"anch revision 196615]\000"
- 4814      20726576 
- 4814      6973696F 
- 4814      6E203139 
- 4814      36363135 
- 4815              	.LASF15:
- 4816 0462 72656738 		.ascii	"reg8\000"
- 4816      00
- 4817              	.LASF82:
- 4818 0467 55534255 		.ascii	"USBUART_interfaceSetting\000"
- 4818      4152545F 
- 4818      696E7465 
- 4818      72666163 
- 4818      65536574 
- 4819              	.LASF52:
- 4820 0480 64657363 		.ascii	"descr\000"
- 4820      7200
- 4821              	.LASF1:
- 4822 0486 756E7369 		.ascii	"unsigned char\000"
- 4822      676E6564 
- 4822      20636861 
- 4822      7200
- 4823              	.LASF2:
- 4824 0494 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 111
+ 4802      70537461 
+ 4802      746500
+ 4803              	.LASF65:
+ 4804 03ad 55534255 		.ascii	"USBUART_TerminateEP\000"
+ 4804      4152545F 
+ 4804      5465726D 
+ 4804      696E6174 
+ 4804      65455000 
+ 4805              	.LASF42:
+ 4806 03c1 636F6E66 		.ascii	"configurationN\000"
+ 4806      69677572 
+ 4806      6174696F 
+ 4806      6E4E00
+ 4807              	.LASF43:
+ 4808 03d0 70537472 		.ascii	"pStr\000"
+ 4808      00
+ 4809              	.LASF89:
+ 4810 03d5 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 4810      4320342E 
+ 4810      372E3320 
+ 4810      32303133 
+ 4810      30333132 
+ 4811 0408 616E6368 		.ascii	"anch revision 196615]\000"
+ 4811      20726576 
+ 4811      6973696F 
+ 4811      6E203139 
+ 4811      36363135 
+ 4812              	.LASF15:
+ 4813 041e 72656738 		.ascii	"reg8\000"
+ 4813      00
+ 4814              	.LASF82:
+ 4815 0423 55534255 		.ascii	"USBUART_interfaceSetting\000"
+ 4815      4152545F 
+ 4815      696E7465 
+ 4815      72666163 
+ 4815      65536574 
+ 4816              	.LASF52:
+ 4817 043c 64657363 		.ascii	"descr\000"
+ 4817      7200
+ 4818              	.LASF1:
+ 4819 0442 756E7369 		.ascii	"unsigned char\000"
+ 4819      676E6564 
+ 4819      20636861 
+ 4819      7200
+ 4820              	.LASF2:
+ 4821 0450 73686F72 		.ascii	"short int\000"
+ 4821      7420696E 
+ 4821      7400
+ 4822              	.LASF91:
+ 4823 045a 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\GitRepo\\psoc"
+ 4823      73657273 
+ 4823      5C4D6172 
+ 4823      6B5C446F 
+ 4823      63756D65 
+ 4824 0487 5F325F70 		.ascii	"_2_pi\\PSoC Creator\\PSoC_2_Pi.cydsn\000"
+ 4824      695C5053 
+ 4824      6F432043 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 111
 
 
- 4824      7420696E 
- 4824      7400
+ 4824      72656174 
+ 4824      6F725C50 
  4825              	.LASF62:
- 4826 049e 55534255 		.ascii	"USBUART_GetInterfaceClassTablePtr\000"
+ 4826 04aa 55534255 		.ascii	"USBUART_GetInterfaceClassTablePtr\000"
  4826      4152545F 
  4826      47657449 
  4826      6E746572 
  4826      66616365 
  4827              	.LASF37:
- 4828 04c0 545F5553 		.ascii	"T_USBUART_TD\000"
+ 4828 04cc 545F5553 		.ascii	"T_USBUART_TD\000"
  4828      42554152 
  4828      545F5444 
  4828      00
  4829              	.LASF85:
- 4830 04cd 55534255 		.ascii	"USBUART_interfaceStatus\000"
+ 4830 04d9 55534255 		.ascii	"USBUART_interfaceStatus\000"
  4830      4152545F 
  4830      696E7465 
  4830      72666163 
  4830      65537461 
  4831              	.LASF28:
- 4832 04e5 61747472 		.ascii	"attributes\000"
+ 4832 04f1 61747472 		.ascii	"attributes\000"
  4832      69627574 
  4832      657300
  4833              	.LASF67:
- 4834 04f0 55534255 		.ascii	"USBUART_ClearEndpointHalt\000"
+ 4834 04fc 55534255 		.ascii	"USBUART_ClearEndpointHalt\000"
  4834      4152545F 
  4834      436C6561 
  4834      72456E64 
  4834      706F696E 
  4835              	.LASF27:
- 4836 050a 616C7453 		.ascii	"altSetting\000"
+ 4836 0516 616C7453 		.ascii	"altSetting\000"
  4836      65747469 
  4836      6E6700
  4837              	.LASF14:
- 4838 0515 63686172 		.ascii	"char\000"
+ 4838 0521 63686172 		.ascii	"char\000"
  4838      00
  4839              	.LASF24:
- 4840 051a 62756666 		.ascii	"bufferSize\000"
+ 4840 0526 62756666 		.ascii	"bufferSize\000"
  4840      65725369 
  4840      7A6500
  4841              	.LASF40:
- 4842 0525 72657175 		.ascii	"requestHandled\000"
+ 4842 0531 72657175 		.ascii	"requestHandled\000"
  4842      65737448 
  4842      616E646C 
  4842      656400
  4843              	.LASF26:
- 4844 0534 545F5553 		.ascii	"T_USBUART_EP_CTL_BLOCK\000"
+ 4844 0540 545F5553 		.ascii	"T_USBUART_EP_CTL_BLOCK\000"
  4844      42554152 
  4844      545F4550 
  4844      5F43544C 
  4844      5F424C4F 
  4845              	.LASF23:
- 4846 054b 62756666 		.ascii	"buffOffset\000"
+ 4846 0557 62756666 		.ascii	"buffOffset\000"
  4846      4F666673 
  4846      657400
  4847              	.LASF13:
- 4848 0556 63686172 		.ascii	"char8\000"
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccDiWvwa.s 			page 112
+ 4848 0562 63686172 		.ascii	"char8\000"
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccltK92Y.s 			page 112
 
 
  4848      3800
  4849              	.LASF30:
- 4850 055c 545F5553 		.ascii	"T_USBUART_EP_SETTINGS_BLOCK\000"
+ 4850 0568 545F5553 		.ascii	"T_USBUART_EP_SETTINGS_BLOCK\000"
  4850      42554152 
  4850      545F4550 
  4850      5F534554 
  4850      54494E47 
  4851              	.LASF81:
- 4852 0578 55534255 		.ascii	"USBUART_interfaceNumber\000"
+ 4852 0584 55534255 		.ascii	"USBUART_interfaceNumber\000"
  4852      4152545F 
  4852      696E7465 
  4852      72666163 
  4852      654E756D 
  4853              	.LASF32:
- 4854 0590 6C656E67 		.ascii	"length\000"
+ 4854 059c 6C656E67 		.ascii	"length\000"
  4854      746800
  4855              	.LASF44:
- 4856 0597 6E537472 		.ascii	"nStr\000"
+ 4856 05a3 6E537472 		.ascii	"nStr\000"
  4856      00
  4857              	.LASF54:
- 4858 059c 6375725F 		.ascii	"cur_ep\000"
+ 4858 05a8 6375725F 		.ascii	"cur_ep\000"
  4858      657000
  4859              	.LASF31:
- 4860 05a3 73746174 		.ascii	"status\000"
+ 4860 05af 73746174 		.ascii	"status\000"
  4860      757300
  4861              	.LASF71:
- 4862 05aa 55534255 		.ascii	"USBUART_configuration\000"
+ 4862 05b6 55534255 		.ascii	"USBUART_configuration\000"
  4862      4152545F 
  4862      636F6E66 
  4862      69677572 
  4862      6174696F 
  4863              	.LASF29:
- 4864 05c0 624D6973 		.ascii	"bMisc\000"
+ 4864 05cc 624D6973 		.ascii	"bMisc\000"
  4864      6300
  4865              	.LASF83:
- 4866 05c6 55534255 		.ascii	"USBUART_interfaceSetting_last\000"
+ 4866 05d2 55534255 		.ascii	"USBUART_interfaceSetting_last\000"
  4866      4152545F 
  4866      696E7465 
  4866      72666163 
  4866      65536574 
  4867              	.LASF66:
- 4868 05e4 55534255 		.ascii	"USBUART_SetEndpointHalt\000"
+ 4868 05f0 55534255 		.ascii	"USBUART_SetEndpointHalt\000"
  4868      4152545F 
  4868      53657445 
  4868      6E64706F 
  4868      696E7448 
  4869              	.LASF72:
- 4870 05fc 55534255 		.ascii	"USBUART_configurationChanged\000"
+ 4870 0608 55534255 		.ascii	"USBUART_configurationChanged\000"
  4870      4152545F 
  4870      636F6E66 
  4870      69677572 

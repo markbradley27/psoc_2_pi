@@ -410,8 +410,6 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\LINX.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\LINX.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\LINX.o
- .text.LINX_SendResponse
-                0x00000000       0x14 .\CortexM3\ARM_GCC_473\Debug\LINX.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
@@ -2168,8 +2166,6 @@ Discarded input sections
                 0x00000000       0x24 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
  .text.USBUART_GetEPState
                 0x00000000       0x34 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
- .text.USBUART_LoadInEP
-                0x00000000      0x150 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
  .text.USBUART_DisableOutEP
                 0x00000000       0x40 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
  .text.USBUART_Force
@@ -2182,8 +2178,6 @@ Discarded input sections
                 0x00000000       0x34 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
- .text.USBUART_PutData
-                0x00000000       0x94 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
  .text.USBUART_StrLen
                 0x00000000       0x34 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
  .text.USBUART_PutString
@@ -2514,7 +2508,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000960                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00004b00     0x4198
+.text           0x00004b00     0x455c
  CREATE_OBJECT_SYMBOLS
                 0x00004b00                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -2531,291 +2525,300 @@ END GROUP
                 0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00004b18       0x54 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
- .text.main     0x00004b6c       0x50 .\CortexM3\ARM_GCC_473\Debug\main.o
+ .text.main     0x00004b6c       0x54 .\CortexM3\ARM_GCC_473\Debug\main.o
                 0x00004b6c                main
  .text.LINX_Initialize
-                0x00004bbc       0x40 .\CortexM3\ARM_GCC_473\Debug\LINX.o
-                0x00004bbc                LINX_Initialize
+                0x00004bc0       0x40 .\CortexM3\ARM_GCC_473\Debug\LINX.o
+                0x00004bc0                LINX_Initialize
  .text.LINX_GetCommand
-                0x00004bfc      0x104 .\CortexM3\ARM_GCC_473\Debug\LINX.o
-                0x00004bfc                LINX_GetCommand
+                0x00004c00      0x11c .\CortexM3\ARM_GCC_473\Debug\LINX.o
+                0x00004c00                LINX_GetCommand
  .text.LINX_CalculateChecksum
-                0x00004d00       0x4c .\CortexM3\ARM_GCC_473\Debug\LINX.o
-                0x00004d00                LINX_CalculateChecksum
+                0x00004d1c       0x48 .\CortexM3\ARM_GCC_473\Debug\LINX.o
+                0x00004d1c                LINX_CalculateChecksum
  .text.LINX_ProcessCommand
-                0x00004d4c       0x18 .\CortexM3\ARM_GCC_473\Debug\LINX.o
-                0x00004d4c                LINX_ProcessCommand
+                0x00004d64      0x1b4 .\CortexM3\ARM_GCC_473\Debug\LINX.o
+                0x00004d64                LINX_ProcessCommand
+ .text.LINX_SendResponse
+                0x00004f18       0x2c .\CortexM3\ARM_GCC_473\Debug\LINX.o
+                0x00004f18                LINX_SendResponse
  .text.IntDefaultHandler
-                0x00004d64        0x8 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x00004d64                IntDefaultHandler
- .text.Start_c  0x00004d6c       0xcc .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x00004d6c                Start_c
+                0x00004f44        0x8 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x00004f44                IntDefaultHandler
+ .text.Start_c  0x00004f4c       0xcc .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x00004f4c                Start_c
  .text.initialize_psoc
-                0x00004e38       0xb8 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x00004e38                initialize_psoc
+                0x00005018       0xb8 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x00005018                initialize_psoc
  .text.CYMEMZERO
-                0x00004ef0       0x20 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                0x000050d0       0x20 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x00004f10       0x20 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                0x000050f0       0x20 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
  .text.CyClockStartupError
-                0x00004f30        0xc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                0x00005110        0xc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
  .text.cfg_write_bytes32
-                0x00004f3c       0x84 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                0x0000511c       0x84 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x00004fc0      0x27c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                0x000051a0      0x27c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x0000523c      0x1bc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                0x0000541c      0x1bc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
  .text.cyfitter_cfg
-                0x000053f8      0x364 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
-                0x000053f8                cyfitter_cfg
+                0x000055d8      0x364 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                0x000055d8                cyfitter_cfg
  .text.SPIS_1_Init
-                0x0000575c       0x3c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                0x0000575c                SPIS_1_Init
+                0x0000593c       0x3c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                0x0000593c                SPIS_1_Init
  .text.SPIS_1_Enable
-                0x00005798       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                0x00005798                SPIS_1_Enable
+                0x00005978       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                0x00005978                SPIS_1_Enable
  .text.SPIS_1_Start
-                0x0000580c       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                0x0000580c                SPIS_1_Start
+                0x000059ec       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                0x000059ec                SPIS_1_Start
  .text.SPIS_1_ReadTxStatus
-                0x00005838       0x20 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                0x00005838                SPIS_1_ReadTxStatus
+                0x00005a18       0x20 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                0x00005a18                SPIS_1_ReadTxStatus
  .text.SPIS_1_ReadRxStatus
-                0x00005858       0x20 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                0x00005858                SPIS_1_ReadRxStatus
+                0x00005a38       0x20 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                0x00005a38                SPIS_1_ReadRxStatus
  .text.SPIS_1_ClearRxBuffer
-                0x00005878       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                0x00005878                SPIS_1_ClearRxBuffer
+                0x00005a58       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                0x00005a58                SPIS_1_ClearRxBuffer
  .text.SPIS_1_ClearTxBuffer
-                0x000058a4       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                0x000058a4                SPIS_1_ClearTxBuffer
+                0x00005a84       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                0x00005a84                SPIS_1_ClearTxBuffer
  .text.SPIS_1_ClearFIFO
-                0x000058fc       0x78 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                0x000058fc                SPIS_1_ClearFIFO
- *fill*         0x00005974        0x4 00
- .text          0x00005978       0x28 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyBootAsmGnu.o)
-                0x00005978                CyDelayCycles
-                0x0000598c                CyEnterCriticalSection
-                0x00005994                CyExitCriticalSection
+                0x00005adc       0x78 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                0x00005adc                SPIS_1_ClearFIFO
+ *fill*         0x00005b54        0x4 00
+ .text          0x00005b58       0x28 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyBootAsmGnu.o)
+                0x00005b58                CyDelayCycles
+                0x00005b6c                CyEnterCriticalSection
+                0x00005b74                CyExitCriticalSection
  .text.CyDmacConfigure
-                0x000059a0       0x70 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
-                0x000059a0                CyDmacConfigure
- .text.CyHalt   0x00005a10       0x18 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
-                0x00005a10                CyHalt
+                0x00005b80       0x70 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
+                0x00005b80                CyDmacConfigure
+ .text.CyHalt   0x00005bf0       0x18 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+                0x00005bf0                CyHalt
  .text.CyDelayUs
-                0x00005a28       0x28 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
-                0x00005a28                CyDelayUs
+                0x00005c08       0x28 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+                0x00005c08                CyDelayUs
  .text.CyIntSetVector
-                0x00005a50       0x60 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
-                0x00005a50                CyIntSetVector
+                0x00005c30       0x60 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+                0x00005c30                CyIntSetVector
  .text.CyIntSetPriority
-                0x00005ab0       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
-                0x00005ab0                CyIntSetPriority
+                0x00005c90       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+                0x00005c90                CyIntSetPriority
  .text.USBUART_Start
-                0x00005afc       0x44 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                0x00005afc                USBUART_Start
+                0x00005cdc       0x44 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x00005cdc                USBUART_Start
  .text.USBUART_Init
-                0x00005b40      0x238 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                0x00005b40                USBUART_Init
+                0x00005d20      0x238 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x00005d20                USBUART_Init
  .text.USBUART_InitComponent
-                0x00005d78      0x138 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                0x00005d78                USBUART_InitComponent
+                0x00005f58      0x138 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x00005f58                USBUART_InitComponent
  .text.USBUART_ReInitComponent
-                0x00005eb0       0x88 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                0x00005eb0                USBUART_ReInitComponent
+                0x00006090       0x88 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x00006090                USBUART_ReInitComponent
  .text.USBUART_GetConfiguration
-                0x00005f38       0x18 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                0x00005f38                USBUART_GetConfiguration
+                0x00006118       0x18 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x00006118                USBUART_GetConfiguration
  .text.USBUART_GetEPCount
-                0x00005f50       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                0x00005f50                USBUART_GetEPCount
+                0x00006130       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x00006130                USBUART_GetEPCount
+ .text.USBUART_LoadInEP
+                0x000061a4      0x150 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x000061a4                USBUART_LoadInEP
  .text.USBUART_ReadOutEP
-                0x00005fc4       0x98 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                0x00005fc4                USBUART_ReadOutEP
+                0x000062f4       0x98 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x000062f4                USBUART_ReadOutEP
  .text.USBUART_EnableOutEP
-                0x0000605c       0x78 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                0x0000605c                USBUART_EnableOutEP
+                0x0000638c       0x78 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                0x0000638c                USBUART_EnableOutEP
  .text.USBUART_DispatchCDCClassRqst
-                0x000060d4      0x11c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
-                0x000060d4                USBUART_DispatchCDCClassRqst
+                0x00006404      0x11c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+                0x00006404                USBUART_DispatchCDCClassRqst
  .text.USBUART_CDC_Init
-                0x000061f0       0x28 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
-                0x000061f0                USBUART_CDC_Init
+                0x00006520       0x28 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+                0x00006520                USBUART_CDC_Init
+ .text.USBUART_PutData
+                0x00006548       0x94 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+                0x00006548                USBUART_PutData
  .text.USBUART_DataIsReady
-                0x00006218       0x34 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
-                0x00006218                USBUART_DataIsReady
+                0x000065dc       0x34 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+                0x000065dc                USBUART_DataIsReady
  .text.USBUART_GetAll
-                0x0000624c       0x54 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
-                0x0000624c                USBUART_GetAll
+                0x00006610       0x54 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+                0x00006610                USBUART_GetAll
  .text.USBUART_EP_0_ISR
-                0x000062a0      0x140 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x000062a0                USBUART_EP_0_ISR
+                0x00006664      0x140 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006664                USBUART_EP_0_ISR
  .text.USBUART_HandleSetup
-                0x000063e0       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x000063e0                USBUART_HandleSetup
+                0x000067a4       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x000067a4                USBUART_HandleSetup
  .text.USBUART_HandleIN
-                0x00006488       0x50 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006488                USBUART_HandleIN
+                0x0000684c       0x50 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x0000684c                USBUART_HandleIN
  .text.USBUART_HandleOUT
-                0x000064d8       0x60 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x000064d8                USBUART_HandleOUT
+                0x0000689c       0x60 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x0000689c                USBUART_HandleOUT
  .text.USBUART_LoadEP0
-                0x00006538      0x138 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006538                USBUART_LoadEP0
+                0x000068fc      0x138 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x000068fc                USBUART_LoadEP0
  .text.USBUART_InitControlRead
-                0x00006670       0x90 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006670                USBUART_InitControlRead
+                0x00006a34       0x90 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006a34                USBUART_InitControlRead
  .text.USBUART_InitZeroLengthControlTransfer
-                0x00006700       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006700                USBUART_InitZeroLengthControlTransfer
+                0x00006ac4       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006ac4                USBUART_InitZeroLengthControlTransfer
  .text.USBUART_ControlReadDataStage
-                0x00006758        0xc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006758                USBUART_ControlReadDataStage
+                0x00006b1c        0xc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006b1c                USBUART_ControlReadDataStage
  .text.USBUART_ControlReadStatusStage
-                0x00006764       0x54 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006764                USBUART_ControlReadStatusStage
+                0x00006b28       0x54 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006b28                USBUART_ControlReadStatusStage
  .text.USBUART_InitControlWrite
-                0x000067b8       0x84 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x000067b8                USBUART_InitControlWrite
+                0x00006b7c       0x84 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006b7c                USBUART_InitControlWrite
  .text.USBUART_ControlWriteDataStage
-                0x0000683c       0xfc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x0000683c                USBUART_ControlWriteDataStage
+                0x00006c00       0xfc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006c00                USBUART_ControlWriteDataStage
  .text.USBUART_ControlWriteStatusStage
-                0x00006938       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006938                USBUART_ControlWriteStatusStage
+                0x00006cfc       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006cfc                USBUART_ControlWriteStatusStage
  .text.USBUART_InitNoDataControlTransfer
-                0x00006964       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006964                USBUART_InitNoDataControlTransfer
+                0x00006d28       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006d28                USBUART_InitNoDataControlTransfer
  .text.USBUART_NoDataControlStatusStage
-                0x000069ac       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x000069ac                USBUART_NoDataControlStatusStage
+                0x00006d70       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006d70                USBUART_NoDataControlStatusStage
  .text.USBUART_UpdateStatusBlock
-                0x00006a10       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006a10                USBUART_UpdateStatusBlock
+                0x00006dd4       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006dd4                USBUART_UpdateStatusBlock
  .text.USBUART_InitializeStatusBlock
-                0x00006a68       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                0x00006a68                USBUART_InitializeStatusBlock
+                0x00006e2c       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                0x00006e2c                USBUART_InitializeStatusBlock
  .text.USBUART_EP_1_ISR
-                0x00006ab0       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
-                0x00006ab0                USBUART_EP_1_ISR
+                0x00006e74       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+                0x00006e74                USBUART_EP_1_ISR
  .text.USBUART_EP_2_ISR
-                0x00006b24       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
-                0x00006b24                USBUART_EP_2_ISR
+                0x00006ee8       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+                0x00006ee8                USBUART_EP_2_ISR
  .text.USBUART_EP_3_ISR
-                0x00006b98       0x7c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
-                0x00006b98                USBUART_EP_3_ISR
+                0x00006f5c       0x7c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+                0x00006f5c                USBUART_EP_3_ISR
  .text.USBUART_SOF_ISR
-                0x00006c14        0xc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
-                0x00006c14                USBUART_SOF_ISR
+                0x00006fd8        0xc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+                0x00006fd8                USBUART_SOF_ISR
  .text.USBUART_BUS_RESET_ISR
-                0x00006c20        0xc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
-                0x00006c20                USBUART_BUS_RESET_ISR
+                0x00006fe4        0xc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+                0x00006fe4                USBUART_BUS_RESET_ISR
  .text.USBUART_HandleStandardRqst
-                0x00006c2c      0x654 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x00006c2c                USBUART_HandleStandardRqst
+                0x00006ff0      0x654 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x00006ff0                USBUART_HandleStandardRqst
  .text.USBUART_ReadDieID
-                0x00007280       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x00007280                USBUART_ReadDieID
+                0x00007644       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x00007644                USBUART_ReadDieID
  .text.USBUART_ConfigReg
-                0x00007328      0x204 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x00007328                USBUART_ConfigReg
+                0x000076ec      0x204 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x000076ec                USBUART_ConfigReg
  .text.USBUART_Config
-                0x0000752c      0x474 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x0000752c                USBUART_Config
+                0x000078f0      0x474 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x000078f0                USBUART_Config
  .text.USBUART_ConfigAltChanged
-                0x000079a0      0x354 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x000079a0                USBUART_ConfigAltChanged
+                0x00007d64      0x354 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x00007d64                USBUART_ConfigAltChanged
  .text.USBUART_GetConfigTablePtr
-                0x00007cf4       0x60 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x00007cf4                USBUART_GetConfigTablePtr
+                0x000080b8       0x60 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x000080b8                USBUART_GetConfigTablePtr
  .text.USBUART_GetDeviceTablePtr
-                0x00007d54       0x28 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x00007d54                USBUART_GetDeviceTablePtr
+                0x00008118       0x28 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x00008118                USBUART_GetDeviceTablePtr
  .text.USBUART_GetInterfaceClassTablePtr
-                0x00007d7c       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x00007d7c                USBUART_GetInterfaceClassTablePtr
+                0x00008140       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x00008140                USBUART_GetInterfaceClassTablePtr
  .text.USBUART_SetEndpointHalt
-                0x00007dd4      0x130 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x00007dd4                USBUART_SetEndpointHalt
+                0x00008198      0x130 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x00008198                USBUART_SetEndpointHalt
  .text.USBUART_ClearEndpointHalt
-                0x00007f04      0x1c4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x00007f04                USBUART_ClearEndpointHalt
+                0x000082c8      0x1c4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x000082c8                USBUART_ClearEndpointHalt
  .text.USBUART_ValidateAlternateSetting
-                0x000080c8       0x90 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                0x000080c8                USBUART_ValidateAlternateSetting
+                0x0000848c       0x90 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                0x0000848c                USBUART_ValidateAlternateSetting
  .text.USBUART_HandleVendorRqst
-                0x00008158       0x70 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
-                0x00008158                USBUART_HandleVendorRqst
+                0x0000851c       0x70 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
+                0x0000851c                USBUART_HandleVendorRqst
  .text.DEBUG_UART_Start
-                0x000081c8       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
-                0x000081c8                DEBUG_UART_Start
+                0x0000858c       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+                0x0000858c                DEBUG_UART_Start
  .text.DEBUG_UART_Init
-                0x000081f4       0x34 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
-                0x000081f4                DEBUG_UART_Init
+                0x000085b8       0x34 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+                0x000085b8                DEBUG_UART_Init
  .text.DEBUG_UART_Enable
-                0x00008228       0x40 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
-                0x00008228                DEBUG_UART_Enable
+                0x000085ec       0x40 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+                0x000085ec                DEBUG_UART_Enable
  .text.DEBUG_UART_PutChar
-                0x00008268       0x38 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
-                0x00008268                DEBUG_UART_PutChar
+                0x0000862c       0x38 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+                0x0000862c                DEBUG_UART_PutChar
  .text.DEBUG_UART_PutString
-                0x000082a0       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
-                0x000082a0                DEBUG_UART_PutString
+                0x00008664       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+                0x00008664                DEBUG_UART_PutString
  .text.DEBUG_UART_PutArray
-                0x000082e8       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
-                0x000082e8                DEBUG_UART_PutArray
+                0x000086ac       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+                0x000086ac                DEBUG_UART_PutArray
  .text.DEBUG_UART_IntClock_Start
-                0x00008330       0x44 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
-                0x00008330                DEBUG_UART_IntClock_Start
+                0x000086f4       0x44 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
+                0x000086f4                DEBUG_UART_IntClock_Start
  .text.USBUART_DispatchClassRqst
-                0x00008374       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
-                0x00008374                USBUART_DispatchClassRqst
+                0x00008738       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
+                0x00008738                USBUART_DispatchClassRqst
  .text.__libc_init_array
-                0x0000841c       0x4c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
-                0x0000841c                __libc_init_array
- .text.memcpy   0x00008468       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
-                0x00008468                memcpy
- .text.memset   0x0000847a       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
-                0x0000847a                memset
- *fill*         0x0000848a        0x2 00
- .text.sprintf  0x0000848c       0x48 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-sprintf.o)
-                0x0000848c                siprintf
-                0x0000848c                sprintf
+                0x000087e0       0x4c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
+                0x000087e0                __libc_init_array
+ .text.memcpy   0x0000882c       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
+                0x0000882c                memcpy
+ .text.memset   0x0000883e       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
+                0x0000883e                memset
+ *fill*         0x0000884e        0x2 00
+ .text.sprintf  0x00008850       0x48 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-sprintf.o)
+                0x00008850                siprintf
+                0x00008850                sprintf
  .text.__ssputc_r
-                0x000084d4       0xae c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-svfprintf.o)
-                0x000084d4                __ssputc_r
- *fill*         0x00008582        0x2 00
+                0x00008898       0xae c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-svfprintf.o)
+                0x00008898                __ssputc_r
+ *fill*         0x00008946        0x2 00
  .text._svfprintf_r
-                0x00008584      0x1f4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-svfprintf.o)
-                0x00008584                _svfiprintf_r
-                0x00008584                _svfprintf_r
+                0x00008948      0x1f4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-svfprintf.o)
+                0x00008948                _svfiprintf_r
+                0x00008948                _svfprintf_r
  .text._printf_common
-                0x00008778       0xde c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-vfprintf_i.o)
-                0x00008778                _printf_common
- *fill*         0x00008856        0x2 00
+                0x00008b3c       0xde c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-vfprintf_i.o)
+                0x00008b3c                _printf_common
+ *fill*         0x00008c1a        0x2 00
  .text._printf_i
-                0x00008858      0x248 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-vfprintf_i.o)
-                0x00008858                _printf_i
- .text._free_r  0x00008aa0       0x88 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-freer.o)
-                0x00008aa0                _free_r
+                0x00008c1c      0x248 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-vfprintf_i.o)
+                0x00008c1c                _printf_i
+ .text._free_r  0x00008e64       0x88 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-freer.o)
+                0x00008e64                _free_r
  .text._malloc_r
-                0x00008b28       0x94 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-mallocr.o)
-                0x00008b28                _malloc_r
- .text.memchr   0x00008bbc       0x1c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memchr.o)
-                0x00008bbc                memchr
+                0x00008eec       0x94 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-mallocr.o)
+                0x00008eec                _malloc_r
+ .text.memchr   0x00008f80       0x1c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memchr.o)
+                0x00008f80                memchr
  .text._realloc_r
-                0x00008bd8       0x48 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-reallocr.o)
-                0x00008bd8                _realloc_r
- .text._sbrk_r  0x00008c20       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-sbrkr.o)
-                0x00008c20                _sbrk_r
- .text.strlen   0x00008c40       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
-                0x00008c40                strlen
+                0x00008f9c       0x48 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-reallocr.o)
+                0x00008f9c                _realloc_r
+ .text._sbrk_r  0x00008fe4       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-sbrkr.o)
+                0x00008fe4                _sbrk_r
+ .text.strlen   0x00009004       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
+                0x00009004                strlen
  .text._malloc_usable_size_r
-                0x00008c50       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-msizer.o)
-                0x00008c50                _malloc_usable_size_r
- *fill*         0x00008c62        0x2 00
- .text._sbrk    0x00008c64       0x34 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a(sbrk.o)
-                0x00008c64                _sbrk
+                0x00009014       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-msizer.o)
+                0x00009014                _malloc_usable_size_r
+ *fill*         0x00009026        0x2 00
+ .text._sbrk    0x00009028       0x34 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a(sbrk.o)
+                0x00009028                _sbrk
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -2828,98 +2831,97 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00008c98        0x0
+.v4_bx          0x0000905c        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00008c98        0x0
+.iplt           0x0000905c        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00008c98        0x4
+.eh_frame       0x0000905c        0x4
  *(.eh_frame)
- .eh_frame      0x00008c98        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
- .eh_frame      0x00008c98        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtend.o
-                0x00008c9c                PROVIDE (__exidx_start, .)
+ .eh_frame      0x0000905c        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .eh_frame      0x0000905c        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtend.o
+                0x00009060                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00008c9c                __exidx_end = .
+                0x00009060                __exidx_end = .
 
-.rodata         0x00008c9c      0x31c
+.rodata         0x00009060      0x360
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00008c9c       0xc8 .\CortexM3\ARM_GCC_473\Debug\LINX.o
- .rodata        0x00008d64       0x3c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
-                0x00008d64                ADC_DelSig_1_AMux__addrTable
-                0x00008d6c                ADC_DelSig_1_AMux__maskTable
- .rodata        0x00008da0       0x14 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
- .rodata        0x00008db4      0x194 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
-                0x00008db4                USBUART_DEVICE0_DESCR
-                0x00008dc8                USBUART_DEVICE0_CONFIGURATION0_DESCR
-                0x00008e0c                USBUART_STRING_DESCRIPTORS
-                0x00008eac                USBUART_SN_STRING_DESCRIPTOR
-                0x00008eb0                USBUART_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
-                0x00008ec8                USBUART_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
-                0x00008ecc                USBUART_DEVICE0_CONFIGURATION0_TABLE
-                0x00008ef4                USBUART_DEVICE0_TABLE
-                0x00008f04                USBUART_TABLE
-                0x00008f0c                USBUART_MSOS_DESCRIPTOR
-                0x00008f20                USBUART_MSOS_CONFIGURATION_DESCR
+ .rodata        0x00009060      0x110 .\CortexM3\ARM_GCC_473\Debug\LINX.o
+ .rodata        0x00009170       0x3c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                0x00009170                ADC_DelSig_1_AMux__addrTable
+                0x00009178                ADC_DelSig_1_AMux__maskTable
+ .rodata        0x000091ac       0x14 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+ .rodata        0x000091c0      0x194 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
+                0x000091c0                USBUART_DEVICE0_DESCR
+                0x000091d4                USBUART_DEVICE0_CONFIGURATION0_DESCR
+                0x00009218                USBUART_STRING_DESCRIPTORS
+                0x000092b8                USBUART_SN_STRING_DESCRIPTOR
+                0x000092bc                USBUART_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+                0x000092d4                USBUART_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+                0x000092d8                USBUART_DEVICE0_CONFIGURATION0_TABLE
+                0x00009300                USBUART_DEVICE0_TABLE
+                0x00009310                USBUART_TABLE
+                0x00009318                USBUART_MSOS_DESCRIPTOR
+                0x0000932c                USBUART_MSOS_CONFIGURATION_DESCR
  .rodata.str1.1
-                0x00008f48        0x2 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-impure.o)
+                0x00009354        0x2 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-impure.o)
  .rodata.str1.1
-                0x00008f4a       0x11 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-svfprintf.o)
+                0x00009356       0x11 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-svfprintf.o)
  .rodata.str1.1
-                0x00008f5b       0x22 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-vfprintf_i.o)
-                0x00008f80                . = ALIGN (0x4)
- *fill*         0x00008f7d        0x3 00
+                0x00009367       0x22 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-vfprintf_i.o)
+                0x0000938c                . = ALIGN (0x4)
+ *fill*         0x00009389        0x3 00
  *(.init)
- .init          0x00008f80        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
-                0x00008f80                _init
- .init          0x00008f84        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
-                0x00008f8c                . = ALIGN (0x4)
-                0x00008f8c                __preinit_array_start = .
+ .init          0x0000938c        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
+                0x0000938c                _init
+ .init          0x00009390        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
+                0x00009398                . = ALIGN (0x4)
+                0x00009398                __preinit_array_start = .
  *(.preinit_array)
-                0x00008f8c                __preinit_array_end = .
-                0x00008f8c                . = ALIGN (0x4)
-                0x00008f8c                __init_array_start = .
+                0x00009398                __preinit_array_end = .
+                0x00009398                . = ALIGN (0x4)
+                0x00009398                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00008f8c        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
- .init_array    0x00008f90        0x4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x00008f94                __init_array_end = .
-                0x00008f94                . = ALIGN (0x4)
+ .init_array    0x00009398        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .init_array    0x0000939c        0x4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x000093a0                __init_array_end = .
+                0x000093a0                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00008f94        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
-                0x00008f94                _fini
- .fini          0x00008f98        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
-                0x00008fa0                . = ALIGN (0x4)
-                0x00008fa0                __fini_array_start = .
+ .fini          0x000093a0        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
+                0x000093a0                _fini
+ .fini          0x000093a4        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
+                0x000093ac                . = ALIGN (0x4)
+                0x000093ac                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00008fa0        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .fini_array    0x000093ac        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00008fa4                __fini_array_end = .
-                0x00008fa4                . = ALIGN (0x4)
+                0x000093b0                __fini_array_end = .
+                0x000093b0                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00008fa4                . = ALIGN (0x4)
+                0x000093b0                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00008fa4                . = ALIGN (0x4)
-                0x00008fa4                __cy_regions = .
-                0x00008fa4        0x4 LONG 0x8fb8 __cy_region_init_ram
-                0x00008fa8        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x00008fac        0x4 LONG 0x90 __cy_region_init_size_ram
-                0x00008fb0        0x4 LONG 0xf8 __cy_region_zero_size_ram
-                0x00008fb4                __cy_regions_end = .
-                0x00008fb8                . = ALIGN (0x8)
- *fill*         0x00008fb4        0x4 00
-                0x00008fb8                _etext = .
+                0x000093b0                . = ALIGN (0x4)
+                0x000093b0                __cy_regions = .
+                0x000093b0        0x4 LONG 0x93c0 __cy_region_init_ram
+                0x000093b4        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x000093b8        0x4 LONG 0x90 __cy_region_init_size_ram
+                0x000093bc        0x4 LONG 0xf8 __cy_region_zero_size_ram
+                0x000093c0                __cy_regions_end = .
+                0x000093c0                . = ALIGN (0x8)
+                0x000093c0                _etext = .
 
 .ramvectors     0x1fff8000      0x100
                 0x1fff8000                __cy_region_start_ram = .
@@ -2933,7 +2935,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0x90 load address 0x00008fb8
+.data           0x1fff8108       0x90 load address 0x000093c0
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
@@ -2960,10 +2962,10 @@ END GROUP
  *(.ram)
                 0x1fff8198                _edata = .
 
-.igot.plt       0x1fff8198        0x0 load address 0x00009048
+.igot.plt       0x1fff8198        0x0 load address 0x00009450
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
 
-.bss            0x1fff8198       0xf8 load address 0x00009048
+.bss            0x1fff8198       0xf8 load address 0x00009450
                 0x1fff8198                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -3020,11 +3022,11 @@ END GROUP
                 0x1fff8290                __end = .
                 0x1fff8290                PROVIDE (end, .)
                 0x1fff8290                PROVIDE (__bss_end__, .)
-                0x00008fb8                __cy_region_init_ram = LOADADDR (.data)
+                0x000093c0                __cy_region_init_ram = LOADADDR (.data)
                 0x00000090                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x000000f8                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff8290     0x1000 load address 0x00009048
+.heap           0x1fff8290     0x1000 load address 0x00009450
                 0x1fff8290                . = _end
                 0x1fff9290                . = (. + 0x1000)
  *fill*         0x1fff8290     0x1000 00
@@ -3334,122 +3336,122 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x104ac
+.debug_info     0x00000000    0x1054a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x1ee .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_info    0x000001ee      0x843 .\CortexM3\ARM_GCC_473\Debug\mem1.o
- .debug_info    0x00000a31      0x1ee .\CortexM3\ARM_GCC_473\Debug\LINX.o
- .debug_info    0x00000c1f       0xda .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
- .debug_info    0x00000cf9      0x2ea .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
- .debug_info    0x00000fe3      0x16a .\CortexM3\ARM_GCC_473\Debug\cybootloader.o
- .debug_info    0x0000114d      0x559 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
- .debug_info    0x000016a6      0x496 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
- .debug_info    0x00001b3c       0x94 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyBootAsmGnu.o)
- .debug_info    0x00001bd0      0x93a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
- .debug_info    0x0000250a      0xcd7 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
- .debug_info    0x000031e1      0x5c3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
- .debug_info    0x000037a4      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
- .debug_info    0x00003aa9      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
- .debug_info    0x00003c1e      0x4cf .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
- .debug_info    0x000040ed       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
- .debug_info    0x00004188      0x12b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
- .debug_info    0x000042b3      0x2da .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
- .debug_info    0x0000458d      0x1b0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
- .debug_info    0x0000473d      0x139 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
- .debug_info    0x00004876      0x1b0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
- .debug_info    0x00004a26      0x139 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
- .debug_info    0x00004b5f      0x1dd .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
- .debug_info    0x00004d3c      0x139 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
- .debug_info    0x00004e75      0x2da .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
- .debug_info    0x0000514f      0x268 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
- .debug_info    0x000053b7      0x106 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
- .debug_info    0x000054bd      0x121 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_info    0x000055de      0x121 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_info    0x000056ff      0x1b0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
- .debug_info    0x000058af      0x139 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
- .debug_info    0x000059e8      0x7a9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
- .debug_info    0x00006191      0x140 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
- .debug_info    0x000062d1       0xe4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
- .debug_info    0x000063b5      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
- .debug_info    0x000066ba      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
- .debug_info    0x0000682f      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
- .debug_info    0x00006b34      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
- .debug_info    0x00006ca9      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
- .debug_info    0x00006fae      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
- .debug_info    0x00007123      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
- .debug_info    0x00007428      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
- .debug_info    0x0000759d      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
- .debug_info    0x000078a2      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
- .debug_info    0x00007a17      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
- .debug_info    0x00007d1c      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
- .debug_info    0x00007e91      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
- .debug_info    0x00008196      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
- .debug_info    0x0000830b      0x11c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
- .debug_info    0x00008427      0x2da .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_info    0x00008701      0x2da .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
- .debug_info    0x000089db      0x13a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
- .debug_info    0x00008b15      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
- .debug_info    0x00008da9      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
- .debug_info    0x0000903d      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
- .debug_info    0x000092d1      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
- .debug_info    0x00009565      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
- .debug_info    0x00009699      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
- .debug_info    0x000097cd      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
- .debug_info    0x00009901      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
- .debug_info    0x00009a35      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
- .debug_info    0x00009b69      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
- .debug_info    0x00009c9d      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
- .debug_info    0x00009dd1      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
- .debug_info    0x00009f05      0x156 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
- .debug_info    0x0000a05b       0xe3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
- .debug_info    0x0000a13e      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
- .debug_info    0x0000a272      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
- .debug_info    0x0000a3a6      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
- .debug_info    0x0000a4da      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
- .debug_info    0x0000a60e      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
- .debug_info    0x0000a742      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
- .debug_info    0x0000a876      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
- .debug_info    0x0000a9aa      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
- .debug_info    0x0000aade      0x156 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
- .debug_info    0x0000ac34       0xe3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
- .debug_info    0x0000ad17      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
- .debug_info    0x0000ae4b      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
- .debug_info    0x0000af7f      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
- .debug_info    0x0000b0b3      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
- .debug_info    0x0000b1e7      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
- .debug_info    0x0000b31b      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
- .debug_info    0x0000b44f      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
- .debug_info    0x0000b583      0x156 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
- .debug_info    0x0000b6d9       0xe3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
- .debug_info    0x0000b7bc      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
- .debug_info    0x0000b8f0      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
- .debug_info    0x0000ba24      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
- .debug_info    0x0000bb58      0x156 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
- .debug_info    0x0000bcae       0xe3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
- .debug_info    0x0000bd91      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
- .debug_info    0x0000bec5      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
- .debug_info    0x0000bff9      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
- .debug_info    0x0000c12d      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
- .debug_info    0x0000c261      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
- .debug_info    0x0000c395      0x4d9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
- .debug_info    0x0000c86e       0xa2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
- .debug_info    0x0000c910      0x4b4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
- .debug_info    0x0000cdc4      0x121 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
- .debug_info    0x0000cee5      0x121 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
- .debug_info    0x0000d006      0x278 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
- .debug_info    0x0000d27e      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
- .debug_info    0x0000d512      0x659 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
- .debug_info    0x0000db6b      0x5f7 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
- .debug_info    0x0000e162      0x56e .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
- .debug_info    0x0000e6d0      0x1d6 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
- .debug_info    0x0000e8a6      0x84c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
- .debug_info    0x0000f0f2      0x18d .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
- .debug_info    0x0000f27f      0x3ce .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
- .debug_info    0x0000f64d      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
- .debug_info    0x0000f8e1      0x354 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
- .debug_info    0x0000fc35      0x3d9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
- .debug_info    0x0001000e      0x1b9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
- .debug_info    0x000101c7      0x2e5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
+ .debug_info    0x00000a31      0x280 .\CortexM3\ARM_GCC_473\Debug\LINX.o
+ .debug_info    0x00000cb1       0xda .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+ .debug_info    0x00000d8b      0x2ea .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+ .debug_info    0x00001075      0x16a .\CortexM3\ARM_GCC_473\Debug\cybootloader.o
+ .debug_info    0x000011df      0x559 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+ .debug_info    0x00001738      0x496 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+ .debug_info    0x00001bce       0xa0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyBootAsmGnu.o)
+ .debug_info    0x00001c6e      0x93a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
+ .debug_info    0x000025a8      0xcd7 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+ .debug_info    0x0000327f      0x5c3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
+ .debug_info    0x00003842      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
+ .debug_info    0x00003b47      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
+ .debug_info    0x00003cbc      0x4cf .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
+ .debug_info    0x0000418b       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
+ .debug_info    0x00004226      0x12b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
+ .debug_info    0x00004351      0x2da .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
+ .debug_info    0x0000462b      0x1b0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
+ .debug_info    0x000047db      0x139 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
+ .debug_info    0x00004914      0x1b0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
+ .debug_info    0x00004ac4      0x139 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
+ .debug_info    0x00004bfd      0x1dd .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
+ .debug_info    0x00004dda      0x139 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
+ .debug_info    0x00004f13      0x2da .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
+ .debug_info    0x000051ed      0x268 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
+ .debug_info    0x00005455      0x106 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
+ .debug_info    0x0000555b      0x121 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_info    0x0000567c      0x121 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_info    0x0000579d      0x1b0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
+ .debug_info    0x0000594d      0x139 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
+ .debug_info    0x00005a86      0x7a9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
+ .debug_info    0x0000622f      0x140 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
+ .debug_info    0x0000636f       0xe4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
+ .debug_info    0x00006453      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
+ .debug_info    0x00006758      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
+ .debug_info    0x000068cd      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
+ .debug_info    0x00006bd2      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
+ .debug_info    0x00006d47      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
+ .debug_info    0x0000704c      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
+ .debug_info    0x000071c1      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
+ .debug_info    0x000074c6      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
+ .debug_info    0x0000763b      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
+ .debug_info    0x00007940      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
+ .debug_info    0x00007ab5      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
+ .debug_info    0x00007dba      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
+ .debug_info    0x00007f2f      0x305 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
+ .debug_info    0x00008234      0x175 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
+ .debug_info    0x000083a9      0x11c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
+ .debug_info    0x000084c5      0x2da .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_info    0x0000879f      0x2da .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
+ .debug_info    0x00008a79      0x13a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
+ .debug_info    0x00008bb3      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
+ .debug_info    0x00008e47      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
+ .debug_info    0x000090db      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
+ .debug_info    0x0000936f      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
+ .debug_info    0x00009603      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
+ .debug_info    0x00009737      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
+ .debug_info    0x0000986b      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
+ .debug_info    0x0000999f      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
+ .debug_info    0x00009ad3      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
+ .debug_info    0x00009c07      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
+ .debug_info    0x00009d3b      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
+ .debug_info    0x00009e6f      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
+ .debug_info    0x00009fa3      0x156 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
+ .debug_info    0x0000a0f9       0xe3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
+ .debug_info    0x0000a1dc      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
+ .debug_info    0x0000a310      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
+ .debug_info    0x0000a444      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
+ .debug_info    0x0000a578      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
+ .debug_info    0x0000a6ac      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
+ .debug_info    0x0000a7e0      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
+ .debug_info    0x0000a914      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
+ .debug_info    0x0000aa48      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
+ .debug_info    0x0000ab7c      0x156 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
+ .debug_info    0x0000acd2       0xe3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
+ .debug_info    0x0000adb5      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
+ .debug_info    0x0000aee9      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
+ .debug_info    0x0000b01d      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
+ .debug_info    0x0000b151      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
+ .debug_info    0x0000b285      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
+ .debug_info    0x0000b3b9      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
+ .debug_info    0x0000b4ed      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
+ .debug_info    0x0000b621      0x156 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
+ .debug_info    0x0000b777       0xe3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
+ .debug_info    0x0000b85a      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
+ .debug_info    0x0000b98e      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
+ .debug_info    0x0000bac2      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
+ .debug_info    0x0000bbf6      0x156 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
+ .debug_info    0x0000bd4c       0xe3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
+ .debug_info    0x0000be2f      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
+ .debug_info    0x0000bf63      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
+ .debug_info    0x0000c097      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
+ .debug_info    0x0000c1cb      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
+ .debug_info    0x0000c2ff      0x134 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
+ .debug_info    0x0000c433      0x4d9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
+ .debug_info    0x0000c90c       0xa2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
+ .debug_info    0x0000c9ae      0x4b4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
+ .debug_info    0x0000ce62      0x121 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
+ .debug_info    0x0000cf83      0x121 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
+ .debug_info    0x0000d0a4      0x278 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
+ .debug_info    0x0000d31c      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
+ .debug_info    0x0000d5b0      0x659 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+ .debug_info    0x0000dc09      0x5f7 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+ .debug_info    0x0000e200      0x56e .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+ .debug_info    0x0000e76e      0x1d6 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+ .debug_info    0x0000e944      0x84c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+ .debug_info    0x0000f190      0x18d .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
+ .debug_info    0x0000f31d      0x3ce .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+ .debug_info    0x0000f6eb      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
+ .debug_info    0x0000f97f      0x354 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
+ .debug_info    0x0000fcd3      0x3d9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
+ .debug_info    0x000100ac      0x1b9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
+ .debug_info    0x00010265      0x2e5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
 
 .debug_abbrev   0x00000000     0x5e50
  *(.debug_abbrev)
@@ -3568,599 +3570,599 @@ END GROUP
  .debug_abbrev  0x00005cef       0xba .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
  .debug_abbrev  0x00005da9       0xa7 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
 
-.debug_line     0x00000000     0x841a
+.debug_line     0x00000000     0x846a
  *(.debug_line)
- .debug_line    0x00000000      0x187 .\CortexM3\ARM_GCC_473\Debug\main.o
- .debug_line    0x00000187      0x469 .\CortexM3\ARM_GCC_473\Debug\mem1.o
- .debug_line    0x000005f0      0x19d .\CortexM3\ARM_GCC_473\Debug\LINX.o
- .debug_line    0x0000078d       0x53 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
- .debug_line    0x000007e0      0x1ae .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
- .debug_line    0x0000098e       0x55 .\CortexM3\ARM_GCC_473\Debug\cybootloader.o
- .debug_line    0x000009e3      0x28d .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
- .debug_line    0x00000c70      0x282 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
- .debug_line    0x00000ef2       0x68 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyBootAsmGnu.o)
- .debug_line    0x00000f5a      0x2bc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
- .debug_line    0x00001216      0x73b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
- .debug_line    0x00001951      0x370 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
- .debug_line    0x00001cc1      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
- .debug_line    0x00001e51       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
- .debug_line    0x00001f04      0x205 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
- .debug_line    0x00002109       0x5b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
- .debug_line    0x00002164       0xb1 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
- .debug_line    0x00002215      0x1cc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
- .debug_line    0x000023e1       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
- .debug_line    0x000024d5       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
- .debug_line    0x00002588       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
- .debug_line    0x0000267c       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
- .debug_line    0x0000272f      0x10c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
- .debug_line    0x0000283b       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
- .debug_line    0x000028ee      0x1c6 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
- .debug_line    0x00002ab4       0xf8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
- .debug_line    0x00002bac       0xab .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
- .debug_line    0x00002c57       0x8a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_line    0x00002ce1       0x8a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_line    0x00002d6b       0xfc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
- .debug_line    0x00002e67       0xc5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
- .debug_line    0x00002f2c      0x36b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
- .debug_line    0x00003297       0xc5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
- .debug_line    0x0000335c       0x97 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
- .debug_line    0x000033f3      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
- .debug_line    0x00003583       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
- .debug_line    0x00003636      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
- .debug_line    0x000037c6       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
- .debug_line    0x00003879      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
- .debug_line    0x00003a09       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
- .debug_line    0x00003abc      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
- .debug_line    0x00003c4c       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
- .debug_line    0x00003cff      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
- .debug_line    0x00003e8f       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
- .debug_line    0x00003f42      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
- .debug_line    0x000040d2       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
- .debug_line    0x00004185      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
- .debug_line    0x00004315       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
- .debug_line    0x000043c8       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
- .debug_line    0x00004470      0x1d2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_line    0x00004642      0x1cf .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
- .debug_line    0x00004811       0xbd .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
- .debug_line    0x000048ce      0x1a2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
- .debug_line    0x00004a70      0x1a2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
- .debug_line    0x00004c12      0x1a2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
- .debug_line    0x00004db4      0x1a2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
- .debug_line    0x00004f56       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
- .debug_line    0x00004ff1       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
- .debug_line    0x0000508c       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
- .debug_line    0x00005127       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
- .debug_line    0x000051c2       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
- .debug_line    0x0000525d       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
- .debug_line    0x000052f8       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
- .debug_line    0x00005393       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
- .debug_line    0x0000542e       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
- .debug_line    0x000054e1       0x7a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
- .debug_line    0x0000555b       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
- .debug_line    0x000055f5       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
- .debug_line    0x0000568f       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
- .debug_line    0x00005729       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
- .debug_line    0x000057c3       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
- .debug_line    0x0000585d       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
- .debug_line    0x000058f7       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
- .debug_line    0x00005991       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
- .debug_line    0x00005a2b       0xb2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
- .debug_line    0x00005add       0x79 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
- .debug_line    0x00005b56       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
- .debug_line    0x00005bf0       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
- .debug_line    0x00005c8a       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
- .debug_line    0x00005d24       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
- .debug_line    0x00005dbe       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
- .debug_line    0x00005e58       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
- .debug_line    0x00005ef2       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
- .debug_line    0x00005f8c       0xb2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
- .debug_line    0x0000603e       0x79 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
- .debug_line    0x000060b7       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
- .debug_line    0x00006151       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
- .debug_line    0x000061eb       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
- .debug_line    0x00006285       0xb2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
- .debug_line    0x00006337       0x79 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
- .debug_line    0x000063b0       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
- .debug_line    0x0000644a       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
- .debug_line    0x000064e4       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
- .debug_line    0x0000657e       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
- .debug_line    0x00006618       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
- .debug_line    0x000066b2      0x24c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
- .debug_line    0x000068fe       0x5f .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
- .debug_line    0x0000695d      0x209 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
- .debug_line    0x00006b66       0x8b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
- .debug_line    0x00006bf1       0x8c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
- .debug_line    0x00006c7d      0x15c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
- .debug_line    0x00006dd9      0x1a8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
- .debug_line    0x00006f81      0x2a4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
- .debug_line    0x00007225      0x234 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
- .debug_line    0x00007459      0x222 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
- .debug_line    0x0000767b       0xe5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
- .debug_line    0x00007760      0x431 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
- .debug_line    0x00007b91       0x8b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
- .debug_line    0x00007c1c      0x209 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
- .debug_line    0x00007e25      0x1aa .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
- .debug_line    0x00007fcf      0x1a9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
- .debug_line    0x00008178      0x1a7 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
- .debug_line    0x0000831f       0x98 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
- .debug_line    0x000083b7       0x63 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
+ .debug_line    0x00000000      0x188 .\CortexM3\ARM_GCC_473\Debug\main.o
+ .debug_line    0x00000188      0x469 .\CortexM3\ARM_GCC_473\Debug\mem1.o
+ .debug_line    0x000005f1      0x1ec .\CortexM3\ARM_GCC_473\Debug\LINX.o
+ .debug_line    0x000007dd       0x53 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+ .debug_line    0x00000830      0x1ae .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+ .debug_line    0x000009de       0x55 .\CortexM3\ARM_GCC_473\Debug\cybootloader.o
+ .debug_line    0x00000a33      0x28d .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+ .debug_line    0x00000cc0      0x282 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+ .debug_line    0x00000f42       0x68 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyBootAsmGnu.o)
+ .debug_line    0x00000faa      0x2bc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
+ .debug_line    0x00001266      0x73b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+ .debug_line    0x000019a1      0x370 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
+ .debug_line    0x00001d11      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
+ .debug_line    0x00001ea1       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
+ .debug_line    0x00001f54      0x205 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
+ .debug_line    0x00002159       0x5b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
+ .debug_line    0x000021b4       0xb1 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
+ .debug_line    0x00002265      0x1cc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
+ .debug_line    0x00002431       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
+ .debug_line    0x00002525       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
+ .debug_line    0x000025d8       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
+ .debug_line    0x000026cc       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
+ .debug_line    0x0000277f      0x10c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
+ .debug_line    0x0000288b       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
+ .debug_line    0x0000293e      0x1c6 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
+ .debug_line    0x00002b04       0xf8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
+ .debug_line    0x00002bfc       0xab .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
+ .debug_line    0x00002ca7       0x8a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_line    0x00002d31       0x8a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_line    0x00002dbb       0xfc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
+ .debug_line    0x00002eb7       0xc5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
+ .debug_line    0x00002f7c      0x36b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
+ .debug_line    0x000032e7       0xc5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
+ .debug_line    0x000033ac       0x97 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
+ .debug_line    0x00003443      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
+ .debug_line    0x000035d3       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
+ .debug_line    0x00003686      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
+ .debug_line    0x00003816       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
+ .debug_line    0x000038c9      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
+ .debug_line    0x00003a59       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
+ .debug_line    0x00003b0c      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
+ .debug_line    0x00003c9c       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
+ .debug_line    0x00003d4f      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
+ .debug_line    0x00003edf       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
+ .debug_line    0x00003f92      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
+ .debug_line    0x00004122       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
+ .debug_line    0x000041d5      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
+ .debug_line    0x00004365       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
+ .debug_line    0x00004418       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
+ .debug_line    0x000044c0      0x1d2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_line    0x00004692      0x1cf .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
+ .debug_line    0x00004861       0xbd .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
+ .debug_line    0x0000491e      0x1a2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
+ .debug_line    0x00004ac0      0x1a2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
+ .debug_line    0x00004c62      0x1a2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
+ .debug_line    0x00004e04      0x1a2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
+ .debug_line    0x00004fa6       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
+ .debug_line    0x00005041       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
+ .debug_line    0x000050dc       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
+ .debug_line    0x00005177       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
+ .debug_line    0x00005212       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
+ .debug_line    0x000052ad       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
+ .debug_line    0x00005348       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
+ .debug_line    0x000053e3       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
+ .debug_line    0x0000547e       0xb3 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
+ .debug_line    0x00005531       0x7a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
+ .debug_line    0x000055ab       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
+ .debug_line    0x00005645       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
+ .debug_line    0x000056df       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
+ .debug_line    0x00005779       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
+ .debug_line    0x00005813       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
+ .debug_line    0x000058ad       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
+ .debug_line    0x00005947       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
+ .debug_line    0x000059e1       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
+ .debug_line    0x00005a7b       0xb2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
+ .debug_line    0x00005b2d       0x79 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
+ .debug_line    0x00005ba6       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
+ .debug_line    0x00005c40       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
+ .debug_line    0x00005cda       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
+ .debug_line    0x00005d74       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
+ .debug_line    0x00005e0e       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
+ .debug_line    0x00005ea8       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
+ .debug_line    0x00005f42       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
+ .debug_line    0x00005fdc       0xb2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
+ .debug_line    0x0000608e       0x79 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
+ .debug_line    0x00006107       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
+ .debug_line    0x000061a1       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
+ .debug_line    0x0000623b       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
+ .debug_line    0x000062d5       0xb2 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
+ .debug_line    0x00006387       0x79 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
+ .debug_line    0x00006400       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
+ .debug_line    0x0000649a       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
+ .debug_line    0x00006534       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
+ .debug_line    0x000065ce       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
+ .debug_line    0x00006668       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
+ .debug_line    0x00006702      0x24c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
+ .debug_line    0x0000694e       0x5f .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
+ .debug_line    0x000069ad      0x209 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
+ .debug_line    0x00006bb6       0x8b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
+ .debug_line    0x00006c41       0x8c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
+ .debug_line    0x00006ccd      0x15c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
+ .debug_line    0x00006e29      0x1a8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
+ .debug_line    0x00006fd1      0x2a4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+ .debug_line    0x00007275      0x234 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+ .debug_line    0x000074a9      0x222 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+ .debug_line    0x000076cb       0xe5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+ .debug_line    0x000077b0      0x431 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+ .debug_line    0x00007be1       0x8b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
+ .debug_line    0x00007c6c      0x209 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+ .debug_line    0x00007e75      0x1aa .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
+ .debug_line    0x0000801f      0x1a9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
+ .debug_line    0x000081c8      0x1a7 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
+ .debug_line    0x0000836f       0x98 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
+ .debug_line    0x00008407       0x63 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
 
-.debug_frame    0x00000000     0x70d8
+.debug_frame    0x00000000     0x70e4
  *(.debug_frame)
  .debug_frame   0x00000000       0x70 .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_frame   0x00000070      0x258 .\CortexM3\ARM_GCC_473\Debug\mem1.o
- .debug_frame   0x000002c8       0xa4 .\CortexM3\ARM_GCC_473\Debug\LINX.o
- .debug_frame   0x0000036c       0xa4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
- .debug_frame   0x00000410      0x158 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
- .debug_frame   0x00000568      0x2e0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
- .debug_frame   0x00000848      0x2c0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
- .debug_frame   0x00000b08      0x778 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
- .debug_frame   0x00001280      0x1d0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
- .debug_frame   0x00001450      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
- .debug_frame   0x00001624       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
- .debug_frame   0x000016a4      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
- .debug_frame   0x000018d0       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
- .debug_frame   0x000018fc       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
- .debug_frame   0x0000197c      0x184 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
- .debug_frame   0x00001b00       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
- .debug_frame   0x00001bf4       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
- .debug_frame   0x00001c74       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
- .debug_frame   0x00001d68       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
- .debug_frame   0x00001de8      0x114 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
- .debug_frame   0x00001efc       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
- .debug_frame   0x00001f7c      0x184 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
- .debug_frame   0x00002100       0xe0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
- .debug_frame   0x000021e0       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
- .debug_frame   0x00002228       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_frame   0x00002274       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_frame   0x000022c0       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
- .debug_frame   0x000023b4       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
- .debug_frame   0x00002434      0x31c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
- .debug_frame   0x00002750       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
- .debug_frame   0x000027d0       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
- .debug_frame   0x00002850      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
- .debug_frame   0x00002a24       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
- .debug_frame   0x00002aa4      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
- .debug_frame   0x00002c78       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
- .debug_frame   0x00002cf8      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
- .debug_frame   0x00002ecc       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
- .debug_frame   0x00002f4c      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
- .debug_frame   0x00003120       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
- .debug_frame   0x000031a0      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
- .debug_frame   0x00003374       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
- .debug_frame   0x000033f4      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
- .debug_frame   0x000035c8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
- .debug_frame   0x00003648      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
- .debug_frame   0x0000381c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
- .debug_frame   0x0000389c       0x70 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
- .debug_frame   0x0000390c      0x184 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_frame   0x00003a90      0x184 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
- .debug_frame   0x00003c14       0x9c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
- .debug_frame   0x00003cb0      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
- .debug_frame   0x00003dfc      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
- .debug_frame   0x00003f48      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
- .debug_frame   0x00004094      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
- .debug_frame   0x000041e0       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
- .debug_frame   0x00004260       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
- .debug_frame   0x000042e0       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
- .debug_frame   0x00004360       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
- .debug_frame   0x000043e0       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
- .debug_frame   0x00004460       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
- .debug_frame   0x000044e0       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
- .debug_frame   0x00004560       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
- .debug_frame   0x000045e0       0xa4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
- .debug_frame   0x00004684       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
- .debug_frame   0x000046cc       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
- .debug_frame   0x0000474c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
- .debug_frame   0x000047cc       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
- .debug_frame   0x0000484c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
- .debug_frame   0x000048cc       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
- .debug_frame   0x0000494c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
- .debug_frame   0x000049cc       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
- .debug_frame   0x00004a4c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
- .debug_frame   0x00004acc       0xa4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
- .debug_frame   0x00004b70       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
- .debug_frame   0x00004bb8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
- .debug_frame   0x00004c38       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
- .debug_frame   0x00004cb8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
- .debug_frame   0x00004d38       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
- .debug_frame   0x00004db8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
- .debug_frame   0x00004e38       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
- .debug_frame   0x00004eb8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
- .debug_frame   0x00004f38       0xa4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
- .debug_frame   0x00004fdc       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
- .debug_frame   0x00005024       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
- .debug_frame   0x000050a4       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
- .debug_frame   0x00005124       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
- .debug_frame   0x000051a4       0xa4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
- .debug_frame   0x00005248       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
- .debug_frame   0x00005290       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
- .debug_frame   0x00005310       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
- .debug_frame   0x00005390       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
- .debug_frame   0x00005410       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
- .debug_frame   0x00005490       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
- .debug_frame   0x00005510      0x280 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
- .debug_frame   0x00005790       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
- .debug_frame   0x000057bc      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
- .debug_frame   0x000059e8       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
- .debug_frame   0x00005a34       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
- .debug_frame   0x00005a80      0x180 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
- .debug_frame   0x00005c00      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
- .debug_frame   0x00005d4c      0x238 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
- .debug_frame   0x00005f84      0x248 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
- .debug_frame   0x000061cc      0x1e0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
- .debug_frame   0x000063ac       0x9c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
- .debug_frame   0x00006448      0x180 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
- .debug_frame   0x000065c8       0x30 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
- .debug_frame   0x000065f8      0x204 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
- .debug_frame   0x000067fc      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
- .debug_frame   0x00006948      0x178 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
- .debug_frame   0x00006ac0      0x13c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
- .debug_frame   0x00006bfc       0x30 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
- .debug_frame   0x00006c2c       0x50 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m\libgcc.a(bpabi.o)
- .debug_frame   0x00006c7c       0x34 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m\libgcc.a(_divdi3.o)
- .debug_frame   0x00006cb0       0x34 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m\libgcc.a(_udivdi3.o)
- .debug_frame   0x00006ce4       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-__atexit2.o)
- .debug_frame   0x00006d0c       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-exit.o)
- .debug_frame   0x00006d34       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-fini.o)
- .debug_frame   0x00006d60       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
- .debug_frame   0x00006d8c       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
- .debug_frame   0x00006db4       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
- .debug_frame   0x00006dd4       0x58 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-sprintf.o)
- .debug_frame   0x00006e2c       0x88 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-svfprintf.o)
- .debug_frame   0x00006eb4       0x58 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-vfprintf_i.o)
- .debug_frame   0x00006f0c       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-freer.o)
- .debug_frame   0x00006f38       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-mallocr.o)
- .debug_frame   0x00006f64       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memchr.o)
- .debug_frame   0x00006f8c       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memmove.o)
- .debug_frame   0x00006fb8       0x30 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-reallocr.o)
- .debug_frame   0x00006fe8       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-sbrkr.o)
- .debug_frame   0x00007014       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
- .debug_frame   0x00007034       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-msizer.o)
- .debug_frame   0x00007054       0x64 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-reent.o)
- .debug_frame   0x000070b8       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a(sbrk.o)
+ .debug_frame   0x000002c8       0xb0 .\CortexM3\ARM_GCC_473\Debug\LINX.o
+ .debug_frame   0x00000378       0xa4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+ .debug_frame   0x0000041c      0x158 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+ .debug_frame   0x00000574      0x2e0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+ .debug_frame   0x00000854      0x2c0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
+ .debug_frame   0x00000b14      0x778 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+ .debug_frame   0x0000128c      0x1d0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
+ .debug_frame   0x0000145c      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
+ .debug_frame   0x00001630       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
+ .debug_frame   0x000016b0      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
+ .debug_frame   0x000018dc       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
+ .debug_frame   0x00001908       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
+ .debug_frame   0x00001988      0x184 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
+ .debug_frame   0x00001b0c       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
+ .debug_frame   0x00001c00       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
+ .debug_frame   0x00001c80       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
+ .debug_frame   0x00001d74       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
+ .debug_frame   0x00001df4      0x114 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
+ .debug_frame   0x00001f08       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
+ .debug_frame   0x00001f88      0x184 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
+ .debug_frame   0x0000210c       0xe0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
+ .debug_frame   0x000021ec       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
+ .debug_frame   0x00002234       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_frame   0x00002280       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_frame   0x000022cc       0xf4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
+ .debug_frame   0x000023c0       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
+ .debug_frame   0x00002440      0x31c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
+ .debug_frame   0x0000275c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
+ .debug_frame   0x000027dc       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
+ .debug_frame   0x0000285c      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
+ .debug_frame   0x00002a30       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
+ .debug_frame   0x00002ab0      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
+ .debug_frame   0x00002c84       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
+ .debug_frame   0x00002d04      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
+ .debug_frame   0x00002ed8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
+ .debug_frame   0x00002f58      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
+ .debug_frame   0x0000312c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
+ .debug_frame   0x000031ac      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
+ .debug_frame   0x00003380       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
+ .debug_frame   0x00003400      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
+ .debug_frame   0x000035d4       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
+ .debug_frame   0x00003654      0x1d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
+ .debug_frame   0x00003828       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
+ .debug_frame   0x000038a8       0x70 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
+ .debug_frame   0x00003918      0x184 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_frame   0x00003a9c      0x184 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
+ .debug_frame   0x00003c20       0x9c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
+ .debug_frame   0x00003cbc      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
+ .debug_frame   0x00003e08      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
+ .debug_frame   0x00003f54      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
+ .debug_frame   0x000040a0      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
+ .debug_frame   0x000041ec       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
+ .debug_frame   0x0000426c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
+ .debug_frame   0x000042ec       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
+ .debug_frame   0x0000436c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
+ .debug_frame   0x000043ec       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
+ .debug_frame   0x0000446c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
+ .debug_frame   0x000044ec       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
+ .debug_frame   0x0000456c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
+ .debug_frame   0x000045ec       0xa4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
+ .debug_frame   0x00004690       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
+ .debug_frame   0x000046d8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
+ .debug_frame   0x00004758       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
+ .debug_frame   0x000047d8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
+ .debug_frame   0x00004858       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
+ .debug_frame   0x000048d8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
+ .debug_frame   0x00004958       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
+ .debug_frame   0x000049d8       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
+ .debug_frame   0x00004a58       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
+ .debug_frame   0x00004ad8       0xa4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
+ .debug_frame   0x00004b7c       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
+ .debug_frame   0x00004bc4       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
+ .debug_frame   0x00004c44       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
+ .debug_frame   0x00004cc4       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
+ .debug_frame   0x00004d44       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
+ .debug_frame   0x00004dc4       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
+ .debug_frame   0x00004e44       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
+ .debug_frame   0x00004ec4       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
+ .debug_frame   0x00004f44       0xa4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
+ .debug_frame   0x00004fe8       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
+ .debug_frame   0x00005030       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
+ .debug_frame   0x000050b0       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
+ .debug_frame   0x00005130       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
+ .debug_frame   0x000051b0       0xa4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
+ .debug_frame   0x00005254       0x48 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
+ .debug_frame   0x0000529c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
+ .debug_frame   0x0000531c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
+ .debug_frame   0x0000539c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
+ .debug_frame   0x0000541c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
+ .debug_frame   0x0000549c       0x80 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
+ .debug_frame   0x0000551c      0x280 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
+ .debug_frame   0x0000579c       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
+ .debug_frame   0x000057c8      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
+ .debug_frame   0x000059f4       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
+ .debug_frame   0x00005a40       0x4c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
+ .debug_frame   0x00005a8c      0x180 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
+ .debug_frame   0x00005c0c      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
+ .debug_frame   0x00005d58      0x238 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+ .debug_frame   0x00005f90      0x248 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+ .debug_frame   0x000061d8      0x1e0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+ .debug_frame   0x000063b8       0x9c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+ .debug_frame   0x00006454      0x180 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+ .debug_frame   0x000065d4       0x30 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
+ .debug_frame   0x00006604      0x204 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+ .debug_frame   0x00006808      0x14c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
+ .debug_frame   0x00006954      0x178 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
+ .debug_frame   0x00006acc      0x13c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
+ .debug_frame   0x00006c08       0x30 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
+ .debug_frame   0x00006c38       0x50 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m\libgcc.a(bpabi.o)
+ .debug_frame   0x00006c88       0x34 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m\libgcc.a(_divdi3.o)
+ .debug_frame   0x00006cbc       0x34 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m\libgcc.a(_udivdi3.o)
+ .debug_frame   0x00006cf0       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-__atexit2.o)
+ .debug_frame   0x00006d18       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-exit.o)
+ .debug_frame   0x00006d40       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-fini.o)
+ .debug_frame   0x00006d6c       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
+ .debug_frame   0x00006d98       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
+ .debug_frame   0x00006dc0       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
+ .debug_frame   0x00006de0       0x58 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-sprintf.o)
+ .debug_frame   0x00006e38       0x88 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-svfprintf.o)
+ .debug_frame   0x00006ec0       0x58 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-vfprintf_i.o)
+ .debug_frame   0x00006f18       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-freer.o)
+ .debug_frame   0x00006f44       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-mallocr.o)
+ .debug_frame   0x00006f70       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memchr.o)
+ .debug_frame   0x00006f98       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memmove.o)
+ .debug_frame   0x00006fc4       0x30 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-reallocr.o)
+ .debug_frame   0x00006ff4       0x2c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-sbrkr.o)
+ .debug_frame   0x00007020       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strlen.o)
+ .debug_frame   0x00007040       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-msizer.o)
+ .debug_frame   0x00007060       0x64 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-reent.o)
+ .debug_frame   0x000070c4       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a(sbrk.o)
 
-.debug_str      0x00000000     0x74cb
+.debug_str      0x00000000     0x7526
  *(.debug_str)
- .debug_str     0x00000000      0x196 .\CortexM3\ARM_GCC_473\Debug\main.o
-                                0x1cf (size before relaxing)
- .debug_str     0x00000196      0x1b0 .\CortexM3\ARM_GCC_473\Debug\mem1.o
-                                0x309 (size before relaxing)
- .debug_str     0x00000346       0x87 .\CortexM3\ARM_GCC_473\Debug\LINX.o
-                                0x1e8 (size before relaxing)
- .debug_str     0x000003cd       0x49 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
-                                0x17b (size before relaxing)
- .debug_str     0x00000416      0x112 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                                0x265 (size before relaxing)
- .debug_str     0x00000528       0x84 .\CortexM3\ARM_GCC_473\Debug\cybootloader.o
-                                0x1b6 (size before relaxing)
- .debug_str     0x000005ac      0x1fd .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
-                                0x369 (size before relaxing)
- .debug_str     0x000007a9      0x282 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
-                                0x3c5 (size before relaxing)
- .debug_str     0x00000a2b      0x352 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
-                                0x4d0 (size before relaxing)
- .debug_str     0x00000d7d      0x614 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
-                                0x7cb (size before relaxing)
- .debug_str     0x00001391      0x367 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
-                                0x4da (size before relaxing)
- .debug_str     0x000016f8      0x192 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
-                                0x2e4 (size before relaxing)
- .debug_str     0x0000188a       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
-                                0x206 (size before relaxing)
- .debug_str     0x00001952      0x251 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
-                                0x3f0 (size before relaxing)
- .debug_str     0x00001ba3       0x37 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
-                                0x15a (size before relaxing)
- .debug_str     0x00001bda       0xab .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
-                                0x1d9 (size before relaxing)
- .debug_str     0x00001c85      0x22b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
-                                0x374 (size before relaxing)
- .debug_str     0x00001eb0       0xb9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
-                                0x1f2 (size before relaxing)
- .debug_str     0x00001f69       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
-                                0x1d5 (size before relaxing)
- .debug_str     0x00002004       0xad .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
-                                0x1f2 (size before relaxing)
- .debug_str     0x000020b1       0x90 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
-                                0x1d5 (size before relaxing)
- .debug_str     0x00002141       0xca .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
-                                0x20f (size before relaxing)
- .debug_str     0x0000220b       0x90 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
-                                0x1d5 (size before relaxing)
- .debug_str     0x0000229b      0x183 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
-                                0x320 (size before relaxing)
- .debug_str     0x0000241e      0x16a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
-                                0x2aa (size before relaxing)
- .debug_str     0x00002588       0x77 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
-                                0x1ba (size before relaxing)
- .debug_str     0x000025ff       0xd1 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
-                                0x20a (size before relaxing)
- .debug_str     0x000026d0       0x96 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
-                                0x20a (size before relaxing)
- .debug_str     0x00002766      0x107 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
-                                0x24c (size before relaxing)
- .debug_str     0x0000286d       0xcf .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
-                                0x214 (size before relaxing)
- .debug_str     0x0000293c      0x3e5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
-                                0x5d6 (size before relaxing)
- .debug_str     0x00002d21       0xba .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
-                                0x1fd (size before relaxing)
- .debug_str     0x00002ddb       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
-                                0x1a0 (size before relaxing)
- .debug_str     0x00002e4f      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
-                                0x2e4 (size before relaxing)
- .debug_str     0x00002fb6       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
-                                0x206 (size before relaxing)
- .debug_str     0x00003038      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
-                                0x2e4 (size before relaxing)
- .debug_str     0x0000319f       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
-                                0x206 (size before relaxing)
- .debug_str     0x00003221      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
-                                0x2e4 (size before relaxing)
- .debug_str     0x00003388       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
-                                0x206 (size before relaxing)
- .debug_str     0x0000340a      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
-                                0x2e4 (size before relaxing)
- .debug_str     0x00003571       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
-                                0x206 (size before relaxing)
- .debug_str     0x000035f3      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
-                                0x2e4 (size before relaxing)
- .debug_str     0x0000375a       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
-                                0x206 (size before relaxing)
- .debug_str     0x000037dc      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
-                                0x2e4 (size before relaxing)
- .debug_str     0x00003943       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
-                                0x206 (size before relaxing)
- .debug_str     0x000039c5      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
-                                0x2e4 (size before relaxing)
- .debug_str     0x00003b2c       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
-                                0x206 (size before relaxing)
- .debug_str     0x00003bae       0x9e .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
-                                0x1cf (size before relaxing)
- .debug_str     0x00003c4c      0x22b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                                0x3c8 (size before relaxing)
- .debug_str     0x00003e77      0x201 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
-                                0x39e (size before relaxing)
- .debug_str     0x00004078       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
-                                0x205 (size before relaxing)
- .debug_str     0x00004140      0x149 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
-                                0x2dd (size before relaxing)
- .debug_str     0x00004289      0x149 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
-                                0x2dd (size before relaxing)
- .debug_str     0x000043d2      0x149 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
-                                0x2dd (size before relaxing)
- .debug_str     0x0000451b      0x149 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
-                                0x2dd (size before relaxing)
- .debug_str     0x00004664       0x7c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
-                                0x1b5 (size before relaxing)
- .debug_str     0x000046e0       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
-                                0x1b5 (size before relaxing)
- .debug_str     0x00004751       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
-                                0x1b5 (size before relaxing)
- .debug_str     0x000047c2       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
-                                0x1b5 (size before relaxing)
- .debug_str     0x00004833       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
-                                0x1b5 (size before relaxing)
- .debug_str     0x000048a4       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
-                                0x1b5 (size before relaxing)
- .debug_str     0x00004915       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
-                                0x1b5 (size before relaxing)
- .debug_str     0x00004986       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
-                                0x1b5 (size before relaxing)
- .debug_str     0x000049f7       0xae .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
-                                0x1f9 (size before relaxing)
- .debug_str     0x00004aa5       0x56 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
-                                0x18c (size before relaxing)
- .debug_str     0x00004afb       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004b67       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004bd3       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004c3f       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004cab       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004d17       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004d83       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004def       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004e5b       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
-                                0x1f3 (size before relaxing)
- .debug_str     0x00004f03       0x53 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
-                                0x189 (size before relaxing)
- .debug_str     0x00004f56       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00004fc2       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x0000502e       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x0000509a       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00005106       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00005172       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x000051de       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x0000524a       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
-                                0x1f3 (size before relaxing)
- .debug_str     0x000052f2       0x53 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
-                                0x189 (size before relaxing)
- .debug_str     0x00005345       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x000053b1       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x0000541d       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00005489       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
-                                0x1f3 (size before relaxing)
- .debug_str     0x00005531       0x53 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
-                                0x189 (size before relaxing)
- .debug_str     0x00005584       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x000055f0       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x0000565c       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x000056c8       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00005734       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x000057a0      0x30a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
-                                0x4f0 (size before relaxing)
- .debug_str     0x00005aaa       0x3f .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
-                                0x16b (size before relaxing)
- .debug_str     0x00005ae9      0x2ac .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
-                                0x4a3 (size before relaxing)
- .debug_str     0x00005d95       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
-                                0x20e (size before relaxing)
- .debug_str     0x00005e2f       0x9e .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
+ .debug_str     0x00000000      0x1a9 .\CortexM3\ARM_GCC_473\Debug\main.o
+                                0x1e2 (size before relaxing)
+ .debug_str     0x000001a9      0x1b0 .\CortexM3\ARM_GCC_473\Debug\mem1.o
+                                0x315 (size before relaxing)
+ .debug_str     0x00000359       0xcf .\CortexM3\ARM_GCC_473\Debug\LINX.o
+                                0x23d (size before relaxing)
+ .debug_str     0x00000428       0x49 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+                                0x187 (size before relaxing)
+ .debug_str     0x00000471      0x112 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                                0x271 (size before relaxing)
+ .debug_str     0x00000583       0x84 .\CortexM3\ARM_GCC_473\Debug\cybootloader.o
+                                0x1c2 (size before relaxing)
+ .debug_str     0x00000607      0x1fd .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+                                0x375 (size before relaxing)
+ .debug_str     0x00000804      0x282 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+                                0x3d1 (size before relaxing)
+ .debug_str     0x00000a86      0x352 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
+                                0x4dc (size before relaxing)
+ .debug_str     0x00000dd8      0x614 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+                                0x7d7 (size before relaxing)
+ .debug_str     0x000013ec      0x367 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
+                                0x4e6 (size before relaxing)
+ .debug_str     0x00001753      0x192 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
+                                0x2f0 (size before relaxing)
+ .debug_str     0x000018e5       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
                                 0x212 (size before relaxing)
- .debug_str     0x00005ecd      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
-                                0x301 (size before relaxing)
- .debug_str     0x0000605d      0x191 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
-                                0x325 (size before relaxing)
- .debug_str     0x000061ee      0x31f .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
-                                0x4a3 (size before relaxing)
- .debug_str     0x0000650d      0x28f .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
-                                0x49f (size before relaxing)
- .debug_str     0x0000679c      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
-                                0x590 (size before relaxing)
- .debug_str     0x00006a2c       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
-                                0x233 (size before relaxing)
- .debug_str     0x00006aae      0x2c1 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
-                                0x619 (size before relaxing)
- .debug_str     0x00006d6f       0x61 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
-                                0x210 (size before relaxing)
- .debug_str     0x00006dd0      0x1e4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
-                                0x371 (size before relaxing)
- .debug_str     0x00006fb4      0x1a9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
-                                0x33d (size before relaxing)
- .debug_str     0x0000715d      0x129 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
-                                0x2a0 (size before relaxing)
- .debug_str     0x00007286       0xfe .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
-                                0x27c (size before relaxing)
- .debug_str     0x00007384       0x41 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
-                                0x228 (size before relaxing)
- .debug_str     0x000073c5      0x106 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
-                                0x345 (size before relaxing)
+ .debug_str     0x000019ad      0x251 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
+                                0x3fc (size before relaxing)
+ .debug_str     0x00001bfe       0x37 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
+                                0x166 (size before relaxing)
+ .debug_str     0x00001c35       0xab .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
+                                0x1e5 (size before relaxing)
+ .debug_str     0x00001ce0      0x22b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
+                                0x380 (size before relaxing)
+ .debug_str     0x00001f0b       0xb9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
+                                0x1fe (size before relaxing)
+ .debug_str     0x00001fc4       0x9b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
+                                0x1e1 (size before relaxing)
+ .debug_str     0x0000205f       0xad .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
+                                0x1fe (size before relaxing)
+ .debug_str     0x0000210c       0x90 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
+                                0x1e1 (size before relaxing)
+ .debug_str     0x0000219c       0xca .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
+                                0x21b (size before relaxing)
+ .debug_str     0x00002266       0x90 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
+                                0x1e1 (size before relaxing)
+ .debug_str     0x000022f6      0x183 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
+                                0x32c (size before relaxing)
+ .debug_str     0x00002479      0x16a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
+                                0x2b6 (size before relaxing)
+ .debug_str     0x000025e3       0x77 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
+                                0x1c6 (size before relaxing)
+ .debug_str     0x0000265a       0xd1 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
+                                0x216 (size before relaxing)
+ .debug_str     0x0000272b       0x96 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
+                                0x216 (size before relaxing)
+ .debug_str     0x000027c1      0x107 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
+                                0x258 (size before relaxing)
+ .debug_str     0x000028c8       0xcf .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
+                                0x220 (size before relaxing)
+ .debug_str     0x00002997      0x3e5 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
+                                0x5e2 (size before relaxing)
+ .debug_str     0x00002d7c       0xba .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
+                                0x209 (size before relaxing)
+ .debug_str     0x00002e36       0x74 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
+                                0x1ac (size before relaxing)
+ .debug_str     0x00002eaa      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
+                                0x2f0 (size before relaxing)
+ .debug_str     0x00003011       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
+                                0x212 (size before relaxing)
+ .debug_str     0x00003093      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
+                                0x2f0 (size before relaxing)
+ .debug_str     0x000031fa       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
+                                0x212 (size before relaxing)
+ .debug_str     0x0000327c      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
+                                0x2f0 (size before relaxing)
+ .debug_str     0x000033e3       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
+                                0x212 (size before relaxing)
+ .debug_str     0x00003465      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
+                                0x2f0 (size before relaxing)
+ .debug_str     0x000035cc       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
+                                0x212 (size before relaxing)
+ .debug_str     0x0000364e      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
+                                0x2f0 (size before relaxing)
+ .debug_str     0x000037b5       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
+                                0x212 (size before relaxing)
+ .debug_str     0x00003837      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
+                                0x2f0 (size before relaxing)
+ .debug_str     0x0000399e       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
+                                0x212 (size before relaxing)
+ .debug_str     0x00003a20      0x167 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
+                                0x2f0 (size before relaxing)
+ .debug_str     0x00003b87       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
+                                0x212 (size before relaxing)
+ .debug_str     0x00003c09       0x9e .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
+                                0x1db (size before relaxing)
+ .debug_str     0x00003ca7      0x22b .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                                0x3d4 (size before relaxing)
+ .debug_str     0x00003ed2      0x201 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
+                                0x3aa (size before relaxing)
+ .debug_str     0x000040d3       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
+                                0x211 (size before relaxing)
+ .debug_str     0x0000419b      0x149 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
+                                0x2e9 (size before relaxing)
+ .debug_str     0x000042e4      0x149 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
+                                0x2e9 (size before relaxing)
+ .debug_str     0x0000442d      0x149 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
+                                0x2e9 (size before relaxing)
+ .debug_str     0x00004576      0x149 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
+                                0x2e9 (size before relaxing)
+ .debug_str     0x000046bf       0x7c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x0000473b       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x000047ac       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x0000481d       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x0000488e       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x000048ff       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x00004970       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x000049e1       0x71 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x00004a52       0xae .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
+                                0x205 (size before relaxing)
+ .debug_str     0x00004b00       0x56 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
+                                0x198 (size before relaxing)
+ .debug_str     0x00004b56       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00004bc2       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00004c2e       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00004c9a       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00004d06       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00004d72       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00004dde       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00004e4a       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00004eb6       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
+                                0x1ff (size before relaxing)
+ .debug_str     0x00004f5e       0x53 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
+                                0x195 (size before relaxing)
+ .debug_str     0x00004fb1       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x0000501d       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00005089       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x000050f5       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00005161       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x000051cd       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00005239       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x000052a5       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
+                                0x1ff (size before relaxing)
+ .debug_str     0x0000534d       0x53 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
+                                0x195 (size before relaxing)
+ .debug_str     0x000053a0       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x0000540c       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00005478       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x000054e4       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
+                                0x1ff (size before relaxing)
+ .debug_str     0x0000558c       0x53 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
+                                0x195 (size before relaxing)
+ .debug_str     0x000055df       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x0000564b       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x000056b7       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x00005723       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x0000578f       0x6c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x000057fb      0x30a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
+                                0x4fc (size before relaxing)
+ .debug_str     0x00005b05       0x3f .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
+                                0x177 (size before relaxing)
+ .debug_str     0x00005b44      0x2ac .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
+                                0x4af (size before relaxing)
+ .debug_str     0x00005df0       0x9a .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
+                                0x21a (size before relaxing)
+ .debug_str     0x00005e8a       0x9e .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
+                                0x21e (size before relaxing)
+ .debug_str     0x00005f28      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
+                                0x30d (size before relaxing)
+ .debug_str     0x000060b8      0x191 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
+                                0x331 (size before relaxing)
+ .debug_str     0x00006249      0x31f .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+                                0x4af (size before relaxing)
+ .debug_str     0x00006568      0x28f .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+                                0x4ab (size before relaxing)
+ .debug_str     0x000067f7      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+                                0x59c (size before relaxing)
+ .debug_str     0x00006a87       0x82 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+                                0x23f (size before relaxing)
+ .debug_str     0x00006b09      0x2c1 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+                                0x625 (size before relaxing)
+ .debug_str     0x00006dca       0x61 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
+                                0x21c (size before relaxing)
+ .debug_str     0x00006e2b      0x1e4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+                                0x37d (size before relaxing)
+ .debug_str     0x0000700f      0x1a9 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
+                                0x349 (size before relaxing)
+ .debug_str     0x000071b8      0x129 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
+                                0x2ac (size before relaxing)
+ .debug_str     0x000072e1       0xfe .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
+                                0x288 (size before relaxing)
+ .debug_str     0x000073df       0x41 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
+                                0x234 (size before relaxing)
+ .debug_str     0x00007420      0x106 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_descr.o)
+                                0x351 (size before relaxing)
 
-.debug_loc      0x00000000     0xb15c
+.debug_loc      0x00000000     0xb16a
  *(.debug_loc)
  .debug_loc     0x00000000       0xa8 .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_loc     0x000000a8      0x3f2 .\CortexM3\ARM_GCC_473\Debug\mem1.o
- .debug_loc     0x0000049a      0x102 .\CortexM3\ARM_GCC_473\Debug\LINX.o
- .debug_loc     0x0000059c      0x100 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
- .debug_loc     0x0000069c      0x268 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
- .debug_loc     0x00000904      0x50c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
- .debug_loc     0x00000e10      0x51c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
- .debug_loc     0x0000132c      0xce0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
- .debug_loc     0x0000200c      0x2e8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
- .debug_loc     0x000022f4      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
- .debug_loc     0x00002614       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
- .debug_loc     0x000026c4      0x3b4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
- .debug_loc     0x00002a78       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
- .debug_loc     0x00002aa4       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
- .debug_loc     0x00002b54      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
- .debug_loc     0x00002de4      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
- .debug_loc     0x00002f74       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
- .debug_loc     0x00003024      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
- .debug_loc     0x000031b4       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
- .debug_loc     0x00003264      0x1c8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
- .debug_loc     0x0000342c       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
- .debug_loc     0x000034dc      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
- .debug_loc     0x0000376c      0x158 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
- .debug_loc     0x000038c4       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
- .debug_loc     0x0000391c       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_loc     0x00003980       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_loc     0x000039e4      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
- .debug_loc     0x00003b74       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
- .debug_loc     0x00003c24      0x58c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
- .debug_loc     0x000041b0       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
- .debug_loc     0x00004260       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
- .debug_loc     0x00004310      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
- .debug_loc     0x00004630       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
- .debug_loc     0x000046e0      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
- .debug_loc     0x00004a00       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
- .debug_loc     0x00004ab0      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
- .debug_loc     0x00004dd0       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
- .debug_loc     0x00004e80      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
- .debug_loc     0x000051a0       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
- .debug_loc     0x00005250      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
- .debug_loc     0x00005570       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
- .debug_loc     0x00005620      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
- .debug_loc     0x00005940       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
- .debug_loc     0x000059f0      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
- .debug_loc     0x00005d10       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
- .debug_loc     0x00005dc0       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
- .debug_loc     0x00005e68      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_loc     0x000060f8      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
- .debug_loc     0x00006388       0xe8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
- .debug_loc     0x00006470      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
- .debug_loc     0x0000669c      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
- .debug_loc     0x000068c8      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
- .debug_loc     0x00006af4      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
- .debug_loc     0x00006d20       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
- .debug_loc     0x00006de8       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
- .debug_loc     0x00006eb0       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
- .debug_loc     0x00006f78       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
- .debug_loc     0x00007040       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
- .debug_loc     0x00007108       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
- .debug_loc     0x000071d0       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
- .debug_loc     0x00007298       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
- .debug_loc     0x00007360      0x100 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
- .debug_loc     0x00007460       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
- .debug_loc     0x000074c4       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
- .debug_loc     0x0000758c       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
- .debug_loc     0x00007654       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
- .debug_loc     0x0000771c       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
- .debug_loc     0x000077e4       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
- .debug_loc     0x000078ac       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
- .debug_loc     0x00007974       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
- .debug_loc     0x00007a3c       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
- .debug_loc     0x00007b04      0x100 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
- .debug_loc     0x00007c04       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
- .debug_loc     0x00007c68       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
- .debug_loc     0x00007d30       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
- .debug_loc     0x00007df8       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
- .debug_loc     0x00007ec0       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
- .debug_loc     0x00007f88       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
- .debug_loc     0x00008050       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
- .debug_loc     0x00008118       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
- .debug_loc     0x000081e0      0x100 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
- .debug_loc     0x000082e0       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
- .debug_loc     0x00008344       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
- .debug_loc     0x0000840c       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
- .debug_loc     0x000084d4       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
- .debug_loc     0x0000859c      0x100 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
- .debug_loc     0x0000869c       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
- .debug_loc     0x00008700       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
- .debug_loc     0x000087c8       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
- .debug_loc     0x00008890       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
- .debug_loc     0x00008958       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
- .debug_loc     0x00008a20       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
- .debug_loc     0x00008ae8      0x420 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
- .debug_loc     0x00008f08       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
- .debug_loc     0x00008f34      0x3b4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
- .debug_loc     0x000092e8       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
- .debug_loc     0x0000934c       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
- .debug_loc     0x000093b0      0x278 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
- .debug_loc     0x00009628      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
- .debug_loc     0x00009854      0x404 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
- .debug_loc     0x00009c58      0x3d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
- .debug_loc     0x0000a02c      0x314 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
- .debug_loc     0x0000a340       0xdc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
- .debug_loc     0x0000a41c      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
- .debug_loc     0x0000a6b0       0x38 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
- .debug_loc     0x0000a6e8      0x388 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
- .debug_loc     0x0000aa70      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
- .debug_loc     0x0000ac9c      0x258 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
- .debug_loc     0x0000aef4      0x230 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
- .debug_loc     0x0000b124       0x38 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
+ .debug_loc     0x0000049a      0x110 .\CortexM3\ARM_GCC_473\Debug\LINX.o
+ .debug_loc     0x000005aa      0x100 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+ .debug_loc     0x000006aa      0x268 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyfitter_cfg.o)
+ .debug_loc     0x00000912      0x50c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(SPIS_1.o)
+ .debug_loc     0x00000e1e      0x51c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyDmac.o)
+ .debug_loc     0x0000133a      0xce0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyLib.o)
+ .debug_loc     0x0000201a      0x2e8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(cyPm.o)
+ .debug_loc     0x00002302      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1.o)
+ .debug_loc     0x00002622       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_PM.o)
+ .debug_loc     0x000026d2      0x3b4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1.o)
+ .debug_loc     0x00002a86       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_INT.o)
+ .debug_loc     0x00002ab2       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_PM.o)
+ .debug_loc     0x00002b62      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_1_theACLK.o)
+ .debug_loc     0x00002df2      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1.o)
+ .debug_loc     0x00002f82       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_1_PM.o)
+ .debug_loc     0x00003032      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2.o)
+ .debug_loc     0x000031c2       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(VDAC8_2_PM.o)
+ .debug_loc     0x00003272      0x1c8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1.o)
+ .debug_loc     0x0000343a       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(IDAC8_1_PM.o)
+ .debug_loc     0x000034ea      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC_clk.o)
+ .debug_loc     0x0000377a      0x158 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1.o)
+ .debug_loc     0x000038d2       0x58 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_PM.o)
+ .debug_loc     0x0000392a       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_loc     0x0000398e       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_loc     0x000039f2      0x190 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8.o)
+ .debug_loc     0x00003b82       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_VDAC8_PM.o)
+ .debug_loc     0x00003c32      0x58c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1.o)
+ .debug_loc     0x000041be       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_PM.o)
+ .debug_loc     0x0000426e       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_INT.o)
+ .debug_loc     0x0000431e      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2.o)
+ .debug_loc     0x0000463e       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_2_PM.o)
+ .debug_loc     0x000046ee      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3.o)
+ .debug_loc     0x00004a0e       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_PM.o)
+ .debug_loc     0x00004abe      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4.o)
+ .debug_loc     0x00004dde       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_4_PM.o)
+ .debug_loc     0x00004e8e      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5.o)
+ .debug_loc     0x000051ae       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_PM.o)
+ .debug_loc     0x0000525e      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6.o)
+ .debug_loc     0x0000557e       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_6_PM.o)
+ .debug_loc     0x0000562e      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7.o)
+ .debug_loc     0x0000594e       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_PM.o)
+ .debug_loc     0x000059fe      0x320 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8.o)
+ .debug_loc     0x00005d1e       0xb0 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_8_PM.o)
+ .debug_loc     0x00005dce       0xa8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_AMux.o)
+ .debug_loc     0x00005e76      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_loc     0x00006106      0x290 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_DelSig_1_theACLK.o)
+ .debug_loc     0x00006396       0xe8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_BuffAmp.o)
+ .debug_loc     0x0000647e      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_1_2_clk.o)
+ .debug_loc     0x000066aa      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_3_4_clk.o)
+ .debug_loc     0x000068d6      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_5_6_clk.o)
+ .debug_loc     0x00006b02      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(PWM_7_8_clk.o)
+ .debug_loc     0x00006d2e       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_1.o)
+ .debug_loc     0x00006df6       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_2.o)
+ .debug_loc     0x00006ebe       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_0.o)
+ .debug_loc     0x00006f86       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_3.o)
+ .debug_loc     0x0000704e       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_4.o)
+ .debug_loc     0x00007116       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_5.o)
+ .debug_loc     0x000071de       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_6.o)
+ .debug_loc     0x000072a6       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_12_7.o)
+ .debug_loc     0x0000736e      0x100 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Status.o)
+ .debug_loc     0x0000746e       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_12_Control.o)
+ .debug_loc     0x000074d2       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_0.o)
+ .debug_loc     0x0000759a       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_1.o)
+ .debug_loc     0x00007662       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_2.o)
+ .debug_loc     0x0000772a       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_7.o)
+ .debug_loc     0x000077f2       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_6.o)
+ .debug_loc     0x000078ba       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_5.o)
+ .debug_loc     0x00007982       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_4.o)
+ .debug_loc     0x00007a4a       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_2_3.o)
+ .debug_loc     0x00007b12      0x100 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Status.o)
+ .debug_loc     0x00007c12       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_2_Control.o)
+ .debug_loc     0x00007c76       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_0.o)
+ .debug_loc     0x00007d3e       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_6.o)
+ .debug_loc     0x00007e06       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_5.o)
+ .debug_loc     0x00007ece       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_4.o)
+ .debug_loc     0x00007f96       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_3.o)
+ .debug_loc     0x0000805e       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_2.o)
+ .debug_loc     0x00008126       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_4_1.o)
+ .debug_loc     0x000081ee      0x100 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Status.o)
+ .debug_loc     0x000082ee       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_4_Control.o)
+ .debug_loc     0x00008352       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_0.o)
+ .debug_loc     0x0000841a       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_7.o)
+ .debug_loc     0x000084e2       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_6.o)
+ .debug_loc     0x000085aa      0x100 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Status.o)
+ .debug_loc     0x000086aa       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(Port_5_Control.o)
+ .debug_loc     0x0000870e       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_5.o)
+ .debug_loc     0x000087d6       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_4.o)
+ .debug_loc     0x0000889e       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_3.o)
+ .debug_loc     0x00008966       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_2.o)
+ .debug_loc     0x00008a2e       0xc8 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(GPIO_5_1.o)
+ .debug_loc     0x00008af6      0x420 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1.o)
+ .debug_loc     0x00008f16       0x2c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_INT.o)
+ .debug_loc     0x00008f42      0x3b4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_SAR.o)
+ .debug_loc     0x000092f6       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_TempBuf_dma.o)
+ .debug_loc     0x0000935a       0x64 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_FinalBuf_dma.o)
+ .debug_loc     0x000093be      0x278 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(ADC_SAR_Seq_1_IRQ.o)
+ .debug_loc     0x00009636      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(WaveDAC8_1_DacClk.o)
+ .debug_loc     0x00009862      0x404 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART.o)
+ .debug_loc     0x00009c66      0x3d4 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cdc.o)
+ .debug_loc     0x0000a03a      0x314 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_drv.o)
+ .debug_loc     0x0000a34e       0xdc .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_episr.o)
+ .debug_loc     0x0000a42a      0x294 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_std.o)
+ .debug_loc     0x0000a6be       0x38 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_vnd.o)
+ .debug_loc     0x0000a6f6      0x388 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART.o)
+ .debug_loc     0x0000aa7e      0x22c .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(DEBUG_UART_IntClock.o)
+ .debug_loc     0x0000acaa      0x258 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CyFlash.o)
+ .debug_loc     0x0000af02      0x230 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(CySpc.o)
+ .debug_loc     0x0000b132       0x38 .\CortexM3\ARM_GCC_473\Debug\PSoC_2_Pi.a(USBUART_cls.o)
 
 .debug_macinfo
  *(.debug_macinfo)

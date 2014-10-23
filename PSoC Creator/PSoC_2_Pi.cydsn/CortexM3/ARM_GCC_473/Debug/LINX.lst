@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 1
   17:.\LINX.c      ****     #include "LINX.h"
   18:.\LINX.c      **** #endif
   19:.\LINX.c      **** 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 2
 
 
   20:.\LINX.c      **** #include <project.h>
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 1
   74              		.size	LINX_Initialize, .-LINX_Initialize
   75 003e 00BF     		.section	.rodata
   76 002e 0000     		.align	2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 3
 
 
   77              	.LC2:
@@ -148,24 +148,25 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 1
   90      0A00
   91 0076 0000     		.align	2
   92              	.LC7:
-  93 0078 09536F46 		.ascii	"\011SoF Passed\015\012\000"
-  93      20506173 
-  93      7365640D 
-  93      0A00
-  94 0086 0000     		.align	2
+  93 0078 09436865 		.ascii	"\011Checksum FAILED\015\012\000"
+  93      636B7375 
+  93      6D204641 
+  93      494C4544 
+  93      0D0A00
+  94 008b 00       		.align	2
   95              	.LC8:
-  96 0088 09436865 		.ascii	"\011Checksum FAILED\015\012\000"
-  96      636B7375 
-  96      6D204641 
-  96      494C4544 
-  96      0D0A00
-  97 009b 00       		.align	2
+  96 008c 09436F6D 		.ascii	"\011Command length FAILED\015\012\000"
+  96      6D616E64 
+  96      206C656E 
+  96      67746820 
+  96      4641494C 
+  97 00a5 000000   		.align	2
   98              	.LC9:
-  99 009c 09436865 		.ascii	"\011Checksum passed\015\012\000"
-  99      636B7375 
-  99      6D207061 
-  99      73736564 
-  99      0D0A00
+  99 00a8 09436F6D 		.ascii	"\011Command validated\015\012\000"
+  99      6D616E64 
+  99      2076616C 
+  99      69646174 
+  99      65640D0A 
  100              		.section	.text.LINX_GetCommand,"ax",%progbits
  101              		.align	2
  102              		.global	LINX_GetCommand
@@ -175,12 +176,12 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 1
  106              	LINX_GetCommand:
  107              	.LFB57:
   34:.\LINX.c      **** 
-  35:.\LINX.c      **** bool LINX_GetCommand(uint8 *command, uint8 *command_len) {
+  35:.\LINX.c      **** bool LINX_GetCommand(uint8 *command) {
  108              		.loc 1 35 0
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 4
+
+
  109              		.cfi_startproc
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 4
-
-
  110              		@ args = 0, pretend = 0, frame = 80
  111              		@ frame_needed = 1, uses_anonymous_args = 0
  112 0000 90B5     		push	{r4, r7, lr}
@@ -196,1184 +197,1600 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 1
  122              	.LCFI4:
  123              		.cfi_def_cfa_register 7
  124 0006 7860     		str	r0, [r7, #4]
- 125 0008 3960     		str	r1, [r7, #0]
   36:.\LINX.c      ****     #ifdef LINX_DEBUG
   37:.\LINX.c      ****         DEBUG_UART_PutString("Getting new LINX command\r\n");
- 126              		.loc 1 37 0
- 127 000a 40F20000 		movw	r0, #:lower16:.LC2
- 128 000e C0F20000 		movt	r0, #:upper16:.LC2
- 129 0012 FFF7FEFF 		bl	DEBUG_UART_PutString
+ 125              		.loc 1 37 0
+ 126 0008 40F20000 		movw	r0, #:lower16:.LC2
+ 127 000c C0F20000 		movt	r0, #:upper16:.LC2
+ 128 0010 FFF7FEFF 		bl	DEBUG_UART_PutString
   38:.\LINX.c      ****         uint8 debug_str[LINX_DEBUG_STR_SIZE];
   39:.\LINX.c      ****         uint8 debug_str_len;
   40:.\LINX.c      ****     #endif
   41:.\LINX.c      ****     
   42:.\LINX.c      ****     uint8 i;
-  43:.\LINX.c      ****     
-  44:.\LINX.c      ****     // Get command bytes
-  45:.\LINX.c      ****     *command_len = USBUART_GetAll(command);
- 130              		.loc 1 45 0
- 131 0016 7868     		ldr	r0, [r7, #4]
- 132 0018 FFF7FEFF 		bl	USBUART_GetAll
- 133 001c 0346     		mov	r3, r0
- 134 001e DAB2     		uxtb	r2, r3
- 135 0020 3B68     		ldr	r3, [r7, #0]
- 136 0022 1A70     		strb	r2, [r3, #0]
-  46:.\LINX.c      ****     
-  47:.\LINX.c      ****     #ifdef LINX_DEBUG
-  48:.\LINX.c      ****         DEBUG_UART_PutString("Received command:");
- 137              		.loc 1 48 0
- 138 0024 40F20000 		movw	r0, #:lower16:.LC3
- 139 0028 C0F20000 		movt	r0, #:upper16:.LC3
- 140 002c FFF7FEFF 		bl	DEBUG_UART_PutString
-  49:.\LINX.c      ****         for (i = 0; i < *command_len; ++i) {
- 141              		.loc 1 49 0
- 142 0030 4FF00003 		mov	r3, #0
- 143 0034 87F84F30 		strb	r3, [r7, #79]
- 144 0038 1FE0     		b	.L4
- 145              	.L5:
-  50:.\LINX.c      ****             debug_str_len = sprintf(debug_str, " %x", command[i]);
- 146              		.loc 1 50 0 discriminator 2
- 147 003a 97F84F30 		ldrb	r3, [r7, #79]	@ zero_extendqisi2
- 148 003e 7A68     		ldr	r2, [r7, #4]
- 149 0040 D318     		adds	r3, r2, r3
- 150 0042 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 151 0044 07F10C02 		add	r2, r7, #12
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 5
+  43:.\LINX.c      ****     uint8 command_len;
+  44:.\LINX.c      ****     
+  45:.\LINX.c      ****     // Get command bytes
+  46:.\LINX.c      ****     command_len = USBUART_GetAll(command);
+ 129              		.loc 1 46 0
+ 130 0014 7868     		ldr	r0, [r7, #4]
+ 131 0016 FFF7FEFF 		bl	USBUART_GetAll
+ 132 001a 0346     		mov	r3, r0
+ 133 001c 87F84E30 		strb	r3, [r7, #78]
+  47:.\LINX.c      ****     
+  48:.\LINX.c      ****     #ifdef LINX_DEBUG
+  49:.\LINX.c      ****         DEBUG_UART_PutString("Received command:");
+ 134              		.loc 1 49 0
+ 135 0020 40F20000 		movw	r0, #:lower16:.LC3
+ 136 0024 C0F20000 		movt	r0, #:upper16:.LC3
+ 137 0028 FFF7FEFF 		bl	DEBUG_UART_PutString
+  50:.\LINX.c      ****         for (i = 0; i < command_len; ++i) {
+ 138              		.loc 1 50 0
+ 139 002c 4FF00003 		mov	r3, #0
+ 140 0030 87F84F30 		strb	r3, [r7, #79]
+ 141 0034 1FE0     		b	.L4
+ 142              	.L5:
+  51:.\LINX.c      ****             debug_str_len = sprintf(debug_str, " %x", command[i]);
+ 143              		.loc 1 51 0 discriminator 2
+ 144 0036 97F84F30 		ldrb	r3, [r7, #79]	@ zero_extendqisi2
+ 145 003a 7A68     		ldr	r2, [r7, #4]
+ 146 003c D318     		adds	r3, r2, r3
+ 147 003e 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 148 0040 07F10C02 		add	r2, r7, #12
+ 149 0044 1046     		mov	r0, r2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 5
 
 
- 152 0048 1046     		mov	r0, r2
- 153 004a 40F20001 		movw	r1, #:lower16:.LC4
- 154 004e C0F20001 		movt	r1, #:upper16:.LC4
- 155 0052 1A46     		mov	r2, r3
- 156 0054 FFF7FEFF 		bl	sprintf
- 157 0058 0346     		mov	r3, r0
- 158 005a 87F84E30 		strb	r3, [r7, #78]
-  51:.\LINX.c      ****             DEBUG_UART_PutArray(debug_str, debug_str_len);
- 159              		.loc 1 51 0 discriminator 2
- 160 005e 07F10C02 		add	r2, r7, #12
- 161 0062 97F84E30 		ldrb	r3, [r7, #78]	@ zero_extendqisi2
- 162 0066 1046     		mov	r0, r2
- 163 0068 1946     		mov	r1, r3
- 164 006a FFF7FEFF 		bl	DEBUG_UART_PutArray
-  49:.\LINX.c      ****         for (i = 0; i < *command_len; ++i) {
- 165              		.loc 1 49 0 discriminator 2
- 166 006e 97F84F30 		ldrb	r3, [r7, #79]
- 167 0072 03F10103 		add	r3, r3, #1
- 168 0076 87F84F30 		strb	r3, [r7, #79]
- 169              	.L4:
-  49:.\LINX.c      ****         for (i = 0; i < *command_len; ++i) {
- 170              		.loc 1 49 0 is_stmt 0 discriminator 1
- 171 007a 3B68     		ldr	r3, [r7, #0]
- 172 007c 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 173 007e 97F84F20 		ldrb	r2, [r7, #79]	@ zero_extendqisi2
- 174 0082 9A42     		cmp	r2, r3
- 175 0084 D9D3     		bcc	.L5
-  52:.\LINX.c      ****         }
-  53:.\LINX.c      ****         DEBUG_UART_PutString("\r\n");
- 176              		.loc 1 53 0 is_stmt 1
- 177 0086 40F20000 		movw	r0, #:lower16:.LC5
- 178 008a C0F20000 		movt	r0, #:upper16:.LC5
- 179 008e FFF7FEFF 		bl	DEBUG_UART_PutString
-  54:.\LINX.c      ****     #endif
-  55:.\LINX.c      ****     
-  56:.\LINX.c      ****     // Verify SoF
-  57:.\LINX.c      ****     if (command[0] != 0xFF) {
- 180              		.loc 1 57 0
- 181 0092 7B68     		ldr	r3, [r7, #4]
- 182 0094 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 183 0096 FF2B     		cmp	r3, #255
- 184 0098 08D0     		beq	.L6
-  58:.\LINX.c      ****         #ifdef LINX_DEBUG
-  59:.\LINX.c      ****             DEBUG_UART_PutString("\tSoF FAILED\r\n");
- 185              		.loc 1 59 0
- 186 009a 40F20000 		movw	r0, #:lower16:.LC6
- 187 009e C0F20000 		movt	r0, #:upper16:.LC6
- 188 00a2 FFF7FEFF 		bl	DEBUG_UART_PutString
-  60:.\LINX.c      ****         #endif
-  61:.\LINX.c      ****         
-  62:.\LINX.c      ****         return false;
- 189              		.loc 1 62 0
- 190 00a6 4FF00003 		mov	r3, #0
- 191 00aa 26E0     		b	.L9
- 192              	.L6:
-  63:.\LINX.c      ****     }
-  64:.\LINX.c      ****     else {
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 6
+ 150 0046 40F20001 		movw	r1, #:lower16:.LC4
+ 151 004a C0F20001 		movt	r1, #:upper16:.LC4
+ 152 004e 1A46     		mov	r2, r3
+ 153 0050 FFF7FEFF 		bl	sprintf
+ 154 0054 0346     		mov	r3, r0
+ 155 0056 87F84D30 		strb	r3, [r7, #77]
+  52:.\LINX.c      ****             DEBUG_UART_PutArray(debug_str, debug_str_len);
+ 156              		.loc 1 52 0 discriminator 2
+ 157 005a 07F10C02 		add	r2, r7, #12
+ 158 005e 97F84D30 		ldrb	r3, [r7, #77]	@ zero_extendqisi2
+ 159 0062 1046     		mov	r0, r2
+ 160 0064 1946     		mov	r1, r3
+ 161 0066 FFF7FEFF 		bl	DEBUG_UART_PutArray
+  50:.\LINX.c      ****         for (i = 0; i < command_len; ++i) {
+ 162              		.loc 1 50 0 discriminator 2
+ 163 006a 97F84F30 		ldrb	r3, [r7, #79]
+ 164 006e 03F10103 		add	r3, r3, #1
+ 165 0072 87F84F30 		strb	r3, [r7, #79]
+ 166              	.L4:
+  50:.\LINX.c      ****         for (i = 0; i < command_len; ++i) {
+ 167              		.loc 1 50 0 is_stmt 0 discriminator 1
+ 168 0076 97F84F20 		ldrb	r2, [r7, #79]	@ zero_extendqisi2
+ 169 007a 97F84E30 		ldrb	r3, [r7, #78]	@ zero_extendqisi2
+ 170 007e 9A42     		cmp	r2, r3
+ 171 0080 D9D3     		bcc	.L5
+  53:.\LINX.c      ****         }
+  54:.\LINX.c      ****         DEBUG_UART_PutString("\r\n");
+ 172              		.loc 1 54 0 is_stmt 1
+ 173 0082 40F20000 		movw	r0, #:lower16:.LC5
+ 174 0086 C0F20000 		movt	r0, #:upper16:.LC5
+ 175 008a FFF7FEFF 		bl	DEBUG_UART_PutString
+  55:.\LINX.c      ****     #endif
+  56:.\LINX.c      ****     
+  57:.\LINX.c      ****     // Verify SoF
+  58:.\LINX.c      ****     if (command[0] != 0xFF) {
+ 176              		.loc 1 58 0
+ 177 008e 7B68     		ldr	r3, [r7, #4]
+ 178 0090 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 179 0092 FF2B     		cmp	r3, #255
+ 180 0094 08D0     		beq	.L6
+  59:.\LINX.c      ****         #ifdef LINX_DEBUG
+  60:.\LINX.c      ****             DEBUG_UART_PutString("\tSoF FAILED\r\n");
+ 181              		.loc 1 60 0
+ 182 0096 40F20000 		movw	r0, #:lower16:.LC6
+ 183 009a C0F20000 		movt	r0, #:upper16:.LC6
+ 184 009e FFF7FEFF 		bl	DEBUG_UART_PutString
+  61:.\LINX.c      ****         #endif
+  62:.\LINX.c      ****         
+  63:.\LINX.c      ****         return false;
+ 185              		.loc 1 63 0
+ 186 00a2 4FF00003 		mov	r3, #0
+ 187 00a6 34E0     		b	.L10
+ 188              	.L6:
+  64:.\LINX.c      ****     }
+  65:.\LINX.c      ****     
+  66:.\LINX.c      ****     // Verify checksum
+  67:.\LINX.c      ****     if (command[command_len - 1] != LINX_CalculateChecksum(command, command_len - 1)) {
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 6
 
 
-  65:.\LINX.c      ****         #ifdef LINX_DEBUG
-  66:.\LINX.c      ****             DEBUG_UART_PutString("\tSoF Passed\r\n");
- 193              		.loc 1 66 0
- 194 00ac 40F20000 		movw	r0, #:lower16:.LC7
- 195 00b0 C0F20000 		movt	r0, #:upper16:.LC7
- 196 00b4 FFF7FEFF 		bl	DEBUG_UART_PutString
-  67:.\LINX.c      ****         #endif
-  68:.\LINX.c      ****     }
-  69:.\LINX.c      ****     
-  70:.\LINX.c      ****     // Verify checksum
-  71:.\LINX.c      ****     if (command[*command_len - 1] != LINX_CalculateChecksum(command, *command_len)) {
- 197              		.loc 1 71 0
- 198 00b8 3B68     		ldr	r3, [r7, #0]
- 199 00ba 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 200 00bc 03F1FF33 		add	r3, r3, #-1
- 201 00c0 7A68     		ldr	r2, [r7, #4]
- 202 00c2 D318     		adds	r3, r2, r3
- 203 00c4 1C78     		ldrb	r4, [r3, #0]	@ zero_extendqisi2
- 204 00c6 3B68     		ldr	r3, [r7, #0]
- 205 00c8 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 206 00ca 7868     		ldr	r0, [r7, #4]
- 207 00cc 1946     		mov	r1, r3
- 208 00ce FFF7FEFF 		bl	LINX_CalculateChecksum
- 209 00d2 0346     		mov	r3, r0
- 210 00d4 9C42     		cmp	r4, r3
- 211 00d6 08D0     		beq	.L8
-  72:.\LINX.c      ****         #ifdef LINX_DEBUG
-  73:.\LINX.c      ****             DEBUG_UART_PutString("\tChecksum FAILED\r\n");
- 212              		.loc 1 73 0
- 213 00d8 40F20000 		movw	r0, #:lower16:.LC8
- 214 00dc C0F20000 		movt	r0, #:upper16:.LC8
- 215 00e0 FFF7FEFF 		bl	DEBUG_UART_PutString
-  74:.\LINX.c      ****         #endif
-  75:.\LINX.c      ****         
-  76:.\LINX.c      ****         return false;
- 216              		.loc 1 76 0
- 217 00e4 4FF00003 		mov	r3, #0
- 218 00e8 07E0     		b	.L9
- 219              	.L8:
-  77:.\LINX.c      ****     }
-  78:.\LINX.c      ****     else {
-  79:.\LINX.c      ****         #ifdef LINX_DEBUG
-  80:.\LINX.c      ****             DEBUG_UART_PutString("\tChecksum passed\r\n");
- 220              		.loc 1 80 0
- 221 00ea 40F20000 		movw	r0, #:lower16:.LC9
- 222 00ee C0F20000 		movt	r0, #:upper16:.LC9
- 223 00f2 FFF7FEFF 		bl	DEBUG_UART_PutString
-  81:.\LINX.c      ****         #endif
+ 189              		.loc 1 67 0
+ 190 00a8 97F84E30 		ldrb	r3, [r7, #78]	@ zero_extendqisi2
+ 191 00ac 03F1FF33 		add	r3, r3, #-1
+ 192 00b0 7A68     		ldr	r2, [r7, #4]
+ 193 00b2 D318     		adds	r3, r2, r3
+ 194 00b4 1C78     		ldrb	r4, [r3, #0]	@ zero_extendqisi2
+ 195 00b6 97F84E30 		ldrb	r3, [r7, #78]
+ 196 00ba 03F1FF33 		add	r3, r3, #-1
+ 197 00be DBB2     		uxtb	r3, r3
+ 198 00c0 7868     		ldr	r0, [r7, #4]
+ 199 00c2 1946     		mov	r1, r3
+ 200 00c4 FFF7FEFF 		bl	LINX_CalculateChecksum
+ 201 00c8 0346     		mov	r3, r0
+ 202 00ca 9C42     		cmp	r4, r3
+ 203 00cc 08D0     		beq	.L8
+  68:.\LINX.c      ****         #ifdef LINX_DEBUG
+  69:.\LINX.c      ****             DEBUG_UART_PutString("\tChecksum FAILED\r\n");
+ 204              		.loc 1 69 0
+ 205 00ce 40F20000 		movw	r0, #:lower16:.LC7
+ 206 00d2 C0F20000 		movt	r0, #:upper16:.LC7
+ 207 00d6 FFF7FEFF 		bl	DEBUG_UART_PutString
+  70:.\LINX.c      ****         #endif
+  71:.\LINX.c      ****         
+  72:.\LINX.c      ****         return false;
+ 208              		.loc 1 72 0
+ 209 00da 4FF00003 		mov	r3, #0
+ 210 00de 18E0     		b	.L10
+ 211              	.L8:
+  73:.\LINX.c      ****     }
+  74:.\LINX.c      ****     
+  75:.\LINX.c      ****     // Verify command length
+  76:.\LINX.c      ****     if (command[1] != command_len) {
+ 212              		.loc 1 76 0
+ 213 00e0 7B68     		ldr	r3, [r7, #4]
+ 214 00e2 03F10103 		add	r3, r3, #1
+ 215 00e6 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 216 00e8 97F84E20 		ldrb	r2, [r7, #78]	@ zero_extendqisi2
+ 217 00ec 9A42     		cmp	r2, r3
+ 218 00ee 08D0     		beq	.L9
+  77:.\LINX.c      ****         #ifdef LINX_DEBUG
+  78:.\LINX.c      ****             DEBUG_UART_PutString("\tCommand length FAILED\r\n");
+ 219              		.loc 1 78 0
+ 220 00f0 40F20000 		movw	r0, #:lower16:.LC8
+ 221 00f4 C0F20000 		movt	r0, #:upper16:.LC8
+ 222 00f8 FFF7FEFF 		bl	DEBUG_UART_PutString
+  79:.\LINX.c      ****         #endif
+  80:.\LINX.c      ****         
+  81:.\LINX.c      ****         return false;
+ 223              		.loc 1 81 0
+ 224 00fc 4FF00003 		mov	r3, #0
+ 225 0100 07E0     		b	.L10
+ 226              	.L9:
   82:.\LINX.c      ****     }
   83:.\LINX.c      ****     
-  84:.\LINX.c      ****     return true;
- 224              		.loc 1 84 0
- 225 00f6 4FF00103 		mov	r3, #1
- 226              	.L9:
-  85:.\LINX.c      **** }
+  84:.\LINX.c      ****     #ifdef LINX_DEBUG
+  85:.\LINX.c      ****         DEBUG_UART_PutString("\tCommand validated\r\n");
  227              		.loc 1 85 0
- 228 00fa 1846     		mov	r0, r3
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 7
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 7
 
 
- 229 00fc 07F15407 		add	r7, r7, #84
- 230 0100 BD46     		mov	sp, r7
- 231 0102 90BD     		pop	{r4, r7, pc}
- 232              		.cfi_endproc
- 233              	.LFE57:
- 234              		.size	LINX_GetCommand, .-LINX_GetCommand
- 235              		.section	.text.LINX_CalculateChecksum,"ax",%progbits
- 236              		.align	2
- 237              		.global	LINX_CalculateChecksum
- 238              		.thumb
- 239              		.thumb_func
- 240              		.type	LINX_CalculateChecksum, %function
- 241              	LINX_CalculateChecksum:
- 242              	.LFB58:
-  86:.\LINX.c      **** 
-  87:.\LINX.c      **** uint8 LINX_CalculateChecksum(uint8 *command, uint8 command_len) {
- 243              		.loc 1 87 0
- 244              		.cfi_startproc
- 245              		@ args = 0, pretend = 0, frame = 16
- 246              		@ frame_needed = 1, uses_anonymous_args = 0
- 247              		@ link register save eliminated.
- 248 0000 80B4     		push	{r7}
- 249              	.LCFI5:
- 250              		.cfi_def_cfa_offset 4
- 251              		.cfi_offset 7, -4
- 252 0002 85B0     		sub	sp, sp, #20
- 253              	.LCFI6:
- 254              		.cfi_def_cfa_offset 24
- 255 0004 00AF     		add	r7, sp, #0
- 256              	.LCFI7:
- 257              		.cfi_def_cfa_register 7
- 258 0006 7860     		str	r0, [r7, #4]
- 259 0008 0B46     		mov	r3, r1
- 260 000a FB70     		strb	r3, [r7, #3]
-  88:.\LINX.c      ****     uint8 checksum = 0;
- 261              		.loc 1 88 0
- 262 000c 4FF00003 		mov	r3, #0
- 263 0010 FB73     		strb	r3, [r7, #15]
-  89:.\LINX.c      ****     uint8 i;
-  90:.\LINX.c      ****     
-  91:.\LINX.c      ****     for (i = 0; i < command_len - 1; ++i) {
- 264              		.loc 1 91 0
- 265 0012 4FF00003 		mov	r3, #0
- 266 0016 BB73     		strb	r3, [r7, #14]
- 267 0018 0AE0     		b	.L11
- 268              	.L12:
-  92:.\LINX.c      ****         checksum += command[i];
- 269              		.loc 1 92 0 discriminator 2
- 270 001a BB7B     		ldrb	r3, [r7, #14]	@ zero_extendqisi2
- 271 001c 7A68     		ldr	r2, [r7, #4]
- 272 001e D318     		adds	r3, r2, r3
- 273 0020 1A78     		ldrb	r2, [r3, #0]	@ zero_extendqisi2
- 274 0022 FB7B     		ldrb	r3, [r7, #15]
- 275 0024 D318     		adds	r3, r2, r3
- 276 0026 FB73     		strb	r3, [r7, #15]
-  91:.\LINX.c      ****     for (i = 0; i < command_len - 1; ++i) {
- 277              		.loc 1 91 0 discriminator 2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 8
+ 228 0102 40F20000 		movw	r0, #:lower16:.LC9
+ 229 0106 C0F20000 		movt	r0, #:upper16:.LC9
+ 230 010a FFF7FEFF 		bl	DEBUG_UART_PutString
+  86:.\LINX.c      ****     #endif
+  87:.\LINX.c      ****     return true;
+ 231              		.loc 1 87 0
+ 232 010e 4FF00103 		mov	r3, #1
+ 233              	.L10:
+  88:.\LINX.c      **** }
+ 234              		.loc 1 88 0
+ 235 0112 1846     		mov	r0, r3
+ 236 0114 07F15407 		add	r7, r7, #84
+ 237 0118 BD46     		mov	sp, r7
+ 238 011a 90BD     		pop	{r4, r7, pc}
+ 239              		.cfi_endproc
+ 240              	.LFE57:
+ 241              		.size	LINX_GetCommand, .-LINX_GetCommand
+ 242              		.section	.text.LINX_CalculateChecksum,"ax",%progbits
+ 243              		.align	2
+ 244              		.global	LINX_CalculateChecksum
+ 245              		.thumb
+ 246              		.thumb_func
+ 247              		.type	LINX_CalculateChecksum, %function
+ 248              	LINX_CalculateChecksum:
+ 249              	.LFB58:
+  89:.\LINX.c      **** 
+  90:.\LINX.c      **** uint8 LINX_CalculateChecksum(uint8 *buffer, uint8 buffer_len) {
+ 250              		.loc 1 90 0
+ 251              		.cfi_startproc
+ 252              		@ args = 0, pretend = 0, frame = 16
+ 253              		@ frame_needed = 1, uses_anonymous_args = 0
+ 254              		@ link register save eliminated.
+ 255 0000 80B4     		push	{r7}
+ 256              	.LCFI5:
+ 257              		.cfi_def_cfa_offset 4
+ 258              		.cfi_offset 7, -4
+ 259 0002 85B0     		sub	sp, sp, #20
+ 260              	.LCFI6:
+ 261              		.cfi_def_cfa_offset 24
+ 262 0004 00AF     		add	r7, sp, #0
+ 263              	.LCFI7:
+ 264              		.cfi_def_cfa_register 7
+ 265 0006 7860     		str	r0, [r7, #4]
+ 266 0008 0B46     		mov	r3, r1
+ 267 000a FB70     		strb	r3, [r7, #3]
+  91:.\LINX.c      ****     uint8 checksum = 0;
+ 268              		.loc 1 91 0
+ 269 000c 4FF00003 		mov	r3, #0
+ 270 0010 FB73     		strb	r3, [r7, #15]
+  92:.\LINX.c      ****     uint8 i;
+  93:.\LINX.c      ****     
+  94:.\LINX.c      ****     for (i = 0; i < buffer_len; ++i) {
+ 271              		.loc 1 94 0
+ 272 0012 4FF00003 		mov	r3, #0
+ 273 0016 BB73     		strb	r3, [r7, #14]
+ 274 0018 0AE0     		b	.L12
+ 275              	.L13:
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 8
 
 
- 278 0028 BB7B     		ldrb	r3, [r7, #14]
- 279 002a 03F10103 		add	r3, r3, #1
- 280 002e BB73     		strb	r3, [r7, #14]
- 281              	.L11:
-  91:.\LINX.c      ****     for (i = 0; i < command_len - 1; ++i) {
- 282              		.loc 1 91 0 is_stmt 0 discriminator 1
- 283 0030 BA7B     		ldrb	r2, [r7, #14]	@ zero_extendqisi2
- 284 0032 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
- 285 0034 03F1FF33 		add	r3, r3, #-1
- 286 0038 9A42     		cmp	r2, r3
- 287 003a EEDB     		blt	.L12
-  93:.\LINX.c      ****     }
-  94:.\LINX.c      ****     
-  95:.\LINX.c      ****     return checksum;
- 288              		.loc 1 95 0 is_stmt 1
- 289 003c FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
-  96:.\LINX.c      **** }
- 290              		.loc 1 96 0
- 291 003e 1846     		mov	r0, r3
- 292 0040 07F11407 		add	r7, r7, #20
- 293 0044 BD46     		mov	sp, r7
- 294 0046 80BC     		pop	{r7}
- 295 0048 7047     		bx	lr
- 296              		.cfi_endproc
- 297              	.LFE58:
- 298              		.size	LINX_CalculateChecksum, .-LINX_CalculateChecksum
- 299 004a 00BF     		.section	.text.LINX_ProcessCommand,"ax",%progbits
- 300              		.align	2
- 301              		.global	LINX_ProcessCommand
- 302              		.thumb
- 303              		.thumb_func
- 304              		.type	LINX_ProcessCommand, %function
- 305              	LINX_ProcessCommand:
- 306              	.LFB59:
-  97:.\LINX.c      **** 
-  98:.\LINX.c      **** void LINX_ProcessCommand(uint8 *command, uint8 command_len) {
- 307              		.loc 1 98 0
- 308              		.cfi_startproc
- 309              		@ args = 0, pretend = 0, frame = 8
- 310              		@ frame_needed = 1, uses_anonymous_args = 0
- 311              		@ link register save eliminated.
- 312 0000 80B4     		push	{r7}
- 313              	.LCFI8:
- 314              		.cfi_def_cfa_offset 4
- 315              		.cfi_offset 7, -4
- 316 0002 83B0     		sub	sp, sp, #12
- 317              	.LCFI9:
- 318              		.cfi_def_cfa_offset 16
- 319 0004 00AF     		add	r7, sp, #0
- 320              	.LCFI10:
- 321              		.cfi_def_cfa_register 7
- 322 0006 7860     		str	r0, [r7, #4]
- 323 0008 0B46     		mov	r3, r1
- 324 000a FB70     		strb	r3, [r7, #3]
-  99:.\LINX.c      ****     
- 100:.\LINX.c      **** }
- 325              		.loc 1 100 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 9
+  95:.\LINX.c      ****         checksum += buffer[i];
+ 276              		.loc 1 95 0 discriminator 2
+ 277 001a BB7B     		ldrb	r3, [r7, #14]	@ zero_extendqisi2
+ 278 001c 7A68     		ldr	r2, [r7, #4]
+ 279 001e D318     		adds	r3, r2, r3
+ 280 0020 1A78     		ldrb	r2, [r3, #0]	@ zero_extendqisi2
+ 281 0022 FB7B     		ldrb	r3, [r7, #15]
+ 282 0024 D318     		adds	r3, r2, r3
+ 283 0026 FB73     		strb	r3, [r7, #15]
+  94:.\LINX.c      ****     for (i = 0; i < buffer_len; ++i) {
+ 284              		.loc 1 94 0 discriminator 2
+ 285 0028 BB7B     		ldrb	r3, [r7, #14]
+ 286 002a 03F10103 		add	r3, r3, #1
+ 287 002e BB73     		strb	r3, [r7, #14]
+ 288              	.L12:
+  94:.\LINX.c      ****     for (i = 0; i < buffer_len; ++i) {
+ 289              		.loc 1 94 0 is_stmt 0 discriminator 1
+ 290 0030 BA7B     		ldrb	r2, [r7, #14]	@ zero_extendqisi2
+ 291 0032 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 292 0034 9A42     		cmp	r2, r3
+ 293 0036 F0D3     		bcc	.L13
+  96:.\LINX.c      ****     }
+  97:.\LINX.c      ****     
+  98:.\LINX.c      ****     return checksum;
+ 294              		.loc 1 98 0 is_stmt 1
+ 295 0038 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  99:.\LINX.c      **** }
+ 296              		.loc 1 99 0
+ 297 003a 1846     		mov	r0, r3
+ 298 003c 07F11407 		add	r7, r7, #20
+ 299 0040 BD46     		mov	sp, r7
+ 300 0042 80BC     		pop	{r7}
+ 301 0044 7047     		bx	lr
+ 302              		.cfi_endproc
+ 303              	.LFE58:
+ 304              		.size	LINX_CalculateChecksum, .-LINX_CalculateChecksum
+ 305 0046 00BF     		.section	.rodata
+ 306 00bd 000000   		.align	2
+ 307              	.LC10:
+ 308 00c0 0950726F 		.ascii	"\011Processing LINX command\015\012\000"
+ 308      63657373 
+ 308      696E6720 
+ 308      4C494E58 
+ 308      20636F6D 
+ 309 00db 00       		.align	2
+ 310              	.LC11:
+ 311 00dc 0947656E 		.ascii	"\011Generated response:\000"
+ 311      65726174 
+ 311      65642072 
+ 311      6573706F 
+ 311      6E73653A 
+ 312              		.section	.text.LINX_ProcessCommand,"ax",%progbits
+ 313              		.align	2
+ 314              		.global	LINX_ProcessCommand
+ 315              		.thumb
+ 316              		.thumb_func
+ 317              		.type	LINX_ProcessCommand, %function
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 9
 
 
- 326 000c 07F10C07 		add	r7, r7, #12
- 327 0010 BD46     		mov	sp, r7
- 328 0012 80BC     		pop	{r7}
- 329 0014 7047     		bx	lr
- 330              		.cfi_endproc
- 331              	.LFE59:
- 332              		.size	LINX_ProcessCommand, .-LINX_ProcessCommand
- 333 0016 00BF     		.section	.rodata
- 334 00af 00       		.align	2
- 335              	.LC10:
- 336 00b0 53656E64 		.ascii	"Sending LINX response\015\012\000"
- 336      696E6720 
- 336      4C494E58 
- 336      20726573 
- 336      706F6E73 
- 337              		.section	.text.LINX_SendResponse,"ax",%progbits
- 338              		.align	2
- 339              		.global	LINX_SendResponse
- 340              		.thumb
- 341              		.thumb_func
- 342              		.type	LINX_SendResponse, %function
- 343              	LINX_SendResponse:
- 344              	.LFB60:
- 101:.\LINX.c      **** 
- 102:.\LINX.c      **** void LINX_SendResponse() {
- 345              		.loc 1 102 0
- 346              		.cfi_startproc
- 347              		@ args = 0, pretend = 0, frame = 0
- 348              		@ frame_needed = 1, uses_anonymous_args = 0
- 349 0000 80B5     		push	{r7, lr}
- 350              	.LCFI11:
- 351              		.cfi_def_cfa_offset 8
- 352              		.cfi_offset 7, -8
- 353              		.cfi_offset 14, -4
- 354 0002 00AF     		add	r7, sp, #0
- 355              	.LCFI12:
- 356              		.cfi_def_cfa_register 7
- 103:.\LINX.c      ****     #ifdef LINX_DEBUG
- 104:.\LINX.c      ****         DEBUG_UART_PutString("Sending LINX response\r\n");
- 357              		.loc 1 104 0
- 358 0004 40F20000 		movw	r0, #:lower16:.LC10
- 359 0008 C0F20000 		movt	r0, #:upper16:.LC10
- 360 000c FFF7FEFF 		bl	DEBUG_UART_PutString
- 105:.\LINX.c      ****     #endif
- 106:.\LINX.c      **** }
- 361              		.loc 1 106 0
- 362 0010 80BD     		pop	{r7, pc}
- 363              		.cfi_endproc
- 364              	.LFE60:
- 365              		.size	LINX_SendResponse, .-LINX_SendResponse
- 366 0012 00BF     		.text
- 367              	.Letext0:
- 368              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4
- 369              		.file 3 "./Generated_Source/PSoC5/cytypes.h"
- 370              		.file 4 "./Generated_Source/PSoC5/core_cm3.h"
- 371              		.section	.debug_info,"",%progbits
- 372              	.Ldebug_info0:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 10
+ 318              	LINX_ProcessCommand:
+ 319              	.LFB59:
+ 100:.\LINX.c      **** 
+ 101:.\LINX.c      **** void LINX_ProcessCommand(uint8 *command, uint8 *response) {
+ 320              		.loc 1 101 0
+ 321              		.cfi_startproc
+ 322              		@ args = 0, pretend = 0, frame = 88
+ 323              		@ frame_needed = 1, uses_anonymous_args = 0
+ 324 0000 90B5     		push	{r4, r7, lr}
+ 325              	.LCFI8:
+ 326              		.cfi_def_cfa_offset 12
+ 327              		.cfi_offset 4, -12
+ 328              		.cfi_offset 7, -8
+ 329              		.cfi_offset 14, -4
+ 330 0002 97B0     		sub	sp, sp, #92
+ 331              	.LCFI9:
+ 332              		.cfi_def_cfa_offset 104
+ 333 0004 00AF     		add	r7, sp, #0
+ 334              	.LCFI10:
+ 335              		.cfi_def_cfa_register 7
+ 336 0006 7860     		str	r0, [r7, #4]
+ 337 0008 3960     		str	r1, [r7, #0]
+ 102:.\LINX.c      ****     #ifdef LINX_DEBUG
+ 103:.\LINX.c      ****         DEBUG_UART_PutString("\tProcessing LINX command\r\n");
+ 338              		.loc 1 103 0
+ 339 000a 40F20000 		movw	r0, #:lower16:.LC10
+ 340 000e C0F20000 		movt	r0, #:upper16:.LC10
+ 341 0012 FFF7FEFF 		bl	DEBUG_UART_PutString
+ 104:.\LINX.c      ****         uint8 debug_str[LINX_DEBUG_STR_SIZE];
+ 105:.\LINX.c      ****         uint8 debug_str_len;
+ 106:.\LINX.c      ****     #endif
+ 107:.\LINX.c      ****     
+ 108:.\LINX.c      ****     uint16 cmd = command[4] << 8 | command[5];
+ 342              		.loc 1 108 0
+ 343 0016 7B68     		ldr	r3, [r7, #4]
+ 344 0018 03F10403 		add	r3, r3, #4
+ 345 001c 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 346 001e 4FEA0323 		lsl	r3, r3, #8
+ 347 0022 9AB2     		uxth	r2, r3
+ 348 0024 7B68     		ldr	r3, [r7, #4]
+ 349 0026 03F10503 		add	r3, r3, #5
+ 350 002a 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 351 002c 1343     		orrs	r3, r3, r2
+ 352 002e 9BB2     		uxth	r3, r3
+ 353 0030 A7F85230 		strh	r3, [r7, #82]	@ movhi
+ 109:.\LINX.c      ****     uint8 i;
+ 110:.\LINX.c      ****     
+ 111:.\LINX.c      ****     uint8 status = L_OK;
+ 354              		.loc 1 111 0
+ 355 0034 4FF00003 		mov	r3, #0
+ 356 0038 87F85630 		strb	r3, [r7, #86]
+ 112:.\LINX.c      ****     uint8 response_data[LINX_RESPONSE_DATA_SIZE];
+ 113:.\LINX.c      ****     uint8 response_data_len = 0;
+ 357              		.loc 1 113 0
+ 358 003c 4FF00003 		mov	r3, #0
+ 359 0040 87F85530 		strb	r3, [r7, #85]
+ 114:.\LINX.c      ****     
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 10
 
 
- 373 0000 EA010000 		.4byte	0x1ea
- 374 0004 0200     		.2byte	0x2
- 375 0006 00000000 		.4byte	.Ldebug_abbrev0
- 376 000a 04       		.byte	0x4
- 377 000b 01       		.uleb128 0x1
- 378 000c 1D010000 		.4byte	.LASF25
- 379 0010 01       		.byte	0x1
- 380 0011 D1010000 		.4byte	.LASF26
- 381 0015 6F010000 		.4byte	.LASF27
- 382 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 383 001d 00000000 		.4byte	0
- 384 0021 00000000 		.4byte	0
- 385 0025 00000000 		.4byte	.Ldebug_line0
- 386 0029 02       		.uleb128 0x2
- 387 002a 01       		.byte	0x1
- 388 002b 06       		.byte	0x6
- 389 002c B3010000 		.4byte	.LASF0
- 390 0030 02       		.uleb128 0x2
- 391 0031 01       		.byte	0x1
- 392 0032 08       		.byte	0x8
- 393 0033 34000000 		.4byte	.LASF1
- 394 0037 02       		.uleb128 0x2
- 395 0038 02       		.byte	0x2
- 396 0039 05       		.byte	0x5
- 397 003a 0D010000 		.4byte	.LASF2
- 398 003e 02       		.uleb128 0x2
- 399 003f 02       		.byte	0x2
- 400 0040 07       		.byte	0x7
- 401 0041 5E000000 		.4byte	.LASF3
- 402 0045 03       		.uleb128 0x3
- 403 0046 E9000000 		.4byte	.LASF9
- 404 004a 02       		.byte	0x2
- 405 004b 4F       		.byte	0x4f
- 406 004c 50000000 		.4byte	0x50
- 407 0050 02       		.uleb128 0x2
- 408 0051 04       		.byte	0x4
- 409 0052 05       		.byte	0x5
- 410 0053 66010000 		.4byte	.LASF4
- 411 0057 02       		.uleb128 0x2
- 412 0058 04       		.byte	0x4
- 413 0059 07       		.byte	0x7
- 414 005a 4C000000 		.4byte	.LASF5
- 415 005e 02       		.uleb128 0x2
- 416 005f 08       		.byte	0x8
- 417 0060 05       		.byte	0x5
- 418 0061 FA000000 		.4byte	.LASF6
- 419 0065 02       		.uleb128 0x2
- 420 0066 08       		.byte	0x8
- 421 0067 07       		.byte	0x7
- 422 0068 C2000000 		.4byte	.LASF7
- 423 006c 04       		.uleb128 0x4
- 424 006d 04       		.byte	0x4
- 425 006e 05       		.byte	0x5
- 426 006f 696E7400 		.ascii	"int\000"
- 427 0073 02       		.uleb128 0x2
- 428 0074 04       		.byte	0x4
- 429 0075 07       		.byte	0x7
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 11
+ 115:.\LINX.c      ****     switch(cmd) {
+ 360              		.loc 1 115 0
+ 361 0044 B7F85230 		ldrh	r3, [r7, #82]
+ 362 0048 032B     		cmp	r3, #3
+ 363 004a 04D0     		beq	.L18
+ 364 004c 052B     		cmp	r3, #5
+ 365 004e 0DD0     		beq	.L19
+ 366 0050 002B     		cmp	r3, #0
+ 367 0052 21D0     		beq	.L26
+ 368 0054 1BE0     		b	.L25
+ 369              	.L18:
+ 116:.\LINX.c      ****         // Sync
+ 117:.\LINX.c      ****         case 0x00:
+ 118:.\LINX.c      ****             // Do nothing, will default to responding with L_OK status and no data
+ 119:.\LINX.c      ****             break;
+ 120:.\LINX.c      ****         
+ 121:.\LINX.c      ****         // Get device ID
+ 122:.\LINX.c      ****         case 0x03:
+ 123:.\LINX.c      ****             response_data_len = 2;
+ 370              		.loc 1 123 0
+ 371 0056 4FF00203 		mov	r3, #2
+ 372 005a 87F85530 		strb	r3, [r7, #85]
+ 124:.\LINX.c      ****             response_data[0] = LINX_DEVICE_FAMILY;
+ 373              		.loc 1 124 0
+ 374 005e 4FF00003 		mov	r3, #0
+ 375 0062 3B73     		strb	r3, [r7, #12]
+ 125:.\LINX.c      ****             response_data[1] = LINX_DEVICE_ID;
+ 376              		.loc 1 125 0
+ 377 0064 4FF00003 		mov	r3, #0
+ 378 0068 7B73     		strb	r3, [r7, #13]
+ 126:.\LINX.c      ****             break;
+ 379              		.loc 1 126 0
+ 380 006a 16E0     		b	.L20
+ 381              	.L19:
+ 127:.\LINX.c      ****         
+ 128:.\LINX.c      ****         // Get max baud rate
+ 129:.\LINX.c      ****         case 0x05:
+ 130:.\LINX.c      ****             response_data_len = 4;
+ 382              		.loc 1 130 0
+ 383 006c 4FF00403 		mov	r3, #4
+ 384 0070 87F85530 		strb	r3, [r7, #85]
+ 131:.\LINX.c      ****             response_data[0] = (LINX_MAX_BAUD_RATE >> 24) & 0xFF;
+ 385              		.loc 1 131 0
+ 386 0074 4FF00003 		mov	r3, #0
+ 387 0078 3B73     		strb	r3, [r7, #12]
+ 132:.\LINX.c      ****             response_data[1] = (LINX_MAX_BAUD_RATE >> 16) & 0xFF;
+ 388              		.loc 1 132 0
+ 389 007a 4FF00003 		mov	r3, #0
+ 390 007e 7B73     		strb	r3, [r7, #13]
+ 133:.\LINX.c      ****             response_data[2] = (LINX_MAX_BAUD_RATE >> 8) & 0xFF;
+ 391              		.loc 1 133 0
+ 392 0080 4FF02503 		mov	r3, #37
+ 393 0084 BB73     		strb	r3, [r7, #14]
+ 134:.\LINX.c      ****             response_data[3] = LINX_MAX_BAUD_RATE & 0xFF;
+ 394              		.loc 1 134 0
+ 395 0086 4FF08003 		mov	r3, #128
+ 396 008a FB73     		strb	r3, [r7, #15]
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 11
 
 
- 430 0076 B5000000 		.4byte	.LASF8
- 431 007a 03       		.uleb128 0x3
- 432 007b 17010000 		.4byte	.LASF10
- 433 007f 03       		.byte	0x3
- 434 0080 5B       		.byte	0x5b
- 435 0081 30000000 		.4byte	0x30
- 436 0085 02       		.uleb128 0x2
- 437 0086 04       		.byte	0x4
- 438 0087 04       		.byte	0x4
- 439 0088 25000000 		.4byte	.LASF11
- 440 008c 02       		.uleb128 0x2
- 441 008d 08       		.byte	0x8
- 442 008e 04       		.byte	0x4
- 443 008f 1E000000 		.4byte	.LASF12
- 444 0093 02       		.uleb128 0x2
- 445 0094 01       		.byte	0x1
- 446 0095 08       		.byte	0x8
- 447 0096 08010000 		.4byte	.LASF13
- 448 009a 02       		.uleb128 0x2
- 449 009b 04       		.byte	0x4
- 450 009c 07       		.byte	0x7
- 451 009d F1000000 		.4byte	.LASF14
- 452 00a1 05       		.uleb128 0x5
- 453 00a2 01       		.byte	0x1
- 454 00a3 D9000000 		.4byte	.LASF23
- 455 00a7 01       		.byte	0x1
- 456 00a8 17       		.byte	0x17
- 457 00a9 00000000 		.4byte	.LFB56
- 458 00ad 3E000000 		.4byte	.LFE56
- 459 00b1 00000000 		.4byte	.LLST0
- 460 00b5 01       		.byte	0x1
- 461 00b6 06       		.uleb128 0x6
- 462 00b7 01       		.byte	0x1
- 463 00b8 00000000 		.4byte	.LASF20
- 464 00bc 01       		.byte	0x1
- 465 00bd 23       		.byte	0x23
- 466 00be 01       		.byte	0x1
- 467 00bf 1C010000 		.4byte	0x11c
- 468 00c3 00000000 		.4byte	.LFB57
- 469 00c7 04010000 		.4byte	.LFE57
- 470 00cb 2C000000 		.4byte	.LLST1
- 471 00cf 01       		.byte	0x1
- 472 00d0 1C010000 		.4byte	0x11c
- 473 00d4 07       		.uleb128 0x7
- 474 00d5 16000000 		.4byte	.LASF15
- 475 00d9 01       		.byte	0x1
- 476 00da 23       		.byte	0x23
- 477 00db 23010000 		.4byte	0x123
- 478 00df 03       		.byte	0x3
- 479 00e0 91       		.byte	0x91
- 480 00e1 A47F     		.sleb128 -92
- 481 00e3 07       		.uleb128 0x7
- 482 00e4 7E000000 		.4byte	.LASF16
- 483 00e8 01       		.byte	0x1
- 484 00e9 23       		.byte	0x23
- 485 00ea 23010000 		.4byte	0x123
- 486 00ee 03       		.byte	0x3
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 12
+ 135:.\LINX.c      ****             break;
+ 397              		.loc 1 135 0
+ 398 008c 05E0     		b	.L20
+ 399              	.L25:
+ 136:.\LINX.c      ****             
+ 137:.\LINX.c      ****         // Unsupported command
+ 138:.\LINX.c      ****         default:
+ 139:.\LINX.c      ****             status = L_FUNCTION_NOT_SUPPORTED;
+ 400              		.loc 1 139 0
+ 401 008e 4FF00103 		mov	r3, #1
+ 402 0092 87F85630 		strb	r3, [r7, #86]
+ 140:.\LINX.c      ****             break;
+ 403              		.loc 1 140 0
+ 404 0096 00E0     		b	.L20
+ 405              	.L26:
+ 119:.\LINX.c      ****             break;
+ 406              		.loc 1 119 0
+ 407 0098 00BF     		nop
+ 408              	.L20:
+ 141:.\LINX.c      ****     }
+ 142:.\LINX.c      ****     
+ 143:.\LINX.c      ****     // Build response
+ 144:.\LINX.c      ****     response[0] = 0xFF;
+ 409              		.loc 1 144 0
+ 410 009a 3B68     		ldr	r3, [r7, #0]
+ 411 009c 4FF0FF02 		mov	r2, #255
+ 412 00a0 1A70     		strb	r2, [r3, #0]
+ 145:.\LINX.c      ****     response[1] = 6 + response_data_len;
+ 413              		.loc 1 145 0
+ 414 00a2 3B68     		ldr	r3, [r7, #0]
+ 415 00a4 03F10103 		add	r3, r3, #1
+ 416 00a8 97F85520 		ldrb	r2, [r7, #85]
+ 417 00ac 02F10602 		add	r2, r2, #6
+ 418 00b0 D2B2     		uxtb	r2, r2
+ 419 00b2 1A70     		strb	r2, [r3, #0]
+ 146:.\LINX.c      ****     response[2] = command[2];
+ 420              		.loc 1 146 0
+ 421 00b4 3B68     		ldr	r3, [r7, #0]
+ 422 00b6 03F10203 		add	r3, r3, #2
+ 423 00ba 7A68     		ldr	r2, [r7, #4]
+ 424 00bc 9278     		ldrb	r2, [r2, #2]	@ zero_extendqisi2
+ 425 00be 1A70     		strb	r2, [r3, #0]
+ 147:.\LINX.c      ****     response[3] = command[3];
+ 426              		.loc 1 147 0
+ 427 00c0 3B68     		ldr	r3, [r7, #0]
+ 428 00c2 03F10303 		add	r3, r3, #3
+ 429 00c6 7A68     		ldr	r2, [r7, #4]
+ 430 00c8 D278     		ldrb	r2, [r2, #3]	@ zero_extendqisi2
+ 431 00ca 1A70     		strb	r2, [r3, #0]
+ 148:.\LINX.c      ****     response[4] = status;
+ 432              		.loc 1 148 0
+ 433 00cc 3B68     		ldr	r3, [r7, #0]
+ 434 00ce 03F10403 		add	r3, r3, #4
+ 435 00d2 97F85620 		ldrb	r2, [r7, #86]
+ 436 00d6 1A70     		strb	r2, [r3, #0]
+ 149:.\LINX.c      ****     for (i = 0; i < response_data_len; ++i) {
+ 437              		.loc 1 149 0
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 12
 
 
- 487 00ef 91       		.byte	0x91
- 488 00f0 A07F     		.sleb128 -96
- 489 00f2 08       		.uleb128 0x8
- 490 00f3 42000000 		.4byte	.LASF17
- 491 00f7 01       		.byte	0x1
- 492 00f8 26       		.byte	0x26
- 493 00f9 29010000 		.4byte	0x129
- 494 00fd 03       		.byte	0x3
- 495 00fe 91       		.byte	0x91
- 496 00ff AC7F     		.sleb128 -84
- 497 0101 08       		.uleb128 0x8
- 498 0102 DA010000 		.4byte	.LASF18
- 499 0106 01       		.byte	0x1
- 500 0107 27       		.byte	0x27
- 501 0108 7A000000 		.4byte	0x7a
- 502 010c 02       		.byte	0x2
- 503 010d 91       		.byte	0x91
- 504 010e 6E       		.sleb128 -18
- 505 010f 09       		.uleb128 0x9
- 506 0110 6900     		.ascii	"i\000"
- 507 0112 01       		.byte	0x1
- 508 0113 2A       		.byte	0x2a
- 509 0114 7A000000 		.4byte	0x7a
- 510 0118 02       		.byte	0x2
- 511 0119 91       		.byte	0x91
- 512 011a 6F       		.sleb128 -17
- 513 011b 00       		.byte	0
- 514 011c 02       		.uleb128 0x2
- 515 011d 01       		.byte	0x1
- 516 011e 02       		.byte	0x2
- 517 011f 10000000 		.4byte	.LASF19
- 518 0123 0A       		.uleb128 0xa
- 519 0124 04       		.byte	0x4
- 520 0125 7A000000 		.4byte	0x7a
- 521 0129 0B       		.uleb128 0xb
- 522 012a 7A000000 		.4byte	0x7a
- 523 012e 39010000 		.4byte	0x139
- 524 0132 0C       		.uleb128 0xc
- 525 0133 9A000000 		.4byte	0x9a
- 526 0137 3F       		.byte	0x3f
- 527 0138 00       		.byte	0
- 528 0139 0D       		.uleb128 0xd
- 529 013a 01       		.byte	0x1
- 530 013b 8A000000 		.4byte	.LASF21
- 531 013f 01       		.byte	0x1
- 532 0140 57       		.byte	0x57
- 533 0141 01       		.byte	0x1
- 534 0142 7A000000 		.4byte	0x7a
- 535 0146 00000000 		.4byte	.LFB58
- 536 014a 4A000000 		.4byte	.LFE58
- 537 014e 66000000 		.4byte	.LLST2
- 538 0152 01       		.byte	0x1
- 539 0153 8E010000 		.4byte	0x18e
- 540 0157 07       		.uleb128 0x7
- 541 0158 16000000 		.4byte	.LASF15
- 542 015c 01       		.byte	0x1
- 543 015d 57       		.byte	0x57
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 13
+ 438 00d8 4FF00003 		mov	r3, #0
+ 439 00dc 87F85730 		strb	r3, [r7, #87]
+ 440 00e0 13E0     		b	.L21
+ 441              	.L22:
+ 150:.\LINX.c      ****         response[5 + i] = response_data[i];
+ 442              		.loc 1 150 0 discriminator 2
+ 443 00e2 97F85730 		ldrb	r3, [r7, #87]	@ zero_extendqisi2
+ 444 00e6 03F10503 		add	r3, r3, #5
+ 445 00ea 3A68     		ldr	r2, [r7, #0]
+ 446 00ec D318     		adds	r3, r2, r3
+ 447 00ee 97F85720 		ldrb	r2, [r7, #87]	@ zero_extendqisi2
+ 448 00f2 07F15801 		add	r1, r7, #88
+ 449 00f6 8A18     		adds	r2, r1, r2
+ 450 00f8 12F84C2C 		ldrb	r2, [r2, #-76]	@ zero_extendqisi2
+ 451 00fc 1A70     		strb	r2, [r3, #0]
+ 149:.\LINX.c      ****     for (i = 0; i < response_data_len; ++i) {
+ 452              		.loc 1 149 0 discriminator 2
+ 453 00fe 97F85730 		ldrb	r3, [r7, #87]
+ 454 0102 03F10103 		add	r3, r3, #1
+ 455 0106 87F85730 		strb	r3, [r7, #87]
+ 456              	.L21:
+ 149:.\LINX.c      ****     for (i = 0; i < response_data_len; ++i) {
+ 457              		.loc 1 149 0 is_stmt 0 discriminator 1
+ 458 010a 97F85720 		ldrb	r2, [r7, #87]	@ zero_extendqisi2
+ 459 010e 97F85530 		ldrb	r3, [r7, #85]	@ zero_extendqisi2
+ 460 0112 9A42     		cmp	r2, r3
+ 461 0114 E5D3     		bcc	.L22
+ 151:.\LINX.c      ****     }
+ 152:.\LINX.c      ****     response[5 + response_data_len] = LINX_CalculateChecksum(response, 5 + response_data_len);
+ 462              		.loc 1 152 0 is_stmt 1
+ 463 0116 97F85530 		ldrb	r3, [r7, #85]	@ zero_extendqisi2
+ 464 011a 03F10503 		add	r3, r3, #5
+ 465 011e 3A68     		ldr	r2, [r7, #0]
+ 466 0120 D418     		adds	r4, r2, r3
+ 467 0122 97F85530 		ldrb	r3, [r7, #85]
+ 468 0126 03F10503 		add	r3, r3, #5
+ 469 012a DBB2     		uxtb	r3, r3
+ 470 012c 3868     		ldr	r0, [r7, #0]
+ 471 012e 1946     		mov	r1, r3
+ 472 0130 FFF7FEFF 		bl	LINX_CalculateChecksum
+ 473 0134 0346     		mov	r3, r0
+ 474 0136 2370     		strb	r3, [r4, #0]
+ 153:.\LINX.c      ****     
+ 154:.\LINX.c      ****     #ifdef LINX_DEBUG
+ 155:.\LINX.c      ****         DEBUG_UART_PutString("\tGenerated response:");
+ 475              		.loc 1 155 0
+ 476 0138 40F20000 		movw	r0, #:lower16:.LC11
+ 477 013c C0F20000 		movt	r0, #:upper16:.LC11
+ 478 0140 FFF7FEFF 		bl	DEBUG_UART_PutString
+ 156:.\LINX.c      ****         for (i = 0; i < response[1]; ++i) {
+ 479              		.loc 1 156 0
+ 480 0144 4FF00003 		mov	r3, #0
+ 481 0148 87F85730 		strb	r3, [r7, #87]
+ 482 014c 1FE0     		b	.L23
+ 483              	.L24:
+ 157:.\LINX.c      ****             debug_str_len = sprintf(debug_str, " %x", response[i]);
+ 484              		.loc 1 157 0 discriminator 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 13
 
 
- 544 015e 23010000 		.4byte	0x123
- 545 0162 02       		.byte	0x2
- 546 0163 91       		.byte	0x91
- 547 0164 6C       		.sleb128 -20
- 548 0165 07       		.uleb128 0x7
- 549 0166 7E000000 		.4byte	.LASF16
- 550 016a 01       		.byte	0x1
- 551 016b 57       		.byte	0x57
- 552 016c 7A000000 		.4byte	0x7a
- 553 0170 02       		.byte	0x2
- 554 0171 91       		.byte	0x91
- 555 0172 6B       		.sleb128 -21
- 556 0173 08       		.uleb128 0x8
- 557 0174 2B000000 		.4byte	.LASF22
- 558 0178 01       		.byte	0x1
- 559 0179 58       		.byte	0x58
- 560 017a 7A000000 		.4byte	0x7a
- 561 017e 02       		.byte	0x2
- 562 017f 91       		.byte	0x91
- 563 0180 77       		.sleb128 -9
- 564 0181 09       		.uleb128 0x9
- 565 0182 6900     		.ascii	"i\000"
- 566 0184 01       		.byte	0x1
- 567 0185 59       		.byte	0x59
- 568 0186 7A000000 		.4byte	0x7a
- 569 018a 02       		.byte	0x2
- 570 018b 91       		.byte	0x91
- 571 018c 76       		.sleb128 -10
- 572 018d 00       		.byte	0
- 573 018e 0E       		.uleb128 0xe
- 574 018f 01       		.byte	0x1
- 575 0190 A1000000 		.4byte	.LASF28
- 576 0194 01       		.byte	0x1
- 577 0195 62       		.byte	0x62
- 578 0196 01       		.byte	0x1
- 579 0197 00000000 		.4byte	.LFB59
- 580 019b 16000000 		.4byte	.LFE59
- 581 019f 9E000000 		.4byte	.LLST3
- 582 01a3 01       		.byte	0x1
- 583 01a4 C5010000 		.4byte	0x1c5
- 584 01a8 07       		.uleb128 0x7
- 585 01a9 16000000 		.4byte	.LASF15
- 586 01ad 01       		.byte	0x1
- 587 01ae 62       		.byte	0x62
- 588 01af 23010000 		.4byte	0x123
- 589 01b3 02       		.byte	0x2
- 590 01b4 91       		.byte	0x91
- 591 01b5 74       		.sleb128 -12
- 592 01b6 07       		.uleb128 0x7
- 593 01b7 7E000000 		.4byte	.LASF16
- 594 01bb 01       		.byte	0x1
- 595 01bc 62       		.byte	0x62
- 596 01bd 7A000000 		.4byte	0x7a
- 597 01c1 02       		.byte	0x2
- 598 01c2 91       		.byte	0x91
- 599 01c3 73       		.sleb128 -13
- 600 01c4 00       		.byte	0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 14
+ 485 014e 97F85730 		ldrb	r3, [r7, #87]	@ zero_extendqisi2
+ 486 0152 3A68     		ldr	r2, [r7, #0]
+ 487 0154 D318     		adds	r3, r2, r3
+ 488 0156 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 489 0158 07F11002 		add	r2, r7, #16
+ 490 015c 1046     		mov	r0, r2
+ 491 015e 40F20001 		movw	r1, #:lower16:.LC4
+ 492 0162 C0F20001 		movt	r1, #:upper16:.LC4
+ 493 0166 1A46     		mov	r2, r3
+ 494 0168 FFF7FEFF 		bl	sprintf
+ 495 016c 0346     		mov	r3, r0
+ 496 016e 87F85130 		strb	r3, [r7, #81]
+ 158:.\LINX.c      ****             DEBUG_UART_PutArray(debug_str, debug_str_len);
+ 497              		.loc 1 158 0 discriminator 2
+ 498 0172 07F11002 		add	r2, r7, #16
+ 499 0176 97F85130 		ldrb	r3, [r7, #81]	@ zero_extendqisi2
+ 500 017a 1046     		mov	r0, r2
+ 501 017c 1946     		mov	r1, r3
+ 502 017e FFF7FEFF 		bl	DEBUG_UART_PutArray
+ 156:.\LINX.c      ****         for (i = 0; i < response[1]; ++i) {
+ 503              		.loc 1 156 0 discriminator 2
+ 504 0182 97F85730 		ldrb	r3, [r7, #87]
+ 505 0186 03F10103 		add	r3, r3, #1
+ 506 018a 87F85730 		strb	r3, [r7, #87]
+ 507              	.L23:
+ 156:.\LINX.c      ****         for (i = 0; i < response[1]; ++i) {
+ 508              		.loc 1 156 0 is_stmt 0 discriminator 1
+ 509 018e 3B68     		ldr	r3, [r7, #0]
+ 510 0190 03F10103 		add	r3, r3, #1
+ 511 0194 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 512 0196 97F85720 		ldrb	r2, [r7, #87]	@ zero_extendqisi2
+ 513 019a 9A42     		cmp	r2, r3
+ 514 019c D7D3     		bcc	.L24
+ 159:.\LINX.c      ****         }
+ 160:.\LINX.c      ****         DEBUG_UART_PutString("\r\n");
+ 515              		.loc 1 160 0 is_stmt 1
+ 516 019e 40F20000 		movw	r0, #:lower16:.LC5
+ 517 01a2 C0F20000 		movt	r0, #:upper16:.LC5
+ 518 01a6 FFF7FEFF 		bl	DEBUG_UART_PutString
+ 161:.\LINX.c      ****     #endif
+ 162:.\LINX.c      **** }
+ 519              		.loc 1 162 0
+ 520 01aa 07F15C07 		add	r7, r7, #92
+ 521 01ae BD46     		mov	sp, r7
+ 522 01b0 90BD     		pop	{r4, r7, pc}
+ 523              		.cfi_endproc
+ 524              	.LFE59:
+ 525              		.size	LINX_ProcessCommand, .-LINX_ProcessCommand
+ 526 01b2 00BF     		.section	.rodata
+ 527 00f1 000000   		.align	2
+ 528              	.LC12:
+ 529 00f4 0953656E 		.ascii	"\011Sending LINX response\015\012\000"
+ 529      64696E67 
+ 529      204C494E 
+ 529      58207265 
+ 529      73706F6E 
+ 530 010d 000000   		.section	.text.LINX_SendResponse,"ax",%progbits
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 14
 
 
- 601 01c5 05       		.uleb128 0x5
- 602 01c6 01       		.byte	0x1
- 603 01c7 BF010000 		.4byte	.LASF24
- 604 01cb 01       		.byte	0x1
- 605 01cc 66       		.byte	0x66
- 606 01cd 00000000 		.4byte	.LFB60
- 607 01d1 12000000 		.4byte	.LFE60
- 608 01d5 D6000000 		.4byte	.LLST4
- 609 01d9 01       		.byte	0x1
- 610 01da 0F       		.uleb128 0xf
- 611 01db 71000000 		.4byte	.LASF29
- 612 01df 04       		.byte	0x4
- 613 01e0 1606     		.2byte	0x616
- 614 01e2 E8010000 		.4byte	0x1e8
- 615 01e6 01       		.byte	0x1
- 616 01e7 01       		.byte	0x1
- 617 01e8 10       		.uleb128 0x10
- 618 01e9 45000000 		.4byte	0x45
- 619 01ed 00       		.byte	0
- 620              		.section	.debug_abbrev,"",%progbits
- 621              	.Ldebug_abbrev0:
- 622 0000 01       		.uleb128 0x1
- 623 0001 11       		.uleb128 0x11
- 624 0002 01       		.byte	0x1
- 625 0003 25       		.uleb128 0x25
- 626 0004 0E       		.uleb128 0xe
- 627 0005 13       		.uleb128 0x13
- 628 0006 0B       		.uleb128 0xb
- 629 0007 03       		.uleb128 0x3
- 630 0008 0E       		.uleb128 0xe
- 631 0009 1B       		.uleb128 0x1b
- 632 000a 0E       		.uleb128 0xe
- 633 000b 55       		.uleb128 0x55
- 634 000c 06       		.uleb128 0x6
- 635 000d 11       		.uleb128 0x11
- 636 000e 01       		.uleb128 0x1
- 637 000f 52       		.uleb128 0x52
- 638 0010 01       		.uleb128 0x1
- 639 0011 10       		.uleb128 0x10
- 640 0012 06       		.uleb128 0x6
- 641 0013 00       		.byte	0
- 642 0014 00       		.byte	0
- 643 0015 02       		.uleb128 0x2
- 644 0016 24       		.uleb128 0x24
- 645 0017 00       		.byte	0
- 646 0018 0B       		.uleb128 0xb
- 647 0019 0B       		.uleb128 0xb
- 648 001a 3E       		.uleb128 0x3e
- 649 001b 0B       		.uleb128 0xb
- 650 001c 03       		.uleb128 0x3
- 651 001d 0E       		.uleb128 0xe
- 652 001e 00       		.byte	0
- 653 001f 00       		.byte	0
- 654 0020 03       		.uleb128 0x3
- 655 0021 16       		.uleb128 0x16
- 656 0022 00       		.byte	0
- 657 0023 03       		.uleb128 0x3
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 15
+ 531              		.align	2
+ 532              		.global	LINX_SendResponse
+ 533              		.thumb
+ 534              		.thumb_func
+ 535              		.type	LINX_SendResponse, %function
+ 536              	LINX_SendResponse:
+ 537              	.LFB60:
+ 163:.\LINX.c      **** 
+ 164:.\LINX.c      **** void LINX_SendResponse(uint8 *response) {
+ 538              		.loc 1 164 0
+ 539              		.cfi_startproc
+ 540              		@ args = 0, pretend = 0, frame = 8
+ 541              		@ frame_needed = 1, uses_anonymous_args = 0
+ 542 0000 80B5     		push	{r7, lr}
+ 543              	.LCFI11:
+ 544              		.cfi_def_cfa_offset 8
+ 545              		.cfi_offset 7, -8
+ 546              		.cfi_offset 14, -4
+ 547 0002 82B0     		sub	sp, sp, #8
+ 548              	.LCFI12:
+ 549              		.cfi_def_cfa_offset 16
+ 550 0004 00AF     		add	r7, sp, #0
+ 551              	.LCFI13:
+ 552              		.cfi_def_cfa_register 7
+ 553 0006 7860     		str	r0, [r7, #4]
+ 165:.\LINX.c      ****     #ifdef LINX_DEBUG
+ 166:.\LINX.c      ****         DEBUG_UART_PutString("\tSending LINX response\r\n");
+ 554              		.loc 1 166 0
+ 555 0008 40F20000 		movw	r0, #:lower16:.LC12
+ 556 000c C0F20000 		movt	r0, #:upper16:.LC12
+ 557 0010 FFF7FEFF 		bl	DEBUG_UART_PutString
+ 167:.\LINX.c      ****     #endif
+ 168:.\LINX.c      ****     
+ 169:.\LINX.c      ****     USBUART_PutData(response, response[1]);
+ 558              		.loc 1 169 0
+ 559 0014 7B68     		ldr	r3, [r7, #4]
+ 560 0016 03F10103 		add	r3, r3, #1
+ 561 001a 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 562 001c 7868     		ldr	r0, [r7, #4]
+ 563 001e 1946     		mov	r1, r3
+ 564 0020 FFF7FEFF 		bl	USBUART_PutData
+ 170:.\LINX.c      **** }
+ 565              		.loc 1 170 0
+ 566 0024 07F10807 		add	r7, r7, #8
+ 567 0028 BD46     		mov	sp, r7
+ 568 002a 80BD     		pop	{r7, pc}
+ 569              		.cfi_endproc
+ 570              	.LFE60:
+ 571              		.size	LINX_SendResponse, .-LINX_SendResponse
+ 572              		.text
+ 573              	.Letext0:
+ 574              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4
+ 575              		.file 3 "./Generated_Source/PSoC5/cytypes.h"
+ 576              		.file 4 "./Generated_Source/PSoC5/core_cm3.h"
+ 577              		.section	.debug_info,"",%progbits
+ 578              	.Ldebug_info0:
+ 579 0000 7C020000 		.4byte	0x27c
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 15
 
 
- 658 0024 0E       		.uleb128 0xe
- 659 0025 3A       		.uleb128 0x3a
- 660 0026 0B       		.uleb128 0xb
- 661 0027 3B       		.uleb128 0x3b
- 662 0028 0B       		.uleb128 0xb
- 663 0029 49       		.uleb128 0x49
- 664 002a 13       		.uleb128 0x13
- 665 002b 00       		.byte	0
- 666 002c 00       		.byte	0
- 667 002d 04       		.uleb128 0x4
- 668 002e 24       		.uleb128 0x24
- 669 002f 00       		.byte	0
- 670 0030 0B       		.uleb128 0xb
- 671 0031 0B       		.uleb128 0xb
- 672 0032 3E       		.uleb128 0x3e
- 673 0033 0B       		.uleb128 0xb
- 674 0034 03       		.uleb128 0x3
- 675 0035 08       		.uleb128 0x8
- 676 0036 00       		.byte	0
- 677 0037 00       		.byte	0
- 678 0038 05       		.uleb128 0x5
- 679 0039 2E       		.uleb128 0x2e
- 680 003a 00       		.byte	0
- 681 003b 3F       		.uleb128 0x3f
- 682 003c 0C       		.uleb128 0xc
- 683 003d 03       		.uleb128 0x3
- 684 003e 0E       		.uleb128 0xe
- 685 003f 3A       		.uleb128 0x3a
- 686 0040 0B       		.uleb128 0xb
- 687 0041 3B       		.uleb128 0x3b
- 688 0042 0B       		.uleb128 0xb
- 689 0043 11       		.uleb128 0x11
- 690 0044 01       		.uleb128 0x1
- 691 0045 12       		.uleb128 0x12
- 692 0046 01       		.uleb128 0x1
- 693 0047 40       		.uleb128 0x40
- 694 0048 06       		.uleb128 0x6
- 695 0049 9642     		.uleb128 0x2116
- 696 004b 0C       		.uleb128 0xc
- 697 004c 00       		.byte	0
- 698 004d 00       		.byte	0
- 699 004e 06       		.uleb128 0x6
- 700 004f 2E       		.uleb128 0x2e
- 701 0050 01       		.byte	0x1
- 702 0051 3F       		.uleb128 0x3f
- 703 0052 0C       		.uleb128 0xc
- 704 0053 03       		.uleb128 0x3
- 705 0054 0E       		.uleb128 0xe
- 706 0055 3A       		.uleb128 0x3a
- 707 0056 0B       		.uleb128 0xb
- 708 0057 3B       		.uleb128 0x3b
- 709 0058 0B       		.uleb128 0xb
- 710 0059 27       		.uleb128 0x27
- 711 005a 0C       		.uleb128 0xc
- 712 005b 49       		.uleb128 0x49
- 713 005c 13       		.uleb128 0x13
- 714 005d 11       		.uleb128 0x11
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 16
+ 580 0004 0200     		.2byte	0x2
+ 581 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 582 000a 04       		.byte	0x4
+ 583 000b 01       		.uleb128 0x1
+ 584 000c 96010000 		.4byte	.LASF32
+ 585 0010 01       		.byte	0x1
+ 586 0011 26020000 		.4byte	.LASF33
+ 587 0015 3B000000 		.4byte	.LASF34
+ 588 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 589 001d 00000000 		.4byte	0
+ 590 0021 00000000 		.4byte	0
+ 591 0025 00000000 		.4byte	.Ldebug_line0
+ 592 0029 02       		.uleb128 0x2
+ 593 002a 01       		.byte	0x1
+ 594 002b 06       		.byte	0x6
+ 595 002c F6010000 		.4byte	.LASF0
+ 596 0030 02       		.uleb128 0x2
+ 597 0031 01       		.byte	0x1
+ 598 0032 08       		.byte	0x8
+ 599 0033 8B000000 		.4byte	.LASF1
+ 600 0037 02       		.uleb128 0x2
+ 601 0038 02       		.byte	0x2
+ 602 0039 05       		.byte	0x5
+ 603 003a 7F010000 		.4byte	.LASF2
+ 604 003e 02       		.uleb128 0x2
+ 605 003f 02       		.byte	0x2
+ 606 0040 07       		.byte	0x7
+ 607 0041 C0000000 		.4byte	.LASF3
+ 608 0045 03       		.uleb128 0x3
+ 609 0046 5B010000 		.4byte	.LASF9
+ 610 004a 02       		.byte	0x2
+ 611 004b 4F       		.byte	0x4f
+ 612 004c 50000000 		.4byte	0x50
+ 613 0050 02       		.uleb128 0x2
+ 614 0051 04       		.byte	0x4
+ 615 0052 05       		.byte	0x5
+ 616 0053 DF010000 		.4byte	.LASF4
+ 617 0057 02       		.uleb128 0x2
+ 618 0058 04       		.byte	0x4
+ 619 0059 07       		.byte	0x7
+ 620 005a A3000000 		.4byte	.LASF5
+ 621 005e 02       		.uleb128 0x2
+ 622 005f 08       		.byte	0x8
+ 623 0060 05       		.byte	0x5
+ 624 0061 6C010000 		.4byte	.LASF6
+ 625 0065 02       		.uleb128 0x2
+ 626 0066 08       		.byte	0x8
+ 627 0067 07       		.byte	0x7
+ 628 0068 2B010000 		.4byte	.LASF7
+ 629 006c 04       		.uleb128 0x4
+ 630 006d 04       		.byte	0x4
+ 631 006e 05       		.byte	0x5
+ 632 006f 696E7400 		.ascii	"int\000"
+ 633 0073 02       		.uleb128 0x2
+ 634 0074 04       		.byte	0x4
+ 635 0075 07       		.byte	0x7
+ 636 0076 1E010000 		.4byte	.LASF8
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 16
 
 
- 715 005e 01       		.uleb128 0x1
- 716 005f 12       		.uleb128 0x12
- 717 0060 01       		.uleb128 0x1
- 718 0061 40       		.uleb128 0x40
- 719 0062 06       		.uleb128 0x6
- 720 0063 9642     		.uleb128 0x2116
- 721 0065 0C       		.uleb128 0xc
- 722 0066 01       		.uleb128 0x1
- 723 0067 13       		.uleb128 0x13
- 724 0068 00       		.byte	0
- 725 0069 00       		.byte	0
- 726 006a 07       		.uleb128 0x7
- 727 006b 05       		.uleb128 0x5
- 728 006c 00       		.byte	0
- 729 006d 03       		.uleb128 0x3
- 730 006e 0E       		.uleb128 0xe
- 731 006f 3A       		.uleb128 0x3a
- 732 0070 0B       		.uleb128 0xb
- 733 0071 3B       		.uleb128 0x3b
- 734 0072 0B       		.uleb128 0xb
- 735 0073 49       		.uleb128 0x49
- 736 0074 13       		.uleb128 0x13
- 737 0075 02       		.uleb128 0x2
- 738 0076 0A       		.uleb128 0xa
- 739 0077 00       		.byte	0
- 740 0078 00       		.byte	0
- 741 0079 08       		.uleb128 0x8
- 742 007a 34       		.uleb128 0x34
- 743 007b 00       		.byte	0
- 744 007c 03       		.uleb128 0x3
- 745 007d 0E       		.uleb128 0xe
- 746 007e 3A       		.uleb128 0x3a
- 747 007f 0B       		.uleb128 0xb
- 748 0080 3B       		.uleb128 0x3b
- 749 0081 0B       		.uleb128 0xb
- 750 0082 49       		.uleb128 0x49
- 751 0083 13       		.uleb128 0x13
- 752 0084 02       		.uleb128 0x2
- 753 0085 0A       		.uleb128 0xa
- 754 0086 00       		.byte	0
- 755 0087 00       		.byte	0
- 756 0088 09       		.uleb128 0x9
- 757 0089 34       		.uleb128 0x34
- 758 008a 00       		.byte	0
- 759 008b 03       		.uleb128 0x3
- 760 008c 08       		.uleb128 0x8
- 761 008d 3A       		.uleb128 0x3a
- 762 008e 0B       		.uleb128 0xb
- 763 008f 3B       		.uleb128 0x3b
- 764 0090 0B       		.uleb128 0xb
- 765 0091 49       		.uleb128 0x49
- 766 0092 13       		.uleb128 0x13
- 767 0093 02       		.uleb128 0x2
- 768 0094 0A       		.uleb128 0xa
- 769 0095 00       		.byte	0
- 770 0096 00       		.byte	0
- 771 0097 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 17
+ 637 007a 03       		.uleb128 0x3
+ 638 007b 90010000 		.4byte	.LASF10
+ 639 007f 03       		.byte	0x3
+ 640 0080 5B       		.byte	0x5b
+ 641 0081 30000000 		.4byte	0x30
+ 642 0085 03       		.uleb128 0x3
+ 643 0086 17010000 		.4byte	.LASF11
+ 644 008a 03       		.byte	0x3
+ 645 008b 5C       		.byte	0x5c
+ 646 008c 3E000000 		.4byte	0x3e
+ 647 0090 02       		.uleb128 0x2
+ 648 0091 04       		.byte	0x4
+ 649 0092 04       		.byte	0x4
+ 650 0093 2C000000 		.4byte	.LASF12
+ 651 0097 02       		.uleb128 0x2
+ 652 0098 08       		.byte	0x8
+ 653 0099 04       		.byte	0x4
+ 654 009a 1E000000 		.4byte	.LASF13
+ 655 009e 02       		.uleb128 0x2
+ 656 009f 01       		.byte	0x1
+ 657 00a0 08       		.byte	0x8
+ 658 00a1 7A010000 		.4byte	.LASF14
+ 659 00a5 02       		.uleb128 0x2
+ 660 00a6 04       		.byte	0x4
+ 661 00a7 07       		.byte	0x7
+ 662 00a8 63010000 		.4byte	.LASF15
+ 663 00ac 05       		.uleb128 0x5
+ 664 00ad 7A000000 		.4byte	0x7a
+ 665 00b1 BC000000 		.4byte	0xbc
+ 666 00b5 06       		.uleb128 0x6
+ 667 00b6 A5000000 		.4byte	0xa5
+ 668 00ba 03       		.byte	0x3
+ 669 00bb 00       		.byte	0
+ 670 00bc 07       		.uleb128 0x7
+ 671 00bd 01       		.byte	0x1
+ 672 00be 42010000 		.4byte	.LASF35
+ 673 00c2 01       		.byte	0x1
+ 674 00c3 17       		.byte	0x17
+ 675 00c4 00000000 		.4byte	.LFB56
+ 676 00c8 3E000000 		.4byte	.LFE56
+ 677 00cc 00000000 		.4byte	.LLST0
+ 678 00d0 01       		.byte	0x1
+ 679 00d1 08       		.uleb128 0x8
+ 680 00d2 01       		.byte	0x1
+ 681 00d3 00000000 		.4byte	.LASF20
+ 682 00d7 01       		.byte	0x1
+ 683 00d8 23       		.byte	0x23
+ 684 00d9 01       		.byte	0x1
+ 685 00da 36010000 		.4byte	0x136
+ 686 00de 00000000 		.4byte	.LFB57
+ 687 00e2 1C010000 		.4byte	.LFE57
+ 688 00e6 2C000000 		.4byte	.LLST1
+ 689 00ea 01       		.byte	0x1
+ 690 00eb 36010000 		.4byte	0x136
+ 691 00ef 09       		.uleb128 0x9
+ 692 00f0 16000000 		.4byte	.LASF22
+ 693 00f4 01       		.byte	0x1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 17
 
 
- 772 0098 0F       		.uleb128 0xf
- 773 0099 00       		.byte	0
- 774 009a 0B       		.uleb128 0xb
- 775 009b 0B       		.uleb128 0xb
- 776 009c 49       		.uleb128 0x49
- 777 009d 13       		.uleb128 0x13
- 778 009e 00       		.byte	0
- 779 009f 00       		.byte	0
- 780 00a0 0B       		.uleb128 0xb
- 781 00a1 01       		.uleb128 0x1
- 782 00a2 01       		.byte	0x1
- 783 00a3 49       		.uleb128 0x49
- 784 00a4 13       		.uleb128 0x13
- 785 00a5 01       		.uleb128 0x1
- 786 00a6 13       		.uleb128 0x13
- 787 00a7 00       		.byte	0
- 788 00a8 00       		.byte	0
- 789 00a9 0C       		.uleb128 0xc
- 790 00aa 21       		.uleb128 0x21
- 791 00ab 00       		.byte	0
- 792 00ac 49       		.uleb128 0x49
- 793 00ad 13       		.uleb128 0x13
- 794 00ae 2F       		.uleb128 0x2f
- 795 00af 0B       		.uleb128 0xb
- 796 00b0 00       		.byte	0
- 797 00b1 00       		.byte	0
- 798 00b2 0D       		.uleb128 0xd
- 799 00b3 2E       		.uleb128 0x2e
- 800 00b4 01       		.byte	0x1
- 801 00b5 3F       		.uleb128 0x3f
- 802 00b6 0C       		.uleb128 0xc
- 803 00b7 03       		.uleb128 0x3
- 804 00b8 0E       		.uleb128 0xe
- 805 00b9 3A       		.uleb128 0x3a
- 806 00ba 0B       		.uleb128 0xb
- 807 00bb 3B       		.uleb128 0x3b
- 808 00bc 0B       		.uleb128 0xb
- 809 00bd 27       		.uleb128 0x27
- 810 00be 0C       		.uleb128 0xc
- 811 00bf 49       		.uleb128 0x49
- 812 00c0 13       		.uleb128 0x13
- 813 00c1 11       		.uleb128 0x11
- 814 00c2 01       		.uleb128 0x1
- 815 00c3 12       		.uleb128 0x12
- 816 00c4 01       		.uleb128 0x1
- 817 00c5 40       		.uleb128 0x40
- 818 00c6 06       		.uleb128 0x6
- 819 00c7 9742     		.uleb128 0x2117
- 820 00c9 0C       		.uleb128 0xc
- 821 00ca 01       		.uleb128 0x1
- 822 00cb 13       		.uleb128 0x13
- 823 00cc 00       		.byte	0
- 824 00cd 00       		.byte	0
- 825 00ce 0E       		.uleb128 0xe
- 826 00cf 2E       		.uleb128 0x2e
- 827 00d0 01       		.byte	0x1
- 828 00d1 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 18
+ 694 00f5 23       		.byte	0x23
+ 695 00f6 3D010000 		.4byte	0x13d
+ 696 00fa 03       		.byte	0x3
+ 697 00fb 91       		.byte	0x91
+ 698 00fc A47F     		.sleb128 -92
+ 699 00fe 0A       		.uleb128 0xa
+ 700 00ff 99000000 		.4byte	.LASF16
+ 701 0103 01       		.byte	0x1
+ 702 0104 26       		.byte	0x26
+ 703 0105 43010000 		.4byte	0x143
+ 704 0109 03       		.byte	0x3
+ 705 010a 91       		.byte	0x91
+ 706 010b AC7F     		.sleb128 -84
+ 707 010d 0A       		.uleb128 0xa
+ 708 010e 2F020000 		.4byte	.LASF17
+ 709 0112 01       		.byte	0x1
+ 710 0113 27       		.byte	0x27
+ 711 0114 7A000000 		.4byte	0x7a
+ 712 0118 02       		.byte	0x2
+ 713 0119 91       		.byte	0x91
+ 714 011a 6D       		.sleb128 -19
+ 715 011b 0B       		.uleb128 0xb
+ 716 011c 6900     		.ascii	"i\000"
+ 717 011e 01       		.byte	0x1
+ 718 011f 2A       		.byte	0x2a
+ 719 0120 7A000000 		.4byte	0x7a
+ 720 0124 02       		.byte	0x2
+ 721 0125 91       		.byte	0x91
+ 722 0126 6F       		.sleb128 -17
+ 723 0127 0A       		.uleb128 0xa
+ 724 0128 E0000000 		.4byte	.LASF18
+ 725 012c 01       		.byte	0x1
+ 726 012d 2B       		.byte	0x2b
+ 727 012e 7A000000 		.4byte	0x7a
+ 728 0132 02       		.byte	0x2
+ 729 0133 91       		.byte	0x91
+ 730 0134 6E       		.sleb128 -18
+ 731 0135 00       		.byte	0
+ 732 0136 02       		.uleb128 0x2
+ 733 0137 01       		.byte	0x1
+ 734 0138 02       		.byte	0x2
+ 735 0139 10000000 		.4byte	.LASF19
+ 736 013d 0C       		.uleb128 0xc
+ 737 013e 04       		.byte	0x4
+ 738 013f 7A000000 		.4byte	0x7a
+ 739 0143 05       		.uleb128 0x5
+ 740 0144 7A000000 		.4byte	0x7a
+ 741 0148 53010000 		.4byte	0x153
+ 742 014c 06       		.uleb128 0x6
+ 743 014d A5000000 		.4byte	0xa5
+ 744 0151 3F       		.byte	0x3f
+ 745 0152 00       		.byte	0
+ 746 0153 0D       		.uleb128 0xd
+ 747 0154 01       		.byte	0x1
+ 748 0155 EC000000 		.4byte	.LASF21
+ 749 0159 01       		.byte	0x1
+ 750 015a 5A       		.byte	0x5a
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 18
 
 
- 829 00d2 0C       		.uleb128 0xc
- 830 00d3 03       		.uleb128 0x3
- 831 00d4 0E       		.uleb128 0xe
- 832 00d5 3A       		.uleb128 0x3a
- 833 00d6 0B       		.uleb128 0xb
- 834 00d7 3B       		.uleb128 0x3b
- 835 00d8 0B       		.uleb128 0xb
- 836 00d9 27       		.uleb128 0x27
- 837 00da 0C       		.uleb128 0xc
- 838 00db 11       		.uleb128 0x11
- 839 00dc 01       		.uleb128 0x1
- 840 00dd 12       		.uleb128 0x12
- 841 00de 01       		.uleb128 0x1
- 842 00df 40       		.uleb128 0x40
- 843 00e0 06       		.uleb128 0x6
- 844 00e1 9742     		.uleb128 0x2117
- 845 00e3 0C       		.uleb128 0xc
- 846 00e4 01       		.uleb128 0x1
- 847 00e5 13       		.uleb128 0x13
- 848 00e6 00       		.byte	0
- 849 00e7 00       		.byte	0
- 850 00e8 0F       		.uleb128 0xf
- 851 00e9 34       		.uleb128 0x34
- 852 00ea 00       		.byte	0
- 853 00eb 03       		.uleb128 0x3
- 854 00ec 0E       		.uleb128 0xe
- 855 00ed 3A       		.uleb128 0x3a
- 856 00ee 0B       		.uleb128 0xb
- 857 00ef 3B       		.uleb128 0x3b
- 858 00f0 05       		.uleb128 0x5
- 859 00f1 49       		.uleb128 0x49
- 860 00f2 13       		.uleb128 0x13
- 861 00f3 3F       		.uleb128 0x3f
- 862 00f4 0C       		.uleb128 0xc
- 863 00f5 3C       		.uleb128 0x3c
- 864 00f6 0C       		.uleb128 0xc
- 865 00f7 00       		.byte	0
- 866 00f8 00       		.byte	0
- 867 00f9 10       		.uleb128 0x10
- 868 00fa 35       		.uleb128 0x35
- 869 00fb 00       		.byte	0
- 870 00fc 49       		.uleb128 0x49
- 871 00fd 13       		.uleb128 0x13
- 872 00fe 00       		.byte	0
- 873 00ff 00       		.byte	0
- 874 0100 00       		.byte	0
- 875              		.section	.debug_loc,"",%progbits
- 876              	.Ldebug_loc0:
- 877              	.LLST0:
- 878 0000 00000000 		.4byte	.LFB56
- 879 0004 02000000 		.4byte	.LCFI0
- 880 0008 0200     		.2byte	0x2
- 881 000a 7D       		.byte	0x7d
- 882 000b 00       		.sleb128 0
- 883 000c 02000000 		.4byte	.LCFI0
- 884 0010 04000000 		.4byte	.LCFI1
- 885 0014 0200     		.2byte	0x2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 19
+ 751 015b 01       		.byte	0x1
+ 752 015c 7A000000 		.4byte	0x7a
+ 753 0160 00000000 		.4byte	.LFB58
+ 754 0164 46000000 		.4byte	.LFE58
+ 755 0168 66000000 		.4byte	.LLST2
+ 756 016c 01       		.byte	0x1
+ 757 016d A8010000 		.4byte	0x1a8
+ 758 0171 09       		.uleb128 0x9
+ 759 0172 89010000 		.4byte	.LASF23
+ 760 0176 01       		.byte	0x1
+ 761 0177 5A       		.byte	0x5a
+ 762 0178 3D010000 		.4byte	0x13d
+ 763 017c 02       		.byte	0x2
+ 764 017d 91       		.byte	0x91
+ 765 017e 6C       		.sleb128 -20
+ 766 017f 09       		.uleb128 0x9
+ 767 0180 B5000000 		.4byte	.LASF24
+ 768 0184 01       		.byte	0x1
+ 769 0185 5A       		.byte	0x5a
+ 770 0186 7A000000 		.4byte	0x7a
+ 771 018a 02       		.byte	0x2
+ 772 018b 91       		.byte	0x91
+ 773 018c 6B       		.sleb128 -21
+ 774 018d 0A       		.uleb128 0xa
+ 775 018e 32000000 		.4byte	.LASF25
+ 776 0192 01       		.byte	0x1
+ 777 0193 5B       		.byte	0x5b
+ 778 0194 7A000000 		.4byte	0x7a
+ 779 0198 02       		.byte	0x2
+ 780 0199 91       		.byte	0x91
+ 781 019a 77       		.sleb128 -9
+ 782 019b 0B       		.uleb128 0xb
+ 783 019c 6900     		.ascii	"i\000"
+ 784 019e 01       		.byte	0x1
+ 785 019f 5C       		.byte	0x5c
+ 786 01a0 7A000000 		.4byte	0x7a
+ 787 01a4 02       		.byte	0x2
+ 788 01a5 91       		.byte	0x91
+ 789 01a6 76       		.sleb128 -10
+ 790 01a7 00       		.byte	0
+ 791 01a8 0E       		.uleb128 0xe
+ 792 01a9 01       		.byte	0x1
+ 793 01aa 03010000 		.4byte	.LASF30
+ 794 01ae 01       		.byte	0x1
+ 795 01af 65       		.byte	0x65
+ 796 01b0 01       		.byte	0x1
+ 797 01b1 00000000 		.4byte	.LFB59
+ 798 01b5 B2010000 		.4byte	.LFE59
+ 799 01b9 9E000000 		.4byte	.LLST3
+ 800 01bd 01       		.byte	0x1
+ 801 01be 43020000 		.4byte	0x243
+ 802 01c2 09       		.uleb128 0x9
+ 803 01c3 16000000 		.4byte	.LASF22
+ 804 01c7 01       		.byte	0x1
+ 805 01c8 65       		.byte	0x65
+ 806 01c9 3D010000 		.4byte	0x13d
+ 807 01cd 03       		.byte	0x3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 19
 
 
- 886 0016 7D       		.byte	0x7d
- 887 0017 08       		.sleb128 8
- 888 0018 04000000 		.4byte	.LCFI1
- 889 001c 3E000000 		.4byte	.LFE56
- 890 0020 0200     		.2byte	0x2
- 891 0022 77       		.byte	0x77
- 892 0023 08       		.sleb128 8
- 893 0024 00000000 		.4byte	0
- 894 0028 00000000 		.4byte	0
- 895              	.LLST1:
- 896 002c 00000000 		.4byte	.LFB57
- 897 0030 02000000 		.4byte	.LCFI2
- 898 0034 0200     		.2byte	0x2
- 899 0036 7D       		.byte	0x7d
- 900 0037 00       		.sleb128 0
- 901 0038 02000000 		.4byte	.LCFI2
- 902 003c 04000000 		.4byte	.LCFI3
- 903 0040 0200     		.2byte	0x2
- 904 0042 7D       		.byte	0x7d
- 905 0043 0C       		.sleb128 12
- 906 0044 04000000 		.4byte	.LCFI3
- 907 0048 06000000 		.4byte	.LCFI4
- 908 004c 0300     		.2byte	0x3
- 909 004e 7D       		.byte	0x7d
- 910 004f E000     		.sleb128 96
- 911 0051 06000000 		.4byte	.LCFI4
- 912 0055 04010000 		.4byte	.LFE57
- 913 0059 0300     		.2byte	0x3
- 914 005b 77       		.byte	0x77
- 915 005c E000     		.sleb128 96
- 916 005e 00000000 		.4byte	0
- 917 0062 00000000 		.4byte	0
- 918              	.LLST2:
- 919 0066 00000000 		.4byte	.LFB58
- 920 006a 02000000 		.4byte	.LCFI5
- 921 006e 0200     		.2byte	0x2
- 922 0070 7D       		.byte	0x7d
- 923 0071 00       		.sleb128 0
- 924 0072 02000000 		.4byte	.LCFI5
- 925 0076 04000000 		.4byte	.LCFI6
- 926 007a 0200     		.2byte	0x2
- 927 007c 7D       		.byte	0x7d
- 928 007d 04       		.sleb128 4
- 929 007e 04000000 		.4byte	.LCFI6
- 930 0082 06000000 		.4byte	.LCFI7
- 931 0086 0200     		.2byte	0x2
- 932 0088 7D       		.byte	0x7d
- 933 0089 18       		.sleb128 24
- 934 008a 06000000 		.4byte	.LCFI7
- 935 008e 4A000000 		.4byte	.LFE58
- 936 0092 0200     		.2byte	0x2
- 937 0094 77       		.byte	0x77
- 938 0095 18       		.sleb128 24
- 939 0096 00000000 		.4byte	0
- 940 009a 00000000 		.4byte	0
- 941              	.LLST3:
- 942 009e 00000000 		.4byte	.LFB59
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 20
+ 808 01ce 91       		.byte	0x91
+ 809 01cf 9C7F     		.sleb128 -100
+ 810 01d1 09       		.uleb128 0x9
+ 811 01d2 52010000 		.4byte	.LASF26
+ 812 01d6 01       		.byte	0x1
+ 813 01d7 65       		.byte	0x65
+ 814 01d8 3D010000 		.4byte	0x13d
+ 815 01dc 03       		.byte	0x3
+ 816 01dd 91       		.byte	0x91
+ 817 01de 987F     		.sleb128 -104
+ 818 01e0 0A       		.uleb128 0xa
+ 819 01e1 99000000 		.4byte	.LASF16
+ 820 01e5 01       		.byte	0x1
+ 821 01e6 68       		.byte	0x68
+ 822 01e7 43010000 		.4byte	0x143
+ 823 01eb 03       		.byte	0x3
+ 824 01ec 91       		.byte	0x91
+ 825 01ed A87F     		.sleb128 -88
+ 826 01ef 0A       		.uleb128 0xa
+ 827 01f0 2F020000 		.4byte	.LASF17
+ 828 01f4 01       		.byte	0x1
+ 829 01f5 69       		.byte	0x69
+ 830 01f6 7A000000 		.4byte	0x7a
+ 831 01fa 02       		.byte	0x2
+ 832 01fb 91       		.byte	0x91
+ 833 01fc 69       		.sleb128 -23
+ 834 01fd 0B       		.uleb128 0xb
+ 835 01fe 636D6400 		.ascii	"cmd\000"
+ 836 0202 01       		.byte	0x1
+ 837 0203 6C       		.byte	0x6c
+ 838 0204 85000000 		.4byte	0x85
+ 839 0208 02       		.byte	0x2
+ 840 0209 91       		.byte	0x91
+ 841 020a 6A       		.sleb128 -22
+ 842 020b 0B       		.uleb128 0xb
+ 843 020c 6900     		.ascii	"i\000"
+ 844 020e 01       		.byte	0x1
+ 845 020f 6D       		.byte	0x6d
+ 846 0210 7A000000 		.4byte	0x7a
+ 847 0214 02       		.byte	0x2
+ 848 0215 91       		.byte	0x91
+ 849 0216 6F       		.sleb128 -17
+ 850 0217 0A       		.uleb128 0xa
+ 851 0218 25000000 		.4byte	.LASF27
+ 852 021c 01       		.byte	0x1
+ 853 021d 6F       		.byte	0x6f
+ 854 021e 7A000000 		.4byte	0x7a
+ 855 0222 02       		.byte	0x2
+ 856 0223 91       		.byte	0x91
+ 857 0224 6E       		.sleb128 -18
+ 858 0225 0A       		.uleb128 0xa
+ 859 0226 E8010000 		.4byte	.LASF28
+ 860 022a 01       		.byte	0x1
+ 861 022b 70       		.byte	0x70
+ 862 022c AC000000 		.4byte	0xac
+ 863 0230 03       		.byte	0x3
+ 864 0231 91       		.byte	0x91
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 20
 
 
- 943 00a2 02000000 		.4byte	.LCFI8
- 944 00a6 0200     		.2byte	0x2
- 945 00a8 7D       		.byte	0x7d
- 946 00a9 00       		.sleb128 0
- 947 00aa 02000000 		.4byte	.LCFI8
- 948 00ae 04000000 		.4byte	.LCFI9
- 949 00b2 0200     		.2byte	0x2
- 950 00b4 7D       		.byte	0x7d
- 951 00b5 04       		.sleb128 4
- 952 00b6 04000000 		.4byte	.LCFI9
- 953 00ba 06000000 		.4byte	.LCFI10
- 954 00be 0200     		.2byte	0x2
- 955 00c0 7D       		.byte	0x7d
- 956 00c1 10       		.sleb128 16
- 957 00c2 06000000 		.4byte	.LCFI10
- 958 00c6 16000000 		.4byte	.LFE59
- 959 00ca 0200     		.2byte	0x2
- 960 00cc 77       		.byte	0x77
- 961 00cd 10       		.sleb128 16
- 962 00ce 00000000 		.4byte	0
- 963 00d2 00000000 		.4byte	0
- 964              	.LLST4:
- 965 00d6 00000000 		.4byte	.LFB60
- 966 00da 02000000 		.4byte	.LCFI11
- 967 00de 0200     		.2byte	0x2
- 968 00e0 7D       		.byte	0x7d
- 969 00e1 00       		.sleb128 0
- 970 00e2 02000000 		.4byte	.LCFI11
- 971 00e6 04000000 		.4byte	.LCFI12
- 972 00ea 0200     		.2byte	0x2
- 973 00ec 7D       		.byte	0x7d
- 974 00ed 08       		.sleb128 8
- 975 00ee 04000000 		.4byte	.LCFI12
- 976 00f2 12000000 		.4byte	.LFE60
- 977 00f6 0200     		.2byte	0x2
- 978 00f8 77       		.byte	0x77
- 979 00f9 08       		.sleb128 8
- 980 00fa 00000000 		.4byte	0
- 981 00fe 00000000 		.4byte	0
- 982              		.section	.debug_aranges,"",%progbits
- 983 0000 3C000000 		.4byte	0x3c
- 984 0004 0200     		.2byte	0x2
- 985 0006 00000000 		.4byte	.Ldebug_info0
- 986 000a 04       		.byte	0x4
- 987 000b 00       		.byte	0
- 988 000c 0000     		.2byte	0
- 989 000e 0000     		.2byte	0
- 990 0010 00000000 		.4byte	.LFB56
- 991 0014 3E000000 		.4byte	.LFE56-.LFB56
- 992 0018 00000000 		.4byte	.LFB57
- 993 001c 04010000 		.4byte	.LFE57-.LFB57
- 994 0020 00000000 		.4byte	.LFB58
- 995 0024 4A000000 		.4byte	.LFE58-.LFB58
- 996 0028 00000000 		.4byte	.LFB59
- 997 002c 16000000 		.4byte	.LFE59-.LFB59
- 998 0030 00000000 		.4byte	.LFB60
- 999 0034 12000000 		.4byte	.LFE60-.LFB60
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 21
+ 865 0232 A47F     		.sleb128 -92
+ 866 0234 0A       		.uleb128 0xa
+ 867 0235 02020000 		.4byte	.LASF29
+ 868 0239 01       		.byte	0x1
+ 869 023a 71       		.byte	0x71
+ 870 023b 7A000000 		.4byte	0x7a
+ 871 023f 02       		.byte	0x2
+ 872 0240 91       		.byte	0x91
+ 873 0241 6D       		.sleb128 -19
+ 874 0242 00       		.byte	0
+ 875 0243 0E       		.uleb128 0xe
+ 876 0244 01       		.byte	0x1
+ 877 0245 14020000 		.4byte	.LASF31
+ 878 0249 01       		.byte	0x1
+ 879 024a A4       		.byte	0xa4
+ 880 024b 01       		.byte	0x1
+ 881 024c 00000000 		.4byte	.LFB60
+ 882 0250 2C000000 		.4byte	.LFE60
+ 883 0254 D8000000 		.4byte	.LLST4
+ 884 0258 01       		.byte	0x1
+ 885 0259 6C020000 		.4byte	0x26c
+ 886 025d 09       		.uleb128 0x9
+ 887 025e 52010000 		.4byte	.LASF26
+ 888 0262 01       		.byte	0x1
+ 889 0263 A4       		.byte	0xa4
+ 890 0264 3D010000 		.4byte	0x13d
+ 891 0268 02       		.byte	0x2
+ 892 0269 91       		.byte	0x91
+ 893 026a 74       		.sleb128 -12
+ 894 026b 00       		.byte	0
+ 895 026c 0F       		.uleb128 0xf
+ 896 026d D3000000 		.4byte	.LASF36
+ 897 0271 04       		.byte	0x4
+ 898 0272 1606     		.2byte	0x616
+ 899 0274 7A020000 		.4byte	0x27a
+ 900 0278 01       		.byte	0x1
+ 901 0279 01       		.byte	0x1
+ 902 027a 10       		.uleb128 0x10
+ 903 027b 45000000 		.4byte	0x45
+ 904 027f 00       		.byte	0
+ 905              		.section	.debug_abbrev,"",%progbits
+ 906              	.Ldebug_abbrev0:
+ 907 0000 01       		.uleb128 0x1
+ 908 0001 11       		.uleb128 0x11
+ 909 0002 01       		.byte	0x1
+ 910 0003 25       		.uleb128 0x25
+ 911 0004 0E       		.uleb128 0xe
+ 912 0005 13       		.uleb128 0x13
+ 913 0006 0B       		.uleb128 0xb
+ 914 0007 03       		.uleb128 0x3
+ 915 0008 0E       		.uleb128 0xe
+ 916 0009 1B       		.uleb128 0x1b
+ 917 000a 0E       		.uleb128 0xe
+ 918 000b 55       		.uleb128 0x55
+ 919 000c 06       		.uleb128 0x6
+ 920 000d 11       		.uleb128 0x11
+ 921 000e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 21
 
 
- 1000 0038 00000000 		.4byte	0
- 1001 003c 00000000 		.4byte	0
- 1002              		.section	.debug_ranges,"",%progbits
- 1003              	.Ldebug_ranges0:
- 1004 0000 00000000 		.4byte	.LFB56
- 1005 0004 3E000000 		.4byte	.LFE56
- 1006 0008 00000000 		.4byte	.LFB57
- 1007 000c 04010000 		.4byte	.LFE57
- 1008 0010 00000000 		.4byte	.LFB58
- 1009 0014 4A000000 		.4byte	.LFE58
- 1010 0018 00000000 		.4byte	.LFB59
- 1011 001c 16000000 		.4byte	.LFE59
- 1012 0020 00000000 		.4byte	.LFB60
- 1013 0024 12000000 		.4byte	.LFE60
- 1014 0028 00000000 		.4byte	0
- 1015 002c 00000000 		.4byte	0
- 1016              		.section	.debug_line,"",%progbits
- 1017              	.Ldebug_line0:
- 1018 0000 99010000 		.section	.debug_str,"MS",%progbits,1
- 1018      0200F900 
- 1018      00000201 
- 1018      FB0E0D00 
- 1018      01010101 
- 1019              	.LASF20:
- 1020 0000 4C494E58 		.ascii	"LINX_GetCommand\000"
- 1020      5F476574 
- 1020      436F6D6D 
- 1020      616E6400 
- 1021              	.LASF19:
- 1022 0010 5F426F6F 		.ascii	"_Bool\000"
- 1022      6C00
- 1023              	.LASF15:
- 1024 0016 636F6D6D 		.ascii	"command\000"
- 1024      616E6400 
- 1025              	.LASF12:
- 1026 001e 646F7562 		.ascii	"double\000"
- 1026      6C6500
- 1027              	.LASF11:
- 1028 0025 666C6F61 		.ascii	"float\000"
- 1028      7400
- 1029              	.LASF22:
- 1030 002b 63686563 		.ascii	"checksum\000"
- 1030      6B73756D 
- 1030      00
- 1031              	.LASF1:
- 1032 0034 756E7369 		.ascii	"unsigned char\000"
- 1032      676E6564 
- 1032      20636861 
- 1032      7200
- 1033              	.LASF17:
- 1034 0042 64656275 		.ascii	"debug_str\000"
- 1034      675F7374 
- 1034      7200
- 1035              	.LASF5:
- 1036 004c 6C6F6E67 		.ascii	"long unsigned int\000"
- 1036      20756E73 
- 1036      69676E65 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 22
+ 922 000f 52       		.uleb128 0x52
+ 923 0010 01       		.uleb128 0x1
+ 924 0011 10       		.uleb128 0x10
+ 925 0012 06       		.uleb128 0x6
+ 926 0013 00       		.byte	0
+ 927 0014 00       		.byte	0
+ 928 0015 02       		.uleb128 0x2
+ 929 0016 24       		.uleb128 0x24
+ 930 0017 00       		.byte	0
+ 931 0018 0B       		.uleb128 0xb
+ 932 0019 0B       		.uleb128 0xb
+ 933 001a 3E       		.uleb128 0x3e
+ 934 001b 0B       		.uleb128 0xb
+ 935 001c 03       		.uleb128 0x3
+ 936 001d 0E       		.uleb128 0xe
+ 937 001e 00       		.byte	0
+ 938 001f 00       		.byte	0
+ 939 0020 03       		.uleb128 0x3
+ 940 0021 16       		.uleb128 0x16
+ 941 0022 00       		.byte	0
+ 942 0023 03       		.uleb128 0x3
+ 943 0024 0E       		.uleb128 0xe
+ 944 0025 3A       		.uleb128 0x3a
+ 945 0026 0B       		.uleb128 0xb
+ 946 0027 3B       		.uleb128 0x3b
+ 947 0028 0B       		.uleb128 0xb
+ 948 0029 49       		.uleb128 0x49
+ 949 002a 13       		.uleb128 0x13
+ 950 002b 00       		.byte	0
+ 951 002c 00       		.byte	0
+ 952 002d 04       		.uleb128 0x4
+ 953 002e 24       		.uleb128 0x24
+ 954 002f 00       		.byte	0
+ 955 0030 0B       		.uleb128 0xb
+ 956 0031 0B       		.uleb128 0xb
+ 957 0032 3E       		.uleb128 0x3e
+ 958 0033 0B       		.uleb128 0xb
+ 959 0034 03       		.uleb128 0x3
+ 960 0035 08       		.uleb128 0x8
+ 961 0036 00       		.byte	0
+ 962 0037 00       		.byte	0
+ 963 0038 05       		.uleb128 0x5
+ 964 0039 01       		.uleb128 0x1
+ 965 003a 01       		.byte	0x1
+ 966 003b 49       		.uleb128 0x49
+ 967 003c 13       		.uleb128 0x13
+ 968 003d 01       		.uleb128 0x1
+ 969 003e 13       		.uleb128 0x13
+ 970 003f 00       		.byte	0
+ 971 0040 00       		.byte	0
+ 972 0041 06       		.uleb128 0x6
+ 973 0042 21       		.uleb128 0x21
+ 974 0043 00       		.byte	0
+ 975 0044 49       		.uleb128 0x49
+ 976 0045 13       		.uleb128 0x13
+ 977 0046 2F       		.uleb128 0x2f
+ 978 0047 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 22
 
 
- 1036      6420696E 
- 1036      7400
- 1037              	.LASF3:
- 1038 005e 73686F72 		.ascii	"short unsigned int\000"
- 1038      7420756E 
- 1038      7369676E 
- 1038      65642069 
- 1038      6E7400
- 1039              	.LASF29:
- 1040 0071 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1040      52784275 
- 1040      66666572 
- 1040      00
- 1041              	.LASF16:
- 1042 007e 636F6D6D 		.ascii	"command_len\000"
- 1042      616E645F 
- 1042      6C656E00 
- 1043              	.LASF21:
- 1044 008a 4C494E58 		.ascii	"LINX_CalculateChecksum\000"
- 1044      5F43616C 
- 1044      63756C61 
- 1044      74654368 
- 1044      65636B73 
- 1045              	.LASF28:
- 1046 00a1 4C494E58 		.ascii	"LINX_ProcessCommand\000"
- 1046      5F50726F 
- 1046      63657373 
- 1046      436F6D6D 
- 1046      616E6400 
- 1047              	.LASF8:
- 1048 00b5 756E7369 		.ascii	"unsigned int\000"
- 1048      676E6564 
- 1048      20696E74 
- 1048      00
- 1049              	.LASF7:
- 1050 00c2 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1050      206C6F6E 
- 1050      6720756E 
- 1050      7369676E 
- 1050      65642069 
- 1051              	.LASF23:
- 1052 00d9 4C494E58 		.ascii	"LINX_Initialize\000"
- 1052      5F496E69 
- 1052      7469616C 
- 1052      697A6500 
- 1053              	.LASF9:
- 1054 00e9 696E7433 		.ascii	"int32_t\000"
- 1054      325F7400 
- 1055              	.LASF14:
- 1056 00f1 73697A65 		.ascii	"sizetype\000"
- 1056      74797065 
- 1056      00
- 1057              	.LASF6:
- 1058 00fa 6C6F6E67 		.ascii	"long long int\000"
- 1058      206C6F6E 
- 1058      6720696E 
- 1058      7400
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccEOPhr3.s 			page 23
+ 979 0048 00       		.byte	0
+ 980 0049 00       		.byte	0
+ 981 004a 07       		.uleb128 0x7
+ 982 004b 2E       		.uleb128 0x2e
+ 983 004c 00       		.byte	0
+ 984 004d 3F       		.uleb128 0x3f
+ 985 004e 0C       		.uleb128 0xc
+ 986 004f 03       		.uleb128 0x3
+ 987 0050 0E       		.uleb128 0xe
+ 988 0051 3A       		.uleb128 0x3a
+ 989 0052 0B       		.uleb128 0xb
+ 990 0053 3B       		.uleb128 0x3b
+ 991 0054 0B       		.uleb128 0xb
+ 992 0055 11       		.uleb128 0x11
+ 993 0056 01       		.uleb128 0x1
+ 994 0057 12       		.uleb128 0x12
+ 995 0058 01       		.uleb128 0x1
+ 996 0059 40       		.uleb128 0x40
+ 997 005a 06       		.uleb128 0x6
+ 998 005b 9642     		.uleb128 0x2116
+ 999 005d 0C       		.uleb128 0xc
+ 1000 005e 00       		.byte	0
+ 1001 005f 00       		.byte	0
+ 1002 0060 08       		.uleb128 0x8
+ 1003 0061 2E       		.uleb128 0x2e
+ 1004 0062 01       		.byte	0x1
+ 1005 0063 3F       		.uleb128 0x3f
+ 1006 0064 0C       		.uleb128 0xc
+ 1007 0065 03       		.uleb128 0x3
+ 1008 0066 0E       		.uleb128 0xe
+ 1009 0067 3A       		.uleb128 0x3a
+ 1010 0068 0B       		.uleb128 0xb
+ 1011 0069 3B       		.uleb128 0x3b
+ 1012 006a 0B       		.uleb128 0xb
+ 1013 006b 27       		.uleb128 0x27
+ 1014 006c 0C       		.uleb128 0xc
+ 1015 006d 49       		.uleb128 0x49
+ 1016 006e 13       		.uleb128 0x13
+ 1017 006f 11       		.uleb128 0x11
+ 1018 0070 01       		.uleb128 0x1
+ 1019 0071 12       		.uleb128 0x12
+ 1020 0072 01       		.uleb128 0x1
+ 1021 0073 40       		.uleb128 0x40
+ 1022 0074 06       		.uleb128 0x6
+ 1023 0075 9642     		.uleb128 0x2116
+ 1024 0077 0C       		.uleb128 0xc
+ 1025 0078 01       		.uleb128 0x1
+ 1026 0079 13       		.uleb128 0x13
+ 1027 007a 00       		.byte	0
+ 1028 007b 00       		.byte	0
+ 1029 007c 09       		.uleb128 0x9
+ 1030 007d 05       		.uleb128 0x5
+ 1031 007e 00       		.byte	0
+ 1032 007f 03       		.uleb128 0x3
+ 1033 0080 0E       		.uleb128 0xe
+ 1034 0081 3A       		.uleb128 0x3a
+ 1035 0082 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 23
 
 
- 1059              	.LASF13:
- 1060 0108 63686172 		.ascii	"char\000"
- 1060      00
- 1061              	.LASF2:
- 1062 010d 73686F72 		.ascii	"short int\000"
- 1062      7420696E 
- 1062      7400
- 1063              	.LASF10:
- 1064 0117 75696E74 		.ascii	"uint8\000"
- 1064      3800
- 1065              	.LASF25:
- 1066 011d 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 1066      4320342E 
- 1066      372E3320 
- 1066      32303133 
- 1066      30333132 
- 1067 0150 616E6368 		.ascii	"anch revision 196615]\000"
- 1067      20726576 
- 1067      6973696F 
- 1067      6E203139 
- 1067      36363135 
- 1068              	.LASF4:
- 1069 0166 6C6F6E67 		.ascii	"long int\000"
- 1069      20696E74 
- 1069      00
- 1070              	.LASF27:
- 1071 016f 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\PSoCCreatorWo"
- 1071      73657273 
- 1071      5C4D6172 
- 1071      6B5C446F 
- 1071      63756D65 
- 1072 019d 726B696E 		.ascii	"rking\\PSoC_2_Pi.cydsn\000"
- 1072      675C5053 
- 1072      6F435F32 
- 1072      5F50692E 
- 1072      63796473 
- 1073              	.LASF0:
- 1074 01b3 7369676E 		.ascii	"signed char\000"
- 1074      65642063 
- 1074      68617200 
- 1075              	.LASF24:
- 1076 01bf 4C494E58 		.ascii	"LINX_SendResponse\000"
- 1076      5F53656E 
- 1076      64526573 
- 1076      706F6E73 
- 1076      6500
- 1077              	.LASF26:
- 1078 01d1 2E5C4C49 		.ascii	".\\LINX.c\000"
- 1078      4E582E63 
- 1078      00
- 1079              	.LASF18:
- 1080 01da 64656275 		.ascii	"debug_str_len\000"
- 1080      675F7374 
- 1080      725F6C65 
- 1080      6E00
- 1081              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 1036 0083 3B       		.uleb128 0x3b
+ 1037 0084 0B       		.uleb128 0xb
+ 1038 0085 49       		.uleb128 0x49
+ 1039 0086 13       		.uleb128 0x13
+ 1040 0087 02       		.uleb128 0x2
+ 1041 0088 0A       		.uleb128 0xa
+ 1042 0089 00       		.byte	0
+ 1043 008a 00       		.byte	0
+ 1044 008b 0A       		.uleb128 0xa
+ 1045 008c 34       		.uleb128 0x34
+ 1046 008d 00       		.byte	0
+ 1047 008e 03       		.uleb128 0x3
+ 1048 008f 0E       		.uleb128 0xe
+ 1049 0090 3A       		.uleb128 0x3a
+ 1050 0091 0B       		.uleb128 0xb
+ 1051 0092 3B       		.uleb128 0x3b
+ 1052 0093 0B       		.uleb128 0xb
+ 1053 0094 49       		.uleb128 0x49
+ 1054 0095 13       		.uleb128 0x13
+ 1055 0096 02       		.uleb128 0x2
+ 1056 0097 0A       		.uleb128 0xa
+ 1057 0098 00       		.byte	0
+ 1058 0099 00       		.byte	0
+ 1059 009a 0B       		.uleb128 0xb
+ 1060 009b 34       		.uleb128 0x34
+ 1061 009c 00       		.byte	0
+ 1062 009d 03       		.uleb128 0x3
+ 1063 009e 08       		.uleb128 0x8
+ 1064 009f 3A       		.uleb128 0x3a
+ 1065 00a0 0B       		.uleb128 0xb
+ 1066 00a1 3B       		.uleb128 0x3b
+ 1067 00a2 0B       		.uleb128 0xb
+ 1068 00a3 49       		.uleb128 0x49
+ 1069 00a4 13       		.uleb128 0x13
+ 1070 00a5 02       		.uleb128 0x2
+ 1071 00a6 0A       		.uleb128 0xa
+ 1072 00a7 00       		.byte	0
+ 1073 00a8 00       		.byte	0
+ 1074 00a9 0C       		.uleb128 0xc
+ 1075 00aa 0F       		.uleb128 0xf
+ 1076 00ab 00       		.byte	0
+ 1077 00ac 0B       		.uleb128 0xb
+ 1078 00ad 0B       		.uleb128 0xb
+ 1079 00ae 49       		.uleb128 0x49
+ 1080 00af 13       		.uleb128 0x13
+ 1081 00b0 00       		.byte	0
+ 1082 00b1 00       		.byte	0
+ 1083 00b2 0D       		.uleb128 0xd
+ 1084 00b3 2E       		.uleb128 0x2e
+ 1085 00b4 01       		.byte	0x1
+ 1086 00b5 3F       		.uleb128 0x3f
+ 1087 00b6 0C       		.uleb128 0xc
+ 1088 00b7 03       		.uleb128 0x3
+ 1089 00b8 0E       		.uleb128 0xe
+ 1090 00b9 3A       		.uleb128 0x3a
+ 1091 00ba 0B       		.uleb128 0xb
+ 1092 00bb 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 24
+
+
+ 1093 00bc 0B       		.uleb128 0xb
+ 1094 00bd 27       		.uleb128 0x27
+ 1095 00be 0C       		.uleb128 0xc
+ 1096 00bf 49       		.uleb128 0x49
+ 1097 00c0 13       		.uleb128 0x13
+ 1098 00c1 11       		.uleb128 0x11
+ 1099 00c2 01       		.uleb128 0x1
+ 1100 00c3 12       		.uleb128 0x12
+ 1101 00c4 01       		.uleb128 0x1
+ 1102 00c5 40       		.uleb128 0x40
+ 1103 00c6 06       		.uleb128 0x6
+ 1104 00c7 9742     		.uleb128 0x2117
+ 1105 00c9 0C       		.uleb128 0xc
+ 1106 00ca 01       		.uleb128 0x1
+ 1107 00cb 13       		.uleb128 0x13
+ 1108 00cc 00       		.byte	0
+ 1109 00cd 00       		.byte	0
+ 1110 00ce 0E       		.uleb128 0xe
+ 1111 00cf 2E       		.uleb128 0x2e
+ 1112 00d0 01       		.byte	0x1
+ 1113 00d1 3F       		.uleb128 0x3f
+ 1114 00d2 0C       		.uleb128 0xc
+ 1115 00d3 03       		.uleb128 0x3
+ 1116 00d4 0E       		.uleb128 0xe
+ 1117 00d5 3A       		.uleb128 0x3a
+ 1118 00d6 0B       		.uleb128 0xb
+ 1119 00d7 3B       		.uleb128 0x3b
+ 1120 00d8 0B       		.uleb128 0xb
+ 1121 00d9 27       		.uleb128 0x27
+ 1122 00da 0C       		.uleb128 0xc
+ 1123 00db 11       		.uleb128 0x11
+ 1124 00dc 01       		.uleb128 0x1
+ 1125 00dd 12       		.uleb128 0x12
+ 1126 00de 01       		.uleb128 0x1
+ 1127 00df 40       		.uleb128 0x40
+ 1128 00e0 06       		.uleb128 0x6
+ 1129 00e1 9642     		.uleb128 0x2116
+ 1130 00e3 0C       		.uleb128 0xc
+ 1131 00e4 01       		.uleb128 0x1
+ 1132 00e5 13       		.uleb128 0x13
+ 1133 00e6 00       		.byte	0
+ 1134 00e7 00       		.byte	0
+ 1135 00e8 0F       		.uleb128 0xf
+ 1136 00e9 34       		.uleb128 0x34
+ 1137 00ea 00       		.byte	0
+ 1138 00eb 03       		.uleb128 0x3
+ 1139 00ec 0E       		.uleb128 0xe
+ 1140 00ed 3A       		.uleb128 0x3a
+ 1141 00ee 0B       		.uleb128 0xb
+ 1142 00ef 3B       		.uleb128 0x3b
+ 1143 00f0 05       		.uleb128 0x5
+ 1144 00f1 49       		.uleb128 0x49
+ 1145 00f2 13       		.uleb128 0x13
+ 1146 00f3 3F       		.uleb128 0x3f
+ 1147 00f4 0C       		.uleb128 0xc
+ 1148 00f5 3C       		.uleb128 0x3c
+ 1149 00f6 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 25
+
+
+ 1150 00f7 00       		.byte	0
+ 1151 00f8 00       		.byte	0
+ 1152 00f9 10       		.uleb128 0x10
+ 1153 00fa 35       		.uleb128 0x35
+ 1154 00fb 00       		.byte	0
+ 1155 00fc 49       		.uleb128 0x49
+ 1156 00fd 13       		.uleb128 0x13
+ 1157 00fe 00       		.byte	0
+ 1158 00ff 00       		.byte	0
+ 1159 0100 00       		.byte	0
+ 1160              		.section	.debug_loc,"",%progbits
+ 1161              	.Ldebug_loc0:
+ 1162              	.LLST0:
+ 1163 0000 00000000 		.4byte	.LFB56
+ 1164 0004 02000000 		.4byte	.LCFI0
+ 1165 0008 0200     		.2byte	0x2
+ 1166 000a 7D       		.byte	0x7d
+ 1167 000b 00       		.sleb128 0
+ 1168 000c 02000000 		.4byte	.LCFI0
+ 1169 0010 04000000 		.4byte	.LCFI1
+ 1170 0014 0200     		.2byte	0x2
+ 1171 0016 7D       		.byte	0x7d
+ 1172 0017 08       		.sleb128 8
+ 1173 0018 04000000 		.4byte	.LCFI1
+ 1174 001c 3E000000 		.4byte	.LFE56
+ 1175 0020 0200     		.2byte	0x2
+ 1176 0022 77       		.byte	0x77
+ 1177 0023 08       		.sleb128 8
+ 1178 0024 00000000 		.4byte	0
+ 1179 0028 00000000 		.4byte	0
+ 1180              	.LLST1:
+ 1181 002c 00000000 		.4byte	.LFB57
+ 1182 0030 02000000 		.4byte	.LCFI2
+ 1183 0034 0200     		.2byte	0x2
+ 1184 0036 7D       		.byte	0x7d
+ 1185 0037 00       		.sleb128 0
+ 1186 0038 02000000 		.4byte	.LCFI2
+ 1187 003c 04000000 		.4byte	.LCFI3
+ 1188 0040 0200     		.2byte	0x2
+ 1189 0042 7D       		.byte	0x7d
+ 1190 0043 0C       		.sleb128 12
+ 1191 0044 04000000 		.4byte	.LCFI3
+ 1192 0048 06000000 		.4byte	.LCFI4
+ 1193 004c 0300     		.2byte	0x3
+ 1194 004e 7D       		.byte	0x7d
+ 1195 004f E000     		.sleb128 96
+ 1196 0051 06000000 		.4byte	.LCFI4
+ 1197 0055 1C010000 		.4byte	.LFE57
+ 1198 0059 0300     		.2byte	0x3
+ 1199 005b 77       		.byte	0x77
+ 1200 005c E000     		.sleb128 96
+ 1201 005e 00000000 		.4byte	0
+ 1202 0062 00000000 		.4byte	0
+ 1203              	.LLST2:
+ 1204 0066 00000000 		.4byte	.LFB58
+ 1205 006a 02000000 		.4byte	.LCFI5
+ 1206 006e 0200     		.2byte	0x2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 26
+
+
+ 1207 0070 7D       		.byte	0x7d
+ 1208 0071 00       		.sleb128 0
+ 1209 0072 02000000 		.4byte	.LCFI5
+ 1210 0076 04000000 		.4byte	.LCFI6
+ 1211 007a 0200     		.2byte	0x2
+ 1212 007c 7D       		.byte	0x7d
+ 1213 007d 04       		.sleb128 4
+ 1214 007e 04000000 		.4byte	.LCFI6
+ 1215 0082 06000000 		.4byte	.LCFI7
+ 1216 0086 0200     		.2byte	0x2
+ 1217 0088 7D       		.byte	0x7d
+ 1218 0089 18       		.sleb128 24
+ 1219 008a 06000000 		.4byte	.LCFI7
+ 1220 008e 46000000 		.4byte	.LFE58
+ 1221 0092 0200     		.2byte	0x2
+ 1222 0094 77       		.byte	0x77
+ 1223 0095 18       		.sleb128 24
+ 1224 0096 00000000 		.4byte	0
+ 1225 009a 00000000 		.4byte	0
+ 1226              	.LLST3:
+ 1227 009e 00000000 		.4byte	.LFB59
+ 1228 00a2 02000000 		.4byte	.LCFI8
+ 1229 00a6 0200     		.2byte	0x2
+ 1230 00a8 7D       		.byte	0x7d
+ 1231 00a9 00       		.sleb128 0
+ 1232 00aa 02000000 		.4byte	.LCFI8
+ 1233 00ae 04000000 		.4byte	.LCFI9
+ 1234 00b2 0200     		.2byte	0x2
+ 1235 00b4 7D       		.byte	0x7d
+ 1236 00b5 0C       		.sleb128 12
+ 1237 00b6 04000000 		.4byte	.LCFI9
+ 1238 00ba 06000000 		.4byte	.LCFI10
+ 1239 00be 0300     		.2byte	0x3
+ 1240 00c0 7D       		.byte	0x7d
+ 1241 00c1 E800     		.sleb128 104
+ 1242 00c3 06000000 		.4byte	.LCFI10
+ 1243 00c7 B2010000 		.4byte	.LFE59
+ 1244 00cb 0300     		.2byte	0x3
+ 1245 00cd 77       		.byte	0x77
+ 1246 00ce E800     		.sleb128 104
+ 1247 00d0 00000000 		.4byte	0
+ 1248 00d4 00000000 		.4byte	0
+ 1249              	.LLST4:
+ 1250 00d8 00000000 		.4byte	.LFB60
+ 1251 00dc 02000000 		.4byte	.LCFI11
+ 1252 00e0 0200     		.2byte	0x2
+ 1253 00e2 7D       		.byte	0x7d
+ 1254 00e3 00       		.sleb128 0
+ 1255 00e4 02000000 		.4byte	.LCFI11
+ 1256 00e8 04000000 		.4byte	.LCFI12
+ 1257 00ec 0200     		.2byte	0x2
+ 1258 00ee 7D       		.byte	0x7d
+ 1259 00ef 08       		.sleb128 8
+ 1260 00f0 04000000 		.4byte	.LCFI12
+ 1261 00f4 06000000 		.4byte	.LCFI13
+ 1262 00f8 0200     		.2byte	0x2
+ 1263 00fa 7D       		.byte	0x7d
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 27
+
+
+ 1264 00fb 10       		.sleb128 16
+ 1265 00fc 06000000 		.4byte	.LCFI13
+ 1266 0100 2C000000 		.4byte	.LFE60
+ 1267 0104 0200     		.2byte	0x2
+ 1268 0106 77       		.byte	0x77
+ 1269 0107 10       		.sleb128 16
+ 1270 0108 00000000 		.4byte	0
+ 1271 010c 00000000 		.4byte	0
+ 1272              		.section	.debug_aranges,"",%progbits
+ 1273 0000 3C000000 		.4byte	0x3c
+ 1274 0004 0200     		.2byte	0x2
+ 1275 0006 00000000 		.4byte	.Ldebug_info0
+ 1276 000a 04       		.byte	0x4
+ 1277 000b 00       		.byte	0
+ 1278 000c 0000     		.2byte	0
+ 1279 000e 0000     		.2byte	0
+ 1280 0010 00000000 		.4byte	.LFB56
+ 1281 0014 3E000000 		.4byte	.LFE56-.LFB56
+ 1282 0018 00000000 		.4byte	.LFB57
+ 1283 001c 1C010000 		.4byte	.LFE57-.LFB57
+ 1284 0020 00000000 		.4byte	.LFB58
+ 1285 0024 46000000 		.4byte	.LFE58-.LFB58
+ 1286 0028 00000000 		.4byte	.LFB59
+ 1287 002c B2010000 		.4byte	.LFE59-.LFB59
+ 1288 0030 00000000 		.4byte	.LFB60
+ 1289 0034 2C000000 		.4byte	.LFE60-.LFB60
+ 1290 0038 00000000 		.4byte	0
+ 1291 003c 00000000 		.4byte	0
+ 1292              		.section	.debug_ranges,"",%progbits
+ 1293              	.Ldebug_ranges0:
+ 1294 0000 00000000 		.4byte	.LFB56
+ 1295 0004 3E000000 		.4byte	.LFE56
+ 1296 0008 00000000 		.4byte	.LFB57
+ 1297 000c 1C010000 		.4byte	.LFE57
+ 1298 0010 00000000 		.4byte	.LFB58
+ 1299 0014 46000000 		.4byte	.LFE58
+ 1300 0018 00000000 		.4byte	.LFB59
+ 1301 001c B2010000 		.4byte	.LFE59
+ 1302 0020 00000000 		.4byte	.LFB60
+ 1303 0024 2C000000 		.4byte	.LFE60
+ 1304 0028 00000000 		.4byte	0
+ 1305 002c 00000000 		.4byte	0
+ 1306              		.section	.debug_line,"",%progbits
+ 1307              	.Ldebug_line0:
+ 1308 0000 E8010000 		.section	.debug_str,"MS",%progbits,1
+ 1308      0200F900 
+ 1308      00000201 
+ 1308      FB0E0D00 
+ 1308      01010101 
+ 1309              	.LASF20:
+ 1310 0000 4C494E58 		.ascii	"LINX_GetCommand\000"
+ 1310      5F476574 
+ 1310      436F6D6D 
+ 1310      616E6400 
+ 1311              	.LASF19:
+ 1312 0010 5F426F6F 		.ascii	"_Bool\000"
+ 1312      6C00
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 28
+
+
+ 1313              	.LASF22:
+ 1314 0016 636F6D6D 		.ascii	"command\000"
+ 1314      616E6400 
+ 1315              	.LASF13:
+ 1316 001e 646F7562 		.ascii	"double\000"
+ 1316      6C6500
+ 1317              	.LASF27:
+ 1318 0025 73746174 		.ascii	"status\000"
+ 1318      757300
+ 1319              	.LASF12:
+ 1320 002c 666C6F61 		.ascii	"float\000"
+ 1320      7400
+ 1321              	.LASF25:
+ 1322 0032 63686563 		.ascii	"checksum\000"
+ 1322      6B73756D 
+ 1322      00
+ 1323              	.LASF34:
+ 1324 003b 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\GitRepo\\psoc"
+ 1324      73657273 
+ 1324      5C4D6172 
+ 1324      6B5C446F 
+ 1324      63756D65 
+ 1325 0068 5F325F70 		.ascii	"_2_pi\\PSoC Creator\\PSoC_2_Pi.cydsn\000"
+ 1325      695C5053 
+ 1325      6F432043 
+ 1325      72656174 
+ 1325      6F725C50 
+ 1326              	.LASF1:
+ 1327 008b 756E7369 		.ascii	"unsigned char\000"
+ 1327      676E6564 
+ 1327      20636861 
+ 1327      7200
+ 1328              	.LASF16:
+ 1329 0099 64656275 		.ascii	"debug_str\000"
+ 1329      675F7374 
+ 1329      7200
+ 1330              	.LASF5:
+ 1331 00a3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1331      20756E73 
+ 1331      69676E65 
+ 1331      6420696E 
+ 1331      7400
+ 1332              	.LASF24:
+ 1333 00b5 62756666 		.ascii	"buffer_len\000"
+ 1333      65725F6C 
+ 1333      656E00
+ 1334              	.LASF3:
+ 1335 00c0 73686F72 		.ascii	"short unsigned int\000"
+ 1335      7420756E 
+ 1335      7369676E 
+ 1335      65642069 
+ 1335      6E7400
+ 1336              	.LASF36:
+ 1337 00d3 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1337      52784275 
+ 1337      66666572 
+ 1337      00
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 29
+
+
+ 1338              	.LASF18:
+ 1339 00e0 636F6D6D 		.ascii	"command_len\000"
+ 1339      616E645F 
+ 1339      6C656E00 
+ 1340              	.LASF21:
+ 1341 00ec 4C494E58 		.ascii	"LINX_CalculateChecksum\000"
+ 1341      5F43616C 
+ 1341      63756C61 
+ 1341      74654368 
+ 1341      65636B73 
+ 1342              	.LASF30:
+ 1343 0103 4C494E58 		.ascii	"LINX_ProcessCommand\000"
+ 1343      5F50726F 
+ 1343      63657373 
+ 1343      436F6D6D 
+ 1343      616E6400 
+ 1344              	.LASF11:
+ 1345 0117 75696E74 		.ascii	"uint16\000"
+ 1345      313600
+ 1346              	.LASF8:
+ 1347 011e 756E7369 		.ascii	"unsigned int\000"
+ 1347      676E6564 
+ 1347      20696E74 
+ 1347      00
+ 1348              	.LASF7:
+ 1349 012b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1349      206C6F6E 
+ 1349      6720756E 
+ 1349      7369676E 
+ 1349      65642069 
+ 1350              	.LASF35:
+ 1351 0142 4C494E58 		.ascii	"LINX_Initialize\000"
+ 1351      5F496E69 
+ 1351      7469616C 
+ 1351      697A6500 
+ 1352              	.LASF26:
+ 1353 0152 72657370 		.ascii	"response\000"
+ 1353      6F6E7365 
+ 1353      00
+ 1354              	.LASF9:
+ 1355 015b 696E7433 		.ascii	"int32_t\000"
+ 1355      325F7400 
+ 1356              	.LASF15:
+ 1357 0163 73697A65 		.ascii	"sizetype\000"
+ 1357      74797065 
+ 1357      00
+ 1358              	.LASF6:
+ 1359 016c 6C6F6E67 		.ascii	"long long int\000"
+ 1359      206C6F6E 
+ 1359      6720696E 
+ 1359      7400
+ 1360              	.LASF14:
+ 1361 017a 63686172 		.ascii	"char\000"
+ 1361      00
+ 1362              	.LASF2:
+ 1363 017f 73686F72 		.ascii	"short int\000"
+ 1363      7420696E 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccsIPtry.s 			page 30
+
+
+ 1363      7400
+ 1364              	.LASF23:
+ 1365 0189 62756666 		.ascii	"buffer\000"
+ 1365      657200
+ 1366              	.LASF10:
+ 1367 0190 75696E74 		.ascii	"uint8\000"
+ 1367      3800
+ 1368              	.LASF32:
+ 1369 0196 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1369      4320342E 
+ 1369      372E3320 
+ 1369      32303133 
+ 1369      30333132 
+ 1370 01c9 616E6368 		.ascii	"anch revision 196615]\000"
+ 1370      20726576 
+ 1370      6973696F 
+ 1370      6E203139 
+ 1370      36363135 
+ 1371              	.LASF4:
+ 1372 01df 6C6F6E67 		.ascii	"long int\000"
+ 1372      20696E74 
+ 1372      00
+ 1373              	.LASF28:
+ 1374 01e8 72657370 		.ascii	"response_data\000"
+ 1374      6F6E7365 
+ 1374      5F646174 
+ 1374      6100
+ 1375              	.LASF0:
+ 1376 01f6 7369676E 		.ascii	"signed char\000"
+ 1376      65642063 
+ 1376      68617200 
+ 1377              	.LASF29:
+ 1378 0202 72657370 		.ascii	"response_data_len\000"
+ 1378      6F6E7365 
+ 1378      5F646174 
+ 1378      615F6C65 
+ 1378      6E00
+ 1379              	.LASF31:
+ 1380 0214 4C494E58 		.ascii	"LINX_SendResponse\000"
+ 1380      5F53656E 
+ 1380      64526573 
+ 1380      706F6E73 
+ 1380      6500
+ 1381              	.LASF33:
+ 1382 0226 2E5C4C49 		.ascii	".\\LINX.c\000"
+ 1382      4E582E63 
+ 1382      00
+ 1383              	.LASF17:
+ 1384 022f 64656275 		.ascii	"debug_str_len\000"
+ 1384      675F7374 
+ 1384      725F6C65 
+ 1384      6E00
+ 1385              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

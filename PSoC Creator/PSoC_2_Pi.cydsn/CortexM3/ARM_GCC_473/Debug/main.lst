@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 1
 
 
    1              		.syntax unified
@@ -58,20 +58,20 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 1
   29:.\main.c      **** int main()
   30:.\main.c      **** {
   27              		.loc 1 30 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 2
 
 
   28              		.cfi_startproc
-  29              		@ args = 0, pretend = 0, frame = 24
+  29              		@ args = 0, pretend = 0, frame = 32
   30              		@ frame_needed = 1, uses_anonymous_args = 0
   31 0000 80B5     		push	{r7, lr}
   32              	.LCFI0:
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 7, -8
   35              		.cfi_offset 14, -4
-  36 0002 86B0     		sub	sp, sp, #24
+  36 0002 88B0     		sub	sp, sp, #32
   37              	.LCFI1:
-  38              		.cfi_def_cfa_offset 32
+  38              		.cfi_def_cfa_offset 40
   39 0004 00AF     		add	r7, sp, #0
   40              	.LCFI2:
   41              		.cfi_def_cfa_register 7
@@ -111,43 +111,44 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 1
   57 001c 00E0     		b	.L3
   58              	.L4:
   49:.\main.c      ****         
-  50:.\main.c      ****         uint8 command[LINX_COMMAND_BUFFER_SIZE];
-  51:.\main.c      ****         uint8 command_len;
+  50:.\main.c      ****         uint8 LINX_Command[LINX_COMMAND_BUFFER_SIZE];
+  51:.\main.c      ****         uint8 LINX_Response[LINX_RESPONSE_BUFFER_SIZE];
   52:.\main.c      ****     #endif
   53:.\main.c      ****     
   54:.\main.c      ****     /* Gets data from the Pi and send it to mem1.c*/
   55:.\main.c      ****     for(;;)
   56:.\main.c      ****     {
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 3
 
 
   57:.\main.c      ****         #ifdef LINX_H
   58:.\main.c      ****             if(USBUART_DataIsReady()) {
-  59:.\main.c      ****                 if (LINX_GetCommand(command, &command_len)) {
-  60:.\main.c      ****                     LINX_ProcessCommand(command, command_len);
-  61:.\main.c      ****                 }
-  62:.\main.c      ****                 else {
-  63:.\main.c      ****                     #ifdef DEBUG_LINX
-  64:.\main.c      ****                         DEBUG_UART_PutString("Get command FAILED\r\n");
-  65:.\main.c      ****                     #endif
-  66:.\main.c      ****                 }
-  67:.\main.c      ****             }
-  68:.\main.c      ****         #else
-  69:.\main.c      ****             uint32 input = ReadFrom_Pi();
-  70:.\main.c      ****             
-  71:.\main.c      ****             uint8 addr = (input & 0xFF000000)>>24;
-  72:.\main.c      ****             uint8 cmd = (input & 0x00FF0000)>>16;
-  73:.\main.c      ****             uint8 dat_lo = (input & 0x0000FF00)>>8;
-  74:.\main.c      ****             uint8 dat_hi = input & 0x000000FF;
-  75:.\main.c      ****             uint16 dat = (dat_hi<<8) | dat_lo;
-  76:.\main.c      ****           
-  77:.\main.c      ****             readData(addr,cmd,dat); 
-  78:.\main.c      ****         #endif
-  79:.\main.c      ****         
-  80:.\main.c      ****         /*          Add your code here            */
-  81:.\main.c      ****         
-  82:.\main.c      ****     }
-  59              		.loc 1 82 0
+  59:.\main.c      ****                 if (LINX_GetCommand(LINX_Command)) {
+  60:.\main.c      ****                     LINX_ProcessCommand(LINX_Command, LINX_Response);
+  61:.\main.c      ****                     LINX_SendResponse(LINX_Response);
+  62:.\main.c      ****                 }
+  63:.\main.c      ****                 else {
+  64:.\main.c      ****                     #ifdef DEBUG_LINX
+  65:.\main.c      ****                         DEBUG_UART_PutString("Get command FAILED\r\n");
+  66:.\main.c      ****                     #endif
+  67:.\main.c      ****                 }
+  68:.\main.c      ****             }
+  69:.\main.c      ****         #else
+  70:.\main.c      ****             uint32 input = ReadFrom_Pi();
+  71:.\main.c      ****             
+  72:.\main.c      ****             uint8 addr = (input & 0xFF000000)>>24;
+  73:.\main.c      ****             uint8 cmd = (input & 0x00FF0000)>>16;
+  74:.\main.c      ****             uint8 dat_lo = (input & 0x0000FF00)>>8;
+  75:.\main.c      ****             uint8 dat_hi = input & 0x000000FF;
+  76:.\main.c      ****             uint16 dat = (dat_hi<<8) | dat_lo;
+  77:.\main.c      ****           
+  78:.\main.c      ****             readData(addr,cmd,dat); 
+  79:.\main.c      ****         #endif
+  80:.\main.c      ****         
+  81:.\main.c      ****         /*          Add your code here            */
+  82:.\main.c      ****         
+  83:.\main.c      ****     }
+  59              		.loc 1 83 0
   60 001e 00BF     		nop
   61              	.L3:
   58:.\main.c      ****             if(USBUART_DataIsReady()) {
@@ -156,43 +157,45 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 1
   64 0024 0346     		mov	r3, r0
   65 0026 002B     		cmp	r3, #0
   66 0028 F9D0     		beq	.L4
-  59:.\main.c      ****                 if (LINX_GetCommand(command, &command_len)) {
+  59:.\main.c      ****                 if (LINX_GetCommand(LINX_Command)) {
   67              		.loc 1 59 0
-  68 002a 07F10802 		add	r2, r7, #8
-  69 002e 07F10703 		add	r3, r7, #7
-  70 0032 1046     		mov	r0, r2
-  71 0034 1946     		mov	r1, r3
-  72 0036 FFF7FEFF 		bl	LINX_GetCommand
-  73 003a 0346     		mov	r3, r0
-  74 003c 002B     		cmp	r3, #0
-  75 003e EED0     		beq	.L4
-  60:.\main.c      ****                     LINX_ProcessCommand(command, command_len);
-  76              		.loc 1 60 0
-  77 0040 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  78 0042 07F10802 		add	r2, r7, #8
-  79 0046 1046     		mov	r0, r2
-  80 0048 1946     		mov	r1, r3
-  81 004a FFF7FEFF 		bl	LINX_ProcessCommand
-  82              		.loc 1 82 0
-  83 004e E6E7     		b	.L4
-  84              		.cfi_endproc
-  85              	.LFE56:
-  86              		.size	main, .-main
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 4
+  68 002a 07F11003 		add	r3, r7, #16
+  69 002e 1846     		mov	r0, r3
+  70 0030 FFF7FEFF 		bl	LINX_GetCommand
+  71 0034 0346     		mov	r3, r0
+  72 0036 002B     		cmp	r3, #0
+  73 0038 F1D0     		beq	.L4
+  60:.\main.c      ****                     LINX_ProcessCommand(LINX_Command, LINX_Response);
+  74              		.loc 1 60 0
+  75 003a 07F11002 		add	r2, r7, #16
+  76 003e 3B46     		mov	r3, r7
+  77 0040 1046     		mov	r0, r2
+  78 0042 1946     		mov	r1, r3
+  79 0044 FFF7FEFF 		bl	LINX_ProcessCommand
+  61:.\main.c      ****                     LINX_SendResponse(LINX_Response);
+  80              		.loc 1 61 0
+  81 0048 3B46     		mov	r3, r7
+  82 004a 1846     		mov	r0, r3
+  83 004c FFF7FEFF 		bl	LINX_SendResponse
+  84              		.loc 1 83 0
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 4
 
 
-  87              		.section	.text.ReadFrom_Pi,"ax",%progbits
-  88              		.align	2
-  89              		.global	ReadFrom_Pi
-  90              		.thumb
-  91              		.thumb_func
-  92              		.type	ReadFrom_Pi, %function
-  93              	ReadFrom_Pi:
-  94              	.LFB57:
-  83:.\main.c      **** }
-  84:.\main.c      **** 
-  85:.\main.c      ****    
-  86:.\main.c      **** 
+  85 0050 E5E7     		b	.L4
+  86              		.cfi_endproc
+  87              	.LFE56:
+  88              		.size	main, .-main
+  89 0052 00BF     		.section	.text.ReadFrom_Pi,"ax",%progbits
+  90              		.align	2
+  91              		.global	ReadFrom_Pi
+  92              		.thumb
+  93              		.thumb_func
+  94              		.type	ReadFrom_Pi, %function
+  95              	ReadFrom_Pi:
+  96              	.LFB57:
+  84:.\main.c      **** }
+  85:.\main.c      **** 
+  86:.\main.c      ****    
   87:.\main.c      **** 
   88:.\main.c      **** 
   89:.\main.c      **** 
@@ -201,1055 +204,1062 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 1
   92:.\main.c      **** 
   93:.\main.c      **** 
   94:.\main.c      **** 
-  95:.\main.c      **** /****************************************************************************************//**
-  96:.\main.c      **** *  @brief receives 4 bytes of data from a Master Device, merges them into a 32 bit number, and
-  97:.\main.c      **** *         returns the result
-  98:.\main.c      **** *
-  99:.\main.c      **** *  @return: 32-bit number which contains all 4 bytes of transferred data, where the MSB is the 
- 100:.\main.c      ****             first item received.
- 101:.\main.c      **** *
- 102:.\main.c      **** *********************************************************************************************/
- 103:.\main.c      ****     
- 104:.\main.c      ****     uint32 ReadFrom_Pi(void)
- 105:.\main.c      ****     {   
-  95              		.loc 1 105 0
-  96              		.cfi_startproc
-  97              		@ args = 0, pretend = 0, frame = 8
-  98              		@ frame_needed = 1, uses_anonymous_args = 0
-  99 0000 80B5     		push	{r7, lr}
- 100              	.LCFI3:
- 101              		.cfi_def_cfa_offset 8
- 102              		.cfi_offset 7, -8
- 103              		.cfi_offset 14, -4
- 104 0002 82B0     		sub	sp, sp, #8
- 105              	.LCFI4:
- 106              		.cfi_def_cfa_offset 16
- 107 0004 00AF     		add	r7, sp, #0
- 108              	.LCFI5:
- 109              		.cfi_def_cfa_register 7
- 106:.\main.c      ****         uint8 addr = 0;
- 110              		.loc 1 106 0
- 111 0006 4FF00003 		mov	r3, #0
- 112 000a FB71     		strb	r3, [r7, #7]
- 107:.\main.c      ****         uint8 cmd = 0;
- 113              		.loc 1 107 0
- 114 000c 4FF00003 		mov	r3, #0
- 115 0010 BB71     		strb	r3, [r7, #6]
- 108:.\main.c      ****         uint8 dat_lo = 0;
- 116              		.loc 1 108 0
- 117 0012 4FF00003 		mov	r3, #0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 5
+  95:.\main.c      **** 
+  96:.\main.c      **** /****************************************************************************************//**
+  97:.\main.c      **** *  @brief receives 4 bytes of data from a Master Device, merges them into a 32 bit number, and
+  98:.\main.c      **** *         returns the result
+  99:.\main.c      **** *
+ 100:.\main.c      **** *  @return: 32-bit number which contains all 4 bytes of transferred data, where the MSB is the 
+ 101:.\main.c      ****             first item received.
+ 102:.\main.c      **** *
+ 103:.\main.c      **** *********************************************************************************************/
+ 104:.\main.c      ****     
+ 105:.\main.c      ****     uint32 ReadFrom_Pi(void)
+ 106:.\main.c      ****     {   
+  97              		.loc 1 106 0
+  98              		.cfi_startproc
+  99              		@ args = 0, pretend = 0, frame = 8
+ 100              		@ frame_needed = 1, uses_anonymous_args = 0
+ 101 0000 80B5     		push	{r7, lr}
+ 102              	.LCFI3:
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 7, -8
+ 105              		.cfi_offset 14, -4
+ 106 0002 82B0     		sub	sp, sp, #8
+ 107              	.LCFI4:
+ 108              		.cfi_def_cfa_offset 16
+ 109 0004 00AF     		add	r7, sp, #0
+ 110              	.LCFI5:
+ 111              		.cfi_def_cfa_register 7
+ 107:.\main.c      ****         uint8 addr = 0;
+ 112              		.loc 1 107 0
+ 113 0006 4FF00003 		mov	r3, #0
+ 114 000a FB71     		strb	r3, [r7, #7]
+ 108:.\main.c      ****         uint8 cmd = 0;
+ 115              		.loc 1 108 0
+ 116 000c 4FF00003 		mov	r3, #0
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 5
 
 
- 118 0016 7B71     		strb	r3, [r7, #5]
- 109:.\main.c      ****         uint8 dat_hi = 0;
- 119              		.loc 1 109 0
- 120 0018 4FF00003 		mov	r3, #0
- 121 001c 3B71     		strb	r3, [r7, #4]
- 110:.\main.c      ****         
- 111:.\main.c      ****         /* SPI READ HANDLER */
- 112:.\main.c      ****         #ifdef CY_SPIS_SPIS_1_H
- 113:.\main.c      ****             while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
- 122              		.loc 1 113 0
- 123 001e 00BF     		nop
- 124              	.L6:
- 125              		.loc 1 113 0 is_stmt 0 discriminator 1
- 126 0020 FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
- 127 0024 0346     		mov	r3, r0
- 128 0026 002B     		cmp	r3, #0
- 129 0028 FAD0     		beq	.L6
- 114:.\main.c      ****                 addr = SPIS_1_ReadRxData();
- 130              		.loc 1 114 0 is_stmt 1
- 131 002a FFF7FEFF 		bl	SPIS_1_ReadRxData
- 132 002e 0346     		mov	r3, r0
- 133 0030 FB71     		strb	r3, [r7, #7]
- 115:.\main.c      ****     	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
- 134              		.loc 1 115 0
- 135 0032 00BF     		nop
- 136              	.L7:
- 137              		.loc 1 115 0 is_stmt 0 discriminator 1
- 138 0034 FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
- 139 0038 0346     		mov	r3, r0
- 140 003a 002B     		cmp	r3, #0
- 141 003c FAD0     		beq	.L7
- 116:.\main.c      ****     	        cmd = SPIS_1_ReadRxData();
- 142              		.loc 1 116 0 is_stmt 1
- 143 003e FFF7FEFF 		bl	SPIS_1_ReadRxData
- 144 0042 0346     		mov	r3, r0
- 145 0044 BB71     		strb	r3, [r7, #6]
- 117:.\main.c      ****     	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
- 146              		.loc 1 117 0
- 147 0046 00BF     		nop
- 148              	.L8:
- 149              		.loc 1 117 0 is_stmt 0 discriminator 1
- 150 0048 FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
- 151 004c 0346     		mov	r3, r0
- 152 004e 002B     		cmp	r3, #0
- 153 0050 FAD0     		beq	.L8
- 118:.\main.c      ****     	        dat_lo = SPIS_1_ReadRxData();
- 154              		.loc 1 118 0 is_stmt 1
- 155 0052 FFF7FEFF 		bl	SPIS_1_ReadRxData
- 156 0056 0346     		mov	r3, r0
- 157 0058 7B71     		strb	r3, [r7, #5]
- 119:.\main.c      ****             while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
- 158              		.loc 1 119 0
- 159 005a 00BF     		nop
- 160              	.L9:
- 161              		.loc 1 119 0 is_stmt 0 discriminator 1
- 162 005c FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
- 163 0060 0346     		mov	r3, r0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 6
+ 117 0010 BB71     		strb	r3, [r7, #6]
+ 109:.\main.c      ****         uint8 dat_lo = 0;
+ 118              		.loc 1 109 0
+ 119 0012 4FF00003 		mov	r3, #0
+ 120 0016 7B71     		strb	r3, [r7, #5]
+ 110:.\main.c      ****         uint8 dat_hi = 0;
+ 121              		.loc 1 110 0
+ 122 0018 4FF00003 		mov	r3, #0
+ 123 001c 3B71     		strb	r3, [r7, #4]
+ 111:.\main.c      ****         
+ 112:.\main.c      ****         /* SPI READ HANDLER */
+ 113:.\main.c      ****         #ifdef CY_SPIS_SPIS_1_H
+ 114:.\main.c      ****             while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+ 124              		.loc 1 114 0
+ 125 001e 00BF     		nop
+ 126              	.L6:
+ 127              		.loc 1 114 0 is_stmt 0 discriminator 1
+ 128 0020 FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
+ 129 0024 0346     		mov	r3, r0
+ 130 0026 002B     		cmp	r3, #0
+ 131 0028 FAD0     		beq	.L6
+ 115:.\main.c      ****                 addr = SPIS_1_ReadRxData();
+ 132              		.loc 1 115 0 is_stmt 1
+ 133 002a FFF7FEFF 		bl	SPIS_1_ReadRxData
+ 134 002e 0346     		mov	r3, r0
+ 135 0030 FB71     		strb	r3, [r7, #7]
+ 116:.\main.c      ****     	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+ 136              		.loc 1 116 0
+ 137 0032 00BF     		nop
+ 138              	.L7:
+ 139              		.loc 1 116 0 is_stmt 0 discriminator 1
+ 140 0034 FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
+ 141 0038 0346     		mov	r3, r0
+ 142 003a 002B     		cmp	r3, #0
+ 143 003c FAD0     		beq	.L7
+ 117:.\main.c      ****     	        cmd = SPIS_1_ReadRxData();
+ 144              		.loc 1 117 0 is_stmt 1
+ 145 003e FFF7FEFF 		bl	SPIS_1_ReadRxData
+ 146 0042 0346     		mov	r3, r0
+ 147 0044 BB71     		strb	r3, [r7, #6]
+ 118:.\main.c      ****     	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+ 148              		.loc 1 118 0
+ 149 0046 00BF     		nop
+ 150              	.L8:
+ 151              		.loc 1 118 0 is_stmt 0 discriminator 1
+ 152 0048 FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
+ 153 004c 0346     		mov	r3, r0
+ 154 004e 002B     		cmp	r3, #0
+ 155 0050 FAD0     		beq	.L8
+ 119:.\main.c      ****     	        dat_lo = SPIS_1_ReadRxData();
+ 156              		.loc 1 119 0 is_stmt 1
+ 157 0052 FFF7FEFF 		bl	SPIS_1_ReadRxData
+ 158 0056 0346     		mov	r3, r0
+ 159 0058 7B71     		strb	r3, [r7, #5]
+ 120:.\main.c      ****             while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+ 160              		.loc 1 120 0
+ 161 005a 00BF     		nop
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 6
 
 
- 164 0062 002B     		cmp	r3, #0
- 165 0064 FAD0     		beq	.L9
- 120:.\main.c      ****     	        dat_hi = SPIS_1_ReadRxData();
- 166              		.loc 1 120 0 is_stmt 1
- 167 0066 FFF7FEFF 		bl	SPIS_1_ReadRxData
- 168 006a 0346     		mov	r3, r0
- 169 006c 3B71     		strb	r3, [r7, #4]
- 121:.\main.c      ****         #endif
- 122:.\main.c      ****       
- 123:.\main.c      ****         /* I2C READ HANDLER */
- 124:.\main.c      ****         #ifdef CY_I2C_I2C_1_H
- 125:.\main.c      ****             while (!I2C_1_SlaveGetWriteBufSize()){}
- 126:.\main.c      ****             /* wait until I2C master is not writing or reading from the Buffer */
- 127:.\main.c      ****             while (!(I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_CMPLT)){}         
- 128:.\main.c      ****                 uint8 byteCount = I2C_1_SlaveGetWriteBufSize(); 
- 129:.\main.c      ****            
- 130:.\main.c      ****                 addr = WR_buf[0];
- 131:.\main.c      ****                 cmd = WR_buf[1];
- 132:.\main.c      ****                 dat_lo = WR_buf[2];
- 133:.\main.c      ****                 dat_hi = WR_buf[3];
- 134:.\main.c      ****                 
- 135:.\main.c      ****                 I2C_1_SlaveClearWriteStatus();
- 136:.\main.c      ****                 I2C_1_SlaveClearWriteBuf();
- 137:.\main.c      ****                 
- 138:.\main.c      ****         #endif
- 139:.\main.c      ****   
- 140:.\main.c      ****         
- 141:.\main.c      ****         uint32 input = (((addr<<24)|(cmd<<16))|(dat_lo<<8))|(dat_hi);
- 170              		.loc 1 141 0
- 171 006e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 172 0070 4FEA0362 		lsl	r2, r3, #24
- 173 0074 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
- 174 0076 4FEA0343 		lsl	r3, r3, #16
- 175 007a 1A43     		orrs	r2, r2, r3
- 176 007c 7B79     		ldrb	r3, [r7, #5]	@ zero_extendqisi2
- 177 007e 4FEA0323 		lsl	r3, r3, #8
- 178 0082 1A43     		orrs	r2, r2, r3
- 179 0084 3B79     		ldrb	r3, [r7, #4]	@ zero_extendqisi2
- 180 0086 1343     		orrs	r3, r3, r2
- 181 0088 3B60     		str	r3, [r7, #0]
- 142:.\main.c      ****         return input;
- 182              		.loc 1 142 0
- 183 008a 3B68     		ldr	r3, [r7, #0]
- 143:.\main.c      ****     }
+ 162              	.L9:
+ 163              		.loc 1 120 0 is_stmt 0 discriminator 1
+ 164 005c FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
+ 165 0060 0346     		mov	r3, r0
+ 166 0062 002B     		cmp	r3, #0
+ 167 0064 FAD0     		beq	.L9
+ 121:.\main.c      ****     	        dat_hi = SPIS_1_ReadRxData();
+ 168              		.loc 1 121 0 is_stmt 1
+ 169 0066 FFF7FEFF 		bl	SPIS_1_ReadRxData
+ 170 006a 0346     		mov	r3, r0
+ 171 006c 3B71     		strb	r3, [r7, #4]
+ 122:.\main.c      ****         #endif
+ 123:.\main.c      ****       
+ 124:.\main.c      ****         /* I2C READ HANDLER */
+ 125:.\main.c      ****         #ifdef CY_I2C_I2C_1_H
+ 126:.\main.c      ****             while (!I2C_1_SlaveGetWriteBufSize()){}
+ 127:.\main.c      ****             /* wait until I2C master is not writing or reading from the Buffer */
+ 128:.\main.c      ****             while (!(I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_CMPLT)){}         
+ 129:.\main.c      ****                 uint8 byteCount = I2C_1_SlaveGetWriteBufSize(); 
+ 130:.\main.c      ****            
+ 131:.\main.c      ****                 addr = WR_buf[0];
+ 132:.\main.c      ****                 cmd = WR_buf[1];
+ 133:.\main.c      ****                 dat_lo = WR_buf[2];
+ 134:.\main.c      ****                 dat_hi = WR_buf[3];
+ 135:.\main.c      ****                 
+ 136:.\main.c      ****                 I2C_1_SlaveClearWriteStatus();
+ 137:.\main.c      ****                 I2C_1_SlaveClearWriteBuf();
+ 138:.\main.c      ****                 
+ 139:.\main.c      ****         #endif
+ 140:.\main.c      ****   
+ 141:.\main.c      ****         
+ 142:.\main.c      ****         uint32 input = (((addr<<24)|(cmd<<16))|(dat_lo<<8))|(dat_hi);
+ 172              		.loc 1 142 0
+ 173 006e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 174 0070 4FEA0362 		lsl	r2, r3, #24
+ 175 0074 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 176 0076 4FEA0343 		lsl	r3, r3, #16
+ 177 007a 1A43     		orrs	r2, r2, r3
+ 178 007c 7B79     		ldrb	r3, [r7, #5]	@ zero_extendqisi2
+ 179 007e 4FEA0323 		lsl	r3, r3, #8
+ 180 0082 1A43     		orrs	r2, r2, r3
+ 181 0084 3B79     		ldrb	r3, [r7, #4]	@ zero_extendqisi2
+ 182 0086 1343     		orrs	r3, r3, r2
+ 183 0088 3B60     		str	r3, [r7, #0]
+ 143:.\main.c      ****         return input;
  184              		.loc 1 143 0
- 185 008c 1846     		mov	r0, r3
- 186 008e 07F10807 		add	r7, r7, #8
- 187 0092 BD46     		mov	sp, r7
- 188 0094 80BD     		pop	{r7, pc}
- 189              		.cfi_endproc
- 190              	.LFE57:
- 191              		.size	ReadFrom_Pi, .-ReadFrom_Pi
- 192 0096 00BF     		.section	.text.WriteTo_Pi,"ax",%progbits
- 193              		.align	2
- 194              		.global	WriteTo_Pi
- 195              		.thumb
- 196              		.thumb_func
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 7
+ 185 008a 3B68     		ldr	r3, [r7, #0]
+ 144:.\main.c      ****     }
+ 186              		.loc 1 144 0
+ 187 008c 1846     		mov	r0, r3
+ 188 008e 07F10807 		add	r7, r7, #8
+ 189 0092 BD46     		mov	sp, r7
+ 190 0094 80BD     		pop	{r7, pc}
+ 191              		.cfi_endproc
+ 192              	.LFE57:
+ 193              		.size	ReadFrom_Pi, .-ReadFrom_Pi
+ 194 0096 00BF     		.section	.text.WriteTo_Pi,"ax",%progbits
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 7
 
 
- 197              		.type	WriteTo_Pi, %function
- 198              	WriteTo_Pi:
- 199              	.LFB58:
- 144:.\main.c      ****     
- 145:.\main.c      **** /****************************************************************************************//**
- 146:.\main.c      **** *  @brief Writes data back to the Master device when appropriate. 
- 147:.\main.c      **** *
- 148:.\main.c      **** *  @param dat: 32-bit number which is to be sent to the Master device. It is split into 4
- 149:.\main.c      **** *              individual bytes, and transferred one at a time starting with the lowest byte
- 150:.\main.c      **** *
- 151:.\main.c      **** *********************************************************************************************/
- 152:.\main.c      ****     
- 153:.\main.c      ****     void WriteTo_Pi(uint32 dat)
- 154:.\main.c      ****     {
- 200              		.loc 1 154 0
- 201              		.cfi_startproc
- 202              		@ args = 0, pretend = 0, frame = 16
- 203              		@ frame_needed = 1, uses_anonymous_args = 0
- 204 0000 80B5     		push	{r7, lr}
- 205              	.LCFI6:
- 206              		.cfi_def_cfa_offset 8
- 207              		.cfi_offset 7, -8
- 208              		.cfi_offset 14, -4
- 209 0002 84B0     		sub	sp, sp, #16
- 210              	.LCFI7:
- 211              		.cfi_def_cfa_offset 24
- 212 0004 00AF     		add	r7, sp, #0
- 213              	.LCFI8:
- 214              		.cfi_def_cfa_register 7
- 215 0006 7860     		str	r0, [r7, #4]
- 155:.\main.c      ****         
+ 195              		.align	2
+ 196              		.global	WriteTo_Pi
+ 197              		.thumb
+ 198              		.thumb_func
+ 199              		.type	WriteTo_Pi, %function
+ 200              	WriteTo_Pi:
+ 201              	.LFB58:
+ 145:.\main.c      ****     
+ 146:.\main.c      **** /****************************************************************************************//**
+ 147:.\main.c      **** *  @brief Writes data back to the Master device when appropriate. 
+ 148:.\main.c      **** *
+ 149:.\main.c      **** *  @param dat: 32-bit number which is to be sent to the Master device. It is split into 4
+ 150:.\main.c      **** *              individual bytes, and transferred one at a time starting with the lowest byte
+ 151:.\main.c      **** *
+ 152:.\main.c      **** *********************************************************************************************/
+ 153:.\main.c      ****     
+ 154:.\main.c      ****     void WriteTo_Pi(uint32 dat)
+ 155:.\main.c      ****     {
+ 202              		.loc 1 155 0
+ 203              		.cfi_startproc
+ 204              		@ args = 0, pretend = 0, frame = 16
+ 205              		@ frame_needed = 1, uses_anonymous_args = 0
+ 206 0000 80B5     		push	{r7, lr}
+ 207              	.LCFI6:
+ 208              		.cfi_def_cfa_offset 8
+ 209              		.cfi_offset 7, -8
+ 210              		.cfi_offset 14, -4
+ 211 0002 84B0     		sub	sp, sp, #16
+ 212              	.LCFI7:
+ 213              		.cfi_def_cfa_offset 24
+ 214 0004 00AF     		add	r7, sp, #0
+ 215              	.LCFI8:
+ 216              		.cfi_def_cfa_register 7
+ 217 0006 7860     		str	r0, [r7, #4]
  156:.\main.c      ****         
- 157:.\main.c      ****             uint8 out_hi = (dat & 0xFF000000)>>24;
- 216              		.loc 1 157 0
- 217 0008 7B68     		ldr	r3, [r7, #4]
- 218 000a 4FEA1363 		lsr	r3, r3, #24
- 219 000e FB73     		strb	r3, [r7, #15]
- 158:.\main.c      ****             uint8 out_mid_hi = (dat & 0x00FF0000)>>16;
- 220              		.loc 1 158 0
- 221 0010 7B68     		ldr	r3, [r7, #4]
- 222 0012 03F47F03 		and	r3, r3, #16711680
- 223 0016 4FEA1343 		lsr	r3, r3, #16
- 224 001a BB73     		strb	r3, [r7, #14]
- 159:.\main.c      ****             uint8 out_mid_lo = (dat & 0x0000FF00)>>8;
- 225              		.loc 1 159 0
- 226 001c 7B68     		ldr	r3, [r7, #4]
- 227 001e 03F47F43 		and	r3, r3, #65280
- 228 0022 4FEA1323 		lsr	r3, r3, #8
- 229 0026 7B73     		strb	r3, [r7, #13]
- 160:.\main.c      ****             uint8 out_lo = dat & 0x000000FF;
- 230              		.loc 1 160 0
- 231 0028 7B68     		ldr	r3, [r7, #4]
- 232 002a 3B73     		strb	r3, [r7, #12]
- 161:.\main.c      ****         
- 162:.\main.c      ****         /* SPI WRITE HANDLER */
- 163:.\main.c      ****         #ifdef CY_SPIS_SPIS_1_H
- 164:.\main.c      ****             SPIS_1_ClearTxBuffer();
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 8
+ 157:.\main.c      ****         
+ 158:.\main.c      ****             uint8 out_hi = (dat & 0xFF000000)>>24;
+ 218              		.loc 1 158 0
+ 219 0008 7B68     		ldr	r3, [r7, #4]
+ 220 000a 4FEA1363 		lsr	r3, r3, #24
+ 221 000e FB73     		strb	r3, [r7, #15]
+ 159:.\main.c      ****             uint8 out_mid_hi = (dat & 0x00FF0000)>>16;
+ 222              		.loc 1 159 0
+ 223 0010 7B68     		ldr	r3, [r7, #4]
+ 224 0012 03F47F03 		and	r3, r3, #16711680
+ 225 0016 4FEA1343 		lsr	r3, r3, #16
+ 226 001a BB73     		strb	r3, [r7, #14]
+ 160:.\main.c      ****             uint8 out_mid_lo = (dat & 0x0000FF00)>>8;
+ 227              		.loc 1 160 0
+ 228 001c 7B68     		ldr	r3, [r7, #4]
+ 229 001e 03F47F43 		and	r3, r3, #65280
+ 230 0022 4FEA1323 		lsr	r3, r3, #8
+ 231 0026 7B73     		strb	r3, [r7, #13]
+ 161:.\main.c      ****             uint8 out_lo = dat & 0x000000FF;
+ 232              		.loc 1 161 0
+ 233 0028 7B68     		ldr	r3, [r7, #4]
+ 234 002a 3B73     		strb	r3, [r7, #12]
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 8
 
 
- 233              		.loc 1 164 0
- 234 002c FFF7FEFF 		bl	SPIS_1_ClearTxBuffer
- 165:.\main.c      ****             SPIS_1_ClearFIFO();    //Clear the SPI buffers
+ 162:.\main.c      ****         
+ 163:.\main.c      ****         /* SPI WRITE HANDLER */
+ 164:.\main.c      ****         #ifdef CY_SPIS_SPIS_1_H
+ 165:.\main.c      ****             SPIS_1_ClearTxBuffer();
  235              		.loc 1 165 0
- 236 0030 FFF7FEFF 		bl	SPIS_1_ClearFIFO
- 166:.\main.c      ****             SPIS_1_ClearRxBuffer();
+ 236 002c FFF7FEFF 		bl	SPIS_1_ClearTxBuffer
+ 166:.\main.c      ****             SPIS_1_ClearFIFO();    //Clear the SPI buffers
  237              		.loc 1 166 0
- 238 0034 FFF7FEFF 		bl	SPIS_1_ClearRxBuffer
- 167:.\main.c      ****             
- 168:.\main.c      ****             uint8 SPI_buffer[3] = {out_mid_lo, out_mid_hi, out_hi};
- 239              		.loc 1 168 0
- 240 0038 7B7B     		ldrb	r3, [r7, #13]
- 241 003a 3B72     		strb	r3, [r7, #8]
- 242 003c BB7B     		ldrb	r3, [r7, #14]
- 243 003e 7B72     		strb	r3, [r7, #9]
- 244 0040 FB7B     		ldrb	r3, [r7, #15]
- 245 0042 BB72     		strb	r3, [r7, #10]
- 169:.\main.c      ****             SPIS_1_WriteTxDataZero(out_lo);
- 246              		.loc 1 169 0
- 247 0044 3B7B     		ldrb	r3, [r7, #12]	@ zero_extendqisi2
- 248 0046 1846     		mov	r0, r3
- 249 0048 FFF7FEFF 		bl	SPIS_1_WriteTxDataZero
- 170:.\main.c      ****             SPIS_1_PutArray(SPI_buffer, 3);
- 250              		.loc 1 170 0
- 251 004c 07F10803 		add	r3, r7, #8
- 252 0050 1846     		mov	r0, r3
- 253 0052 4FF00301 		mov	r1, #3
- 254 0056 FFF7FEFF 		bl	SPIS_1_PutArray
- 171:.\main.c      ****            
- 172:.\main.c      ****             while(!(SPIS_1_ReadTxStatus() & SPIS_1_STS_SPI_DONE)); //Wait until Tx buffer empties  
- 255              		.loc 1 172 0
- 256 005a 00BF     		nop
- 257              	.L12:
- 258              		.loc 1 172 0 is_stmt 0 discriminator 1
- 259 005c FFF7FEFF 		bl	SPIS_1_ReadTxStatus
- 260 0060 0346     		mov	r3, r0
- 261 0062 03F00103 		and	r3, r3, #1
- 262 0066 002B     		cmp	r3, #0
- 263 0068 F8D0     		beq	.L12
- 173:.\main.c      ****         #endif
- 174:.\main.c      ****         
- 175:.\main.c      ****         /* I2C WRITE HANDLER */
- 176:.\main.c      ****         #ifdef CY_I2C_I2C_1_H
- 177:.\main.c      ****             while (I2C_1_SlaveGetReadBufSize()){}
- 178:.\main.c      ****             RD_buf[0] = out_lo;
- 179:.\main.c      ****             RD_buf[1] = out_mid_lo;
- 180:.\main.c      ****             RD_buf[2] = out_mid_hi;
- 181:.\main.c      ****             RD_buf[3] = out_hi;
- 182:.\main.c      ****             
- 183:.\main.c      ****             /*Wait until read is complete*/
- 184:.\main.c      ****             while (0u == (I2C_1_SlaveStatus() & I2C_1_SSTAT_RD_CMPLT)){}
- 185:.\main.c      ****                 I2C_1_SlaveClearReadBuf();          /* Clear slave read buffer and status */
- 186:.\main.c      ****                 (void) I2C_1_SlaveClearReadStatus();
- 187:.\main.c      ****         #endif
- 188:.\main.c      ****         
- 189:.\main.c      ****     }
- 264              		.loc 1 189 0 is_stmt 1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 9
+ 238 0030 FFF7FEFF 		bl	SPIS_1_ClearFIFO
+ 167:.\main.c      ****             SPIS_1_ClearRxBuffer();
+ 239              		.loc 1 167 0
+ 240 0034 FFF7FEFF 		bl	SPIS_1_ClearRxBuffer
+ 168:.\main.c      ****             
+ 169:.\main.c      ****             uint8 SPI_buffer[3] = {out_mid_lo, out_mid_hi, out_hi};
+ 241              		.loc 1 169 0
+ 242 0038 7B7B     		ldrb	r3, [r7, #13]
+ 243 003a 3B72     		strb	r3, [r7, #8]
+ 244 003c BB7B     		ldrb	r3, [r7, #14]
+ 245 003e 7B72     		strb	r3, [r7, #9]
+ 246 0040 FB7B     		ldrb	r3, [r7, #15]
+ 247 0042 BB72     		strb	r3, [r7, #10]
+ 170:.\main.c      ****             SPIS_1_WriteTxDataZero(out_lo);
+ 248              		.loc 1 170 0
+ 249 0044 3B7B     		ldrb	r3, [r7, #12]	@ zero_extendqisi2
+ 250 0046 1846     		mov	r0, r3
+ 251 0048 FFF7FEFF 		bl	SPIS_1_WriteTxDataZero
+ 171:.\main.c      ****             SPIS_1_PutArray(SPI_buffer, 3);
+ 252              		.loc 1 171 0
+ 253 004c 07F10803 		add	r3, r7, #8
+ 254 0050 1846     		mov	r0, r3
+ 255 0052 4FF00301 		mov	r1, #3
+ 256 0056 FFF7FEFF 		bl	SPIS_1_PutArray
+ 172:.\main.c      ****            
+ 173:.\main.c      ****             while(!(SPIS_1_ReadTxStatus() & SPIS_1_STS_SPI_DONE)); //Wait until Tx buffer empties  
+ 257              		.loc 1 173 0
+ 258 005a 00BF     		nop
+ 259              	.L12:
+ 260              		.loc 1 173 0 is_stmt 0 discriminator 1
+ 261 005c FFF7FEFF 		bl	SPIS_1_ReadTxStatus
+ 262 0060 0346     		mov	r3, r0
+ 263 0062 03F00103 		and	r3, r3, #1
+ 264 0066 002B     		cmp	r3, #0
+ 265 0068 F8D0     		beq	.L12
+ 174:.\main.c      ****         #endif
+ 175:.\main.c      ****         
+ 176:.\main.c      ****         /* I2C WRITE HANDLER */
+ 177:.\main.c      ****         #ifdef CY_I2C_I2C_1_H
+ 178:.\main.c      ****             while (I2C_1_SlaveGetReadBufSize()){}
+ 179:.\main.c      ****             RD_buf[0] = out_lo;
+ 180:.\main.c      ****             RD_buf[1] = out_mid_lo;
+ 181:.\main.c      ****             RD_buf[2] = out_mid_hi;
+ 182:.\main.c      ****             RD_buf[3] = out_hi;
+ 183:.\main.c      ****             
+ 184:.\main.c      ****             /*Wait until read is complete*/
+ 185:.\main.c      ****             while (0u == (I2C_1_SlaveStatus() & I2C_1_SSTAT_RD_CMPLT)){}
+ 186:.\main.c      ****                 I2C_1_SlaveClearReadBuf();          /* Clear slave read buffer and status */
+ 187:.\main.c      ****                 (void) I2C_1_SlaveClearReadStatus();
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 9
 
 
- 265 006a 07F11007 		add	r7, r7, #16
- 266 006e BD46     		mov	sp, r7
- 267 0070 80BD     		pop	{r7, pc}
- 268              		.cfi_endproc
- 269              	.LFE58:
- 270              		.size	WriteTo_Pi, .-WriteTo_Pi
- 271 0072 00BF     		.text
- 272              	.Letext0:
- 273              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4
- 274              		.file 3 "./Generated_Source/PSoC5/cytypes.h"
- 275              		.file 4 "./Generated_Source/PSoC5/core_cm3.h"
- 276              		.section	.debug_info,"",%progbits
- 277              	.Ldebug_info0:
- 278 0000 EA010000 		.4byte	0x1ea
- 279 0004 0200     		.2byte	0x2
- 280 0006 00000000 		.4byte	.Ldebug_abbrev0
- 281 000a 04       		.byte	0x4
- 282 000b 01       		.uleb128 0x1
- 283 000c 09010000 		.4byte	.LASF29
- 284 0010 01       		.byte	0x1
- 285 0011 53000000 		.4byte	.LASF30
- 286 0015 78010000 		.4byte	.LASF31
- 287 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 288 001d 00000000 		.4byte	0
- 289 0021 00000000 		.4byte	0
- 290 0025 00000000 		.4byte	.Ldebug_line0
- 291 0029 02       		.uleb128 0x2
- 292 002a 01       		.byte	0x1
- 293 002b 06       		.byte	0x6
- 294 002c BC010000 		.4byte	.LASF0
- 295 0030 02       		.uleb128 0x2
- 296 0031 01       		.byte	0x1
- 297 0032 08       		.byte	0x8
- 298 0033 3F000000 		.4byte	.LASF1
- 299 0037 02       		.uleb128 0x2
- 300 0038 02       		.byte	0x2
- 301 0039 05       		.byte	0x5
- 302 003a F9000000 		.4byte	.LASF2
- 303 003e 02       		.uleb128 0x2
- 304 003f 02       		.byte	0x2
- 305 0040 07       		.byte	0x7
- 306 0041 13000000 		.4byte	.LASF3
- 307 0045 03       		.uleb128 0x3
- 308 0046 CE000000 		.4byte	.LASF9
- 309 004a 02       		.byte	0x2
- 310 004b 4F       		.byte	0x4f
- 311 004c 50000000 		.4byte	0x50
- 312 0050 02       		.uleb128 0x2
- 313 0051 04       		.byte	0x4
- 314 0052 05       		.byte	0x5
- 315 0053 6F010000 		.4byte	.LASF4
- 316 0057 02       		.uleb128 0x2
- 317 0058 04       		.byte	0x4
- 318 0059 07       		.byte	0x7
- 319 005a 5C000000 		.4byte	.LASF5
- 320 005e 02       		.uleb128 0x2
- 321 005f 08       		.byte	0x8
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 10
+ 188:.\main.c      ****         #endif
+ 189:.\main.c      ****         
+ 190:.\main.c      ****     }
+ 266              		.loc 1 190 0 is_stmt 1
+ 267 006a 07F11007 		add	r7, r7, #16
+ 268 006e BD46     		mov	sp, r7
+ 269 0070 80BD     		pop	{r7, pc}
+ 270              		.cfi_endproc
+ 271              	.LFE58:
+ 272              		.size	WriteTo_Pi, .-WriteTo_Pi
+ 273 0072 00BF     		.text
+ 274              	.Letext0:
+ 275              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4
+ 276              		.file 3 "./Generated_Source/PSoC5/cytypes.h"
+ 277              		.file 4 "./Generated_Source/PSoC5/core_cm3.h"
+ 278              		.section	.debug_info,"",%progbits
+ 279              	.Ldebug_info0:
+ 280 0000 EA010000 		.4byte	0x1ea
+ 281 0004 0200     		.2byte	0x2
+ 282 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 283 000a 04       		.byte	0x4
+ 284 000b 01       		.uleb128 0x1
+ 285 000c 60010000 		.4byte	.LASF29
+ 286 0010 01       		.byte	0x1
+ 287 0011 A9000000 		.4byte	.LASF30
+ 288 0015 45000000 		.4byte	.LASF31
+ 289 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 290 001d 00000000 		.4byte	0
+ 291 0021 00000000 		.4byte	0
+ 292 0025 00000000 		.4byte	.Ldebug_line0
+ 293 0029 02       		.uleb128 0x2
+ 294 002a 01       		.byte	0x1
+ 295 002b 06       		.byte	0x6
+ 296 002c CF010000 		.4byte	.LASF0
+ 297 0030 02       		.uleb128 0x2
+ 298 0031 01       		.byte	0x1
+ 299 0032 08       		.byte	0x8
+ 300 0033 95000000 		.4byte	.LASF1
+ 301 0037 02       		.uleb128 0x2
+ 302 0038 02       		.byte	0x2
+ 303 0039 05       		.byte	0x5
+ 304 003a 50010000 		.4byte	.LASF2
+ 305 003e 02       		.uleb128 0x2
+ 306 003f 02       		.byte	0x2
+ 307 0040 07       		.byte	0x7
+ 308 0041 21000000 		.4byte	.LASF3
+ 309 0045 03       		.uleb128 0x3
+ 310 0046 18010000 		.4byte	.LASF9
+ 311 004a 02       		.byte	0x2
+ 312 004b 4F       		.byte	0x4f
+ 313 004c 50000000 		.4byte	0x50
+ 314 0050 02       		.uleb128 0x2
+ 315 0051 04       		.byte	0x4
+ 316 0052 05       		.byte	0x5
+ 317 0053 C6010000 		.4byte	.LASF4
+ 318 0057 02       		.uleb128 0x2
+ 319 0058 04       		.byte	0x4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 10
 
 
- 322 0060 05       		.byte	0x5
- 323 0061 E6000000 		.4byte	.LASF6
- 324 0065 02       		.uleb128 0x2
- 325 0066 08       		.byte	0x8
- 326 0067 07       		.byte	0x7
- 327 0068 B7000000 		.4byte	.LASF7
- 328 006c 04       		.uleb128 0x4
- 329 006d 04       		.byte	0x4
- 330 006e 05       		.byte	0x5
- 331 006f 696E7400 		.ascii	"int\000"
- 332 0073 02       		.uleb128 0x2
- 333 0074 04       		.byte	0x4
- 334 0075 07       		.byte	0x7
- 335 0076 AA000000 		.4byte	.LASF8
- 336 007a 03       		.uleb128 0x3
- 337 007b 03010000 		.4byte	.LASF10
- 338 007f 03       		.byte	0x3
- 339 0080 5B       		.byte	0x5b
- 340 0081 30000000 		.4byte	0x30
- 341 0085 03       		.uleb128 0x3
- 342 0086 A3000000 		.4byte	.LASF11
- 343 008a 03       		.byte	0x3
- 344 008b 5D       		.byte	0x5d
- 345 008c 57000000 		.4byte	0x57
- 346 0090 02       		.uleb128 0x2
- 347 0091 04       		.byte	0x4
- 348 0092 04       		.byte	0x4
- 349 0093 39000000 		.4byte	.LASF12
- 350 0097 02       		.uleb128 0x2
- 351 0098 08       		.byte	0x8
- 352 0099 04       		.byte	0x4
- 353 009a 97000000 		.4byte	.LASF13
- 354 009e 02       		.uleb128 0x2
- 355 009f 01       		.byte	0x1
- 356 00a0 08       		.byte	0x8
- 357 00a1 F4000000 		.4byte	.LASF14
- 358 00a5 02       		.uleb128 0x2
- 359 00a6 04       		.byte	0x4
- 360 00a7 07       		.byte	0x7
- 361 00a8 D6000000 		.4byte	.LASF15
- 362 00ac 05       		.uleb128 0x5
- 363 00ad 01       		.byte	0x1
- 364 00ae 9E000000 		.4byte	.LASF22
- 365 00b2 01       		.byte	0x1
- 366 00b3 1D       		.byte	0x1d
- 367 00b4 6C000000 		.4byte	0x6c
- 368 00b8 00000000 		.4byte	.LFB56
- 369 00bc 50000000 		.4byte	.LFE56
- 370 00c0 00000000 		.4byte	.LLST0
- 371 00c4 01       		.byte	0x1
- 372 00c5 E6000000 		.4byte	0xe6
- 373 00c9 06       		.uleb128 0x6
- 374 00ca 26000000 		.4byte	.LASF16
- 375 00ce 01       		.byte	0x1
- 376 00cf 32       		.byte	0x32
- 377 00d0 E6000000 		.4byte	0xe6
- 378 00d4 02       		.byte	0x2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 11
+ 320 0059 07       		.byte	0x7
+ 321 005a B2000000 		.4byte	.LASF5
+ 322 005e 02       		.uleb128 0x2
+ 323 005f 08       		.byte	0x8
+ 324 0060 05       		.byte	0x5
+ 325 0061 30010000 		.4byte	.LASF6
+ 326 0065 02       		.uleb128 0x2
+ 327 0066 08       		.byte	0x8
+ 328 0067 07       		.byte	0x7
+ 329 0068 01010000 		.4byte	.LASF7
+ 330 006c 04       		.uleb128 0x4
+ 331 006d 04       		.byte	0x4
+ 332 006e 05       		.byte	0x5
+ 333 006f 696E7400 		.ascii	"int\000"
+ 334 0073 02       		.uleb128 0x2
+ 335 0074 04       		.byte	0x4
+ 336 0075 07       		.byte	0x7
+ 337 0076 F4000000 		.4byte	.LASF8
+ 338 007a 03       		.uleb128 0x3
+ 339 007b 5A010000 		.4byte	.LASF10
+ 340 007f 03       		.byte	0x3
+ 341 0080 5B       		.byte	0x5b
+ 342 0081 30000000 		.4byte	0x30
+ 343 0085 03       		.uleb128 0x3
+ 344 0086 ED000000 		.4byte	.LASF11
+ 345 008a 03       		.byte	0x3
+ 346 008b 5D       		.byte	0x5d
+ 347 008c 57000000 		.4byte	0x57
+ 348 0090 02       		.uleb128 0x2
+ 349 0091 04       		.byte	0x4
+ 350 0092 04       		.byte	0x4
+ 351 0093 3F000000 		.4byte	.LASF12
+ 352 0097 02       		.uleb128 0x2
+ 353 0098 08       		.byte	0x8
+ 354 0099 04       		.byte	0x4
+ 355 009a E1000000 		.4byte	.LASF13
+ 356 009e 02       		.uleb128 0x2
+ 357 009f 01       		.byte	0x1
+ 358 00a0 08       		.byte	0x8
+ 359 00a1 4B010000 		.4byte	.LASF14
+ 360 00a5 02       		.uleb128 0x2
+ 361 00a6 04       		.byte	0x4
+ 362 00a7 07       		.byte	0x7
+ 363 00a8 20010000 		.4byte	.LASF15
+ 364 00ac 05       		.uleb128 0x5
+ 365 00ad 01       		.byte	0x1
+ 366 00ae E8000000 		.4byte	.LASF22
+ 367 00b2 01       		.byte	0x1
+ 368 00b3 1D       		.byte	0x1d
+ 369 00b4 6C000000 		.4byte	0x6c
+ 370 00b8 00000000 		.4byte	.LFB56
+ 371 00bc 52000000 		.4byte	.LFE56
+ 372 00c0 00000000 		.4byte	.LLST0
+ 373 00c4 01       		.byte	0x1
+ 374 00c5 E6000000 		.4byte	0xe6
+ 375 00c9 06       		.uleb128 0x6
+ 376 00ca 3E010000 		.4byte	.LASF16
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 11
 
 
- 379 00d5 91       		.byte	0x91
- 380 00d6 68       		.sleb128 -24
- 381 00d7 06       		.uleb128 0x6
- 382 00d8 8B000000 		.4byte	.LASF17
- 383 00dc 01       		.byte	0x1
- 384 00dd 33       		.byte	0x33
- 385 00de 7A000000 		.4byte	0x7a
- 386 00e2 02       		.byte	0x2
- 387 00e3 91       		.byte	0x91
- 388 00e4 67       		.sleb128 -25
- 389 00e5 00       		.byte	0
- 390 00e6 07       		.uleb128 0x7
- 391 00e7 7A000000 		.4byte	0x7a
- 392 00eb F6000000 		.4byte	0xf6
- 393 00ef 08       		.uleb128 0x8
- 394 00f0 A5000000 		.4byte	0xa5
- 395 00f4 0F       		.byte	0xf
- 396 00f5 00       		.byte	0
- 397 00f6 09       		.uleb128 0x9
- 398 00f7 01       		.byte	0x1
- 399 00f8 00000000 		.4byte	.LASF32
- 400 00fc 01       		.byte	0x1
- 401 00fd 68       		.byte	0x68
- 402 00fe 01       		.byte	0x1
- 403 00ff 85000000 		.4byte	0x85
- 404 0103 00000000 		.4byte	.LFB57
- 405 0107 96000000 		.4byte	.LFE57
- 406 010b 38000000 		.4byte	.LLST1
- 407 010f 01       		.byte	0x1
- 408 0110 5B010000 		.4byte	0x15b
- 409 0114 06       		.uleb128 0x6
- 410 0115 6E000000 		.4byte	.LASF18
- 411 0119 01       		.byte	0x1
- 412 011a 6A       		.byte	0x6a
- 413 011b 7A000000 		.4byte	0x7a
- 414 011f 02       		.byte	0x2
- 415 0120 91       		.byte	0x91
- 416 0121 77       		.sleb128 -9
- 417 0122 0A       		.uleb128 0xa
- 418 0123 636D6400 		.ascii	"cmd\000"
- 419 0127 01       		.byte	0x1
- 420 0128 6B       		.byte	0x6b
- 421 0129 7A000000 		.4byte	0x7a
- 422 012d 02       		.byte	0x2
- 423 012e 91       		.byte	0x91
- 424 012f 76       		.sleb128 -10
- 425 0130 06       		.uleb128 0x6
- 426 0131 68010000 		.4byte	.LASF19
- 427 0135 01       		.byte	0x1
- 428 0136 6C       		.byte	0x6c
- 429 0137 7A000000 		.4byte	0x7a
- 430 013b 02       		.byte	0x2
- 431 013c 91       		.byte	0x91
- 432 013d 75       		.sleb128 -11
- 433 013e 06       		.uleb128 0x6
- 434 013f DF000000 		.4byte	.LASF20
- 435 0143 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 12
+ 377 00ce 01       		.byte	0x1
+ 378 00cf 32       		.byte	0x32
+ 379 00d0 E6000000 		.4byte	0xe6
+ 380 00d4 02       		.byte	0x2
+ 381 00d5 91       		.byte	0x91
+ 382 00d6 68       		.sleb128 -24
+ 383 00d7 06       		.uleb128 0x6
+ 384 00d8 0C000000 		.4byte	.LASF17
+ 385 00dc 01       		.byte	0x1
+ 386 00dd 33       		.byte	0x33
+ 387 00de E6000000 		.4byte	0xe6
+ 388 00e2 02       		.byte	0x2
+ 389 00e3 91       		.byte	0x91
+ 390 00e4 58       		.sleb128 -40
+ 391 00e5 00       		.byte	0
+ 392 00e6 07       		.uleb128 0x7
+ 393 00e7 7A000000 		.4byte	0x7a
+ 394 00eb F6000000 		.4byte	0xf6
+ 395 00ef 08       		.uleb128 0x8
+ 396 00f0 A5000000 		.4byte	0xa5
+ 397 00f4 0F       		.byte	0xf
+ 398 00f5 00       		.byte	0
+ 399 00f6 09       		.uleb128 0x9
+ 400 00f7 01       		.byte	0x1
+ 401 00f8 00000000 		.4byte	.LASF32
+ 402 00fc 01       		.byte	0x1
+ 403 00fd 69       		.byte	0x69
+ 404 00fe 01       		.byte	0x1
+ 405 00ff 85000000 		.4byte	0x85
+ 406 0103 00000000 		.4byte	.LFB57
+ 407 0107 96000000 		.4byte	.LFE57
+ 408 010b 38000000 		.4byte	.LLST1
+ 409 010f 01       		.byte	0x1
+ 410 0110 5B010000 		.4byte	0x15b
+ 411 0114 06       		.uleb128 0x6
+ 412 0115 C4000000 		.4byte	.LASF18
+ 413 0119 01       		.byte	0x1
+ 414 011a 6B       		.byte	0x6b
+ 415 011b 7A000000 		.4byte	0x7a
+ 416 011f 02       		.byte	0x2
+ 417 0120 91       		.byte	0x91
+ 418 0121 77       		.sleb128 -9
+ 419 0122 0A       		.uleb128 0xa
+ 420 0123 636D6400 		.ascii	"cmd\000"
+ 421 0127 01       		.byte	0x1
+ 422 0128 6C       		.byte	0x6c
+ 423 0129 7A000000 		.4byte	0x7a
+ 424 012d 02       		.byte	0x2
+ 425 012e 91       		.byte	0x91
+ 426 012f 76       		.sleb128 -10
+ 427 0130 06       		.uleb128 0x6
+ 428 0131 BF010000 		.4byte	.LASF19
+ 429 0135 01       		.byte	0x1
+ 430 0136 6D       		.byte	0x6d
+ 431 0137 7A000000 		.4byte	0x7a
+ 432 013b 02       		.byte	0x2
+ 433 013c 91       		.byte	0x91
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 12
 
 
- 436 0144 6D       		.byte	0x6d
- 437 0145 7A000000 		.4byte	0x7a
- 438 0149 02       		.byte	0x2
- 439 014a 91       		.byte	0x91
- 440 014b 74       		.sleb128 -12
- 441 014c 06       		.uleb128 0x6
- 442 014d 4D000000 		.4byte	.LASF21
- 443 0151 01       		.byte	0x1
- 444 0152 8D       		.byte	0x8d
- 445 0153 85000000 		.4byte	0x85
- 446 0157 02       		.byte	0x2
- 447 0158 91       		.byte	0x91
- 448 0159 70       		.sleb128 -16
- 449 015a 00       		.byte	0
- 450 015b 0B       		.uleb128 0xb
- 451 015c 01       		.byte	0x1
- 452 015d 5D010000 		.4byte	.LASF23
- 453 0161 01       		.byte	0x1
- 454 0162 99       		.byte	0x99
- 455 0163 01       		.byte	0x1
- 456 0164 00000000 		.4byte	.LFB58
- 457 0168 72000000 		.4byte	.LFE58
- 458 016c 70000000 		.4byte	.LLST2
- 459 0170 01       		.byte	0x1
- 460 0171 CA010000 		.4byte	0x1ca
- 461 0175 0C       		.uleb128 0xc
- 462 0176 64617400 		.ascii	"dat\000"
- 463 017a 01       		.byte	0x1
- 464 017b 99       		.byte	0x99
- 465 017c 85000000 		.4byte	0x85
- 466 0180 02       		.byte	0x2
- 467 0181 91       		.byte	0x91
- 468 0182 6C       		.sleb128 -20
- 469 0183 06       		.uleb128 0x6
- 470 0184 C8010000 		.4byte	.LASF24
- 471 0188 01       		.byte	0x1
- 472 0189 9D       		.byte	0x9d
- 473 018a 7A000000 		.4byte	0x7a
- 474 018e 02       		.byte	0x2
- 475 018f 91       		.byte	0x91
- 476 0190 77       		.sleb128 -9
- 477 0191 06       		.uleb128 0x6
- 478 0192 73000000 		.4byte	.LASF25
- 479 0196 01       		.byte	0x1
- 480 0197 9E       		.byte	0x9e
- 481 0198 7A000000 		.4byte	0x7a
- 482 019c 02       		.byte	0x2
- 483 019d 91       		.byte	0x91
- 484 019e 76       		.sleb128 -10
- 485 019f 06       		.uleb128 0x6
- 486 01a0 52010000 		.4byte	.LASF26
- 487 01a4 01       		.byte	0x1
- 488 01a5 9F       		.byte	0x9f
- 489 01a6 7A000000 		.4byte	0x7a
- 490 01aa 02       		.byte	0x2
- 491 01ab 91       		.byte	0x91
- 492 01ac 75       		.sleb128 -11
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 13
+ 434 013d 75       		.sleb128 -11
+ 435 013e 06       		.uleb128 0x6
+ 436 013f 29010000 		.4byte	.LASF20
+ 437 0143 01       		.byte	0x1
+ 438 0144 6E       		.byte	0x6e
+ 439 0145 7A000000 		.4byte	0x7a
+ 440 0149 02       		.byte	0x2
+ 441 014a 91       		.byte	0x91
+ 442 014b 74       		.sleb128 -12
+ 443 014c 06       		.uleb128 0x6
+ 444 014d A3000000 		.4byte	.LASF21
+ 445 0151 01       		.byte	0x1
+ 446 0152 8E       		.byte	0x8e
+ 447 0153 85000000 		.4byte	0x85
+ 448 0157 02       		.byte	0x2
+ 449 0158 91       		.byte	0x91
+ 450 0159 70       		.sleb128 -16
+ 451 015a 00       		.byte	0
+ 452 015b 0B       		.uleb128 0xb
+ 453 015c 01       		.byte	0x1
+ 454 015d B4010000 		.4byte	.LASF23
+ 455 0161 01       		.byte	0x1
+ 456 0162 9A       		.byte	0x9a
+ 457 0163 01       		.byte	0x1
+ 458 0164 00000000 		.4byte	.LFB58
+ 459 0168 72000000 		.4byte	.LFE58
+ 460 016c 70000000 		.4byte	.LLST2
+ 461 0170 01       		.byte	0x1
+ 462 0171 CA010000 		.4byte	0x1ca
+ 463 0175 0C       		.uleb128 0xc
+ 464 0176 64617400 		.ascii	"dat\000"
+ 465 017a 01       		.byte	0x1
+ 466 017b 9A       		.byte	0x9a
+ 467 017c 85000000 		.4byte	0x85
+ 468 0180 02       		.byte	0x2
+ 469 0181 91       		.byte	0x91
+ 470 0182 6C       		.sleb128 -20
+ 471 0183 06       		.uleb128 0x6
+ 472 0184 DB010000 		.4byte	.LASF24
+ 473 0188 01       		.byte	0x1
+ 474 0189 9E       		.byte	0x9e
+ 475 018a 7A000000 		.4byte	0x7a
+ 476 018e 02       		.byte	0x2
+ 477 018f 91       		.byte	0x91
+ 478 0190 77       		.sleb128 -9
+ 479 0191 06       		.uleb128 0x6
+ 480 0192 C9000000 		.4byte	.LASF25
+ 481 0196 01       		.byte	0x1
+ 482 0197 9F       		.byte	0x9f
+ 483 0198 7A000000 		.4byte	0x7a
+ 484 019c 02       		.byte	0x2
+ 485 019d 91       		.byte	0x91
+ 486 019e 76       		.sleb128 -10
+ 487 019f 06       		.uleb128 0x6
+ 488 01a0 A9010000 		.4byte	.LASF26
+ 489 01a4 01       		.byte	0x1
+ 490 01a5 A0       		.byte	0xa0
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 13
 
 
- 493 01ad 06       		.uleb128 0x6
- 494 01ae 0C000000 		.4byte	.LASF27
- 495 01b2 01       		.byte	0x1
- 496 01b3 A0       		.byte	0xa0
- 497 01b4 7A000000 		.4byte	0x7a
- 498 01b8 02       		.byte	0x2
- 499 01b9 91       		.byte	0x91
- 500 01ba 74       		.sleb128 -12
- 501 01bb 06       		.uleb128 0x6
- 502 01bc 2E000000 		.4byte	.LASF28
- 503 01c0 01       		.byte	0x1
- 504 01c1 A8       		.byte	0xa8
- 505 01c2 CA010000 		.4byte	0x1ca
- 506 01c6 02       		.byte	0x2
- 507 01c7 91       		.byte	0x91
- 508 01c8 70       		.sleb128 -16
- 509 01c9 00       		.byte	0
- 510 01ca 07       		.uleb128 0x7
- 511 01cb 7A000000 		.4byte	0x7a
- 512 01cf DA010000 		.4byte	0x1da
- 513 01d3 08       		.uleb128 0x8
- 514 01d4 A5000000 		.4byte	0xa5
- 515 01d8 02       		.byte	0x2
- 516 01d9 00       		.byte	0
- 517 01da 0D       		.uleb128 0xd
- 518 01db 7E000000 		.4byte	.LASF33
- 519 01df 04       		.byte	0x4
- 520 01e0 1606     		.2byte	0x616
- 521 01e2 E8010000 		.4byte	0x1e8
- 522 01e6 01       		.byte	0x1
- 523 01e7 01       		.byte	0x1
- 524 01e8 0E       		.uleb128 0xe
- 525 01e9 45000000 		.4byte	0x45
- 526 01ed 00       		.byte	0
- 527              		.section	.debug_abbrev,"",%progbits
- 528              	.Ldebug_abbrev0:
- 529 0000 01       		.uleb128 0x1
- 530 0001 11       		.uleb128 0x11
- 531 0002 01       		.byte	0x1
- 532 0003 25       		.uleb128 0x25
- 533 0004 0E       		.uleb128 0xe
- 534 0005 13       		.uleb128 0x13
- 535 0006 0B       		.uleb128 0xb
- 536 0007 03       		.uleb128 0x3
- 537 0008 0E       		.uleb128 0xe
- 538 0009 1B       		.uleb128 0x1b
- 539 000a 0E       		.uleb128 0xe
- 540 000b 55       		.uleb128 0x55
- 541 000c 06       		.uleb128 0x6
- 542 000d 11       		.uleb128 0x11
- 543 000e 01       		.uleb128 0x1
- 544 000f 52       		.uleb128 0x52
- 545 0010 01       		.uleb128 0x1
- 546 0011 10       		.uleb128 0x10
- 547 0012 06       		.uleb128 0x6
- 548 0013 00       		.byte	0
- 549 0014 00       		.byte	0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 14
+ 491 01a6 7A000000 		.4byte	0x7a
+ 492 01aa 02       		.byte	0x2
+ 493 01ab 91       		.byte	0x91
+ 494 01ac 75       		.sleb128 -11
+ 495 01ad 06       		.uleb128 0x6
+ 496 01ae 1A000000 		.4byte	.LASF27
+ 497 01b2 01       		.byte	0x1
+ 498 01b3 A1       		.byte	0xa1
+ 499 01b4 7A000000 		.4byte	0x7a
+ 500 01b8 02       		.byte	0x2
+ 501 01b9 91       		.byte	0x91
+ 502 01ba 74       		.sleb128 -12
+ 503 01bb 06       		.uleb128 0x6
+ 504 01bc 34000000 		.4byte	.LASF28
+ 505 01c0 01       		.byte	0x1
+ 506 01c1 A9       		.byte	0xa9
+ 507 01c2 CA010000 		.4byte	0x1ca
+ 508 01c6 02       		.byte	0x2
+ 509 01c7 91       		.byte	0x91
+ 510 01c8 70       		.sleb128 -16
+ 511 01c9 00       		.byte	0
+ 512 01ca 07       		.uleb128 0x7
+ 513 01cb 7A000000 		.4byte	0x7a
+ 514 01cf DA010000 		.4byte	0x1da
+ 515 01d3 08       		.uleb128 0x8
+ 516 01d4 A5000000 		.4byte	0xa5
+ 517 01d8 02       		.byte	0x2
+ 518 01d9 00       		.byte	0
+ 519 01da 0D       		.uleb128 0xd
+ 520 01db D4000000 		.4byte	.LASF33
+ 521 01df 04       		.byte	0x4
+ 522 01e0 1606     		.2byte	0x616
+ 523 01e2 E8010000 		.4byte	0x1e8
+ 524 01e6 01       		.byte	0x1
+ 525 01e7 01       		.byte	0x1
+ 526 01e8 0E       		.uleb128 0xe
+ 527 01e9 45000000 		.4byte	0x45
+ 528 01ed 00       		.byte	0
+ 529              		.section	.debug_abbrev,"",%progbits
+ 530              	.Ldebug_abbrev0:
+ 531 0000 01       		.uleb128 0x1
+ 532 0001 11       		.uleb128 0x11
+ 533 0002 01       		.byte	0x1
+ 534 0003 25       		.uleb128 0x25
+ 535 0004 0E       		.uleb128 0xe
+ 536 0005 13       		.uleb128 0x13
+ 537 0006 0B       		.uleb128 0xb
+ 538 0007 03       		.uleb128 0x3
+ 539 0008 0E       		.uleb128 0xe
+ 540 0009 1B       		.uleb128 0x1b
+ 541 000a 0E       		.uleb128 0xe
+ 542 000b 55       		.uleb128 0x55
+ 543 000c 06       		.uleb128 0x6
+ 544 000d 11       		.uleb128 0x11
+ 545 000e 01       		.uleb128 0x1
+ 546 000f 52       		.uleb128 0x52
+ 547 0010 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 14
 
 
- 550 0015 02       		.uleb128 0x2
- 551 0016 24       		.uleb128 0x24
- 552 0017 00       		.byte	0
- 553 0018 0B       		.uleb128 0xb
- 554 0019 0B       		.uleb128 0xb
- 555 001a 3E       		.uleb128 0x3e
- 556 001b 0B       		.uleb128 0xb
- 557 001c 03       		.uleb128 0x3
- 558 001d 0E       		.uleb128 0xe
- 559 001e 00       		.byte	0
- 560 001f 00       		.byte	0
- 561 0020 03       		.uleb128 0x3
- 562 0021 16       		.uleb128 0x16
- 563 0022 00       		.byte	0
- 564 0023 03       		.uleb128 0x3
- 565 0024 0E       		.uleb128 0xe
- 566 0025 3A       		.uleb128 0x3a
- 567 0026 0B       		.uleb128 0xb
- 568 0027 3B       		.uleb128 0x3b
- 569 0028 0B       		.uleb128 0xb
- 570 0029 49       		.uleb128 0x49
- 571 002a 13       		.uleb128 0x13
- 572 002b 00       		.byte	0
- 573 002c 00       		.byte	0
- 574 002d 04       		.uleb128 0x4
- 575 002e 24       		.uleb128 0x24
- 576 002f 00       		.byte	0
- 577 0030 0B       		.uleb128 0xb
- 578 0031 0B       		.uleb128 0xb
- 579 0032 3E       		.uleb128 0x3e
- 580 0033 0B       		.uleb128 0xb
- 581 0034 03       		.uleb128 0x3
- 582 0035 08       		.uleb128 0x8
- 583 0036 00       		.byte	0
- 584 0037 00       		.byte	0
- 585 0038 05       		.uleb128 0x5
- 586 0039 2E       		.uleb128 0x2e
- 587 003a 01       		.byte	0x1
- 588 003b 3F       		.uleb128 0x3f
- 589 003c 0C       		.uleb128 0xc
- 590 003d 03       		.uleb128 0x3
- 591 003e 0E       		.uleb128 0xe
- 592 003f 3A       		.uleb128 0x3a
- 593 0040 0B       		.uleb128 0xb
- 594 0041 3B       		.uleb128 0x3b
- 595 0042 0B       		.uleb128 0xb
- 596 0043 49       		.uleb128 0x49
- 597 0044 13       		.uleb128 0x13
- 598 0045 11       		.uleb128 0x11
- 599 0046 01       		.uleb128 0x1
- 600 0047 12       		.uleb128 0x12
- 601 0048 01       		.uleb128 0x1
- 602 0049 40       		.uleb128 0x40
- 603 004a 06       		.uleb128 0x6
- 604 004b 9642     		.uleb128 0x2116
- 605 004d 0C       		.uleb128 0xc
- 606 004e 01       		.uleb128 0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 15
+ 548 0011 10       		.uleb128 0x10
+ 549 0012 06       		.uleb128 0x6
+ 550 0013 00       		.byte	0
+ 551 0014 00       		.byte	0
+ 552 0015 02       		.uleb128 0x2
+ 553 0016 24       		.uleb128 0x24
+ 554 0017 00       		.byte	0
+ 555 0018 0B       		.uleb128 0xb
+ 556 0019 0B       		.uleb128 0xb
+ 557 001a 3E       		.uleb128 0x3e
+ 558 001b 0B       		.uleb128 0xb
+ 559 001c 03       		.uleb128 0x3
+ 560 001d 0E       		.uleb128 0xe
+ 561 001e 00       		.byte	0
+ 562 001f 00       		.byte	0
+ 563 0020 03       		.uleb128 0x3
+ 564 0021 16       		.uleb128 0x16
+ 565 0022 00       		.byte	0
+ 566 0023 03       		.uleb128 0x3
+ 567 0024 0E       		.uleb128 0xe
+ 568 0025 3A       		.uleb128 0x3a
+ 569 0026 0B       		.uleb128 0xb
+ 570 0027 3B       		.uleb128 0x3b
+ 571 0028 0B       		.uleb128 0xb
+ 572 0029 49       		.uleb128 0x49
+ 573 002a 13       		.uleb128 0x13
+ 574 002b 00       		.byte	0
+ 575 002c 00       		.byte	0
+ 576 002d 04       		.uleb128 0x4
+ 577 002e 24       		.uleb128 0x24
+ 578 002f 00       		.byte	0
+ 579 0030 0B       		.uleb128 0xb
+ 580 0031 0B       		.uleb128 0xb
+ 581 0032 3E       		.uleb128 0x3e
+ 582 0033 0B       		.uleb128 0xb
+ 583 0034 03       		.uleb128 0x3
+ 584 0035 08       		.uleb128 0x8
+ 585 0036 00       		.byte	0
+ 586 0037 00       		.byte	0
+ 587 0038 05       		.uleb128 0x5
+ 588 0039 2E       		.uleb128 0x2e
+ 589 003a 01       		.byte	0x1
+ 590 003b 3F       		.uleb128 0x3f
+ 591 003c 0C       		.uleb128 0xc
+ 592 003d 03       		.uleb128 0x3
+ 593 003e 0E       		.uleb128 0xe
+ 594 003f 3A       		.uleb128 0x3a
+ 595 0040 0B       		.uleb128 0xb
+ 596 0041 3B       		.uleb128 0x3b
+ 597 0042 0B       		.uleb128 0xb
+ 598 0043 49       		.uleb128 0x49
+ 599 0044 13       		.uleb128 0x13
+ 600 0045 11       		.uleb128 0x11
+ 601 0046 01       		.uleb128 0x1
+ 602 0047 12       		.uleb128 0x12
+ 603 0048 01       		.uleb128 0x1
+ 604 0049 40       		.uleb128 0x40
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 15
 
 
- 607 004f 13       		.uleb128 0x13
- 608 0050 00       		.byte	0
- 609 0051 00       		.byte	0
- 610 0052 06       		.uleb128 0x6
- 611 0053 34       		.uleb128 0x34
- 612 0054 00       		.byte	0
- 613 0055 03       		.uleb128 0x3
- 614 0056 0E       		.uleb128 0xe
- 615 0057 3A       		.uleb128 0x3a
- 616 0058 0B       		.uleb128 0xb
- 617 0059 3B       		.uleb128 0x3b
- 618 005a 0B       		.uleb128 0xb
- 619 005b 49       		.uleb128 0x49
- 620 005c 13       		.uleb128 0x13
- 621 005d 02       		.uleb128 0x2
- 622 005e 0A       		.uleb128 0xa
- 623 005f 00       		.byte	0
- 624 0060 00       		.byte	0
- 625 0061 07       		.uleb128 0x7
- 626 0062 01       		.uleb128 0x1
- 627 0063 01       		.byte	0x1
- 628 0064 49       		.uleb128 0x49
- 629 0065 13       		.uleb128 0x13
- 630 0066 01       		.uleb128 0x1
- 631 0067 13       		.uleb128 0x13
- 632 0068 00       		.byte	0
- 633 0069 00       		.byte	0
- 634 006a 08       		.uleb128 0x8
- 635 006b 21       		.uleb128 0x21
- 636 006c 00       		.byte	0
- 637 006d 49       		.uleb128 0x49
- 638 006e 13       		.uleb128 0x13
- 639 006f 2F       		.uleb128 0x2f
- 640 0070 0B       		.uleb128 0xb
- 641 0071 00       		.byte	0
- 642 0072 00       		.byte	0
- 643 0073 09       		.uleb128 0x9
- 644 0074 2E       		.uleb128 0x2e
- 645 0075 01       		.byte	0x1
- 646 0076 3F       		.uleb128 0x3f
- 647 0077 0C       		.uleb128 0xc
- 648 0078 03       		.uleb128 0x3
- 649 0079 0E       		.uleb128 0xe
- 650 007a 3A       		.uleb128 0x3a
- 651 007b 0B       		.uleb128 0xb
- 652 007c 3B       		.uleb128 0x3b
- 653 007d 0B       		.uleb128 0xb
- 654 007e 27       		.uleb128 0x27
- 655 007f 0C       		.uleb128 0xc
- 656 0080 49       		.uleb128 0x49
- 657 0081 13       		.uleb128 0x13
- 658 0082 11       		.uleb128 0x11
- 659 0083 01       		.uleb128 0x1
- 660 0084 12       		.uleb128 0x12
- 661 0085 01       		.uleb128 0x1
- 662 0086 40       		.uleb128 0x40
- 663 0087 06       		.uleb128 0x6
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 16
+ 605 004a 06       		.uleb128 0x6
+ 606 004b 9642     		.uleb128 0x2116
+ 607 004d 0C       		.uleb128 0xc
+ 608 004e 01       		.uleb128 0x1
+ 609 004f 13       		.uleb128 0x13
+ 610 0050 00       		.byte	0
+ 611 0051 00       		.byte	0
+ 612 0052 06       		.uleb128 0x6
+ 613 0053 34       		.uleb128 0x34
+ 614 0054 00       		.byte	0
+ 615 0055 03       		.uleb128 0x3
+ 616 0056 0E       		.uleb128 0xe
+ 617 0057 3A       		.uleb128 0x3a
+ 618 0058 0B       		.uleb128 0xb
+ 619 0059 3B       		.uleb128 0x3b
+ 620 005a 0B       		.uleb128 0xb
+ 621 005b 49       		.uleb128 0x49
+ 622 005c 13       		.uleb128 0x13
+ 623 005d 02       		.uleb128 0x2
+ 624 005e 0A       		.uleb128 0xa
+ 625 005f 00       		.byte	0
+ 626 0060 00       		.byte	0
+ 627 0061 07       		.uleb128 0x7
+ 628 0062 01       		.uleb128 0x1
+ 629 0063 01       		.byte	0x1
+ 630 0064 49       		.uleb128 0x49
+ 631 0065 13       		.uleb128 0x13
+ 632 0066 01       		.uleb128 0x1
+ 633 0067 13       		.uleb128 0x13
+ 634 0068 00       		.byte	0
+ 635 0069 00       		.byte	0
+ 636 006a 08       		.uleb128 0x8
+ 637 006b 21       		.uleb128 0x21
+ 638 006c 00       		.byte	0
+ 639 006d 49       		.uleb128 0x49
+ 640 006e 13       		.uleb128 0x13
+ 641 006f 2F       		.uleb128 0x2f
+ 642 0070 0B       		.uleb128 0xb
+ 643 0071 00       		.byte	0
+ 644 0072 00       		.byte	0
+ 645 0073 09       		.uleb128 0x9
+ 646 0074 2E       		.uleb128 0x2e
+ 647 0075 01       		.byte	0x1
+ 648 0076 3F       		.uleb128 0x3f
+ 649 0077 0C       		.uleb128 0xc
+ 650 0078 03       		.uleb128 0x3
+ 651 0079 0E       		.uleb128 0xe
+ 652 007a 3A       		.uleb128 0x3a
+ 653 007b 0B       		.uleb128 0xb
+ 654 007c 3B       		.uleb128 0x3b
+ 655 007d 0B       		.uleb128 0xb
+ 656 007e 27       		.uleb128 0x27
+ 657 007f 0C       		.uleb128 0xc
+ 658 0080 49       		.uleb128 0x49
+ 659 0081 13       		.uleb128 0x13
+ 660 0082 11       		.uleb128 0x11
+ 661 0083 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 16
 
 
- 664 0088 9642     		.uleb128 0x2116
- 665 008a 0C       		.uleb128 0xc
- 666 008b 01       		.uleb128 0x1
- 667 008c 13       		.uleb128 0x13
- 668 008d 00       		.byte	0
- 669 008e 00       		.byte	0
- 670 008f 0A       		.uleb128 0xa
- 671 0090 34       		.uleb128 0x34
- 672 0091 00       		.byte	0
- 673 0092 03       		.uleb128 0x3
- 674 0093 08       		.uleb128 0x8
- 675 0094 3A       		.uleb128 0x3a
- 676 0095 0B       		.uleb128 0xb
- 677 0096 3B       		.uleb128 0x3b
- 678 0097 0B       		.uleb128 0xb
- 679 0098 49       		.uleb128 0x49
- 680 0099 13       		.uleb128 0x13
- 681 009a 02       		.uleb128 0x2
- 682 009b 0A       		.uleb128 0xa
- 683 009c 00       		.byte	0
- 684 009d 00       		.byte	0
- 685 009e 0B       		.uleb128 0xb
- 686 009f 2E       		.uleb128 0x2e
- 687 00a0 01       		.byte	0x1
- 688 00a1 3F       		.uleb128 0x3f
- 689 00a2 0C       		.uleb128 0xc
- 690 00a3 03       		.uleb128 0x3
- 691 00a4 0E       		.uleb128 0xe
- 692 00a5 3A       		.uleb128 0x3a
- 693 00a6 0B       		.uleb128 0xb
- 694 00a7 3B       		.uleb128 0x3b
- 695 00a8 0B       		.uleb128 0xb
- 696 00a9 27       		.uleb128 0x27
- 697 00aa 0C       		.uleb128 0xc
- 698 00ab 11       		.uleb128 0x11
- 699 00ac 01       		.uleb128 0x1
- 700 00ad 12       		.uleb128 0x12
- 701 00ae 01       		.uleb128 0x1
- 702 00af 40       		.uleb128 0x40
- 703 00b0 06       		.uleb128 0x6
- 704 00b1 9642     		.uleb128 0x2116
- 705 00b3 0C       		.uleb128 0xc
- 706 00b4 01       		.uleb128 0x1
- 707 00b5 13       		.uleb128 0x13
- 708 00b6 00       		.byte	0
- 709 00b7 00       		.byte	0
- 710 00b8 0C       		.uleb128 0xc
- 711 00b9 05       		.uleb128 0x5
- 712 00ba 00       		.byte	0
- 713 00bb 03       		.uleb128 0x3
- 714 00bc 08       		.uleb128 0x8
- 715 00bd 3A       		.uleb128 0x3a
- 716 00be 0B       		.uleb128 0xb
- 717 00bf 3B       		.uleb128 0x3b
- 718 00c0 0B       		.uleb128 0xb
- 719 00c1 49       		.uleb128 0x49
- 720 00c2 13       		.uleb128 0x13
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 17
+ 662 0084 12       		.uleb128 0x12
+ 663 0085 01       		.uleb128 0x1
+ 664 0086 40       		.uleb128 0x40
+ 665 0087 06       		.uleb128 0x6
+ 666 0088 9642     		.uleb128 0x2116
+ 667 008a 0C       		.uleb128 0xc
+ 668 008b 01       		.uleb128 0x1
+ 669 008c 13       		.uleb128 0x13
+ 670 008d 00       		.byte	0
+ 671 008e 00       		.byte	0
+ 672 008f 0A       		.uleb128 0xa
+ 673 0090 34       		.uleb128 0x34
+ 674 0091 00       		.byte	0
+ 675 0092 03       		.uleb128 0x3
+ 676 0093 08       		.uleb128 0x8
+ 677 0094 3A       		.uleb128 0x3a
+ 678 0095 0B       		.uleb128 0xb
+ 679 0096 3B       		.uleb128 0x3b
+ 680 0097 0B       		.uleb128 0xb
+ 681 0098 49       		.uleb128 0x49
+ 682 0099 13       		.uleb128 0x13
+ 683 009a 02       		.uleb128 0x2
+ 684 009b 0A       		.uleb128 0xa
+ 685 009c 00       		.byte	0
+ 686 009d 00       		.byte	0
+ 687 009e 0B       		.uleb128 0xb
+ 688 009f 2E       		.uleb128 0x2e
+ 689 00a0 01       		.byte	0x1
+ 690 00a1 3F       		.uleb128 0x3f
+ 691 00a2 0C       		.uleb128 0xc
+ 692 00a3 03       		.uleb128 0x3
+ 693 00a4 0E       		.uleb128 0xe
+ 694 00a5 3A       		.uleb128 0x3a
+ 695 00a6 0B       		.uleb128 0xb
+ 696 00a7 3B       		.uleb128 0x3b
+ 697 00a8 0B       		.uleb128 0xb
+ 698 00a9 27       		.uleb128 0x27
+ 699 00aa 0C       		.uleb128 0xc
+ 700 00ab 11       		.uleb128 0x11
+ 701 00ac 01       		.uleb128 0x1
+ 702 00ad 12       		.uleb128 0x12
+ 703 00ae 01       		.uleb128 0x1
+ 704 00af 40       		.uleb128 0x40
+ 705 00b0 06       		.uleb128 0x6
+ 706 00b1 9642     		.uleb128 0x2116
+ 707 00b3 0C       		.uleb128 0xc
+ 708 00b4 01       		.uleb128 0x1
+ 709 00b5 13       		.uleb128 0x13
+ 710 00b6 00       		.byte	0
+ 711 00b7 00       		.byte	0
+ 712 00b8 0C       		.uleb128 0xc
+ 713 00b9 05       		.uleb128 0x5
+ 714 00ba 00       		.byte	0
+ 715 00bb 03       		.uleb128 0x3
+ 716 00bc 08       		.uleb128 0x8
+ 717 00bd 3A       		.uleb128 0x3a
+ 718 00be 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 17
 
 
- 721 00c3 02       		.uleb128 0x2
- 722 00c4 0A       		.uleb128 0xa
- 723 00c5 00       		.byte	0
- 724 00c6 00       		.byte	0
- 725 00c7 0D       		.uleb128 0xd
- 726 00c8 34       		.uleb128 0x34
- 727 00c9 00       		.byte	0
- 728 00ca 03       		.uleb128 0x3
- 729 00cb 0E       		.uleb128 0xe
- 730 00cc 3A       		.uleb128 0x3a
- 731 00cd 0B       		.uleb128 0xb
- 732 00ce 3B       		.uleb128 0x3b
- 733 00cf 05       		.uleb128 0x5
- 734 00d0 49       		.uleb128 0x49
- 735 00d1 13       		.uleb128 0x13
- 736 00d2 3F       		.uleb128 0x3f
- 737 00d3 0C       		.uleb128 0xc
- 738 00d4 3C       		.uleb128 0x3c
- 739 00d5 0C       		.uleb128 0xc
- 740 00d6 00       		.byte	0
- 741 00d7 00       		.byte	0
- 742 00d8 0E       		.uleb128 0xe
- 743 00d9 35       		.uleb128 0x35
- 744 00da 00       		.byte	0
- 745 00db 49       		.uleb128 0x49
- 746 00dc 13       		.uleb128 0x13
- 747 00dd 00       		.byte	0
- 748 00de 00       		.byte	0
- 749 00df 00       		.byte	0
- 750              		.section	.debug_loc,"",%progbits
- 751              	.Ldebug_loc0:
- 752              	.LLST0:
- 753 0000 00000000 		.4byte	.LFB56
- 754 0004 02000000 		.4byte	.LCFI0
- 755 0008 0200     		.2byte	0x2
- 756 000a 7D       		.byte	0x7d
- 757 000b 00       		.sleb128 0
- 758 000c 02000000 		.4byte	.LCFI0
- 759 0010 04000000 		.4byte	.LCFI1
- 760 0014 0200     		.2byte	0x2
- 761 0016 7D       		.byte	0x7d
- 762 0017 08       		.sleb128 8
- 763 0018 04000000 		.4byte	.LCFI1
- 764 001c 06000000 		.4byte	.LCFI2
- 765 0020 0200     		.2byte	0x2
- 766 0022 7D       		.byte	0x7d
- 767 0023 20       		.sleb128 32
- 768 0024 06000000 		.4byte	.LCFI2
- 769 0028 50000000 		.4byte	.LFE56
- 770 002c 0200     		.2byte	0x2
- 771 002e 77       		.byte	0x77
- 772 002f 20       		.sleb128 32
- 773 0030 00000000 		.4byte	0
- 774 0034 00000000 		.4byte	0
- 775              	.LLST1:
- 776 0038 00000000 		.4byte	.LFB57
- 777 003c 02000000 		.4byte	.LCFI3
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 18
+ 719 00bf 3B       		.uleb128 0x3b
+ 720 00c0 0B       		.uleb128 0xb
+ 721 00c1 49       		.uleb128 0x49
+ 722 00c2 13       		.uleb128 0x13
+ 723 00c3 02       		.uleb128 0x2
+ 724 00c4 0A       		.uleb128 0xa
+ 725 00c5 00       		.byte	0
+ 726 00c6 00       		.byte	0
+ 727 00c7 0D       		.uleb128 0xd
+ 728 00c8 34       		.uleb128 0x34
+ 729 00c9 00       		.byte	0
+ 730 00ca 03       		.uleb128 0x3
+ 731 00cb 0E       		.uleb128 0xe
+ 732 00cc 3A       		.uleb128 0x3a
+ 733 00cd 0B       		.uleb128 0xb
+ 734 00ce 3B       		.uleb128 0x3b
+ 735 00cf 05       		.uleb128 0x5
+ 736 00d0 49       		.uleb128 0x49
+ 737 00d1 13       		.uleb128 0x13
+ 738 00d2 3F       		.uleb128 0x3f
+ 739 00d3 0C       		.uleb128 0xc
+ 740 00d4 3C       		.uleb128 0x3c
+ 741 00d5 0C       		.uleb128 0xc
+ 742 00d6 00       		.byte	0
+ 743 00d7 00       		.byte	0
+ 744 00d8 0E       		.uleb128 0xe
+ 745 00d9 35       		.uleb128 0x35
+ 746 00da 00       		.byte	0
+ 747 00db 49       		.uleb128 0x49
+ 748 00dc 13       		.uleb128 0x13
+ 749 00dd 00       		.byte	0
+ 750 00de 00       		.byte	0
+ 751 00df 00       		.byte	0
+ 752              		.section	.debug_loc,"",%progbits
+ 753              	.Ldebug_loc0:
+ 754              	.LLST0:
+ 755 0000 00000000 		.4byte	.LFB56
+ 756 0004 02000000 		.4byte	.LCFI0
+ 757 0008 0200     		.2byte	0x2
+ 758 000a 7D       		.byte	0x7d
+ 759 000b 00       		.sleb128 0
+ 760 000c 02000000 		.4byte	.LCFI0
+ 761 0010 04000000 		.4byte	.LCFI1
+ 762 0014 0200     		.2byte	0x2
+ 763 0016 7D       		.byte	0x7d
+ 764 0017 08       		.sleb128 8
+ 765 0018 04000000 		.4byte	.LCFI1
+ 766 001c 06000000 		.4byte	.LCFI2
+ 767 0020 0200     		.2byte	0x2
+ 768 0022 7D       		.byte	0x7d
+ 769 0023 28       		.sleb128 40
+ 770 0024 06000000 		.4byte	.LCFI2
+ 771 0028 52000000 		.4byte	.LFE56
+ 772 002c 0200     		.2byte	0x2
+ 773 002e 77       		.byte	0x77
+ 774 002f 28       		.sleb128 40
+ 775 0030 00000000 		.4byte	0
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 18
 
 
- 778 0040 0200     		.2byte	0x2
- 779 0042 7D       		.byte	0x7d
- 780 0043 00       		.sleb128 0
- 781 0044 02000000 		.4byte	.LCFI3
- 782 0048 04000000 		.4byte	.LCFI4
- 783 004c 0200     		.2byte	0x2
- 784 004e 7D       		.byte	0x7d
- 785 004f 08       		.sleb128 8
- 786 0050 04000000 		.4byte	.LCFI4
- 787 0054 06000000 		.4byte	.LCFI5
- 788 0058 0200     		.2byte	0x2
- 789 005a 7D       		.byte	0x7d
- 790 005b 10       		.sleb128 16
- 791 005c 06000000 		.4byte	.LCFI5
- 792 0060 96000000 		.4byte	.LFE57
- 793 0064 0200     		.2byte	0x2
- 794 0066 77       		.byte	0x77
- 795 0067 10       		.sleb128 16
- 796 0068 00000000 		.4byte	0
- 797 006c 00000000 		.4byte	0
- 798              	.LLST2:
- 799 0070 00000000 		.4byte	.LFB58
- 800 0074 02000000 		.4byte	.LCFI6
- 801 0078 0200     		.2byte	0x2
- 802 007a 7D       		.byte	0x7d
- 803 007b 00       		.sleb128 0
- 804 007c 02000000 		.4byte	.LCFI6
- 805 0080 04000000 		.4byte	.LCFI7
- 806 0084 0200     		.2byte	0x2
- 807 0086 7D       		.byte	0x7d
- 808 0087 08       		.sleb128 8
- 809 0088 04000000 		.4byte	.LCFI7
- 810 008c 06000000 		.4byte	.LCFI8
- 811 0090 0200     		.2byte	0x2
- 812 0092 7D       		.byte	0x7d
- 813 0093 18       		.sleb128 24
- 814 0094 06000000 		.4byte	.LCFI8
- 815 0098 72000000 		.4byte	.LFE58
- 816 009c 0200     		.2byte	0x2
- 817 009e 77       		.byte	0x77
- 818 009f 18       		.sleb128 24
- 819 00a0 00000000 		.4byte	0
- 820 00a4 00000000 		.4byte	0
- 821              		.section	.debug_aranges,"",%progbits
- 822 0000 2C000000 		.4byte	0x2c
- 823 0004 0200     		.2byte	0x2
- 824 0006 00000000 		.4byte	.Ldebug_info0
- 825 000a 04       		.byte	0x4
- 826 000b 00       		.byte	0
- 827 000c 0000     		.2byte	0
- 828 000e 0000     		.2byte	0
- 829 0010 00000000 		.4byte	.LFB56
- 830 0014 50000000 		.4byte	.LFE56-.LFB56
- 831 0018 00000000 		.4byte	.LFB57
- 832 001c 96000000 		.4byte	.LFE57-.LFB57
- 833 0020 00000000 		.4byte	.LFB58
- 834 0024 72000000 		.4byte	.LFE58-.LFB58
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 19
+ 776 0034 00000000 		.4byte	0
+ 777              	.LLST1:
+ 778 0038 00000000 		.4byte	.LFB57
+ 779 003c 02000000 		.4byte	.LCFI3
+ 780 0040 0200     		.2byte	0x2
+ 781 0042 7D       		.byte	0x7d
+ 782 0043 00       		.sleb128 0
+ 783 0044 02000000 		.4byte	.LCFI3
+ 784 0048 04000000 		.4byte	.LCFI4
+ 785 004c 0200     		.2byte	0x2
+ 786 004e 7D       		.byte	0x7d
+ 787 004f 08       		.sleb128 8
+ 788 0050 04000000 		.4byte	.LCFI4
+ 789 0054 06000000 		.4byte	.LCFI5
+ 790 0058 0200     		.2byte	0x2
+ 791 005a 7D       		.byte	0x7d
+ 792 005b 10       		.sleb128 16
+ 793 005c 06000000 		.4byte	.LCFI5
+ 794 0060 96000000 		.4byte	.LFE57
+ 795 0064 0200     		.2byte	0x2
+ 796 0066 77       		.byte	0x77
+ 797 0067 10       		.sleb128 16
+ 798 0068 00000000 		.4byte	0
+ 799 006c 00000000 		.4byte	0
+ 800              	.LLST2:
+ 801 0070 00000000 		.4byte	.LFB58
+ 802 0074 02000000 		.4byte	.LCFI6
+ 803 0078 0200     		.2byte	0x2
+ 804 007a 7D       		.byte	0x7d
+ 805 007b 00       		.sleb128 0
+ 806 007c 02000000 		.4byte	.LCFI6
+ 807 0080 04000000 		.4byte	.LCFI7
+ 808 0084 0200     		.2byte	0x2
+ 809 0086 7D       		.byte	0x7d
+ 810 0087 08       		.sleb128 8
+ 811 0088 04000000 		.4byte	.LCFI7
+ 812 008c 06000000 		.4byte	.LCFI8
+ 813 0090 0200     		.2byte	0x2
+ 814 0092 7D       		.byte	0x7d
+ 815 0093 18       		.sleb128 24
+ 816 0094 06000000 		.4byte	.LCFI8
+ 817 0098 72000000 		.4byte	.LFE58
+ 818 009c 0200     		.2byte	0x2
+ 819 009e 77       		.byte	0x77
+ 820 009f 18       		.sleb128 24
+ 821 00a0 00000000 		.4byte	0
+ 822 00a4 00000000 		.4byte	0
+ 823              		.section	.debug_aranges,"",%progbits
+ 824 0000 2C000000 		.4byte	0x2c
+ 825 0004 0200     		.2byte	0x2
+ 826 0006 00000000 		.4byte	.Ldebug_info0
+ 827 000a 04       		.byte	0x4
+ 828 000b 00       		.byte	0
+ 829 000c 0000     		.2byte	0
+ 830 000e 0000     		.2byte	0
+ 831 0010 00000000 		.4byte	.LFB56
+ 832 0014 52000000 		.4byte	.LFE56-.LFB56
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 19
 
 
- 835 0028 00000000 		.4byte	0
- 836 002c 00000000 		.4byte	0
- 837              		.section	.debug_ranges,"",%progbits
- 838              	.Ldebug_ranges0:
- 839 0000 00000000 		.4byte	.LFB56
- 840 0004 50000000 		.4byte	.LFE56
- 841 0008 00000000 		.4byte	.LFB57
- 842 000c 96000000 		.4byte	.LFE57
- 843 0010 00000000 		.4byte	.LFB58
- 844 0014 72000000 		.4byte	.LFE58
- 845 0018 00000000 		.4byte	0
- 846 001c 00000000 		.4byte	0
- 847              		.section	.debug_line,"",%progbits
- 848              	.Ldebug_line0:
- 849 0000 83010000 		.section	.debug_str,"MS",%progbits,1
- 849      0200F900 
- 849      00000201 
- 849      FB0E0D00 
- 849      01010101 
- 850              	.LASF32:
- 851 0000 52656164 		.ascii	"ReadFrom_Pi\000"
- 851      46726F6D 
- 851      5F506900 
- 852              	.LASF27:
- 853 000c 6F75745F 		.ascii	"out_lo\000"
- 853      6C6F00
- 854              	.LASF3:
- 855 0013 73686F72 		.ascii	"short unsigned int\000"
- 855      7420756E 
- 855      7369676E 
- 855      65642069 
- 855      6E7400
- 856              	.LASF16:
- 857 0026 636F6D6D 		.ascii	"command\000"
- 857      616E6400 
- 858              	.LASF28:
- 859 002e 5350495F 		.ascii	"SPI_buffer\000"
- 859      62756666 
- 859      657200
- 860              	.LASF12:
- 861 0039 666C6F61 		.ascii	"float\000"
- 861      7400
- 862              	.LASF1:
- 863 003f 756E7369 		.ascii	"unsigned char\000"
- 863      676E6564 
- 863      20636861 
- 863      7200
- 864              	.LASF21:
- 865 004d 696E7075 		.ascii	"input\000"
- 865      7400
- 866              	.LASF30:
- 867 0053 2E5C6D61 		.ascii	".\\main.c\000"
- 867      696E2E63 
- 867      00
- 868              	.LASF5:
- 869 005c 6C6F6E67 		.ascii	"long unsigned int\000"
- 869      20756E73 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 20
+ 833 0018 00000000 		.4byte	.LFB57
+ 834 001c 96000000 		.4byte	.LFE57-.LFB57
+ 835 0020 00000000 		.4byte	.LFB58
+ 836 0024 72000000 		.4byte	.LFE58-.LFB58
+ 837 0028 00000000 		.4byte	0
+ 838 002c 00000000 		.4byte	0
+ 839              		.section	.debug_ranges,"",%progbits
+ 840              	.Ldebug_ranges0:
+ 841 0000 00000000 		.4byte	.LFB56
+ 842 0004 52000000 		.4byte	.LFE56
+ 843 0008 00000000 		.4byte	.LFB57
+ 844 000c 96000000 		.4byte	.LFE57
+ 845 0010 00000000 		.4byte	.LFB58
+ 846 0014 72000000 		.4byte	.LFE58
+ 847 0018 00000000 		.4byte	0
+ 848 001c 00000000 		.4byte	0
+ 849              		.section	.debug_line,"",%progbits
+ 850              	.Ldebug_line0:
+ 851 0000 84010000 		.section	.debug_str,"MS",%progbits,1
+ 851      0200F900 
+ 851      00000201 
+ 851      FB0E0D00 
+ 851      01010101 
+ 852              	.LASF32:
+ 853 0000 52656164 		.ascii	"ReadFrom_Pi\000"
+ 853      46726F6D 
+ 853      5F506900 
+ 854              	.LASF17:
+ 855 000c 4C494E58 		.ascii	"LINX_Response\000"
+ 855      5F526573 
+ 855      706F6E73 
+ 855      6500
+ 856              	.LASF27:
+ 857 001a 6F75745F 		.ascii	"out_lo\000"
+ 857      6C6F00
+ 858              	.LASF3:
+ 859 0021 73686F72 		.ascii	"short unsigned int\000"
+ 859      7420756E 
+ 859      7369676E 
+ 859      65642069 
+ 859      6E7400
+ 860              	.LASF28:
+ 861 0034 5350495F 		.ascii	"SPI_buffer\000"
+ 861      62756666 
+ 861      657200
+ 862              	.LASF12:
+ 863 003f 666C6F61 		.ascii	"float\000"
+ 863      7400
+ 864              	.LASF31:
+ 865 0045 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\GitRepo\\psoc"
+ 865      73657273 
+ 865      5C4D6172 
+ 865      6B5C446F 
+ 865      63756D65 
+ 866 0072 5F325F70 		.ascii	"_2_pi\\PSoC Creator\\PSoC_2_Pi.cydsn\000"
+ 866      695C5053 
+ 866      6F432043 
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 20
 
 
- 869      69676E65 
- 869      6420696E 
- 869      7400
- 870              	.LASF18:
- 871 006e 61646472 		.ascii	"addr\000"
- 871      00
- 872              	.LASF25:
- 873 0073 6F75745F 		.ascii	"out_mid_hi\000"
- 873      6D69645F 
- 873      686900
- 874              	.LASF33:
- 875 007e 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 875      52784275 
- 875      66666572 
- 875      00
- 876              	.LASF17:
- 877 008b 636F6D6D 		.ascii	"command_len\000"
- 877      616E645F 
- 877      6C656E00 
- 878              	.LASF13:
- 879 0097 646F7562 		.ascii	"double\000"
- 879      6C6500
- 880              	.LASF22:
- 881 009e 6D61696E 		.ascii	"main\000"
- 881      00
- 882              	.LASF11:
- 883 00a3 75696E74 		.ascii	"uint32\000"
- 883      333200
- 884              	.LASF8:
- 885 00aa 756E7369 		.ascii	"unsigned int\000"
- 885      676E6564 
- 885      20696E74 
- 885      00
- 886              	.LASF7:
- 887 00b7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 887      206C6F6E 
- 887      6720756E 
- 887      7369676E 
- 887      65642069 
- 888              	.LASF9:
- 889 00ce 696E7433 		.ascii	"int32_t\000"
- 889      325F7400 
- 890              	.LASF15:
- 891 00d6 73697A65 		.ascii	"sizetype\000"
- 891      74797065 
- 891      00
- 892              	.LASF20:
- 893 00df 6461745F 		.ascii	"dat_hi\000"
- 893      686900
- 894              	.LASF6:
- 895 00e6 6C6F6E67 		.ascii	"long long int\000"
- 895      206C6F6E 
- 895      6720696E 
- 895      7400
- 896              	.LASF14:
- 897 00f4 63686172 		.ascii	"char\000"
- 897      00
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccSTXpLe.s 			page 21
+ 866      72656174 
+ 866      6F725C50 
+ 867              	.LASF1:
+ 868 0095 756E7369 		.ascii	"unsigned char\000"
+ 868      676E6564 
+ 868      20636861 
+ 868      7200
+ 869              	.LASF21:
+ 870 00a3 696E7075 		.ascii	"input\000"
+ 870      7400
+ 871              	.LASF30:
+ 872 00a9 2E5C6D61 		.ascii	".\\main.c\000"
+ 872      696E2E63 
+ 872      00
+ 873              	.LASF5:
+ 874 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 874      20756E73 
+ 874      69676E65 
+ 874      6420696E 
+ 874      7400
+ 875              	.LASF18:
+ 876 00c4 61646472 		.ascii	"addr\000"
+ 876      00
+ 877              	.LASF25:
+ 878 00c9 6F75745F 		.ascii	"out_mid_hi\000"
+ 878      6D69645F 
+ 878      686900
+ 879              	.LASF33:
+ 880 00d4 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 880      52784275 
+ 880      66666572 
+ 880      00
+ 881              	.LASF13:
+ 882 00e1 646F7562 		.ascii	"double\000"
+ 882      6C6500
+ 883              	.LASF22:
+ 884 00e8 6D61696E 		.ascii	"main\000"
+ 884      00
+ 885              	.LASF11:
+ 886 00ed 75696E74 		.ascii	"uint32\000"
+ 886      333200
+ 887              	.LASF8:
+ 888 00f4 756E7369 		.ascii	"unsigned int\000"
+ 888      676E6564 
+ 888      20696E74 
+ 888      00
+ 889              	.LASF7:
+ 890 0101 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 890      206C6F6E 
+ 890      6720756E 
+ 890      7369676E 
+ 890      65642069 
+ 891              	.LASF9:
+ 892 0118 696E7433 		.ascii	"int32_t\000"
+ 892      325F7400 
+ 893              	.LASF15:
+ 894 0120 73697A65 		.ascii	"sizetype\000"
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 21
 
 
- 898              	.LASF2:
- 899 00f9 73686F72 		.ascii	"short int\000"
- 899      7420696E 
- 899      7400
- 900              	.LASF10:
- 901 0103 75696E74 		.ascii	"uint8\000"
- 901      3800
- 902              	.LASF29:
- 903 0109 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 903      4320342E 
- 903      372E3320 
- 903      32303133 
- 903      30333132 
- 904 013c 616E6368 		.ascii	"anch revision 196615]\000"
- 904      20726576 
- 904      6973696F 
- 904      6E203139 
- 904      36363135 
- 905              	.LASF26:
- 906 0152 6F75745F 		.ascii	"out_mid_lo\000"
- 906      6D69645F 
- 906      6C6F00
- 907              	.LASF23:
- 908 015d 57726974 		.ascii	"WriteTo_Pi\000"
- 908      65546F5F 
- 908      506900
- 909              	.LASF19:
- 910 0168 6461745F 		.ascii	"dat_lo\000"
- 910      6C6F00
- 911              	.LASF4:
- 912 016f 6C6F6E67 		.ascii	"long int\000"
- 912      20696E74 
- 912      00
- 913              	.LASF31:
- 914 0178 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\PSoCCreatorWo"
- 914      73657273 
- 914      5C4D6172 
- 914      6B5C446F 
- 914      63756D65 
- 915 01a6 726B696E 		.ascii	"rking\\PSoC_2_Pi.cydsn\000"
- 915      675C5053 
- 915      6F435F32 
- 915      5F50692E 
- 915      63796473 
- 916              	.LASF0:
- 917 01bc 7369676E 		.ascii	"signed char\000"
- 917      65642063 
- 917      68617200 
- 918              	.LASF24:
- 919 01c8 6F75745F 		.ascii	"out_hi\000"
- 919      686900
- 920              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 894      74797065 
+ 894      00
+ 895              	.LASF20:
+ 896 0129 6461745F 		.ascii	"dat_hi\000"
+ 896      686900
+ 897              	.LASF6:
+ 898 0130 6C6F6E67 		.ascii	"long long int\000"
+ 898      206C6F6E 
+ 898      6720696E 
+ 898      7400
+ 899              	.LASF16:
+ 900 013e 4C494E58 		.ascii	"LINX_Command\000"
+ 900      5F436F6D 
+ 900      6D616E64 
+ 900      00
+ 901              	.LASF14:
+ 902 014b 63686172 		.ascii	"char\000"
+ 902      00
+ 903              	.LASF2:
+ 904 0150 73686F72 		.ascii	"short int\000"
+ 904      7420696E 
+ 904      7400
+ 905              	.LASF10:
+ 906 015a 75696E74 		.ascii	"uint8\000"
+ 906      3800
+ 907              	.LASF29:
+ 908 0160 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 908      4320342E 
+ 908      372E3320 
+ 908      32303133 
+ 908      30333132 
+ 909 0193 616E6368 		.ascii	"anch revision 196615]\000"
+ 909      20726576 
+ 909      6973696F 
+ 909      6E203139 
+ 909      36363135 
+ 910              	.LASF26:
+ 911 01a9 6F75745F 		.ascii	"out_mid_lo\000"
+ 911      6D69645F 
+ 911      6C6F00
+ 912              	.LASF23:
+ 913 01b4 57726974 		.ascii	"WriteTo_Pi\000"
+ 913      65546F5F 
+ 913      506900
+ 914              	.LASF19:
+ 915 01bf 6461745F 		.ascii	"dat_lo\000"
+ 915      6C6F00
+ 916              	.LASF4:
+ 917 01c6 6C6F6E67 		.ascii	"long int\000"
+ 917      20696E74 
+ 917      00
+ 918              	.LASF0:
+ 919 01cf 7369676E 		.ascii	"signed char\000"
+ 919      65642063 
+ 919      68617200 
+ 920              	.LASF24:
+ 921 01db 6F75745F 		.ascii	"out_hi\000"
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccAuYfe1.s 			page 22
+
+
+ 921      686900
+ 922              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

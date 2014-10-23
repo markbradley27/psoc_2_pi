@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC_2_Pi\PSoC_2_Pi\Header Files\mem1.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC_2_Pi\PSoC_2_Pi\Source Files\LINX.c">
 <ExpandedNodeIds>
 <v>PSoC_2_Pi</v>
 <v>PSoC_2_Pi\PSoC_2_Pi</v>

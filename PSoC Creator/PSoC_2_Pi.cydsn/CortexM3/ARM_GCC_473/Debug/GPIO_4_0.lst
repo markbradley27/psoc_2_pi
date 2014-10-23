@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
   29:.\Generated_Source\PSoC5/GPIO_4_0.c **** * Summary:
   30:.\Generated_Source\PSoC5/GPIO_4_0.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/GPIO_4_0.c **** *
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/GPIO_4_0.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
   69 003e 00BF     		.section	.text.GPIO_4_0_SetDriveMode,"ax",%progbits
   70              		.align	2
   71              		.global	GPIO_4_0_SetDriveMode
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 3
 
 
   72              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
   98 0016 C4F20002 		movt	r2, 16384
   99 001a 1278     		ldrb	r2, [r2, #0]
  100 001c D2B2     		uxtb	r2, r2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 4
 
 
  101 001e D2B2     		uxtb	r2, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  132 0000 80B4     		push	{r7}
  133              	.LCFI6:
  134              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 5
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 5
 
 
  135              		.cfi_offset 7, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  169              		.cfi_def_cfa_offset 4
  170              		.cfi_offset 7, -4
  171 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 6
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 6
 
 
  172              	.LCFI9:
@@ -330,10 +330,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  196 0006 00000000 		.4byte	.Ldebug_abbrev0
  197 000a 04       		.byte	0x4
  198 000b 01       		.uleb128 0x1
- 199 000c F9000000 		.4byte	.LASF20
+ 199 000c 33010000 		.4byte	.LASF20
  200 0010 01       		.byte	0x1
- 201 0011 A4000000 		.4byte	.LASF21
- 202 0015 4B010000 		.4byte	.LASF22
+ 201 0011 DE000000 		.4byte	.LASF21
+ 202 0015 17000000 		.4byte	.LASF22
  203 0019 00000000 		.4byte	.Ldebug_ranges0+0
  204 001d 00000000 		.4byte	0
  205 0021 00000000 		.4byte	0
@@ -341,38 +341,38 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  207 0029 02       		.uleb128 0x2
  208 002a 01       		.byte	0x1
  209 002b 06       		.byte	0x6
- 210 002c 8F010000 		.4byte	.LASF0
+ 210 002c 9B010000 		.4byte	.LASF0
  211 0030 02       		.uleb128 0x2
  212 0031 01       		.byte	0x1
  213 0032 08       		.byte	0x8
- 214 0033 2D000000 		.4byte	.LASF1
+ 214 0033 67000000 		.4byte	.LASF1
  215 0037 02       		.uleb128 0x2
  216 0038 02       		.byte	0x2
  217 0039 05       		.byte	0x5
- 218 003a E9000000 		.4byte	.LASF2
+ 218 003a 23010000 		.4byte	.LASF2
  219 003e 02       		.uleb128 0x2
  220 003f 02       		.byte	0x2
  221 0040 07       		.byte	0x7
- 222 0041 61000000 		.4byte	.LASF3
+ 222 0041 9B000000 		.4byte	.LASF3
  223 0045 02       		.uleb128 0x2
  224 0046 04       		.byte	0x4
  225 0047 05       		.byte	0x5
- 226 0048 42010000 		.4byte	.LASF4
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 7
+ 226 0048 92010000 		.4byte	.LASF4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 7
 
 
  227 004c 02       		.uleb128 0x2
  228 004d 04       		.byte	0x4
  229 004e 07       		.byte	0x7
- 230 004f 40000000 		.4byte	.LASF5
+ 230 004f 7A000000 		.4byte	.LASF5
  231 0053 02       		.uleb128 0x2
  232 0054 08       		.byte	0x8
  233 0055 05       		.byte	0x5
- 234 0056 C8000000 		.4byte	.LASF6
+ 234 0056 02010000 		.4byte	.LASF6
  235 005a 02       		.uleb128 0x2
  236 005b 08       		.byte	0x8
  237 005c 07       		.byte	0x7
- 238 005d 88000000 		.4byte	.LASF7
+ 238 005d C2000000 		.4byte	.LASF7
  239 0061 03       		.uleb128 0x3
  240 0062 04       		.byte	0x4
  241 0063 05       		.byte	0x5
@@ -380,9 +380,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  243 0068 02       		.uleb128 0x2
  244 0069 04       		.byte	0x4
  245 006a 07       		.byte	0x7
- 246 006b 7B000000 		.4byte	.LASF8
+ 246 006b B5000000 		.4byte	.LASF8
  247 006f 04       		.uleb128 0x4
- 248 0070 F3000000 		.4byte	.LASF12
+ 248 0070 2D010000 		.4byte	.LASF12
  249 0074 02       		.byte	0x2
  250 0075 5B       		.byte	0x5b
  251 0076 30000000 		.4byte	0x30
@@ -393,13 +393,13 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  256 0081 02       		.uleb128 0x2
  257 0082 08       		.byte	0x8
  258 0083 04       		.byte	0x4
- 259 0084 74000000 		.4byte	.LASF10
+ 259 0084 AE000000 		.4byte	.LASF10
  260 0088 02       		.uleb128 0x2
  261 0089 01       		.byte	0x1
  262 008a 08       		.byte	0x8
- 263 008b E4000000 		.4byte	.LASF11
+ 263 008b 1E010000 		.4byte	.LASF11
  264 008f 04       		.uleb128 0x4
- 265 0090 3B000000 		.4byte	.LASF13
+ 265 0090 75000000 		.4byte	.LASF13
  266 0094 02       		.byte	0x2
  267 0095 F0       		.byte	0xf0
  268 0096 9A000000 		.4byte	0x9a
@@ -407,7 +407,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  270 009b 6F000000 		.4byte	0x6f
  271 009f 06       		.uleb128 0x6
  272 00a0 01       		.byte	0x1
- 273 00a1 52000000 		.4byte	.LASF14
+ 273 00a1 8C000000 		.4byte	.LASF14
  274 00a5 01       		.byte	0x1
  275 00a6 27       		.byte	0x27
  276 00a7 01       		.byte	0x1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  281 00b5 D6000000 		.4byte	0xd6
  282 00b9 07       		.uleb128 0x7
  283 00ba 00000000 		.4byte	.LASF16
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 8
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 8
 
 
  284 00be 01       		.byte	0x1
@@ -438,7 +438,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  298 00d5 00       		.byte	0
  299 00d6 06       		.uleb128 0x6
  300 00d7 01       		.byte	0x1
- 301 00d8 17000000 		.4byte	.LASF15
+ 301 00d8 7C010000 		.4byte	.LASF15
  302 00dc 01       		.byte	0x1
  303 00dd 45       		.byte	0x45
  304 00de 01       		.byte	0x1
@@ -448,7 +448,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  308 00eb 01       		.byte	0x1
  309 00ec FF000000 		.4byte	0xff
  310 00f0 07       		.uleb128 0x7
- 311 00f1 9F000000 		.4byte	.LASF17
+ 311 00f1 D9000000 		.4byte	.LASF17
  312 00f5 01       		.byte	0x1
  313 00f6 45       		.byte	0x45
  314 00f7 6F000000 		.4byte	0x6f
@@ -458,7 +458,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  318 00fe 00       		.byte	0
  319 00ff 09       		.uleb128 0x9
  320 0100 01       		.byte	0x1
- 321 0101 D6000000 		.4byte	.LASF18
+ 321 0101 10010000 		.4byte	.LASF18
  322 0105 01       		.byte	0x1
  323 0106 5D       		.byte	0x5d
  324 0107 01       		.byte	0x1
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  329 0118 01       		.byte	0x1
  330 0119 09       		.uleb128 0x9
  331 011a 01       		.byte	0x1
- 332 011b 9B010000 		.4byte	.LASF19
+ 332 011b A7010000 		.4byte	.LASF19
  333 011f 01       		.byte	0x1
  334 0120 71       		.byte	0x71
  335 0121 01       		.byte	0x1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  338 012a 1E000000 		.4byte	.LFE3
  339 012e 9C000000 		.4byte	.LLST3
  340 0132 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 9
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 9
 
 
  341 0133 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  395 0033 0B       		.uleb128 0xb
  396 0034 49       		.uleb128 0x49
  397 0035 13       		.uleb128 0x13
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 10
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 10
 
 
  398 0036 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  452 006d 3A       		.uleb128 0x3a
  453 006e 0B       		.uleb128 0xb
  454 006f 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 11
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 11
 
 
  455 0070 0B       		.uleb128 0xb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  509 002e 77       		.byte	0x77
  510 002f 18       		.sleb128 24
  511 0030 00000000 		.4byte	0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 12
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 12
 
 
  512 0034 00000000 		.4byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  566 00b8 1E000000 		.4byte	.LFE3
  567 00bc 0200     		.2byte	0x2
  568 00be 77       		.byte	0x77
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 13
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 13
 
 
  569 00bf 04       		.sleb128 4
@@ -771,118 +771,118 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 1
  609              	.LASF9:
  610 0011 666C6F61 		.ascii	"float\000"
  610      7400
- 611              	.LASF15:
- 612 0017 4750494F 		.ascii	"GPIO_4_0_SetDriveMode\000"
- 612      5F345F30 
- 612      5F536574 
- 612      44726976 
- 612      654D6F64 
- 613              	.LASF1:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 14
+ 611              	.LASF22:
+ 612 0017 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\GitRepo\\psoc"
+ 612      73657273 
+ 612      5C4D6172 
+ 612      6B5C446F 
+ 612      63756D65 
+ 613 0044 5F325F70 		.ascii	"_2_pi\\PSoC Creator\\PSoC_2_Pi.cydsn\000"
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 14
 
 
- 614 002d 756E7369 		.ascii	"unsigned char\000"
- 614      676E6564 
- 614      20636861 
- 614      7200
- 615              	.LASF13:
- 616 003b 72656738 		.ascii	"reg8\000"
- 616      00
- 617              	.LASF5:
- 618 0040 6C6F6E67 		.ascii	"long unsigned int\000"
- 618      20756E73 
- 618      69676E65 
- 618      6420696E 
- 618      7400
- 619              	.LASF14:
- 620 0052 4750494F 		.ascii	"GPIO_4_0_Write\000"
- 620      5F345F30 
- 620      5F577269 
- 620      746500
- 621              	.LASF3:
- 622 0061 73686F72 		.ascii	"short unsigned int\000"
- 622      7420756E 
- 622      7369676E 
- 622      65642069 
- 622      6E7400
- 623              	.LASF10:
- 624 0074 646F7562 		.ascii	"double\000"
- 624      6C6500
- 625              	.LASF8:
- 626 007b 756E7369 		.ascii	"unsigned int\000"
- 626      676E6564 
- 626      20696E74 
- 626      00
- 627              	.LASF7:
- 628 0088 6C6F6E67 		.ascii	"long long unsigned int\000"
- 628      206C6F6E 
- 628      6720756E 
- 628      7369676E 
- 628      65642069 
- 629              	.LASF17:
- 630 009f 6D6F6465 		.ascii	"mode\000"
- 630      00
- 631              	.LASF21:
- 632 00a4 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\GPIO_4_0.c\000"
- 632      6E657261 
- 632      7465645F 
- 632      536F7572 
- 632      63655C50 
- 633              	.LASF6:
- 634 00c8 6C6F6E67 		.ascii	"long long int\000"
- 634      206C6F6E 
- 634      6720696E 
- 634      7400
- 635              	.LASF18:
- 636 00d6 4750494F 		.ascii	"GPIO_4_0_Read\000"
- 636      5F345F30 
- 636      5F526561 
- 636      6400
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccCndFaa.s 			page 15
+ 613      695C5053 
+ 613      6F432043 
+ 613      72656174 
+ 613      6F725C50 
+ 614              	.LASF1:
+ 615 0067 756E7369 		.ascii	"unsigned char\000"
+ 615      676E6564 
+ 615      20636861 
+ 615      7200
+ 616              	.LASF13:
+ 617 0075 72656738 		.ascii	"reg8\000"
+ 617      00
+ 618              	.LASF5:
+ 619 007a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 619      20756E73 
+ 619      69676E65 
+ 619      6420696E 
+ 619      7400
+ 620              	.LASF14:
+ 621 008c 4750494F 		.ascii	"GPIO_4_0_Write\000"
+ 621      5F345F30 
+ 621      5F577269 
+ 621      746500
+ 622              	.LASF3:
+ 623 009b 73686F72 		.ascii	"short unsigned int\000"
+ 623      7420756E 
+ 623      7369676E 
+ 623      65642069 
+ 623      6E7400
+ 624              	.LASF10:
+ 625 00ae 646F7562 		.ascii	"double\000"
+ 625      6C6500
+ 626              	.LASF8:
+ 627 00b5 756E7369 		.ascii	"unsigned int\000"
+ 627      676E6564 
+ 627      20696E74 
+ 627      00
+ 628              	.LASF7:
+ 629 00c2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 629      206C6F6E 
+ 629      6720756E 
+ 629      7369676E 
+ 629      65642069 
+ 630              	.LASF17:
+ 631 00d9 6D6F6465 		.ascii	"mode\000"
+ 631      00
+ 632              	.LASF21:
+ 633 00de 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\GPIO_4_0.c\000"
+ 633      6E657261 
+ 633      7465645F 
+ 633      536F7572 
+ 633      63655C50 
+ 634              	.LASF6:
+ 635 0102 6C6F6E67 		.ascii	"long long int\000"
+ 635      206C6F6E 
+ 635      6720696E 
+ 635      7400
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc6TLPhg.s 			page 15
 
 
- 637              	.LASF11:
- 638 00e4 63686172 		.ascii	"char\000"
- 638      00
- 639              	.LASF2:
- 640 00e9 73686F72 		.ascii	"short int\000"
- 640      7420696E 
- 640      7400
- 641              	.LASF12:
- 642 00f3 75696E74 		.ascii	"uint8\000"
- 642      3800
- 643              	.LASF20:
- 644 00f9 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 644      4320342E 
- 644      372E3320 
- 644      32303133 
- 644      30333132 
- 645 012c 616E6368 		.ascii	"anch revision 196615]\000"
- 645      20726576 
- 645      6973696F 
- 645      6E203139 
- 645      36363135 
- 646              	.LASF4:
- 647 0142 6C6F6E67 		.ascii	"long int\000"
- 647      20696E74 
- 647      00
- 648              	.LASF22:
- 649 014b 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\PSoCCreatorWo"
- 649      73657273 
- 649      5C4D6172 
- 649      6B5C446F 
- 649      63756D65 
- 650 0179 726B696E 		.ascii	"rking\\PSoC_2_Pi.cydsn\000"
- 650      675C5053 
- 650      6F435F32 
- 650      5F50692E 
- 650      63796473 
+ 636              	.LASF18:
+ 637 0110 4750494F 		.ascii	"GPIO_4_0_Read\000"
+ 637      5F345F30 
+ 637      5F526561 
+ 637      6400
+ 638              	.LASF11:
+ 639 011e 63686172 		.ascii	"char\000"
+ 639      00
+ 640              	.LASF2:
+ 641 0123 73686F72 		.ascii	"short int\000"
+ 641      7420696E 
+ 641      7400
+ 642              	.LASF12:
+ 643 012d 75696E74 		.ascii	"uint8\000"
+ 643      3800
+ 644              	.LASF20:
+ 645 0133 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 645      4320342E 
+ 645      372E3320 
+ 645      32303133 
+ 645      30333132 
+ 646 0166 616E6368 		.ascii	"anch revision 196615]\000"
+ 646      20726576 
+ 646      6973696F 
+ 646      6E203139 
+ 646      36363135 
+ 647              	.LASF15:
+ 648 017c 4750494F 		.ascii	"GPIO_4_0_SetDriveMode\000"
+ 648      5F345F30 
+ 648      5F536574 
+ 648      44726976 
+ 648      654D6F64 
+ 649              	.LASF4:
+ 650 0192 6C6F6E67 		.ascii	"long int\000"
+ 650      20696E74 
+ 650      00
  651              	.LASF0:
- 652 018f 7369676E 		.ascii	"signed char\000"
+ 652 019b 7369676E 		.ascii	"signed char\000"
  652      65642063 
  652      68617200 
  653              	.LASF19:
- 654 019b 4750494F 		.ascii	"GPIO_4_0_ReadDataReg\000"
+ 654 01a7 4750494F 		.ascii	"GPIO_4_0_ReadDataReg\000"
  654      5F345F30 
  654      5F526561 
  654      64446174 

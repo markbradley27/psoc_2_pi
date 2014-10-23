@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
   29:.\Generated_Source\PSoC5/analog_in_8.c **** * Summary:
   30:.\Generated_Source\PSoC5/analog_in_8.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/analog_in_8.c **** *
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/analog_in_8.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
   69 003e 00BF     		.section	.text.analog_in_8_SetDriveMode,"ax",%progbits
   70              		.align	2
   71              		.global	analog_in_8_SetDriveMode
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 3
 
 
   72              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
   98 0016 C4F20002 		movt	r2, 16384
   99 001a 1278     		ldrb	r2, [r2, #0]
  100 001c D2B2     		uxtb	r2, r2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 4
 
 
  101 001e D2B2     		uxtb	r2, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  132 0000 80B4     		push	{r7}
  133              	.LCFI6:
  134              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 5
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 5
 
 
  135              		.cfi_offset 7, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  169              		.cfi_def_cfa_offset 4
  170              		.cfi_offset 7, -4
  171 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 6
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 6
 
 
  172              	.LCFI9:
@@ -330,10 +330,10 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  196 0006 00000000 		.4byte	.Ldebug_abbrev0
  197 000a 04       		.byte	0x4
  198 000b 01       		.uleb128 0x1
- 199 000c FA000000 		.4byte	.LASF20
+ 199 000c 4A010000 		.4byte	.LASF20
  200 0010 01       		.byte	0x1
  201 0011 00000000 		.4byte	.LASF21
- 202 0015 5E010000 		.4byte	.LASF22
+ 202 0015 57000000 		.4byte	.LASF22
  203 0019 00000000 		.4byte	.Ldebug_ranges0+0
  204 001d 00000000 		.4byte	0
  205 0021 00000000 		.4byte	0
@@ -341,38 +341,38 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  207 0029 02       		.uleb128 0x2
  208 002a 01       		.byte	0x1
  209 002b 06       		.byte	0x6
- 210 002c A2010000 		.4byte	.LASF0
+ 210 002c AE010000 		.4byte	.LASF0
  211 0030 02       		.uleb128 0x2
  212 0031 01       		.byte	0x1
  213 0032 08       		.byte	0x8
- 214 0033 57000000 		.4byte	.LASF1
+ 214 0033 A7000000 		.4byte	.LASF1
  215 0037 02       		.uleb128 0x2
  216 0038 02       		.byte	0x2
  217 0039 05       		.byte	0x5
- 218 003a EA000000 		.4byte	.LASF2
+ 218 003a 3A010000 		.4byte	.LASF2
  219 003e 02       		.uleb128 0x2
  220 003f 02       		.byte	0x2
  221 0040 07       		.byte	0x7
- 222 0041 7C000000 		.4byte	.LASF3
+ 222 0041 CC000000 		.4byte	.LASF3
  223 0045 02       		.uleb128 0x2
  224 0046 04       		.byte	0x4
  225 0047 05       		.byte	0x5
- 226 0048 43010000 		.4byte	.LASF4
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 7
+ 226 0048 93010000 		.4byte	.LASF4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 7
 
 
  227 004c 02       		.uleb128 0x2
  228 004d 04       		.byte	0x4
  229 004e 07       		.byte	0x7
- 230 004f 6A000000 		.4byte	.LASF5
+ 230 004f BA000000 		.4byte	.LASF5
  231 0053 02       		.uleb128 0x2
  232 0054 08       		.byte	0x8
  233 0055 05       		.byte	0x5
- 234 0056 D7000000 		.4byte	.LASF6
+ 234 0056 27010000 		.4byte	.LASF6
  235 005a 02       		.uleb128 0x2
  236 005b 08       		.byte	0x8
  237 005c 07       		.byte	0x7
- 238 005d BB000000 		.4byte	.LASF7
+ 238 005d 0B010000 		.4byte	.LASF7
  239 0061 03       		.uleb128 0x3
  240 0062 04       		.byte	0x4
  241 0063 05       		.byte	0x5
@@ -380,9 +380,9 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  243 0068 02       		.uleb128 0x2
  244 0069 04       		.byte	0x4
  245 006a 07       		.byte	0x7
- 246 006b 96000000 		.4byte	.LASF8
+ 246 006b E6000000 		.4byte	.LASF8
  247 006f 04       		.uleb128 0x4
- 248 0070 F4000000 		.4byte	.LASF12
+ 248 0070 44010000 		.4byte	.LASF12
  249 0074 02       		.byte	0x2
  250 0075 5B       		.byte	0x5b
  251 0076 30000000 		.4byte	0x30
@@ -393,13 +393,13 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  256 0081 02       		.uleb128 0x2
  257 0082 08       		.byte	0x8
  258 0083 04       		.byte	0x4
- 259 0084 8F000000 		.4byte	.LASF10
+ 259 0084 DF000000 		.4byte	.LASF10
  260 0088 02       		.uleb128 0x2
  261 0089 01       		.byte	0x1
  262 008a 08       		.byte	0x8
- 263 008b E5000000 		.4byte	.LASF11
+ 263 008b 35010000 		.4byte	.LASF11
  264 008f 04       		.uleb128 0x4
- 265 0090 65000000 		.4byte	.LASF13
+ 265 0090 B5000000 		.4byte	.LASF13
  266 0094 02       		.byte	0x2
  267 0095 F0       		.byte	0xf0
  268 0096 9A000000 		.4byte	0x9a
@@ -407,7 +407,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  270 009b 6F000000 		.4byte	0x6f
  271 009f 06       		.uleb128 0x6
  272 00a0 01       		.byte	0x1
- 273 00a1 4C010000 		.4byte	.LASF14
+ 273 00a1 9C010000 		.4byte	.LASF14
  274 00a5 01       		.byte	0x1
  275 00a6 27       		.byte	0x27
  276 00a7 01       		.byte	0x1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  281 00b5 D6000000 		.4byte	0xd6
  282 00b9 07       		.uleb128 0x7
  283 00ba 27000000 		.4byte	.LASF16
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 8
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 8
 
 
  284 00be 01       		.byte	0x1
@@ -448,7 +448,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  308 00eb 01       		.byte	0x1
  309 00ec FF000000 		.4byte	0xff
  310 00f0 07       		.uleb128 0x7
- 311 00f1 D2000000 		.4byte	.LASF17
+ 311 00f1 22010000 		.4byte	.LASF17
  312 00f5 01       		.byte	0x1
  313 00f6 45       		.byte	0x45
  314 00f7 6F000000 		.4byte	0x6f
@@ -458,7 +458,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  318 00fe 00       		.byte	0
  319 00ff 09       		.uleb128 0x9
  320 0100 01       		.byte	0x1
- 321 0101 AE010000 		.4byte	.LASF18
+ 321 0101 BA010000 		.4byte	.LASF18
  322 0105 01       		.byte	0x1
  323 0106 5D       		.byte	0x5d
  324 0107 01       		.byte	0x1
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  329 0118 01       		.byte	0x1
  330 0119 09       		.uleb128 0x9
  331 011a 01       		.byte	0x1
- 332 011b A3000000 		.4byte	.LASF19
+ 332 011b F3000000 		.4byte	.LASF19
  333 011f 01       		.byte	0x1
  334 0120 71       		.byte	0x71
  335 0121 01       		.byte	0x1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  338 012a 1E000000 		.4byte	.LFE3
  339 012e 9C000000 		.4byte	.LLST3
  340 0132 01       		.byte	0x1
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 9
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 9
 
 
  341 0133 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  395 0033 0B       		.uleb128 0xb
  396 0034 49       		.uleb128 0x49
  397 0035 13       		.uleb128 0x13
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 10
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 10
 
 
  398 0036 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  452 006d 3A       		.uleb128 0x3a
  453 006e 0B       		.uleb128 0xb
  454 006f 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 11
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 11
 
 
  455 0070 0B       		.uleb128 0xb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  509 002e 77       		.byte	0x77
  510 002f 18       		.sleb128 24
  511 0030 00000000 		.4byte	0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 12
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 12
 
 
  512 0034 00000000 		.4byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  566 00b8 1E000000 		.4byte	.LFE3
  567 00bc 0200     		.2byte	0x2
  568 00be 77       		.byte	0x77
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 13
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 13
 
 
  569 00bf 04       		.sleb128 4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  612 0038 666C6F61 		.ascii	"float\000"
  612      7400
  613              	.LASF15:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 14
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 14
 
 
  614 003e 616E616C 		.ascii	"analog_in_8_SetDriveMode\000"
@@ -786,105 +786,105 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 1
  614      6E5F385F 
  614      53657444 
  614      72697665 
- 615              	.LASF1:
- 616 0057 756E7369 		.ascii	"unsigned char\000"
- 616      676E6564 
- 616      20636861 
- 616      7200
- 617              	.LASF13:
- 618 0065 72656738 		.ascii	"reg8\000"
- 618      00
- 619              	.LASF5:
- 620 006a 6C6F6E67 		.ascii	"long unsigned int\000"
- 620      20756E73 
- 620      69676E65 
- 620      6420696E 
- 620      7400
- 621              	.LASF3:
- 622 007c 73686F72 		.ascii	"short unsigned int\000"
- 622      7420756E 
- 622      7369676E 
- 622      65642069 
- 622      6E7400
- 623              	.LASF10:
- 624 008f 646F7562 		.ascii	"double\000"
- 624      6C6500
- 625              	.LASF8:
- 626 0096 756E7369 		.ascii	"unsigned int\000"
- 626      676E6564 
- 626      20696E74 
- 626      00
- 627              	.LASF19:
- 628 00a3 616E616C 		.ascii	"analog_in_8_ReadDataReg\000"
- 628      6F675F69 
- 628      6E5F385F 
- 628      52656164 
- 628      44617461 
- 629              	.LASF7:
- 630 00bb 6C6F6E67 		.ascii	"long long unsigned int\000"
- 630      206C6F6E 
- 630      6720756E 
- 630      7369676E 
- 630      65642069 
- 631              	.LASF17:
- 632 00d2 6D6F6465 		.ascii	"mode\000"
- 632      00
- 633              	.LASF6:
- 634 00d7 6C6F6E67 		.ascii	"long long int\000"
- 634      206C6F6E 
- 634      6720696E 
- 634      7400
- 635              	.LASF11:
- 636 00e5 63686172 		.ascii	"char\000"
- 636      00
- 637              	.LASF2:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\cc0QdDKM.s 			page 15
+ 615              	.LASF22:
+ 616 0057 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\GitRepo\\psoc"
+ 616      73657273 
+ 616      5C4D6172 
+ 616      6B5C446F 
+ 616      63756D65 
+ 617 0084 5F325F70 		.ascii	"_2_pi\\PSoC Creator\\PSoC_2_Pi.cydsn\000"
+ 617      695C5053 
+ 617      6F432043 
+ 617      72656174 
+ 617      6F725C50 
+ 618              	.LASF1:
+ 619 00a7 756E7369 		.ascii	"unsigned char\000"
+ 619      676E6564 
+ 619      20636861 
+ 619      7200
+ 620              	.LASF13:
+ 621 00b5 72656738 		.ascii	"reg8\000"
+ 621      00
+ 622              	.LASF5:
+ 623 00ba 6C6F6E67 		.ascii	"long unsigned int\000"
+ 623      20756E73 
+ 623      69676E65 
+ 623      6420696E 
+ 623      7400
+ 624              	.LASF3:
+ 625 00cc 73686F72 		.ascii	"short unsigned int\000"
+ 625      7420756E 
+ 625      7369676E 
+ 625      65642069 
+ 625      6E7400
+ 626              	.LASF10:
+ 627 00df 646F7562 		.ascii	"double\000"
+ 627      6C6500
+ 628              	.LASF8:
+ 629 00e6 756E7369 		.ascii	"unsigned int\000"
+ 629      676E6564 
+ 629      20696E74 
+ 629      00
+ 630              	.LASF19:
+ 631 00f3 616E616C 		.ascii	"analog_in_8_ReadDataReg\000"
+ 631      6F675F69 
+ 631      6E5F385F 
+ 631      52656164 
+ 631      44617461 
+ 632              	.LASF7:
+ 633 010b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 633      206C6F6E 
+ 633      6720756E 
+ 633      7369676E 
+ 633      65642069 
+ 634              	.LASF17:
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccylRNvy.s 			page 15
 
 
- 638 00ea 73686F72 		.ascii	"short int\000"
- 638      7420696E 
- 638      7400
- 639              	.LASF12:
- 640 00f4 75696E74 		.ascii	"uint8\000"
- 640      3800
- 641              	.LASF20:
- 642 00fa 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 642      4320342E 
- 642      372E3320 
- 642      32303133 
- 642      30333132 
- 643 012d 616E6368 		.ascii	"anch revision 196615]\000"
- 643      20726576 
- 643      6973696F 
- 643      6E203139 
- 643      36363135 
- 644              	.LASF4:
- 645 0143 6C6F6E67 		.ascii	"long int\000"
- 645      20696E74 
- 645      00
- 646              	.LASF14:
- 647 014c 616E616C 		.ascii	"analog_in_8_Write\000"
- 647      6F675F69 
- 647      6E5F385F 
- 647      57726974 
- 647      6500
- 648              	.LASF22:
- 649 015e 433A5C55 		.ascii	"C:\\Users\\Mark\\Documents\\Capstone\\PSoCCreatorWo"
- 649      73657273 
- 649      5C4D6172 
- 649      6B5C446F 
- 649      63756D65 
- 650 018c 726B696E 		.ascii	"rking\\PSoC_2_Pi.cydsn\000"
- 650      675C5053 
- 650      6F435F32 
- 650      5F50692E 
- 650      63796473 
+ 635 0122 6D6F6465 		.ascii	"mode\000"
+ 635      00
+ 636              	.LASF6:
+ 637 0127 6C6F6E67 		.ascii	"long long int\000"
+ 637      206C6F6E 
+ 637      6720696E 
+ 637      7400
+ 638              	.LASF11:
+ 639 0135 63686172 		.ascii	"char\000"
+ 639      00
+ 640              	.LASF2:
+ 641 013a 73686F72 		.ascii	"short int\000"
+ 641      7420696E 
+ 641      7400
+ 642              	.LASF12:
+ 643 0144 75696E74 		.ascii	"uint8\000"
+ 643      3800
+ 644              	.LASF20:
+ 645 014a 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 645      4320342E 
+ 645      372E3320 
+ 645      32303133 
+ 645      30333132 
+ 646 017d 616E6368 		.ascii	"anch revision 196615]\000"
+ 646      20726576 
+ 646      6973696F 
+ 646      6E203139 
+ 646      36363135 
+ 647              	.LASF4:
+ 648 0193 6C6F6E67 		.ascii	"long int\000"
+ 648      20696E74 
+ 648      00
+ 649              	.LASF14:
+ 650 019c 616E616C 		.ascii	"analog_in_8_Write\000"
+ 650      6F675F69 
+ 650      6E5F385F 
+ 650      57726974 
+ 650      6500
  651              	.LASF0:
- 652 01a2 7369676E 		.ascii	"signed char\000"
+ 652 01ae 7369676E 		.ascii	"signed char\000"
  652      65642063 
  652      68617200 
  653              	.LASF18:
- 654 01ae 616E616C 		.ascii	"analog_in_8_Read\000"
+ 654 01ba 616E616C 		.ascii	"analog_in_8_Read\000"
  654      6F675F69 
  654      6E5F385F 
  654      52656164 
