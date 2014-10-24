@@ -1,5 +1,5 @@
 # PSoC_2_Pi
-# 2014-10-22 20:10:57Z
+# 2014-10-23 15:26:26Z
 
 set_io "DELSIG_IN(0)" iocell 15 5
 set_io "GPIO_12_0(0)" iocell 12 0

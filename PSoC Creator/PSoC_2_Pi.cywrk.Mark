@@ -911,10 +911,9 @@
 <name v=".\PSoC_2_Pi.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\PSoC_2_Pi.cydsn\PSoC_2_Pi.cydwr" />
 <name v=".\PSoC_2_Pi.cydsn\LINX.h" />
-<name v=".\PSoC_2_Pi.cydsn\LINX.c" />
 <name v=".\PSoC_2_Pi.cydsn\main.c" />
-<name v=".\PSoC_2_Pi.cydsn\mem1.c" />
 <name v=".\PSoC_2_Pi.cydsn\mem1.h" />
+<name v=".\PSoC_2_Pi.cydsn\LINX.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

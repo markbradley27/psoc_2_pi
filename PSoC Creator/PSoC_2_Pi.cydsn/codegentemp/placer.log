@@ -6,7 +6,7 @@
 
 #Build Date:         Mar 26 2013 14:54:34
 
-#File Generated:     Oct 22 2014 16:10:57
+#File Generated:     Oct 23 2014 11:26:26
 
 #Purpose:            
 
@@ -86,7 +86,7 @@ Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:  12.0 MHz
 Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_1              | Frequency:  31.8 MHz | Target:  12.0 MHz
+Clock: Clock_1              | Frequency:  33.0 MHz | Target:  12.0 MHz
 Clock: Clock_1(routed)      | Frequency: N/A       | Target:  12.0 MHz
 Clock: CyBUS_CLK            | Frequency:  62.1 MHz | Target:  24.0 MHz
 Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
@@ -94,23 +94,23 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.1 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: DEBUG_UART_IntClock  | Frequency:  40.2 MHz | Target:   0.1 MHz
+Clock: DEBUG_UART_IntClock  | Frequency:  40.2 MHz | Target:   0.9 MHz
 Clock: PWM_1_2_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_3_4_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_5_6_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_7_8_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: SPIS_1_IntClock      | Frequency:  44.9 MHz | Target:   2.0 MHz
+Clock: SPIS_1_IntClock      | Frequency:  50.6 MHz | Target:   2.0 MHz
 Clock: WaveDAC8_1_DacClk    | Frequency:  71.7 MHz | Target:   0.3 MHz
 Clock: WaveDAC8_1_DacClk(routed) | Frequency: N/A       | Target:   0.3 MHz
 Clock: WaveDAC_clk          | Frequency: N/A       | Target:   2.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
-Clock: sclk(0)/fb           | Frequency:  33.2 MHz | Target:  12.0 MHz
+Clock: sclk(0)/fb           | Frequency:  30.7 MHz | Target:  12.0 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
 
-D2088: Phase 6, elapsed time : 0.3 (sec)
+D2088: Phase 6, elapsed time : 0.4 (sec)
 
 Phase 7
 ######################################################################
@@ -123,7 +123,7 @@ Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:  12.0 MHz
 Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_1              | Frequency:  34.8 MHz | Target:  12.0 MHz
+Clock: Clock_1              | Frequency:  32.1 MHz | Target:  12.0 MHz
 Clock: Clock_1(routed)      | Frequency: N/A       | Target:  12.0 MHz
 Clock: CyBUS_CLK            | Frequency:   1.7 MHz | Target:  24.0 MHz
 Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
@@ -131,22 +131,22 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.1 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: DEBUG_UART_IntClock  | Frequency:  32.2 MHz | Target:   0.1 MHz
+Clock: DEBUG_UART_IntClock  | Frequency:  42.7 MHz | Target:   0.9 MHz
 Clock: PWM_1_2_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_3_4_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_5_6_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_7_8_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: SPIS_1_IntClock      | Frequency:  59.6 MHz | Target:   2.0 MHz
+Clock: SPIS_1_IntClock      | Frequency:  51.2 MHz | Target:   2.0 MHz
 Clock: WaveDAC8_1_DacClk    | Frequency:   1.7 MHz | Target:   0.3 MHz
 Clock: WaveDAC8_1_DacClk(routed) | Frequency: N/A       | Target:   0.3 MHz
 Clock: WaveDAC_clk          | Frequency: N/A       | Target:   2.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
-Clock: sclk(0)/fb           | Frequency:  33.6 MHz | Target:  12.0 MHz
+Clock: sclk(0)/fb           | Frequency:  30.7 MHz | Target:  12.0 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 1.6 (sec)
+D2088: Phase 7, elapsed time : 1.8 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	22
@@ -183,7 +183,7 @@ Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:  12.0 MHz
 Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_1              | Frequency:  34.8 MHz | Target:  12.0 MHz
+Clock: Clock_1              | Frequency:  32.1 MHz | Target:  12.0 MHz
 Clock: Clock_1(routed)      | Frequency: N/A       | Target:  12.0 MHz
 Clock: CyBUS_CLK            | Frequency:   1.7 MHz | Target:  24.0 MHz
 Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
@@ -191,17 +191,17 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.1 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: DEBUG_UART_IntClock  | Frequency:  32.2 MHz | Target:   0.1 MHz
+Clock: DEBUG_UART_IntClock  | Frequency:  42.7 MHz | Target:   0.9 MHz
 Clock: PWM_1_2_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_3_4_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_5_6_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_7_8_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: SPIS_1_IntClock      | Frequency:  59.6 MHz | Target:   2.0 MHz
+Clock: SPIS_1_IntClock      | Frequency:  51.2 MHz | Target:   2.0 MHz
 Clock: WaveDAC8_1_DacClk    | Frequency:   1.7 MHz | Target:   0.3 MHz
 Clock: WaveDAC8_1_DacClk(routed) | Frequency: N/A       | Target:   0.3 MHz
 Clock: WaveDAC_clk          | Frequency: N/A       | Target:   2.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
-Clock: sclk(0)/fb           | Frequency:  33.6 MHz | Target:  12.0 MHz
+Clock: sclk(0)/fb           | Frequency:  30.7 MHz | Target:  12.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -227,7 +227,7 @@ Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:  12.0 MHz
 Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_1              | Frequency:  31.8 MHz | Target:  12.0 MHz
+Clock: Clock_1              | Frequency:  33.0 MHz | Target:  12.0 MHz
 Clock: Clock_1(routed)      | Frequency: N/A       | Target:  12.0 MHz
 Clock: CyBUS_CLK            | Frequency:   1.7 MHz | Target:  24.0 MHz
 Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
@@ -235,44 +235,7 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.1 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: DEBUG_UART_IntClock  | Frequency:  40.2 MHz | Target:   0.1 MHz
-Clock: PWM_1_2_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: PWM_3_4_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: PWM_5_6_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: PWM_7_8_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: SPIS_1_IntClock      | Frequency:  44.9 MHz | Target:   2.0 MHz
-Clock: WaveDAC8_1_DacClk    | Frequency:   1.7 MHz | Target:   0.3 MHz
-Clock: WaveDAC8_1_DacClk(routed) | Frequency: N/A       | Target:   0.3 MHz
-Clock: WaveDAC_clk          | Frequency: N/A       | Target:   2.0 MHz
-Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
-Clock: sclk(0)/fb           | Frequency:  33.2 MHz | Target:  12.0 MHz
-
-======================================================================
-                     End of Clock Summary
-######################################################################
-
-D2088: Phase 6, elapsed time : 0.3 (sec)
-
-Phase 7
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 25
-Clock: ADC_DelSig_1_Ext_CP_Clk | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_DelSig_1_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   2.7 MHz
-Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   2.7 MHz
-Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:  12.0 MHz
-Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_1              | Frequency:  33.6 MHz | Target:  12.0 MHz
-Clock: Clock_1(routed)      | Frequency: N/A       | Target:  12.0 MHz
-Clock: CyBUS_CLK            | Frequency:   1.7 MHz | Target:  24.0 MHz
-Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.1 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: DEBUG_UART_IntClock  | Frequency:  41.6 MHz | Target:   0.1 MHz
+Clock: DEBUG_UART_IntClock  | Frequency:  40.2 MHz | Target:   0.9 MHz
 Clock: PWM_1_2_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_3_4_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
 Clock: PWM_5_6_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
@@ -287,7 +250,44 @@ Clock: sclk(0)/fb           | Frequency:  30.7 MHz | Target:  12.0 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 5.1 (sec)
+
+D2088: Phase 6, elapsed time : 0.4 (sec)
+
+Phase 7
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 25
+Clock: ADC_DelSig_1_Ext_CP_Clk | Frequency: N/A       | Target:  24.0 MHz
+Clock: ADC_DelSig_1_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
+Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   2.7 MHz
+Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   2.7 MHz
+Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:  12.0 MHz
+Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
+Clock: Clock_1              | Frequency:  33.9 MHz | Target:  12.0 MHz
+Clock: Clock_1(routed)      | Frequency: N/A       | Target:  12.0 MHz
+Clock: CyBUS_CLK            | Frequency:   1.7 MHz | Target:  24.0 MHz
+Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.1 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
+Clock: DEBUG_UART_IntClock  | Frequency:  41.6 MHz | Target:   0.9 MHz
+Clock: PWM_1_2_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
+Clock: PWM_3_4_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
+Clock: PWM_5_6_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
+Clock: PWM_7_8_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
+Clock: SPIS_1_IntClock      | Frequency:  45.4 MHz | Target:   2.0 MHz
+Clock: WaveDAC8_1_DacClk    | Frequency:   1.7 MHz | Target:   0.3 MHz
+Clock: WaveDAC8_1_DacClk(routed) | Frequency: N/A       | Target:   0.3 MHz
+Clock: WaveDAC_clk          | Frequency: N/A       | Target:   2.0 MHz
+Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
+Clock: sclk(0)/fb           | Frequency:  30.7 MHz | Target:  12.0 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+D2088: Phase 7, elapsed time : 6.3 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	22
@@ -324,7 +324,7 @@ Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   2.7 MHz
 Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:  12.0 MHz
 Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_1              | Frequency:  30.4 MHz | Target:  12.0 MHz
+Clock: Clock_1              | Frequency:  32.6 MHz | Target:  12.0 MHz
 Clock: Clock_1(routed)      | Frequency: N/A       | Target:  12.0 MHz
 Clock: CyBUS_CLK            | Frequency:   1.7 MHz | Target:  24.0 MHz
 Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
@@ -332,17 +332,17 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.1 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: DEBUG_UART_IntClock  | Frequency:  33.0 MHz | Target:   0.1 MHz
-Clock: PWM_1_2_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
+Clock: DEBUG_UART_IntClock  | Frequency:  42.5 MHz | Target:   0.9 MHz
+Clock: PWM_1_2_clk          | Frequency:  41.6 MHz | Target:   3.0 MHz
 Clock: PWM_3_4_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: PWM_5_6_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
+Clock: PWM_5_6_clk          | Frequency:  38.0 MHz | Target:   3.0 MHz
 Clock: PWM_7_8_clk          | Frequency:  41.7 MHz | Target:   3.0 MHz
-Clock: SPIS_1_IntClock      | Frequency:  55.1 MHz | Target:   2.0 MHz
+Clock: SPIS_1_IntClock      | Frequency:  47.4 MHz | Target:   2.0 MHz
 Clock: WaveDAC8_1_DacClk    | Frequency:   1.7 MHz | Target:   0.3 MHz
 Clock: WaveDAC8_1_DacClk(routed) | Frequency: N/A       | Target:   0.3 MHz
 Clock: WaveDAC_clk          | Frequency: N/A       | Target:   2.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
-Clock: sclk(0)/fb           | Frequency:  30.3 MHz | Target:  12.0 MHz
+Clock: sclk(0)/fb           | Frequency:  35.8 MHz | Target:  12.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -353,5 +353,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 8.9 sec.
+I2076: Total run-time: 11.2 sec.
 

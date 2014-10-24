@@ -2,7 +2,7 @@
 --	Conversion of PSoC_2_Pi.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Oct 22 16:10:53 2014
+--	Thu Oct 23 11:26:19 2014
 --
 
 USE cypress.cypress.all;
@@ -12013,7 +12013,7 @@ analog_in_1:cy_psoc3_pins_v1_10
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"13020833333.3333",
+		period=>"1085069444.44444",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>\DEBUG_UART:Net_9\,

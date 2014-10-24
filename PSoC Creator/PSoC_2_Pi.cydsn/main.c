@@ -56,6 +56,15 @@ int main()
     {
         #ifdef LINX_H
             if(USBUART_DataIsReady()) {
+                /*
+                uint8 size;
+                size = USBUART_GetAll(LINX_Command);
+                LINX_Command[size] = '.';
+                ++size;
+                USBUART_PutData(LINX_Command, size);
+                */
+                
+                
                 if (LINX_GetCommand(LINX_Command)) {
                     LINX_ProcessCommand(LINX_Command, LINX_Response);
                     LINX_SendResponse(LINX_Response);
@@ -65,6 +74,7 @@ int main()
                         DEBUG_UART_PutString("Get command FAILED\r\n");
                     #endif
                 }
+                
             }
         #else
             uint32 input = ReadFrom_Pi();

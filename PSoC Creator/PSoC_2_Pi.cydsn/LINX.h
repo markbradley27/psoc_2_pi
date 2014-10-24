@@ -23,6 +23,10 @@
 #define LINX_DEBUG
     
 // Firmware-specific constants
+#define FIRMWARE_VER_MAJOR (0x00)
+#define FIRMWARE_VER_MINOR (0x00)
+#define FIRMWARE_VER_SUBMINOR (0x00)
+#define FIRMWARE_VER_BUILD (0x00)
 #define LINX_COMMAND_BUFFER_SIZE 16
 #define LINX_RESPONSE_BUFFER_SIZE 16
 #define LINX_RESPONSE_DATA_SIZE 4
@@ -51,7 +55,7 @@
     
 // LINX Device constants
 #define LINX_MAX_BAUD_RATE (9600u)
-#define LINX_DEVICE_FAMILY (0x00)
+#define LINX_DEVICE_FAMILY (0xFF)
 #define LINX_DEVICE_ID (0x00)
 
 void LINX_Initialize();

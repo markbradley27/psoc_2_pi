@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
   25:.\Generated_Source\PSoC5/DEBUG_UART_PM.c **** {
   26:.\Generated_Source\PSoC5/DEBUG_UART_PM.c ****     /* enableState - disabled */
   27:.\Generated_Source\PSoC5/DEBUG_UART_PM.c ****     0u,
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 2
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 2
 
 
   28:.\Generated_Source\PSoC5/DEBUG_UART_PM.c **** };
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
   70:.\Generated_Source\PSoC5/DEBUG_UART_PM.c ****             #if(DEBUG_UART_TXCLKGEN_DP)
   71:.\Generated_Source\PSoC5/DEBUG_UART_PM.c ****                 DEBUG_UART_backup.tx_clk_ctr = DEBUG_UART_TXBITCLKGEN_CTR_REG;
   72:.\Generated_Source\PSoC5/DEBUG_UART_PM.c ****                 DEBUG_UART_backup.tx_clk_compl = DEBUG_UART_TXBITCLKTX_COMPLETE_REG;
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 3
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 3
 
 
   73:.\Generated_Source\PSoC5/DEBUG_UART_PM.c ****             #else
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
   58              		.loc 1 111 0
   59              		.cfi_startproc
   60              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 4
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 4
 
 
   61              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
   81              		.thumb_func
   82              		.type	DEBUG_UART_Sleep, %function
   83              	DEBUG_UART_Sleep:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 5
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 5
 
 
   84              	.LFB2:
@@ -293,12 +293,12 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  182:.\Generated_Source\PSoC5/DEBUG_UART_PM.c ****     #else
  183:.\Generated_Source\PSoC5/DEBUG_UART_PM.c ****         if((DEBUG_UART_TXSTATUS_ACTL_REG  & DEBUG_UART_INT_ENABLE) !=0u)
   97              		.loc 1 183 0
-  98 0004 46F29853 		movw	r3, #26008
+  98 0004 46F29453 		movw	r3, #26004
   99 0008 C4F20003 		movt	r3, 16384
  100 000c 1B78     		ldrb	r3, [r3, #0]
  101 000e DBB2     		uxtb	r3, r3
  102 0010 03F01003 		and	r3, r3, #16
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 6
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 6
 
 
  103 0014 002B     		cmp	r3, #0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  206:.\Generated_Source\PSoC5/DEBUG_UART_PM.c **** * Parameters:
  207:.\Generated_Source\PSoC5/DEBUG_UART_PM.c **** *  None.
  208:.\Generated_Source\PSoC5/DEBUG_UART_PM.c **** *
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 7
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 7
 
 
  209:.\Generated_Source\PSoC5/DEBUG_UART_PM.c **** * Return:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  164              		.size	DEBUG_UART_Wakeup, .-DEBUG_UART_Wakeup
  165              		.text
  166              	.Letext0:
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 8
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 8
 
 
  167              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  221 0069 04       		.byte	0x4
  222 006a 07       		.byte	0x7
  223 006b 1A000000 		.4byte	.LASF8
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 9
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 9
 
 
  224 006f 04       		.uleb128 0x4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  278 00d5 64       		.byte	0x64
  279 00d6 A6000000 		.4byte	0xa6
  280 00da 08       		.uleb128 0x8
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 10
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 10
 
 
  281 00db 01       		.byte	0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  335 0004 0E       		.uleb128 0xe
  336 0005 13       		.uleb128 0x13
  337 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 11
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 11
 
 
  338 0007 03       		.uleb128 0x3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  392 003d 00       		.byte	0
  393 003e 00       		.byte	0
  394 003f 06       		.uleb128 0x6
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 12
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 12
 
 
  395 0040 13       		.uleb128 0x13
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  449 0077 00       		.byte	0
  450 0078 3F       		.uleb128 0x3f
  451 0079 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 13
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 13
 
 
  452 007a 03       		.uleb128 0x3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  506              	.LLST1:
  507 002c 00000000 		.4byte	.LFB1
  508 0030 02000000 		.4byte	.LCFI2
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 14
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 14
 
 
  509 0034 0200     		.2byte	0x2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  563 0006 00000000 		.4byte	.Ldebug_info0
  564 000a 04       		.byte	0x4
  565 000b 00       		.byte	0
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 15
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 15
 
 
  566 000c 0000     		.2byte	0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  602      52545F52 
  602      6573746F 
  602      7265436F 
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 16
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 16
 
 
  603              	.LASF12:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  624              	.LASF10:
  625 0120 646F7562 		.ascii	"double\000"
  625      6C6500
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 17
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 17
 
 
  626              	.LASF25:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 1
  646      6F725C50 
  647              	.LASF14:
  648 0210 73697A65 		.ascii	"sizetype\000"
-ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccO1Tk9R.s 			page 18
+ARM GAS  C:\Users\Mark\AppData\Local\Temp\ccTnBt0Z.s 			page 18
 
 
  648      74797065 

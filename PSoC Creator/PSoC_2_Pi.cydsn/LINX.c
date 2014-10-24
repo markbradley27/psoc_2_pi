@@ -37,9 +37,9 @@ bool LINX_GetCommand(uint8 *command) {
         DEBUG_UART_PutString("Getting new LINX command\r\n");
         uint8 debug_str[LINX_DEBUG_STR_SIZE];
         uint8 debug_str_len;
+        uint8 i;
     #endif
     
-    uint8 i;
     uint8 command_len;
     
     // Get command bytes
@@ -100,7 +100,7 @@ uint8 LINX_CalculateChecksum(uint8 *buffer, uint8 buffer_len) {
 
 void LINX_ProcessCommand(uint8 *command, uint8 *response) {
     #ifdef LINX_DEBUG
-        DEBUG_UART_PutString("\tProcessing LINX command\r\n");
+        DEBUG_UART_PutString("\tProcessing LINX command: ");
         uint8 debug_str[LINX_DEBUG_STR_SIZE];
         uint8 debug_str_len;
     #endif
@@ -115,27 +115,78 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
     switch(cmd) {
         // Sync
         case 0x00:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("Sync\r\n");
+            #endif
+            
             // Do nothing, will default to responding with L_OK status and no data
             break;
         
         // Get device ID
         case 0x03:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("Get device ID\r\n");
+            #endif
+            
             response_data_len = 2;
             response_data[0] = LINX_DEVICE_FAMILY;
             response_data[1] = LINX_DEVICE_ID;
             break;
         
+        // Get LINX API Version
+        case 0x04:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("Get API (Firmware) Version\r\n");
+            #endif
+            
+            response_data_len = 3;
+            response_data[0] = FIRMWARE_VER_MAJOR;
+            response_data[1] = FIRMWARE_VER_MINOR;
+            response_data[2] = FIRMWARE_VER_SUBMINOR;
+            response_data[3] = FIRMWARE_VER_BUILD;
+            break;
+        
         // Get max baud rate
         case 0x05:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("Get max baud rate\r\n");
+            #endif
+            
             response_data_len = 4;
             response_data[0] = (LINX_MAX_BAUD_RATE >> 24) & 0xFF;
             response_data[1] = (LINX_MAX_BAUD_RATE >> 16) & 0xFF;
             response_data[2] = (LINX_MAX_BAUD_RATE >> 8) & 0xFF;
             response_data[3] = LINX_MAX_BAUD_RATE & 0xFF;
             break;
+        
+        // Set Baud Rate
+        case 0x06:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("Set Baud Rate\r\n");
+            #endif
+            
+            // So far, this is a bit of a hack
+            // I'm not quite sure how the USBUART baud rate actually
+            // works, but it doesn't seem like it gets set the same
+            // way a normal UART's does
+            // For now, the firmware always responds saying it set
+            // the baud rate to the max
+            
+            // TODO: Follow up on possible typo in documentation
+            // Says status is 8th byte, but it's usually the 4th
+            response_data_len = 4;
+            response_data[0] = (LINX_MAX_BAUD_RATE >> 24) & 0xFF;
+            response_data[1] = (LINX_MAX_BAUD_RATE >> 16) & 0xFF;
+            response_data[2] = (LINX_MAX_BAUD_RATE >> 8) & 0xFF;
+            response_data[3] = LINX_MAX_BAUD_RATE & 0xFF;            
+            break;
             
         // Unsupported command
         default:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("Unsupported\r\n");
+            #endif
+            
             status = L_FUNCTION_NOT_SUPPORTED;
             break;
     }
