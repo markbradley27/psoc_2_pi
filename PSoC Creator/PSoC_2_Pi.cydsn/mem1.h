@@ -20,6 +20,7 @@
 #include "cyfitter.h"
 #include "cytypes.h"
 #include "CyLib.h"
+#include <stdbool.h>
     
 #define MAX_32          (0xFFFFFFFF)
 #define I2C_BUFFER_SIZE (4u)
@@ -60,7 +61,7 @@
 void WriteTo_Pi(uint32 dat);
 uint32 ReadFrom_Pi(void);
 
-void readData(uint8 addr, uint8 cmd, uint16 dat);
+bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result);
 
 void DELSIG_ADC_Control(uint8 cmd, uint16 val);
 void SAR0_ADC_Control(uint8 cmd, uint16 val);
@@ -79,8 +80,8 @@ void PWM_Control_4(uint8 cmd, uint16 val);
 void PWM_Control_5(uint8 cmd, uint16 val);
 void PWM_Control_6(uint8 cmd, uint16 val);
 void PWM_Control_7(uint8 cmd, uint16 val);
-void GPIO_Control(uint8 cmd, uint16 val);
-void Analog_Read(uint8 cmd, uint16 dat);
+bool GPIO_Control(uint8 cmd, uint16 val, uint32 *result);
+bool Analog_Read(uint8 cmd, uint16 dat, uint32 *result);
 
 
 #endif

@@ -56,15 +56,6 @@ int main()
     {
         #ifdef LINX_H
             if(USBUART_DataIsReady()) {
-                /*
-                uint8 size;
-                size = USBUART_GetAll(LINX_Command);
-                LINX_Command[size] = '.';
-                ++size;
-                USBUART_PutData(LINX_Command, size);
-                */
-                
-                
                 if (LINX_GetCommand(LINX_Command)) {
                     LINX_ProcessCommand(LINX_Command, LINX_Response);
                     LINX_SendResponse(LINX_Response);
@@ -84,8 +75,11 @@ int main()
             uint8 dat_lo = (input & 0x0000FF00)>>8;
             uint8 dat_hi = input & 0x000000FF;
             uint16 dat = (dat_hi<<8) | dat_lo;
+            uint32 result;
           
-            readData(addr,cmd,dat); 
+            if (readData(addr,cmd,dat,&result)) {
+                WriteTo_Pi(result);
+            }
         #endif
         
         /*          Add your code here            */

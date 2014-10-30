@@ -32,8 +32,10 @@
 *
 *****************************************************************************************************/
 
-void readData(uint8 addr, uint8 cmd, uint16 dat)
+bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 {
+    bool return_flag = false;
+    
     switch(addr)
     {
         //delsig_adc
@@ -117,14 +119,16 @@ void readData(uint8 addr, uint8 cmd, uint16 dat)
         #endif
         
         #ifdef CY_ADC_SAR_Seq_1_H
-            case ANALOG_IN_REGISTER: Analog_Read(cmd, dat); break;
+            case ANALOG_IN_REGISTER: return_flag = Analog_Read(cmd, dat, result); break;
         #endif
         
-        case GPIO_REGISTER: GPIO_Control(cmd,dat); break;
+        case GPIO_REGISTER: return_flag = GPIO_Control(cmd,dat,result); break;
         
         case RESET_ADDRESS: CySoftwareReset(); break;
         
-    }    
+    }
+    
+    return return_flag;
 }
 
 /****************************************************************************************//**
@@ -1018,7 +1022,7 @@ void readData(uint8 addr, uint8 cmd, uint16 dat)
         }
     #endif
     
-    void GPIO_Control(uint8 cmd, uint16 dat)
+    bool GPIO_Control(uint8 cmd, uint16 dat, uint32 *result)
     {
         uint8 val = dat&0x0001;
         uint8 pin = (dat>>1)&0x0007;
@@ -1027,10 +1031,15 @@ void readData(uint8 addr, uint8 cmd, uint16 dat)
         
         uint16 config_MASK = 0x00;
         
-        uint32 result = MAX_32; 
+        *result = MAX_32; 
         bool return_flag = 0;
         uint8 new_reg_status = 0;
         uint8 prev_reg_status = 0;
+        
+        uint8 debug_str[60];
+        uint8 debug_str_len;
+        debug_str_len = sprintf(debug_str, "\t\t\tcmd: %u, val: %u, pin: %u, port: %u, config: %u\r\n", cmd, val, pin, port, config);
+        DEBUG_UART_PutArray(debug_str, debug_str_len);
         
         switch(cmd)
                 {
@@ -1039,19 +1048,19 @@ void readData(uint8 addr, uint8 cmd, uint16 dat)
                             switch(port)
                             {
                                 #ifdef CY_STATUS_REG_Port_2_Status_H
-                                    case 0x02: result = Port_2_Status_Read(); return_flag = 1; break;
+                                    case 0x02: *result = Port_2_Status_Read(); return_flag = 1; break;
                                 #endif
                                 #ifdef CY_STATUS_REG_Port_4_Status_H
-                                    case 0x04: result = Port_4_Status_Read(); return_flag = 1; break;
+                                    case 0x04: *result = Port_4_Status_Read(); return_flag = 1; break;
                                 #endif
                                 #ifdef CY_STATUS_REG_Port_5_Status_H
-                                    case 0x05: result = Port_5_Status_Read(); return_flag = 1; break;
+                                    case 0x05: *result = Port_5_Status_Read(); return_flag = 1; break;
                                 #endif
                                 #ifdef CY_STATUS_REG_Port_6_Status_H
-                                    case 0x06: result = Port_6_Status_Read(); return_flag = 1; break;
+                                    case 0x06: *result = Port_6_Status_Read(); return_flag = 1; break;
                                 #endif
                                 #ifdef CY_STATUS_REG_Port_12_Status_H
-                                    case 0x0C: result = Port_12_Status_Read(); return_flag = 1; break;
+                                    case 0x0C: *result = Port_12_Status_Read(); return_flag = 1; break;
                                 #endif
                              }
                             break;
@@ -1277,32 +1286,28 @@ void readData(uint8 addr, uint8 cmd, uint16 dat)
                 
                 }
                 
-                if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                } 
-        
-        
+                return return_flag;
     }
     
     #ifdef CY_ADC_SAR_Seq_1_H
-        void Analog_Read(uint8 cmd, uint16 dat)
+        bool Analog_Read(uint8 cmd, uint16 dat, uint32 *result)
         {
-            uint16 result;
+            bool return_flag = false;
+            
             ADC_SAR_Seq_1_Start();
             if (cmd == 0x00 || cmd == 0x01)
             {
                 ADC_SAR_Seq_1_StartConvert();
                 ADC_SAR_Seq_1_IsEndConversion(ADC_SAR_Seq_1_WAIT_FOR_RESULT);
-                result = ADC_SAR_Seq_1_GetResult16(dat);
+                *result = ADC_SAR_Seq_1_GetResult16(dat);
                 ADC_SAR_Seq_1_StopConvert();
                 ADC_SAR_Seq_1_Stop();
             }
             
             switch(cmd)
             {
-                case 0x00: WriteTo_Pi(result); break;
-                case 0x01: WriteTo_Pi(ADC_SAR_Seq_1_CountsTo_uVolts(result)); break;
+                case 0x00: return_flag = true; break;
+                case 0x01: *result = ADC_SAR_Seq_1_CountsTo_uVolts(*result); return_flag = true; break;
                 case 0x02: ADC_SAR_Seq_1_SetOffset(dat); ADC_SAR_Seq_1_Stop(); break;
                 case 0x03: 
                     switch(dat)
@@ -1315,7 +1320,8 @@ void readData(uint8 addr, uint8 cmd, uint16 dat)
                     ADC_SAR_Seq_1_Stop();
                     break;
             }
-            
+
+            return return_flag;
         }
     #endif
 
