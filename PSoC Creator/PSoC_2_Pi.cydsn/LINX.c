@@ -417,6 +417,39 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 DEBUG_UART_PutString("Get PWM Channels\r\n");
             #endif
             
+            #ifdef CY_PWM_PWM_1_H
+                response_data[response_data_len] = 0x00;
+                ++response_data_len;
+            #endif
+            #ifdef CY_PWM_PWM_2_H
+                response_data[response_data_len] = 0x01;
+                ++response_data_len;
+            #endif
+            #ifdef CY_PWM_PWM_3_H
+                response_data[response_data_len] = 0x02;
+                ++response_data_len;
+            #endif
+            #ifdef CY_PWM_PWM_4_H
+                response_data[response_data_len] = 0x03;
+                ++response_data_len;
+            #endif
+            #ifdef CY_PWM_PWM_5_H
+                response_data[response_data_len] = 0x04;
+                ++response_data_len;
+            #endif
+            #ifdef CY_PWM_PWM_6_H
+                response_data[response_data_len] = 0x05;
+                ++response_data_len;
+            #endif
+            #ifdef CY_PWM_PWM_7_H
+                response_data[response_data_len] = 0x06;
+                ++response_data_len;
+            #endif
+            #ifdef CY_PWM_PWM_8_H
+                response_data[response_data_len] = 0x07;
+                ++response_data_len;
+            #endif
+            
             break;
             
         // Get QE Channels
@@ -684,6 +717,45 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 uint16 dat = value;                 // Set value
                 uint32 result = 0x00;
                 readData(addr, cmd, dat, &result);
+            }
+            
+            break;
+            
+        // PWM Set Duty Cycle
+        case 0x83:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("PWM Set Duty Cycle\r\n");
+            #endif
+            
+            for (i = 0; i < command[6]; ++i) {
+                uint8 pin = command[7 + i];
+                uint8 value = command[7 + command[6] + i];
+                
+                #ifdef LINX_DEBUG
+                    debug_str_len = sprintf(debug_str,"\t\tPin: %u Value: %u\r\n", pin, value);
+                    DEBUG_UART_PutArray(debug_str, debug_str_len);
+                #endif
+                
+                // TODO: Softcode with #defines?
+                uint16 cmp = (uint32)value * (uint32)60000 / (uint32)255;
+                uint8 addr;
+                uint32 result;
+                switch(pin) {
+                    case 0: addr = PWM_REGISTER0; break;
+                    case 1: addr = PWM_REGISTER1; break;
+                    case 2: addr = PWM_REGISTER2; break;
+                    case 3: addr = PWM_REGISTER3; break;
+                    case 4: addr = PWM_REGISTER4; break;
+                    case 5: addr = PWM_REGISTER5; break;
+                    case 6: addr = PWM_REGISTER6; break;
+                    case 7: addr = PWM_REGISTER7; break;
+                }
+                
+                // Start PWM channel
+                readData(addr, 0x00, cmp, &result);
+                
+                // Set PWM compare value
+                readData(addr, 0x0E, cmp, &result);
             }
             
             break;
