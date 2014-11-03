@@ -126,6 +126,11 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
     uint8 response_data[LINX_RESPONSE_DATA_BUFFER_SIZE];
     uint8 response_data_len = 0;
     
+    // TODO: Not great that these are declared even whent they're not used, switches are weird though...
+    // TODO: Switch to snake_case when testing read N channels
+    uint8 responseBitsRemaining;
+    uint8 dataBitsRemaining;
+    
     switch(cmd) {
         // Sync
         case 0x00:
@@ -453,10 +458,15 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             break;
             
         // Get QE Channels
-        // Incomplete
+        // Untested
         case 0x0C:
             #ifdef LINX_DEBUG
                 DEBUG_UART_PutString("Get QE Channels\r\n");
+            #endif
+            
+            #ifdef CY_QUADRATURE_DECODER_QuadDec_0_H
+                response_data[response_data_len] = 0x00;
+                ++response_data_len;
             #endif
             
             break;
@@ -650,8 +660,8 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             response_data_len = 1;
             response_data[0] = LINX_AI_BITS;
             
-            uint8 responseBitsRemaining = 8;
-            uint8 dataBitsRemaining = LINX_AI_BITS;
+            responseBitsRemaining = 8;
+            dataBitsRemaining = LINX_AI_BITS;
             response_data[response_data_len] = 0x00;
             
             for (i = 0; i < (command[1] - 7); ++i) {
@@ -758,6 +768,66 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 readData(addr, 0x0E, cmp, &result);
             }
             
+            break;
+            
+        // QE Read
+        // Untested
+        case 0xA2:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("QE Read\r\n");
+            #endif
+            
+            response_data_len = 1;
+            response_data[0] = LINX_QE_BITS;
+            
+            responseBitsRemaining = 8;
+            dataBitsRemaining = LINX_QE_BITS;
+            response_data[response_data_len] = 0x00;
+            
+            for (i = 0; i < (command[1] - 7); ++i) {
+                uint8 channel = command[6 + i];
+                
+                #ifdef LINX_DEBUG
+                    debug_str_len = sprintf(debug_str, "\t\t\tChannel: %u\r\n", channel);
+                    DEBUG_UART_PutArray(debug_str, debug_str_len);
+                #endif
+                
+                // Read QE
+                int32 result = QuadDec_0_GetCounter();
+                // TODO: Remove, debugging
+                result = -29;
+                
+                #ifdef LINX_DEBUG
+                    debug_str_len = sprintf(debug_str, "\t\t\tResult: %x\r\n", result);
+                    DEBUG_UART_PutArray(debug_str, debug_str_len);
+                #endif
+                
+                // Pack response bits
+                while (dataBitsRemaining > 0) {
+                    response_data[response_data_len] |= ((result >> (LINX_QE_BITS - dataBitsRemaining)) << (8 - responseBitsRemaining));
+                    
+                    if (responseBitsRemaining > dataBitsRemaining) {
+                        responseBitsRemaining -= dataBitsRemaining;
+                        dataBitsRemaining = 0;
+                    }
+                    else {
+                        dataBitsRemaining = dataBitsRemaining - responseBitsRemaining;
+                        // TODO: I don't think this is right...
+                        if(dataBitsRemaining > 0) {
+                            ++response_data_len;
+                            response_data[response_data_len] = 0x00;
+                        }
+                        responseBitsRemaining = 8;
+                        
+                        debug_str_len = sprintf(debug_str, "\t\t\t\tdataBitsRemaining: %u, last packed response byte: %u\r\n", dataBitsRemaining, response_data[response_data_len-1]);
+                        DEBUG_UART_PutArray(debug_str, debug_str_len);
+                    }
+                }
+            }
+            
+            //response_data_len = responseBitsRemaining == 0 ? response_data_len + 1 : response_data_len + 2;
+            if (responseBitsRemaining > 0) { ++response_data_len; }
+
             break;
             
         // Unsupported command
