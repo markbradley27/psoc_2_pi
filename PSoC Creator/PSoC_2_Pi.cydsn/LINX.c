@@ -44,6 +44,11 @@ void LINX_Initialize() {
     #ifdef CY_VDAC8_VDAC8_2_H
         readData(VDAC1_CONTROL, 0x00, 0x00, 0x00);
     #endif
+    
+    // Start QE
+    #ifdef CY_QUADRATURE_DECODER_QuadDec_0_H
+        QuadDec_0_Start();
+    #endif
 }
 
 bool LINX_GetCommand(uint8 *command) {
@@ -62,7 +67,7 @@ bool LINX_GetCommand(uint8 *command) {
     #ifdef LINX_DEBUG
         DEBUG_UART_PutString("Received command:");
         for (i = 0; i < command_len; ++i) {
-            debug_str_len = sprintf(debug_str, " %x", command[i]);
+            debug_str_len = sprintf((char *)debug_str, " %x", command[i]);
             DEBUG_UART_PutArray(debug_str, debug_str_len);
         }
         DEBUG_UART_PutString("\r\n");
@@ -547,7 +552,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
             // TODO: Maybe use a define for the name?
             // Not sure how that works with strings
-            response_data_len = sprintf(response_data, "RPiSoC");
+            response_data_len = sprintf((char *)response_data, "RPiSoC");
             
             break;
             
@@ -564,11 +569,11 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 bool value = (command[7 + command[6] + (i / 8)] >> (i % 8)) & 0x01;
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str, "\t\tPort: %u", port);
+                    debug_str_len = sprintf((char *)debug_str, "\t\tPort: %u", port);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
-                    debug_str_len = sprintf(debug_str, " Pin: %u", pin);
+                    debug_str_len = sprintf((char *)debug_str, " Pin: %u", pin);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
-                    debug_str_len = sprintf(debug_str, " Value: %u\r\n", value);
+                    debug_str_len = sprintf((char *)debug_str, " Value: %u\r\n", value);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
@@ -602,9 +607,9 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 uint8 pin = command[6 + i] % 10;
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str, "\t\tPort: %u", port);
+                    debug_str_len = sprintf((char *)debug_str, "\t\tPort: %u", port);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
-                    debug_str_len = sprintf(debug_str, " Pin: %u\r\n", pin);
+                    debug_str_len = sprintf((char *)debug_str, " Pin: %u\r\n", pin);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
@@ -623,7 +628,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 readData(addr, cmd, dat, &result);
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str, "\t\tResult: %x\r\n", result);
+                    debug_str_len = sprintf((char *)debug_str, "\t\tResult: %x\r\n", (unsigned int)result);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
@@ -668,7 +673,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 uint8 pin = command[6 + i];
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str, "\t\t\tPin: %u\r\n", pin);
+                    debug_str_len = sprintf((char *)debug_str, "\t\t\tPin: %u\r\n", pin);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
@@ -680,7 +685,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 readData(addr, cmd, dat, &result);
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str, "\t\t\tResult: %x\r\n", result);
+                    debug_str_len = sprintf((char *)debug_str, "\t\t\tResult: %x\r\n", (unsigned int)result);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
@@ -707,7 +712,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
         // Analog write
         // TODO: generalize for varying-bit values, add logic for value unpacking if not using
-        // an 8-bit DAC, or just make sure the hardware doesn't support higher than 8 bits
+        // an 8-bit DAC, or just make sure the hardware doesn't support higher than 8 bits and throw an error if more than 8 bits are sent
         case 0x65:
             #ifdef LINX_DEBUG
                 DEBUG_UART_PutString("Analog write\r\n");
@@ -718,7 +723,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 uint8 value = command[7 + command[6] + i];
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str, "\t\tPin: %u Value: %u\r\n", pin, value);
+                    debug_str_len = sprintf((char *)debug_str, "\t\tPin: %u Value: %u\r\n", pin, value);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
@@ -742,7 +747,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 uint8 value = command[7 + command[6] + i];
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str,"\t\tPin: %u Value: %u\r\n", pin, value);
+                    debug_str_len = sprintf((char *)debug_str,"\t\tPin: %u Value: %u\r\n", pin, value);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
@@ -771,7 +776,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             break;
             
         // QE Read
-        // Untested
+        // Bug: Only works in debug mode
         case 0xA2:
             #ifdef LINX_DEBUG
                 DEBUG_UART_PutString("QE Read\r\n");
@@ -788,21 +793,21 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 uint8 channel = command[6 + i];
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str, "\t\t\tChannel: %u\r\n", channel);
+                    debug_str_len = sprintf((char *)debug_str, "\t\t\tChannel: %u\r\n", channel);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
                 // Read QE
+                // TODO: Actually pay attention to the channel
                 int32 result = QuadDec_0_GetCounter();
-                // TODO: Remove, debugging
-                result = -29;
                 
                 #ifdef LINX_DEBUG
-                    debug_str_len = sprintf(debug_str, "\t\t\tResult: %x\r\n", result);
+                    debug_str_len = sprintf((char *)debug_str, "\t\t\tResult: %x\r\n", (unsigned int)result);
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
                 // Pack response bits
+                // TODO: Break this out into a helper function
                 while (dataBitsRemaining > 0) {
                     response_data[response_data_len] |= ((result >> (LINX_QE_BITS - dataBitsRemaining)) << (8 - responseBitsRemaining));
                     
@@ -819,8 +824,10 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                         }
                         responseBitsRemaining = 8;
                         
-                        debug_str_len = sprintf(debug_str, "\t\t\t\tdataBitsRemaining: %u, last packed response byte: %u\r\n", dataBitsRemaining, response_data[response_data_len-1]);
-                        DEBUG_UART_PutArray(debug_str, debug_str_len);
+                        #ifdef LINX_DEBUG
+                            debug_str_len = sprintf((char *)debug_str, "\t\t\t\tdataBitsRemaining: %u, last packed response byte: %u\r\n", dataBitsRemaining, response_data[response_data_len-1]);
+                            DEBUG_UART_PutArray(debug_str, debug_str_len);
+                        #endif
                     }
                 }
             }
@@ -854,7 +861,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
     #ifdef LINX_DEBUG
         DEBUG_UART_PutString("\tGenerated response:");
         for (i = 0; i < response[1]; ++i) {
-            debug_str_len = sprintf(debug_str, " %x", response[i]);
+            debug_str_len = sprintf((char *)debug_str, " %x", response[i]);
             DEBUG_UART_PutArray(debug_str, debug_str_len);
         }
         DEBUG_UART_PutString("\r\n");
