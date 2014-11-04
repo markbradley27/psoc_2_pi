@@ -774,6 +774,28 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             }
             
             break;
+                        
+        // QE Reset
+        // Untested
+        case 0xA0:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("QE Reset\r\n");
+            #endif
+            
+            for (i = 0; i < command[6]; ++i) {
+                uint8 channel = command[7 + i];
+                
+                #ifdef LINX_DEBUG
+                    debug_str_len = sprintf((char *)debug_str, "\t\t\tChannel: %u\r\n", channel);
+                    DEBUG_UART_PutArray(debug_str, debug_str_len);
+                #endif
+                
+                // Set counter value to 0
+                // TODO: Actually pay attention to the channel
+                QuadDec_0_SetCounter(0);
+            }
+            
+            break;
             
         // QE Read
         // Bug: Only works in debug mode
