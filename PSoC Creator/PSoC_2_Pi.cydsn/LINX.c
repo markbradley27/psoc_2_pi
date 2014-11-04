@@ -791,8 +791,13 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 #endif
                 
                 // Set counter value to 0
-                // TODO: Actually pay attention to the channel
-                QuadDec_0_SetCounter(0);
+                switch(channel) {
+                    #ifdef CY_QUADRATURE_DECODER_QuadDec_0_H
+                        case 0x00: QuadDec_0_SetCounter(0); break;
+                    #endif
+                    default:
+                        status = L_UNKNOWN_ERROR; break;
+                }
             }
             
             break;
@@ -820,8 +825,14 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 #endif
                 
                 // Read QE
-                // TODO: Actually pay attention to the channel
-                int32 result = QuadDec_0_GetCounter();
+                int32 result;
+                switch(channel) {
+                    #ifdef CY_QUADRATURE_DECODER_QuadDec_0_H
+                        case 0x00: result = QuadDec_0_GetCounter(); break;
+                    #endif
+                    default:
+                        status = L_UNKNOWN_ERROR; break;
+                }
                 
                 #ifdef LINX_DEBUG
                     debug_str_len = sprintf((char *)debug_str, "\t\t\tResult: %x\r\n", (unsigned int)result);
