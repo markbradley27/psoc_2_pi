@@ -25,7 +25,6 @@
 # Ignore the generated source directories.
 
 codegentemp
-CortexM3
 Generated_Source
 
 # Add back the bootloader files
@@ -37,4 +36,3 @@ Generated_Source
 !*.md
 !*.txt
 !*.docx
-!.gitignore

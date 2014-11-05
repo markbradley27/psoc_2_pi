@@ -751,7 +751,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
-                // TODO: Softcode with #defines?
+                // TODO: Softcode with #defines? Actually cypress API calls
                 uint16 cmp = (uint32)value * (uint32)60000 / (uint32)255;
                 uint8 addr;
                 uint32 result;
