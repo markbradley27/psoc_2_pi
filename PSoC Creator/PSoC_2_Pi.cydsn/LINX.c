@@ -125,6 +125,32 @@ uint8 LINX_CalculateChecksum(uint8 *buffer, uint8 buffer_len) {
     return checksum;
 }
 
+// Given some response data, a value to pack, and some parameters
+// describing what's been packed so far, packs the new value into
+// the response
+// Keep in mind, this function increases the value of response_data_len
+// as it goes, but outside of this function, you'll need to make sure you
+// increment response_data_len before shipping off the response if
+// response_bits_remaining is less than 8
+void LINX_PackResult(uint8 *response_data, uint8 *response_data_len, uint8 bits_per_value, uint8 *response_bits_remaining, uint32 value) {
+    uint8 value_bits_remaining = bits_per_value;
+    
+    while(value_bits_remaining > 0) {
+        response_data[*response_data_len] |= ((value >> (bits_per_value - value_bits_remaining)) << (8 - *response_bits_remaining));
+    
+        if (*response_bits_remaining > value_bits_remaining) {
+            *response_bits_remaining -= value_bits_remaining;
+            value_bits_remaining = 0;
+        }
+        else {
+            value_bits_remaining -= *response_bits_remaining;
+            *response_bits_remaining = 8;
+            ++(*response_data_len);
+            response_data[*response_data_len] = 0x00;
+        }
+    }
+}
+
 // Given a command, performs the commanded action and builds the
 // corresponding response
 void LINX_ProcessCommand(uint8 *command, uint8 *response) {
@@ -142,7 +168,6 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
     uint8 response_data[LINX_RESPONSE_DATA_BUFFER_SIZE];
     uint8 response_data_len = 0;
     uint8 response_bits_remaining;
-    uint8 data_bits_remaining;
     int32 result;
     
     // Execute code that corresponds to the command
@@ -681,7 +706,6 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
             // Initialize byte packing counters
             response_bits_remaining = 8;
-            data_bits_remaining = LINX_AI_BITS;
             response_data[response_data_len] = 0x00;
             
             // For each pin
@@ -706,24 +730,14 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                     DEBUG_UART_PutArray(debug_str, debug_str_len);
                 #endif
                 
-                // Pack response bits
-                while (data_bits_remaining > 0) {
-                    response_data[response_data_len] |= ((result >> (LINX_AI_BITS - data_bits_remaining)) << (8 - response_bits_remaining));
-                    
-                    if (response_bits_remaining > data_bits_remaining) {
-                        response_bits_remaining -= data_bits_remaining;
-                        data_bits_remaining = 0;
-                    }
-                    else {
-                        data_bits_remaining = data_bits_remaining - response_bits_remaining;
-                        ++response_data_len;
-                        response_bits_remaining = 8;
-                        response_data[response_data_len] = 0x00;
-                    }
-                }
+                // Pack response
+                LINX_PackResult(response_data, &response_data_len, LINX_AI_BITS, &response_bits_remaining, result);
             }
             
-            response_data_len = response_bits_remaining == 0 ? response_data_len + 1 : response_data_len + 2;
+            // Take care of response_data_len
+            if (response_bits_remaining > 0) {
+                ++response_data_len;
+            }
             
             break;
             
@@ -836,7 +850,6 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
             // Initialize byte packing variables
             response_bits_remaining = 8;
-            data_bits_remaining = LINX_QE_BITS;
             response_data[response_data_len] = 0x00;
             
             // For each channel
@@ -851,7 +864,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 // Read QE
                 switch(channel) {
                     #ifdef CY_QUADRATURE_DECODER_QuadDec_1_H
-                        case 0x00: result = QuadDec_1_GetCounter(); break;
+                        case 0x01: result = QuadDec_1_GetCounter(); break;
                     #endif
                     default:
                         status = L_UNKNOWN_ERROR; break;
@@ -863,33 +876,13 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 #endif
                 
                 // Pack response bits
-                // TODO: Break this out into a helper function
-                while (data_bits_remaining > 0) {
-                    response_data[response_data_len] |= ((result >> (LINX_QE_BITS - data_bits_remaining)) << (8 - response_bits_remaining));
-                    
-                    if (response_bits_remaining > data_bits_remaining) {
-                        response_bits_remaining -= data_bits_remaining;
-                        data_bits_remaining = 0;
-                    }
-                    else {
-                        data_bits_remaining = data_bits_remaining - response_bits_remaining;
-                        // TODO: I don't think this is right...
-                        if(data_bits_remaining > 0) {
-                            ++response_data_len;
-                            response_data[response_data_len] = 0x00;
-                        }
-                        response_bits_remaining = 8;
-                        
-                        #ifdef LINX_DEBUG
-                            debug_str_len = sprintf((char *)debug_str, "\t\t\t\tdataBitsRemaining: %u, last packed response byte: %u\r\n", data_bits_remaining, response_data[response_data_len-1]);
-                            DEBUG_UART_PutArray(debug_str, debug_str_len);
-                        #endif
-                    }
-                }
+                LINX_PackResult(response_data, &response_data_len, LINX_QE_BITS, &response_bits_remaining, result);
             }
             
-            //response_data_len = responseBitsRemaining == 0 ? response_data_len + 1 : response_data_len + 2;
-            if (response_bits_remaining > 0) { ++response_data_len; }
+            // Take care of response_data_len
+            if (response_bits_remaining > 0) {
+                ++response_data_len;
+            }
 
             break;
             
