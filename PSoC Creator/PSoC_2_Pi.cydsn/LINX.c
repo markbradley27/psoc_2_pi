@@ -839,7 +839,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             break;
             
         // QE Read
-        case 0xA2:
+        case 0xA1:
             #ifdef LINX_DEBUG
                 DEBUG_UART_PutString("QE Read\r\n");
             #endif
