@@ -59,7 +59,7 @@
 #define LINX_DEVICE_ID (0x00)
 #define LINX_AI_REF_UVOLTS (5000000u)
 #define LINX_AI_BITS (12u)
-#define LINX_QE_BITS (16u)      // TODO: Is there a quad decoder API call that returns this? If it were changed in hardware, it would have to be changed here too
+#define LINX_QE_BITS (16u)
 
 void LINX_Initialize();
 bool LINX_GetCommand(uint8 *command);
