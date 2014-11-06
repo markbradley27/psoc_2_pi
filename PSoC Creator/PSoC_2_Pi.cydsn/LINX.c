@@ -49,8 +49,8 @@ void LINX_Initialize() {
     #endif
     
     // Start QE
-    #ifdef CY_QUADRATURE_DECODER_QuadDec_0_H
-        QuadDec_0_Start();
+    #ifdef CY_QUADRATURE_DECODER_QuadDec_1_H
+        QuadDec_1_Start();
     #endif
 }
 
@@ -406,7 +406,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             // TODO: 1-index
             #ifdef CY_ADC_SAR_Seq_1_H
                 response_data_len = 10;
-                for (i = 0; i < 10; ++i) {
+                for (i = 1; i < 11; ++i) {
                     response_data[i] = i;
                 }
             #endif
@@ -422,12 +422,12 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             // TODO: For now, only supports the two VDACs, could potentially add more DAC devices
             // TODO: 1-index
             #ifdef CY_VDAC8_VDAC8_1_H
-                response_data[response_data_len] = 0;
+                response_data[response_data_len] = 1;
                 ++response_data_len;
             #endif
             
             #ifdef CY_VDAC8_VDAC8_2_H
-                response_data[response_data_len] = 1;
+                response_data[response_data_len] = 2;
                 ++response_data_len;
             #endif
             
@@ -441,35 +441,35 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
             // TODO: 1-index
             #ifdef CY_PWM_PWM_1_H
-                response_data[response_data_len] = 0x00;
+                response_data[response_data_len] = 1;
                 ++response_data_len;
             #endif
             #ifdef CY_PWM_PWM_2_H
-                response_data[response_data_len] = 0x01;
+                response_data[response_data_len] = 2;
                 ++response_data_len;
             #endif
             #ifdef CY_PWM_PWM_3_H
-                response_data[response_data_len] = 0x02;
+                response_data[response_data_len] = 3;
                 ++response_data_len;
             #endif
             #ifdef CY_PWM_PWM_4_H
-                response_data[response_data_len] = 0x03;
+                response_data[response_data_len] = 4;
                 ++response_data_len;
             #endif
             #ifdef CY_PWM_PWM_5_H
-                response_data[response_data_len] = 0x04;
+                response_data[response_data_len] = 5;
                 ++response_data_len;
             #endif
             #ifdef CY_PWM_PWM_6_H
-                response_data[response_data_len] = 0x05;
+                response_data[response_data_len] = 6;
                 ++response_data_len;
             #endif
             #ifdef CY_PWM_PWM_7_H
-                response_data[response_data_len] = 0x06;
+                response_data[response_data_len] = 7;
                 ++response_data_len;
             #endif
             #ifdef CY_PWM_PWM_8_H
-                response_data[response_data_len] = 0x07;
+                response_data[response_data_len] = 8;
                 ++response_data_len;
             #endif
             
@@ -481,8 +481,8 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 DEBUG_UART_PutString("Get QE Channels\r\n");
             #endif
             
-            #ifdef CY_QUADRATURE_DECODER_QuadDec_0_H
-                response_data[response_data_len] = 0;
+            #ifdef CY_QUADRATURE_DECODER_QuadDec_1_H
+                response_data[response_data_len] = 1;
                 ++response_data_len;
             #endif
             
@@ -686,7 +686,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
             // For each pin
             for (i = 0; i < (command[1] - 7); ++i) {
-                uint8 pin = command[6 + i];
+                uint8 pin = command[6 + i] - 1;
                 
                 #ifdef LINX_DEBUG
                     debug_str_len = sprintf((char *)debug_str, "\t\t\tPin: %u\r\n", pin);
@@ -737,7 +737,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
             // For each pin
             for (i = 0; i < command[6]; ++i) {
-                uint8 pin = command[7 + i];
+                uint8 pin = command[7 + i] - 1;
                 uint8 value = command[7 + command[6] + i];
                 
                 #ifdef LINX_DEBUG
@@ -763,7 +763,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
             // For each pin
             for (i = 0; i < command[6]; ++i) {
-                uint8 pin = command[7 + i];
+                uint8 pin = command[7 + i] - 1;
                 uint8 value = command[7 + command[6] + i];
                 
                 #ifdef LINX_DEBUG
@@ -814,8 +814,8 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 
                 // Set counter value to 0
                 switch(channel) {
-                    #ifdef CY_QUADRATURE_DECODER_QuadDec_0_H
-                        case 0x00: QuadDec_0_SetCounter(0); break;
+                    #ifdef CY_QUADRATURE_DECODER_QuadDec_1_H
+                        case 0x00: QuadDec_1_SetCounter(0); break;
                     #endif
                     default:
                         status = L_UNKNOWN_ERROR; break;
@@ -850,8 +850,8 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 
                 // Read QE
                 switch(channel) {
-                    #ifdef CY_QUADRATURE_DECODER_QuadDec_0_H
-                        case 0x00: result = QuadDec_0_GetCounter(); break;
+                    #ifdef CY_QUADRATURE_DECODER_QuadDec_1_H
+                        case 0x00: result = QuadDec_1_GetCounter(); break;
                     #endif
                     default:
                         status = L_UNKNOWN_ERROR; break;
