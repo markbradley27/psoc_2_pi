@@ -1036,11 +1036,6 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
         uint8 new_reg_status = 0;
         uint8 prev_reg_status = 0;
         
-        uint8 debug_str[60];
-        uint8 debug_str_len;
-        debug_str_len = sprintf(debug_str, "\t\t\tcmd: %u, val: %u, pin: %u, port: %u, config: %u\r\n", cmd, val, pin, port, config);
-        DEBUG_UART_PutArray(debug_str, debug_str_len);
-        
         switch(cmd)
                 {
                     
