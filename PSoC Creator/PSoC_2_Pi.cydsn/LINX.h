@@ -64,6 +64,7 @@
 void LINX_Initialize();
 bool LINX_GetCommand(uint8 *command);
 uint8 LINX_CalculateChecksum(uint8 *command, uint8 command_len);
+void LINX_PackResult(uint8 *response_data, uint8 *response_data_len, uint8 bits_per_value, uint8 *response_bits_remaining, uint32 value);
 void LINX_ProcessCommand(uint8 *command, uint8 *response);
 void LINX_SendResponse(uint8 *response);
     
