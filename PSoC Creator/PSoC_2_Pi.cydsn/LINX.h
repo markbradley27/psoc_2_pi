@@ -57,6 +57,7 @@
 #define LINX_MAX_BAUD_RATE (9600u)
 #define LINX_DEVICE_FAMILY (0xFF)
 #define LINX_DEVICE_ID (0x00)
+#define LINX_DEVICE_NAME "RPiSoC"
 #define LINX_AI_REF_UVOLTS (5000000u)
 #define LINX_AI_BITS (12u)
 #define LINX_QE_BITS (16u)

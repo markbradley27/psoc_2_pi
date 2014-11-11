@@ -428,7 +428,6 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             #endif
             
             // TODO: For now, only supports the sequenced SAR ADC, could potentially add more ADC devices
-            // TODO: 1-index
             #ifdef CY_ADC_SAR_Seq_1_H
                 response_data_len = 10;
                 for (i = 1; i < 11; ++i) {
@@ -445,7 +444,6 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             #endif
             
             // TODO: For now, only supports the two VDACs, could potentially add more DAC devices
-            // TODO: 1-index
             #ifdef CY_VDAC8_VDAC8_1_H
                 response_data[response_data_len] = 1;
                 ++response_data_len;
@@ -585,10 +583,8 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             #ifdef LINX_DEBUG
                 DEBUG_UART_PutString("Get device name\r\n");
             #endif
-            
-            // TODO: Maybe use a define for the name?
-            //       Not sure how that works with strings
-            response_data_len = sprintf((char *)response_data, "RPiSoC");
+
+            response_data_len = sprintf((char *)response_data, LINX_DEVICE_NAME);
             
             break;
             
