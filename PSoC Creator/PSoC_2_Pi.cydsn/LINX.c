@@ -19,6 +19,7 @@
 
 #include <project.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "mem1.h"
 
 // Initializes all hardware devices the LINX protocol needs,
@@ -527,6 +528,11 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 DEBUG_UART_PutString("Get I2C Channels\r\n");
             #endif
             
+            #ifdef CY_I2C_I2C_1_H
+                response_data[response_data_len] = 1;
+                ++response_data_len;
+            #endif
+            
             break;
             
         // Get SPI Channels
@@ -880,6 +886,83 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 ++response_data_len;
             }
 
+            break;
+            
+        // I2C Open Master
+        case 0xE0:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("I2C Open Master\r\n");
+            #endif
+            
+            switch(command[6]) {
+                // TODO: This should check if it exists and is set as a master
+                #ifdef CY_I2C_I2C_1_H
+                    case 0x01: I2C_1_Start(); break;
+                #endif
+                
+                default:
+                    status = L_UNKNOWN_ERROR; break;
+            }
+            
+            break;
+            
+        // I2C Write
+        case 0xE2:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("I2C Write\r\n");
+            #endif
+            
+            // For now, assumes that this is a single master bus, which is probably legit
+            // TODO: Support EOF repeated start 'n stuff
+            switch(command[6]) {
+                // TODO: This should check if it exists and is set as a master
+                #ifdef CY_I2C_I2C_1_H
+                    case 0x01:
+                        I2C_1_MasterClearStatus();
+                        I2C_1_MasterWriteBuf(command[7] >> 1, &command[9], command[1] - 10, I2C_1_MODE_COMPLETE_XFER);
+                        while((I2C_1_MasterStatus() & I2C_1_MSTAT_WR_CMPLT) == 0);
+                        i = I2C_1_MasterStatus();
+                        if (i & I2C_1_MSTAT_ERR_XFER) {
+                            status = L_UNKNOWN_ERROR;
+                            DEBUG_UART_PutArray(debug_str, sprintf((char *)debug_str, "\t\tI2C_MasterStatus: %x\r\n", i));
+                        }
+                        break;
+                #endif
+                
+                default:
+                    status = L_UNKNOWN_ERROR; break;
+            }
+            
+            break;
+            
+        // I2C Read
+        case 0xE3:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("I2C Read\r\n");
+            #endif
+            
+            switch(command[6]) {
+                // TODO: This should check if it exists and is set as a master
+                #ifdef CY_I2C_I2C_1_H
+                    case 0x01:
+                        I2C_1_MasterClearStatus();
+                        I2C_1_MasterReadBuf(command[7] >> 1, response_data, command[8], I2C_1_MODE_COMPLETE_XFER);
+                        while((I2C_1_MasterStatus() & I2C_1_MSTAT_RD_CMPLT) == 0);
+                        i = I2C_1_MasterStatus();
+                        if (i & I2C_1_MSTAT_ERR_XFER) {
+                            status = L_UNKNOWN_ERROR;
+                            DEBUG_UART_PutArray(debug_str, sprintf((char *)debug_str, "\t\tI2C_MasterStatus: %x\r\n", i));
+                        }
+                        else {
+                            response_data_len = command[8];
+                        }
+                        break;
+                #endif
+                
+                default:
+                    status = L_UNKNOWN_ERROR; break;
+            }
+            
             break;
             
         // Unsupported command

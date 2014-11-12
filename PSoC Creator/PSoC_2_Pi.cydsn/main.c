@@ -28,20 +28,6 @@
 
 int main()
 {
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-    #ifdef CY_SPIS_SPIS_1_H
-        SPIS_1_Start();
-        SPIS_1_ClearFIFO();
-        SPIS_1_ClearRxBuffer();
-        SPIS_1_ClearTxBuffer();
-    #endif
-
-    #ifdef CY_I2C_I2C_1_H
-        I2C_1_SlaveInitReadBuf(RD_buf,  I2C_BUFFER_SIZE);
-        I2C_1_SlaveInitWriteBuf(WR_buf,  I2C_BUFFER_SIZE);
-        I2C_1_Start();
-    #endif
-    
     CyGlobalIntEnable;  /* enable global interrupts. */
     
     #ifdef LINX_H
@@ -49,7 +35,22 @@ int main()
         
         uint8 LINX_Command[LINX_COMMAND_BUFFER_SIZE];
         uint8 LINX_Response[LINX_RESPONSE_BUFFER_SIZE];
+    #else
+        #ifdef CY_SPIS_SPIS_1_H
+            SPIS_1_Start();
+            SPIS_1_ClearFIFO();
+            SPIS_1_ClearRxBuffer();
+            SPIS_1_ClearTxBuffer();
+        #endif
+
+        #ifdef CY_I2C_I2C_1_H
+            I2C_1_SlaveInitReadBuf(RD_buf,  I2C_BUFFER_SIZE);
+            I2C_1_SlaveInitWriteBuf(WR_buf,  I2C_BUFFER_SIZE);
+            I2C_1_Start();
+        #endif
     #endif
+    
+    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     
     /* Gets data from the Pi and send it to mem1.c*/
     for(;;)
@@ -126,10 +127,10 @@ int main()
         #endif
       
         /* I2C READ HANDLER */
-        #ifdef CY_I2C_I2C_1_H
+ /*       #ifdef CY_I2C_I2C_1_H
             while (!I2C_1_SlaveGetWriteBufSize()){}
-            /* wait until I2C master is not writing or reading from the Buffer */
-            while (!(I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_CMPLT)){}         
+ */           /* wait until I2C master is not writing or reading from the Buffer */
+ /*           while (!(I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_CMPLT)){}         
                 uint8 byteCount = I2C_1_SlaveGetWriteBufSize(); 
            
                 addr = WR_buf[0];
@@ -141,7 +142,7 @@ int main()
                 I2C_1_SlaveClearWriteBuf();
                 
         #endif
-  
+  */
         
         uint32 input = (((addr<<24)|(cmd<<16))|(dat_lo<<8))|(dat_hi);
         return input;
@@ -179,16 +180,16 @@ int main()
         
         /* I2C WRITE HANDLER */
         #ifdef CY_I2C_I2C_1_H
-            while (I2C_1_SlaveGetReadBufSize()){}
+ //           while (I2C_1_SlaveGetReadBufSize()){}
             RD_buf[0] = out_lo;
             RD_buf[1] = out_mid_lo;
             RD_buf[2] = out_mid_hi;
             RD_buf[3] = out_hi;
             
             /*Wait until read is complete*/
-            while (0u == (I2C_1_SlaveStatus() & I2C_1_SSTAT_RD_CMPLT)){}
-                I2C_1_SlaveClearReadBuf();          /* Clear slave read buffer and status */
-                (void) I2C_1_SlaveClearReadStatus();
+//            while (0u == (I2C_1_SlaveStatus() & I2C_1_SSTAT_RD_CMPLT)){}
+//                I2C_1_SlaveClearReadBuf();          /* Clear slave read buffer and status */
+//                (void) I2C_1_SlaveClearReadStatus();
         #endif
         
     }
