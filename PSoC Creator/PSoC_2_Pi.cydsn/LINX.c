@@ -959,8 +959,28 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                         break;
                 #endif
                 
-                default:
-                    status = L_UNKNOWN_ERROR; break;
+                default: status = L_UNKNOWN_ERROR; break;
+            }
+            
+            break;
+            
+        // I2C Close
+        case 0xE4:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("I2C Close\r\n");
+            #endif
+            
+            switch(command[6]) {
+                #ifdef CY_I2C_I2C_1_H
+                    case 0x01:
+                        I2C_1_MasterClearReadBuf();
+                        I2C_1_MasterClearStatus();
+                        I2C_1_MasterClearWriteBuf();
+                        I2C_1_Stop();
+                        break;
+                #endif
+                
+                default: status = L_UNKNOWN_ERROR; break;
             }
             
             break;
