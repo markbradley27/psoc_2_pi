@@ -836,7 +836,7 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 // Set counter value to 0
                 switch(channel) {
                     #ifdef CY_QUADRATURE_DECODER_QuadDec_1_H
-                        case 0x00: QuadDec_1_SetCounter(0); break;
+                        case 0x01: QuadDec_1_SetCounter(0); break;
                     #endif
                     default:
                         status = L_UNKNOWN_ERROR; break;
