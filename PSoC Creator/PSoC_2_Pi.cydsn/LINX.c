@@ -542,6 +542,11 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 DEBUG_UART_PutString("Get SPI Channels\r\n");
             #endif
             
+            #ifdef CY_SPIM_SPIM_1_H
+                response_data[response_data_len] = 1;
+                ++response_data_len;
+            #endif
+            
             break;
             
         // Get CAN Channels
@@ -980,6 +985,50 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                         break;
                 #endif
                 
+                default: status = L_UNKNOWN_ERROR; break;
+            }
+            
+            break;
+            
+        // SPI Open
+        case 0x100:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("SPI Open\r\n");
+            #endif
+            
+            switch(command[6]) {
+                #ifdef CY_SPIM_SPIM_1_H
+                    case 0x01: SPIM_1_Start(); break;
+                #endif
+                
+                default: status = L_UNKNOWN_ERROR; break;
+            }
+            
+            break;
+            
+        // SPI Write/Read
+        case 0x107:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("SPI Write/Read\r\n");
+            #endif
+            
+            // TODO: Right now this completely ignores frame size, CS pin, and CS logic level parts of the LINX command
+            switch(command[6]) {
+                #ifdef CY_SPIM_SPIM_1_H
+                    case 0x01:
+                        // Write data bytes
+                        for(i = 10; i < command[1] - 1; ++i) {
+                            SPIM_1_WriteTxData(command[i]);
+                        }
+                        
+                        // Respond with read data bytes sitting in the buffer
+                        for(i = 0; i < command[1] - 11; ++i) {
+                            response_data[response_data_len] = SPIM_1_ReadRxData();
+                            ++response_data_len;
+                        }
+                        break;
+                #endif
+             
                 default: status = L_UNKNOWN_ERROR; break;
             }
             

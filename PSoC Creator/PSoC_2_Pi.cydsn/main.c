@@ -115,16 +115,16 @@ int main()
         uint8 dat_hi = 0;
         
         /* SPI READ HANDLER */
-        #ifdef CY_SPIS_SPIS_1_H
-            while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
-                addr = SPIS_1_ReadRxData();
-    	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
-    	        cmd = SPIS_1_ReadRxData();
-    	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
-    	        dat_lo = SPIS_1_ReadRxData();
-            while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
-    	        dat_hi = SPIS_1_ReadRxData();
-        #endif
+//        #ifdef CY_SPIS_SPIS_1_H
+//            while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+//                addr = SPIS_1_ReadRxData();
+//    	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+//    	        cmd = SPIS_1_ReadRxData();
+//    	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+//    	        dat_lo = SPIS_1_ReadRxData();
+//            while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+//    	        dat_hi = SPIS_1_ReadRxData();
+//        #endif
       
         /* I2C READ HANDLER */
  /*       #ifdef CY_I2C_I2C_1_H
