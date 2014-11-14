@@ -929,7 +929,10 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                         i = I2C_1_MasterStatus();
                         if (i & I2C_1_MSTAT_ERR_XFER) {
                             status = L_UNKNOWN_ERROR;
-                            DEBUG_UART_PutArray(debug_str, sprintf((char *)debug_str, "\t\tI2C_MasterStatus: %x\r\n", i));
+                            
+                            #ifdef LINX_DEBUG
+                                DEBUG_UART_PutArray(debug_str, sprintf((char *)debug_str, "\t\tI2C_MasterStatus: %x\r\n", i));
+                            #endif
                         }
                         break;
                 #endif
@@ -956,7 +959,10 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                         i = I2C_1_MasterStatus();
                         if (i & I2C_1_MSTAT_ERR_XFER) {
                             status = L_UNKNOWN_ERROR;
-                            DEBUG_UART_PutArray(debug_str, sprintf((char *)debug_str, "\t\tI2C_MasterStatus: %x\r\n", i));
+                            
+                            #ifdef LINX_DEBUG
+                                DEBUG_UART_PutArray(debug_str, sprintf((char *)debug_str, "\t\tI2C_MasterStatus: %x\r\n", i));
+                            #endif
                         }
                         else {
                             response_data_len = command[8];

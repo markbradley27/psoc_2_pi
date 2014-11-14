@@ -20,7 +20,7 @@
 #include "stdbool.h"
 
 // Uncomment to enable LINX debug mode
-#define LINX_DEBUG
+//#define LINX_DEBUG
     
 // Firmware-specific constants
 #define FIRMWARE_VER_MAJOR (0x00)
