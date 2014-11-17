@@ -1040,6 +1040,39 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
             
             break;
             
+        // EEPROM Write
+        case 0x140:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("EEPROM Write\r\n");
+            #endif
+            
+            // Check if writing to device user ID memory, error if so
+            if(command[7] == 0 && command[8] < 2) {
+                status = L_UNKNOWN_ERROR;
+                break;
+            }
+            
+            // Write bytes
+            for(i = 0; i < command[6]; ++i) {
+                EEPROM_ByteWrite(command[9 + i], command[7] + ((command[8] + i) / 16), (command[8] + i) % 16);
+            }
+            
+            break;
+            
+        // EEPROM Read
+        case 0x141:
+            #ifdef LINX_DEBUG
+                DEBUG_UART_PutString("EEPROM Read\r\n");
+            #endif
+            
+            // Read bytes
+            for (i = 0; i < command[6]; ++i) {
+                response_data[response_data_len] = *((uint8 *)(CYDEV_EE_BASE + 16*command[7] + command[8] + i));
+                ++response_data_len;
+            }
+            
+            break;
+            
         // Unsupported command
         default:
             #ifdef LINX_DEBUG
