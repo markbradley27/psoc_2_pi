@@ -725,10 +725,10 @@ void LINX_ProcessCommand(uint8 *command, uint8 *response) {
                 #endif
                 
                 // Read pin
-                // TODO: I'm pretty sure this is hard coded to only ever read channel 0
+                // TODO: Test that this works with multiple channels
                 uint8 addr = ANALOG_IN_REGISTER;
                 uint8 cmd = 0x00;
-                uint16 dat = 0x0000;
+                uint16 dat = pin;
                 uint32 result;
                 readData(addr, cmd, dat, &result);
                 
