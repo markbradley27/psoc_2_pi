@@ -1,6 +1,7 @@
 # Ignore all files.
 
 *.*
+!*.gitignore
 
 # Add back the workspace configuration file.
 
