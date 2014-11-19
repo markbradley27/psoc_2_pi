@@ -2,7 +2,7 @@
 * \file LINX.h
 * \brief TODO
 *
-* Version 1.1.2 TODO
+* Version 1.2.1
 *
 * \author Mark Bradley
 *
@@ -27,7 +27,7 @@
 #define FIRMWARE_VER_MINOR (0x00)
 #define FIRMWARE_VER_SUBMINOR (0x00)
 #define FIRMWARE_VER_BUILD (0x00)
-#define LINX_COMMAND_BUFFER_SIZE (16u)
+#define LINX_COMMAND_BUFFER_SIZE (32u)
 #define LINX_RESPONSE_DATA_BUFFER_SIZE (40u)
 #define LINX_RESPONSE_BUFFER_SIZE (LINX_RESPONSE_DATA_BUFFER_SIZE + 8u)
 #define LINX_DEBUG_STR_SIZE (64u)

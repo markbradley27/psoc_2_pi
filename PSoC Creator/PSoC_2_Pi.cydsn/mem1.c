@@ -4,7 +4,7 @@
 *        all components included in the build. It will do so according to
 *        sets of instructions provided by a Master Device.
 *
-* Version 1.1.2
+* Version 1.2.1
 *
 * \author Brian Bradley
 *
@@ -40,95 +40,817 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
     {
         //delsig_adc
         #ifdef CY_ADC_DELSIG_ADC_DelSig_1_H
-            case DELSIG_ADC_CONTROL: DELSIG_ADC_Control(cmd,dat); break;
+            case DELSIG_ADC_CONTROL: return_flag = DELSIG_ADC_Control(cmd,dat,result); break;
         #endif
         
         //sar adc 1
         #ifdef CY_ADC_SAR_ADC_SAR_1_H 
-            case SAR_ADC0_CONTROL: SAR0_ADC_Control(cmd, dat); break;
+            case SAR_ADC0_CONTROL: return_flag = SAR0_ADC_Control(cmd, dat, result); break;
         #endif
         
         //sar adc 2
         #ifdef CY_ADC_SAR_ADC_SAR_2_H 
-            case SAR_ADC1_CONTROL: SAR1_ADC_Control(cmd, dat); break;
+            case SAR_ADC1_CONTROL: return_flag = SAR1_ADC_Control(cmd, dat, result); break;
         #endif
         
         //VDAC1
         #ifdef CY_VDAC8_VDAC8_1_H
-            case VDAC0_CONTROL: VDAC0_Control(cmd, dat); break;        
+            case VDAC0_CONTROL: return_flag = VDAC0_Control(cmd, dat, result); break;        
         #endif
         
         //VDAC2
         #ifdef CY_VDAC8_VDAC8_2_H
-            case VDAC1_CONTROL: VDAC1_Control(cmd, dat); break;
+            case VDAC1_CONTROL: return_flag = VDAC1_Control(cmd, dat, result); break;
         #endif
         
         //IDAC1
         #ifdef CY_IDAC8_IDAC8_1_H
-            case IDAC0_CONTROL: IDAC0_Control(cmd,dat); break;     
+            case IDAC0_CONTROL: return_flag = IDAC0_Control(cmd,dat, result); break;     
         #endif
         
         //IDAC2
         #ifdef CY_IDAC8_IDAC8_2_H
-            case IDAC1_CONTROL: IDAC1_Control(cmd, dat); break;     
+            case IDAC1_CONTROL: return_flag = IDAC1_Control(cmd, dat, result); break;     
         #endif
         
         //Wave DAC
         #ifdef CY_WaveDAC8_WaveDAC8_1_H
-            case WAVEDAC_CONTROL: WAVEDAC_Control(cmd,dat); break;      
+            case WAVEDAC_CONTROL: return_flag = WAVEDAC_Control(cmd,dat, result); break;      
         #endif
         
         //first PWM
         #ifdef CY_PWM_PWM_1_H
-            case PWM_REGISTER0: PWM_Control_0(cmd, dat); break;
+            case PWM_REGISTER0: return_flag = PWM_Control_0(cmd, dat, result); break;
         #endif
         
         //second PWM
         #ifdef CY_PWM_PWM_2_H
-            case PWM_REGISTER1: PWM_Control_1(cmd, dat); break;
+            case PWM_REGISTER1: return_flag = PWM_Control_1(cmd, dat, result); break;
         #endif
         
         //third PWM
         #ifdef CY_PWM_PWM_3_H
-            case PWM_REGISTER2: PWM_Control_2(cmd, dat); break;
+            case PWM_REGISTER2: return_flag = PWM_Control_2(cmd, dat, result); break;
         #endif
         
         //fourth PWM
         #ifdef CY_PWM_PWM_4_H
-            case PWM_REGISTER3: PWM_Control_3(cmd, dat); break;  
+            case PWM_REGISTER3: return_flag = PWM_Control_3(cmd, dat, result); break;  
         #endif
         
         //fifth PWM
         #ifdef CY_PWM_PWM_5_H
-            case PWM_REGISTER4: PWM_Control_4(cmd, dat); break;
+            case PWM_REGISTER4: return_flag = PWM_Control_4(cmd, dat, result); break;
         #endif
         
         //sixth PWM
         #ifdef CY_PWM_PWM_6_H
-            case PWM_REGISTER5: PWM_Control_5(cmd, dat); break;  
+            case PWM_REGISTER5: return_flag = PWM_Control_5(cmd, dat, result); break;  
         #endif
         
         //seventh PWM
         #ifdef CY_PWM_PWM_7_H
-            case PWM_REGISTER6: PWM_Control_6(cmd, dat); break;
+            case PWM_REGISTER6: return_flag = PWM_Control_6(cmd, dat, result); break;
         #endif
         
         //eighth PWM
         #ifdef CY_PWM_PWM_8_H
-            case PWM_REGISTER7: PWM_Control_7(cmd, dat); break;
+            case PWM_REGISTER7: return_flag = PWM_Control_7(cmd, dat, result); break;
+        #endif
+        
+        #ifdef CY_PWM_PWM_9_H
+            case PWM_REGISTER8: return_flag = PWM_Control_8(cmd, dat, result); break;
+        #endif
+        
+        #ifdef CY_PWM_PWM_10_H
+            case PWM_REGISTER9: return_flag = PWM_Control_9(cmd, dat, result); break;
+        #endif
+        
+        #ifdef CY_PWM_PWM_11_H
+            case PWM_REGISTER10: return_flag = PWM_Control_10(cmd, dat, result); break;
+        #endif
+        
+        #ifdef CY_PWM_PWM_12_H
+            case PWM_REGISTER11: return_flag = PWM_Control_11(cmd, dat, result); break;
         #endif
         
         #ifdef CY_ADC_SAR_Seq_1_H
             case ANALOG_IN_REGISTER: return_flag = Analog_Read(cmd, dat, result); break;
         #endif
         
-        case GPIO_REGISTER: return_flag = GPIO_Control(cmd,dat,result); break;
+        #ifdef CY_CAPSENSE_CSD_CapSense_1_H
+            case CAPSENSE_REGISTER: return_flag = CapSense_Read(cmd, dat, result); break;
+        #endif
+        
+        case GPIO_REGISTER: return_flag = GPIO_Control(cmd,dat, result); break;
+        
+        case CHECK_BUILD: return_flag = CheckBuild(cmd, dat, result); break;
         
         case RESET_ADDRESS: CySoftwareReset(); break;
         
     }
     
     return return_flag;
+}
+/*This function is used during init to tell the master device what is in the PSoC Creator file */
+/* This should not be edited */
+bool CheckBuild(uint8 cmd, uint16 val, uint32 *result)
+{
+    *result = 0;
+    
+    uint8 PORT0 = 0x00;
+    uint8 PORT2 = 0x00;
+    uint8 PORT3 = 0x00;
+    uint8 PORT4 = 0x00;
+    uint8 PORT5 = 0x00;
+    uint8 PORT6 = 0x00;
+    uint8 PORT12 = 0x00;
+    uint8 PORT15 = 0x00;
+    uint8 cap_sensors = 0;
+    uint8 analogPins = 0;
+    
+    uint8 freq = 0x00;
+    
+   
+    switch(cmd)
+    {
+        /* Check analog */
+        case 0x00: 
+
+            #ifdef CY_ADC_DELSIG_ADC_DelSig_1_H
+                *result |= 0x01;
+            #endif
+            
+            #ifdef CY_ADC_SAR_ADC_SAR_1_H 
+                *result |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_ADC_SAR_ADC_SAR_2_H 
+                *result |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_VDAC8_VDAC8_1_H
+                *result |= 0x01<<3;      
+                if (VDAC8_1_DEFAULT_RANGE == VDAC8_1_RANGE_4V)
+                {
+                 *result|=(0x01<<20);   
+                }
+            #endif
+         
+            #ifdef CY_VDAC8_VDAC8_2_H
+                *result |= 0x01<<4;
+                if (VDAC8_2_DEFAULT_RANGE == VDAC8_2_RANGE_4V)
+                {
+                 *result|=(0x01<<21);   
+                }
+            #endif
+            
+            #ifdef CY_IDAC8_IDAC8_1_H
+                *result |= 0x01<<5; 
+                if (IDAC8_1_DEFAULT_RANGE == IDAC8_1_RANGE_32uA)
+                {
+                 *result|=(0x01<<23);   
+                }
+                else if (IDAC8_1_DEFAULT_RANGE == IDAC8_1_RANGE_255uA)
+                {
+                 *result|=(0x10<<23);   
+                }
+            #endif
+            
+            #ifdef CY_IDAC8_IDAC8_2_H
+                *result |= 0x01<<6;
+                if (IDAC8_2_DEFAULT_RANGE == IDAC8_2_RANGE_32uA)
+                {
+                 *result|=(0x01<<25);   
+                }
+                else if (IDAC8_2_DEFAULT_RANGE == IDAC8_2_RANGE_32uA)
+                {
+                 *result|=(0x10<<25);   
+                }
+            #endif
+            
+            #ifdef CY_WaveDAC8_WaveDAC8_1_H
+                *result |= 0x01<<7;    
+            #endif
+            
+            #ifdef CY_CAPSENSE_CSD_CapSense_1_H
+                cap_sensors = CapSense_1_TOTAL_SENSOR_COUNT;
+            #endif
+            
+            #ifdef CY_ADC_SAR_Seq_1_H
+                analogPins = ADC_SAR_Seq_1_NUMBER_OF_CHANNELS;
+            #endif
+            /* iiiivvccccccaaaaaaWIIVVSSD*/
+            *result|=(analogPins<<8);
+            *result|=(cap_sensors<<14);
+            
+            
+            
+                      
+            break;
+    
+    /* Check PWMs and clocks */
+        case 0x01: 
+            //result = (PWM_NUM<<16)|(CLK_NUM<<12)|(analogPins<<6)|cap_sensors;
+            /* ppppppCCCC*/            
+            *result = (PWM_NUM<<4)|CLK_NUM;
+            break;
+    
+    /* Check GPIO ports 0, 2, 3 */
+        case 0x02: 
+            /* PORT 0 */
+            #ifdef CY_PINS_GPIO_0_0_H
+                PORT0 |= 0x01;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_0_1_H
+                PORT0 |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_0_2_H
+                PORT0 |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_0_3_H
+                PORT0 |= 0x01<<3;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_0_4_H
+                PORT0 |= 0x01<<4;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_0_5_H
+                PORT0 |= 0x01<<5;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_0_6_H
+                PORT0 |= 0x01<<6;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_0_7_H
+                PORT0 |= 0x01<<7;
+            #endif
+            
+            /* PORT 2 */
+            #ifdef CY_PINS_GPIO_2_0_H
+                PORT2 |= 0x01;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_2_1_H
+                PORT2 |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_2_2_H
+                PORT2 |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_2_3_H
+                PORT2 |= 0x01<<3;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_2_4_H
+                PORT2 |= 0x01<<4;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_2_5_H
+                PORT2 |= 0x01<<5;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_2_6_H
+                PORT2 |= 0x01<<6;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_2_7_H
+                PORT2 |= 0x01<<7;
+            #endif
+            
+            /* PORT 3 */
+            #ifdef CY_PINS_GPIO_3_0_H
+                PORT3 |= 0x01;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_3_1_H
+                PORT3 |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_3_2_H
+                PORT3 |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_3_3_H
+                PORT3 |= 0x01<<3;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_3_4_H
+                PORT3 |= 0x01<<4;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_3_5_H
+                PORT3 |= 0x01<<5;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_3_6_H
+                PORT3 |= 0x01<<6;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_3_7_H
+                PORT3 |= 0x01<<7;
+            #endif
+            
+            *result = (((PORT3<<16)|PORT2<<8)|PORT0);
+            
+            break;
+            
+    /* Check GPIO ports 4, 5, 6 */
+        case 0x03: 
+            
+            /* PORT 4 */
+            #ifdef CY_PINS_GPIO_4_0_H
+                PORT4 |= 0x01;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_4_1_H
+                PORT4 |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_4_2_H
+                PORT4 |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_4_3_H
+                PORT4 |= 0x01<<3;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_4_4_H
+                PORT4 |= 0x01<<4;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_4_5_H
+                PORT4 |= 0x01<<5;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_4_6_H
+                PORT4 |= 0x01<<6;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_4_7_H
+                PORT4 |= 0x01<<7;
+            #endif
+            
+            /* PORT 5 */
+            #ifdef CY_PINS_GPIO_5_0_H
+                PORT5 |= 0x01;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_5_1_H
+                PORT5 |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_5_2_H
+                PORT5 |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_5_3_H
+                PORT5 |= 0x01<<3;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_5_4_H
+                PORT5 |= 0x01<<4;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_5_5_H
+                PORT5 |= 0x01<<5;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_5_6_H
+                PORT5 |= 0x01<<6;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_5_7_H
+                PORT5 |= 0x01<<7;
+            #endif
+            
+            /* PORT 6 */
+            #ifdef CY_PINS_GPIO_6_0_H
+                PORT6 |= 0x01;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_6_1_H
+                PORT6 |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_6_2_H
+                PORT6 |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_6_3_H
+                PORT6 |= 0x01<<3;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_6_4_H
+                PORT6 |= 0x01<<4;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_6_5_H
+                PORT6 |= 0x01<<5;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_6_6_H
+                PORT6 |= 0x01<<6;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_6_7_H
+                PORT6 |= 0x01<<7;
+            #endif
+            
+            *result = (((PORT6<<16)|PORT5<<8)|PORT4);
+           
+            break;
+            
+    /* Check GPIO ports 12, 15 */
+        case 0x04: 
+            /* PORT 12 */
+            #ifdef CY_PINS_GPIO_12_0_H
+                PORT12 |= 0x01;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_12_1_H
+                PORT12 |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_12_2_H
+                PORT12 |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_12_3_H
+                PORT12 |= 0x01<<3;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_12_4_H
+                PORT12 |= 0x01<<4;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_12_5_H
+                PORT12 |= 0x01<<5;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_12_6_H
+                PORT12 |= 0x01<<6;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_12_7_H
+                PORT12 |= 0x01<<7;
+            #endif
+            
+             /* PORT 15 */
+            #ifdef CY_PINS_GPIO_15_0_H
+                PORT15 |= 0x01;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_15_1_H
+                PORT15 |= 0x01<<1;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_15_2_H
+                PORT15 |= 0x01<<2;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_15_3_H
+                PORT15 |= 0x01<<3;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_15_4_H
+                PORT15 |= 0x01<<4;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_15_5_H
+                PORT15 |= 0x01<<5;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_15_6_H
+                PORT15 |= 0x01<<6;
+            #endif
+            
+            #ifdef CY_PINS_GPIO_15_7_H
+                PORT15 |= 0x01<<7;
+            #endif
+            
+            *result = (PORT15<<8)|(PORT12);
+           
+            break;
+  
+    /* Check PWM CLOCKS */
+        //test
+        case 0x07:
+            switch(val)
+            {
+                case 0x00:
+                    #ifdef PWM_CLK_1
+                        switch(PWM_CLK_1__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_1__DIV)|(freq<<16)|(PWM_CLK_1<<19);
+                    /* ccccfffdddddddddddddddd*/
+                    #endif
+                    break;
+                    
+                case 0x01:
+                    #ifdef PWM_CLK_2
+                        switch(PWM_CLK_2__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_2__DIV)|(freq<<16)|(PWM_CLK_2<<19);
+                    #endif
+                    break;
+                    
+                case 0x02:
+                    #ifdef PWM_CLK_3
+                        switch(PWM_CLK_3__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_3__DIV)|(freq<<16)|(PWM_CLK_3<<19);
+                    #endif
+                    break;
+                    
+                case 0x03:
+                    #ifdef PWM_CLK_4
+                        switch(PWM_CLK_4__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_4__DIV)|(freq<<16)|(PWM_CLK_4<<19);
+                    #endif
+                    break;
+                    
+                case 0x04:
+                    #ifdef PWM_CLK_5
+                        switch(PWM_CLK_5__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_5__DIV)|(freq<<16)|(PWM_CLK_5<<19);
+                    /* 
+                        ccccfffdddddddddddddddd*/
+                    #endif
+                    break;
+                    
+                    
+                case 0x05:
+                    #ifdef PWM_CLK_6
+                        switch(PWM_CLK_6__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_6__DIV)|(freq<<16)|(PWM_CLK_6<<19);
+                    #endif
+                    break;
+                    
+                case 0x06:
+                    #ifdef PWM_CLK_7
+                        switch(PWM_CLK_7__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_7__DIV)|(freq<<16)|(PWM_CLK_7<<19);
+                    #endif
+                    break;
+                    
+                case 0x07:
+                    #ifdef PWM_CLK_8
+                        switch(PWM_CLK_8__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_8__DIV)|(freq<<16)|(PWM_CLK_8<<19);
+                    #endif
+                    break;
+                    
+                case 0x08:
+                    #ifdef PWM_CLK_9
+                        switch(PWM_CLK_9__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_9__DIV)|(freq<<16)|(PWM_CLK_9<<19);
+                    #endif
+                    break;
+                    
+                case 0x09:
+                    #ifdef PWM_CLK_10
+                        switch(PWM_CLK_10__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_10__DIV)|(freq<<16)|(PWM_CLK_10<<19);
+                    #endif
+                    break;
+                    
+                case 0x0A:
+                    #ifdef PWM_CLK_11
+                        switch(PWM_CLK_11__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_11__DIV)|(freq<<16)|(PWM_CLK_11<<19);
+                    #endif
+                    break;
+                    
+                case 0x0B:
+                    #ifdef PWM_CLK_12
+                        switch(PWM_CLK_12__SOURCE)
+                        {
+                            case CYCLK_SRC_SEL_SYNC_DIG: freq = 0x01;break;
+                            case CYCLK_SRC_SEL_IMO: freq = 0x02;break;
+                            case CYCLK_SRC_SEL_ILO: freq = 0x03;break;
+                            case CYCLK_SRC_SEL_PLL: freq = 0x04;break;
+                        }
+                        
+                    *result = (PWM_CLK_12__DIV)|(freq<<16)|(PWM_CLK_12<<19);
+                    #endif
+                    break;
+                    
+             
+            }
+            break;
+            
+        case 0x08:
+            if (PWM_NUM>0)
+            {
+                switch(val)
+                {
+                    case 0x00: 
+                        #ifdef PWM_1_CLK
+                            *result|=PWM_1_CLK;
+                            if (PWM_1_Resolution == 16u){*result|=0x01<<4;}
+                        #endif
+                        #ifdef PWM_2_CLK
+                            *result|=PWM_2_CLK<<5;
+                            if (PWM_2_Resolution == 16u){*result|=0x01<<9;}
+                        #endif
+                        #ifdef PWM_3_CLK
+                            *result|=PWM_3_CLK<<10;
+                            if (PWM_3_Resolution == 16u){*result|=0x01<<14;}
+                        #endif
+                        #ifdef PWM_4_CLK
+                            *result|=PWM_4_CLK<<15;
+                            if (PWM_4_Resolution == 16u){*result|=0x01<<19;}
+                        #endif
+                    /* r4444r3333r2222r1111*/
+                    break;
+                    case 0x01:
+                        #ifdef PWM_5_CLK
+                            *result|=PWM_5_CLK;
+                            if (PWM_5_Resolution == 16u){*result|=0x01<<4;}
+                        #endif
+                        #ifdef PWM_6_CLK
+                            *result|=PWM_6_CLK<<5;
+                            if (PWM_6_Resolution == 16u){*result|=0x01<<9;}
+                        #endif
+                
+                        #ifdef PWM_7_CLK
+                            *result|=PWM_7_CLK<<10;
+                            if (PWM_7_Resolution == 16u){*result|=0x01<<14;}
+                        #endif
+                        #ifdef PWM_8_CLK
+                            *result|=PWM_8_CLK<<15;
+                            if (PWM_8_Resolution == 16u){*result|=0x01<<19;}
+                        #endif
+                    break;
+                        
+                    case 0x02: 
+                        #ifdef PWM_9_CLK
+                            *result|=PWM_9_CLK;
+                            if (PWM_9_Resolution == 16u){*result|=0x01<<4;}
+                        #endif
+                        #ifdef PWM_10_CLK
+                            *result|=PWM_10_CLK<<5;
+                            if (PWM_10_Resolution == 16u){*result|=0x01<<9;}
+                        #endif
+                        #ifdef PWM_11_CLK
+                            *result|=PWM_11_CLK<<10;
+                            if (PWM_11_Resolution == 16u){*result|=0x01<<14;}
+                        #endif
+                        #ifdef PWM_12_CLK
+                            *result|=PWM_12_CLK<<15;
+                            if (PWM_12_Resolution == 16u){*result|=0x01<<19;}
+                        #endif
+                    /* r4444r3333r2222r1111*/
+                    break;
+                    case 0x03:
+                        #ifdef PWM_13_CLK
+                            *result|=PWM_13_CLK;
+                            if (PWM_13_Resolution == 16u){*result|=0x01<<4;}
+                        #endif
+                        #ifdef PWM_14_CLK
+                            *result|=PWM_14_CLK<<5;
+                            if (PWM_14_Resolution == 16u){*result|=0x01<<9;}
+                        #endif
+                
+                        #ifdef PWM_15_CLK
+                            *result|=PWM_15_CLK<<10;
+                            if (PWM_15_Resolution == 16u){*result|=0x01<<14;}
+                        #endif
+                        #ifdef PWM_16_CLK
+                            *result|=PWM_16_CLK<<15;
+                            if (PWM_16_Resolution == 16u){*result|=0x01<<19;}
+                        #endif
+                    break;
+                        
+                    case 0x04: 
+                        #ifdef PWM_17_CLK
+                            *result|=PWM_17_CLK;
+                            if (PWM_17_Resolution == 16u){*result|=0x01<<4;}
+                        #endif
+                        #ifdef PWM_18_CLK
+                            *result|=PWM_18_CLK<<5;
+                            if (PWM_18_Resolution == 16u){*result|=0x01<<9;}
+                        #endif
+                        #ifdef PWM_19_CLK
+                            *result|=PWM_19_CLK<<10;
+                            if (PWM_19_Resolution == 16u){*result|=0x01<<14;}
+                        #endif
+                        #ifdef PWM_20_CLK
+                            *result|=PWM_20_CLK<<15;
+                            if (PWM_20_Resolution == 16u){*result|=0x01<<19;}
+                        #endif
+                    /* r4444r3333r2222r1111*/
+                    break;
+                    case 0x05:
+                        #ifdef PWM_21_CLK
+                            *result|=PWM_21_CLK;
+                            if (PWM_21_Resolution == 16u){*result|=0x01<<4;}
+                        #endif
+                        #ifdef PWM_22_CLK
+                            *result|=PWM_22_CLK<<5;
+                            if (PWM_22_Resolution == 16u){*result|=0x01<<9;}
+                        #endif
+                
+                        #ifdef PWM_23_CLK
+                            *result|=PWM_23_CLK<<10;
+                            if (PWM_23_Resolution == 16u){*result|=0x01<<14;}
+                        #endif
+                        #ifdef PWM_24_CLK
+                            *result|=PWM_24_CLK<<15;
+                            if (PWM_24_Resolution == 16u){*result|=0x01<<19;}
+                        #endif
+                    break;
+                                     
+                }
+            }
+            else {*result = 0;}
+        break;//case 0x08
+           
+         
+    }
+    
+    return true;
 }
 
 /****************************************************************************************//**
@@ -142,9 +864,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
 
     #ifdef CY_ADC_DELSIG_ADC_DelSig_1_H
-        void DELSIG_ADC_Control(uint8 cmd, uint16 val)
+        bool DELSIG_ADC_Control(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
            
             switch(cmd)
@@ -163,22 +885,19 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                     break;
                 case 0x03: ADC_DelSig_1_StartConvert(); break;
                 case 0x04: ADC_DelSig_1_StopConvert(); break;
-                case 0x07: result = ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS); return_flag = 1; break;
-                case 0x0A: result = ADC_DelSig_1_GetResult32(); return_flag = 1; break;
-                case 0x0D: result = ADC_DelSig_1_Read32(); return_flag = 1; break;
+                case 0x07: *result = ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS); return_flag = 1; break;
+                case 0x0A: *result = ADC_DelSig_1_GetResult32(); return_flag = 1; break;
+                case 0x0D: *result = ADC_DelSig_1_Read32(); return_flag = 1; break;
                 case 0x0E: ADC_DelSig_1_SetOffset(val); break;
                 case 0x0F: ADC_DelSig_1_SetGain(val); break;
-                case 0x10: result = ADC_DelSig_1_CountsTo_uVolts(val); return_flag = 1; break;
+                case 0x10: *result = ADC_DelSig_1_CountsTo_uVolts(val); return_flag = 1; break;
                 case 0x14: ADC_DelSig_1_Sleep(); break;
                 case 0x15: ADC_DelSig_1_Wakeup(); break;
                     
                         
             }
             
-            if (return_flag)
-            {
-                WriteTo_Pi(result);
-            }
+            return return_flag;
         }
     #endif
     
@@ -193,9 +912,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
     #ifdef CY_ADC_SAR_ADC_SAR_1_H
-        void SAR0_ADC_Control(uint8 cmd, uint16 val)
+        bool SAR0_ADC_Control(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             switch(cmd)
             {
@@ -212,19 +931,16 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                     break;
                 case 0x04: ADC_SAR_1_StartConvert(); break;
                 case 0x05: ADC_SAR_1_StopConvert(); break;
-                case 0x08: result = ADC_SAR_1_IsEndConversion(ADC_SAR_1_RETURN_STATUS); return_flag = 1; break;
-                case 0x0A: result = ADC_SAR_1_GetResult16(); return_flag = 1; break;
+                case 0x08: *result = ADC_SAR_1_IsEndConversion(ADC_SAR_1_RETURN_STATUS); return_flag = 1; break;
+                case 0x0A: *result = ADC_SAR_1_GetResult16(); return_flag = 1; break;
                 case 0x0B: ADC_SAR_1_SetOffset(val); break;
                 case 0x0C: ADC_SAR_1_SetGain(val); break;
-                case 0x0D: result = ADC_SAR_1_CountsTo_uVolts(val); return_flag = 1; break;
+                case 0x0D: *result = ADC_SAR_1_CountsTo_uVolts(val); return_flag = 1; break;
                 case 0x10: ADC_SAR_1_Sleep(); break;
                 case 0x11: ADC_SAR_1_Wakeup(); break;       
             }
             
-            if (return_flag)
-            {
-                WriteTo_Pi(result);   
-            }
+            return return_flag;
         }
      #endif
 /****************************************************************************************//**
@@ -237,9 +953,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *
 *********************************************************************************************/
     #ifdef CY_ADC_SAR_ADC_SAR_2_H
-         void SAR1_ADC_Control(uint8 cmd, uint16 val)
+         bool SAR1_ADC_Control(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             switch(cmd)
             {
@@ -255,19 +971,16 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                     break;
                 case 0x04: ADC_SAR_2_StartConvert(); break;
                 case 0x05: ADC_SAR_2_StopConvert(); break;
-                case 0x08: result = ADC_SAR_2_IsEndConversion(ADC_SAR_2_RETURN_STATUS); return_flag = 1; break;
-                case 0x0A: result = ADC_SAR_2_GetResult16(); return_flag = 1; break;
+                case 0x08: *result = ADC_SAR_2_IsEndConversion(ADC_SAR_2_RETURN_STATUS); return_flag = 1; break;
+                case 0x0A: *result = ADC_SAR_2_GetResult16(); return_flag = 1; break;
                 case 0x0B: ADC_SAR_2_SetOffset(val); break;
                 case 0x0C: ADC_SAR_2_SetGain(val); break;
-                case 0x0D: result = ADC_SAR_2_CountsTo_uVolts(val); return_flag = 1; break;//Change this cmd to reflect datasheet
+                case 0x0D: *result = ADC_SAR_2_CountsTo_uVolts(val); return_flag = 1; break;//Change this cmd to reflect datasheet
                 case 0x10: ADC_SAR_2_Sleep(); break;
                 case 0x11: ADC_SAR_2_Wakeup(); break;     
                 
             }
-            if (return_flag)
-            {
-                WriteTo_Pi(result);
-            }
+            return return_flag;
         }
     #endif
     
@@ -282,37 +995,35 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
     #ifdef CY_VDAC8_VDAC8_1_H
-        void VDAC0_Control(uint8 cmd, uint16 val)
+        bool VDAC0_Control(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
-                switch(cmd)
-                {
-                    case 0x00: VDAC8_1_Start(); break;
-                    case 0x01: VDAC8_1_Stop(); break;
-                    case 0x02: 
-                        switch(val)
-                        {
-                        case 0: VDAC8_1_SetSpeed(VDAC8_1_LOWSPEED); break;
-                        case 1: VDAC8_1_SetSpeed(VDAC8_1_HIGHSPEED); break;
-                        }
-                        break;
-                    case 0x03:
-                        switch(val)
-                        {
-                        case 0: VDAC8_1_SetRange(VDAC8_1_RANGE_1V); break;
-                        case 1: VDAC8_1_SetRange(VDAC8_1_RANGE_4V); break;
-                        }
-                        break;
-                    case 0x04: VDAC8_1_SetValue(val); break; 
-                    case 0x05: VDAC8_1_Sleep(); break;
-                    case 0x06: VDAC8_1_Wakeup(); break;     
-                    
-                }
-                if (return_flag)
+            switch(cmd)
             {
-                WriteTo_Pi(result);
+                case 0x00: VDAC8_1_Start(); break;
+                case 0x01: VDAC8_1_Stop(); break;
+                case 0x02: 
+                    switch(val)
+                    {
+                    case 0: VDAC8_1_SetSpeed(VDAC8_1_LOWSPEED); break;
+                    case 1: VDAC8_1_SetSpeed(VDAC8_1_HIGHSPEED); break;
+                    }
+                    break;
+                case 0x03:
+                    switch(val)
+                    {
+                    case 0: VDAC8_1_SetRange(VDAC8_1_RANGE_1V); break;
+                    case 1: VDAC8_1_SetRange(VDAC8_1_RANGE_4V); break;
+                    }
+                    break;
+                case 0x04: VDAC8_1_SetValue(val); break; 
+                case 0x05: VDAC8_1_Sleep(); break;
+                case 0x06: VDAC8_1_Wakeup(); break;     
+                
             }
+            
+            return return_flag;
         }
     #endif
     
@@ -326,9 +1037,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *
 *********************************************************************************************/
     #ifdef CY_VDAC8_VDAC8_2_H
-        void VDAC1_Control(uint8 cmd, uint16 val)
+        bool VDAC1_Control(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
                 switch(cmd)
                 {
@@ -353,10 +1064,7 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                     case 0x06: VDAC8_2_Wakeup(); break;     
                     
                 }
-            if (return_flag)
-            {
-                WriteTo_Pi(result);
-            }
+            return return_flag;
         }
     #endif
     
@@ -371,9 +1079,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
     #ifdef CY_IDAC8_IDAC8_1_H
-        void IDAC0_Control(uint8 cmd, uint16 val)
+        bool IDAC0_Control(uint8 cmd, uint16 val, uint32 *result)
             {
-                uint32 result = MAX_32;
+                *result = MAX_32;
                 bool return_flag = 0;
                     switch(cmd)
                     {
@@ -382,23 +1090,23 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                         case 0x02: 
                             switch(val)
                             {
-                            case 0: IDAC8_1_SetSpeed(IDAC8_1_LOWSPEED); break;
-                            case 1: IDAC8_1_SetSpeed(IDAC8_1_HIGHSPEED); break;
+                                case 0: IDAC8_1_SetSpeed(IDAC8_1_LOWSPEED); break;
+                                case 1: IDAC8_1_SetSpeed(IDAC8_1_HIGHSPEED); break;
                             }
                             break;
                         case 0x03:
                             switch(val)
                             {
-                            case 0: IDAC8_1_SetPolarity(IDAC8_1_SOURCE); break;
-                            case 1: IDAC8_1_SetPolarity(IDAC8_1_SINK); break;
+                                case 0: IDAC8_1_SetPolarity(IDAC8_1_SOURCE); break;
+                                case 1: IDAC8_1_SetPolarity(IDAC8_1_SINK); break;
                             }
                             break;
                         case 0x04:
                             switch(val)
                             {
-                            case 0: IDAC8_1_SetRange(IDAC8_1_RANGE_32uA); break;
-                            case 1: IDAC8_1_SetRange(IDAC8_1_RANGE_255uA); break;
-                            case 2: IDAC8_1_SetRange(IDAC8_1_RANGE_2mA); break;
+                                case 0: IDAC8_1_SetRange(IDAC8_1_RANGE_32uA); break;
+                                case 1: IDAC8_1_SetRange(IDAC8_1_RANGE_255uA); break;
+                                case 2: IDAC8_1_SetRange(IDAC8_1_RANGE_2mA); break;
                             }
                             break;
                         case 0x05: IDAC8_1_SetValue(val); break;
@@ -406,10 +1114,7 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                         case 0x07: IDAC8_1_Wakeup(); break;     
                         
                     }
-                if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                }
+                return return_flag;
             }
     #endif
     
@@ -424,9 +1129,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
     #ifdef CY_IDAC8_IDAC8_2_H
-        void IDAC1_Control(uint8 cmd, uint16 val)
+        bool IDAC1_Control(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
                 switch(cmd)
                 {
@@ -459,10 +1164,7 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                     case 0x07: IDAC8_2_Wakeup(); break;     
                     
                 }
-                if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                }
+                return return_flag;
         }
     #endif
     
@@ -477,9 +1179,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
     #ifdef CY_WaveDAC8_WaveDAC8_1_H
-        void WAVEDAC_Control(uint8 cmd, uint16 val)
+        bool WAVEDAC_Control(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -504,10 +1206,7 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                     
                 }   
                 
-             if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                }
+             return return_flag;
             
         }
         
@@ -707,9 +1406,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
  
     #ifdef CY_PWM_PWM_1_H
-        void PWM_Control_0(uint8 cmd, uint16 val)
+        bool PWM_Control_0(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -717,24 +1416,17 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                 case 0x00: PWM_1_Start(); break;
                 case 0x01: PWM_1_Stop(); break;
                 case 0x0C: PWM_1_WritePeriod(val); break;
-                case 0x0D: result = PWM_1_ReadPeriod(); return_flag = 1; break;
+                case 0x0D: *result = PWM_1_ReadPeriod(); return_flag = 1; break;
                 case 0x0E: PWM_1_WriteCompare(val); break;
-                case 0x0F: result  = PWM_1_ReadCompare(); return_flag = 1; break;
-                //case 0x14: PWM_1_WriteDeadTime(val); break;
-                //case 0x15: result = PWM_1_ReadDeadTime(); break; 
-                // 0x16: PWM_1_WriteKillTime(val); break;
-                //case 0x17: result = PWM_1_ReadKillTime(); break; 
+                case 0x0F: *result  = PWM_1_ReadCompare(); return_flag = 1; break;
                 case 0x18: PWM_1_ClearFIFO(); break; 
                 case 0x19: PWM_1_Sleep(); break; 
                 case 0x1A: PWM_1_Wakeup(); break; 
-                case 0xFF: PWM_1_2_clk_SetDividerValue(val); result = PWM_1_2_clk_GetDividerRegister(); return_flag = 1; break; 
+                case 0xFF: PWM_CLK_1_SetDividerValue(val); *result = PWM_CLK_1_GetDividerRegister(); return_flag = 1; break; 
                 
             }
             
-            if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                }
+            return return_flag;
         }
     #endif
 /****************************************************************************************//**
@@ -748,9 +1440,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
      #ifdef CY_PWM_PWM_2_H
-        void PWM_Control_1(uint8 cmd, uint16 val)
+        bool PWM_Control_1(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -758,24 +1450,17 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                 case 0x00: PWM_2_Start(); break;
                 case 0x01: PWM_2_Stop(); break;
                 case 0x0C: PWM_2_WritePeriod(val); break;
-                case 0x0D: result = PWM_2_ReadPeriod(); return_flag = 1; break;
+                case 0x0D: *result = PWM_2_ReadPeriod(); return_flag = 1; break;
                 case 0x0E: PWM_2_WriteCompare(val); break;
-                case 0x0F: result  = PWM_2_ReadCompare(); return_flag = 1; break;
-                //case 0x14: PWM_2_WriteDeadTime(val); break;
-                //case 0x15: result = PWM_2_ReadDeadTime(); break; 
-                // 0x16: PWM_2_WriteKillTime(val); break;
-                //case 0x17: result = PWM_2_ReadKillTime(); break; 
+                case 0x0F: *result  = PWM_2_ReadCompare(); return_flag = 1; break;
                 case 0x18: PWM_2_ClearFIFO(); break; 
                 case 0x19: PWM_2_Sleep(); break; 
                 case 0x1A: PWM_2_Wakeup(); break; 
-                case 0xFF: PWM_1_2_clk_SetDividerValue(val); result = PWM_1_2_clk_GetDividerRegister(); return_flag = 1; break;
+                case 0xFF: PWM_CLK_1_SetDividerValue(val); *result = PWM_CLK_1_GetDividerRegister(); return_flag = 1; break;
                 
             }
             
-            if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                } 
+            return return_flag;
         }
     #endif
 /****************************************************************************************//**
@@ -788,9 +1473,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *
 *********************************************************************************************/
      #ifdef CY_PWM_PWM_3_H
-        void PWM_Control_2(uint8 cmd, uint16 val)
+        bool PWM_Control_2(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -798,24 +1483,17 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                 case 0x00: PWM_3_Start(); break;
                 case 0x01: PWM_3_Stop(); break;
                 case 0x0C: PWM_3_WritePeriod(val); break;
-                case 0x0D: result = PWM_3_ReadPeriod(); return_flag = 1; break;
+                case 0x0D: *result = PWM_3_ReadPeriod(); return_flag = 1; break;
                 case 0x0E: PWM_3_WriteCompare(val); break;
-                case 0x0F: result  = PWM_3_ReadCompare(); return_flag = 1; break;
-                //case 0x14: PWM_3_WriteDeadTime(val); break;
-                //case 0x15: result = PWM_3_ReadDeadTime(); break; 
-                // 0x16: PWM_3_WriteKillTime(val); break;
-                //case 0x17: result = PWM_3_ReadKillTime(); break; 
+                case 0x0F: *result  = PWM_3_ReadCompare(); return_flag = 1; break;
                 case 0x18: PWM_3_ClearFIFO(); break; 
                 case 0x19: PWM_3_Sleep(); break; 
                 case 0x1A: PWM_3_Wakeup(); break; 
-                case 0xFF: PWM_3_4_clk_SetDividerValue(val); result = PWM_3_4_clk_GetDividerRegister(); return_flag = 1; break;
+                case 0xFF: PWM_CLK_2_SetDividerValue(val); *result = PWM_CLK_2_GetDividerRegister(); return_flag = 1; break;
                 
             }
             
-            if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                } 
+            return return_flag;
         }
     #endif
 /****************************************************************************************//**
@@ -828,9 +1506,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *
 *********************************************************************************************/
      #ifdef CY_PWM_PWM_4_H
-        void PWM_Control_3(uint8 cmd, uint16 val)
+        bool PWM_Control_3(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -838,24 +1516,17 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                 case 0x00: PWM_4_Start(); break;
                 case 0x01: PWM_4_Stop(); break;
                 case 0x0C: PWM_4_WritePeriod(val); break;
-                case 0x0D: result = PWM_4_ReadPeriod(); return_flag = 1; break;
+                case 0x0D: *result = PWM_4_ReadPeriod(); return_flag = 1; break;
                 case 0x0E: PWM_4_WriteCompare(val); break;
-                case 0x0F: result  = PWM_4_ReadCompare(); return_flag = 1; break;
-                //case 0x14: PWM_4_WriteDeadTime(val); break;
-                //case 0x15: result = PWM_4_ReadDeadTime(); break; 
-                // 0x16: PWM_4_WriteKillTime(val); break;
-                //case 0x17: result = PWM_4_ReadKillTime(); break; 
+                case 0x0F: *result  = PWM_4_ReadCompare(); return_flag = 1; break;
                 case 0x18: PWM_4_ClearFIFO(); break; 
                 case 0x19: PWM_4_Sleep(); break; 
                 case 0x1A: PWM_4_Wakeup(); break; 
-                case 0xFF: PWM_3_4_clk_SetDividerValue(val); result = PWM_3_4_clk_GetDividerRegister(); return_flag = 1; break;
+                case 0xFF: PWM_CLK_2_SetDividerValue(val); *result = PWM_CLK_2_GetDividerRegister(); return_flag = 1; break;
                 
             }
             
-            if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                } 
+            return return_flag;
         }
     #endif
     
@@ -870,9 +1541,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
      #ifdef CY_PWM_PWM_5_H
-        void PWM_Control_4(uint8 cmd, uint16 val)
+        bool PWM_Control_4(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -880,24 +1551,17 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                 case 0x00: PWM_5_Start(); break;
                 case 0x01: PWM_5_Stop(); break;
                 case 0x0C: PWM_5_WritePeriod(val); break;
-                case 0x0D: result = PWM_5_ReadPeriod(); return_flag = 1; break;
+                case 0x0D: *result = PWM_5_ReadPeriod(); return_flag = 1; break;
                 case 0x0E: PWM_5_WriteCompare(val); break;
-                case 0x0F: result  = PWM_5_ReadCompare(); return_flag = 1; break;
-                //case 0x14: PWM_5_WriteDeadTime(val); break;
-                //case 0x15: result = PWM_5_ReadDeadTime(); break; 
-                // 0x16: PWM_5_WriteKillTime(val); break;
-                //case 0x17: result = PWM_5_ReadKillTime(); break; 
+                case 0x0F: *result  = PWM_5_ReadCompare(); return_flag = 1; break;
                 case 0x18: PWM_5_ClearFIFO(); break; 
                 case 0x19: PWM_5_Sleep(); break; 
                 case 0x1A: PWM_5_Wakeup(); break; 
-                case 0xFF: PWM_5_6_clk_SetDividerValue(val); result = PWM_5_6_clk_GetDividerRegister(); return_flag = 1; break;
+                case 0xFF: PWM_CLK_3_SetDividerValue(val); *result = PWM_CLK_3_GetDividerRegister(); return_flag = 1; break;
                 
             }
             
-            if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                } 
+            return return_flag;
         }
     #endif
     
@@ -912,9 +1576,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
      #ifdef CY_PWM_PWM_6_H
-        void PWM_Control_5(uint8 cmd, uint16 val)
+        bool PWM_Control_5(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -922,23 +1586,16 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                 case 0x00: PWM_6_Start(); break;
                 case 0x01: PWM_6_Stop(); break;
                 case 0x0C: PWM_6_WritePeriod(val); break;
-                case 0x0D: result = PWM_6_ReadPeriod(); return_flag = 1; break;
+                case 0x0D: *result = PWM_6_ReadPeriod(); return_flag = 1; break;
                 case 0x0E: PWM_6_WriteCompare(val); break;
-                case 0x0F: result  = PWM_6_ReadCompare(); return_flag = 1; break;
-                //case 0x14: PWM_6_WriteDeadTime(val); break;
-                //case 0x15: result = PWM_6_ReadDeadTime(); break; 
-                // 0x16: PWM_6_WriteKillTime(val); break;
-                //case 0x17: result = PWM_6_ReadKillTime(); break; 
+                case 0x0F: *result  = PWM_6_ReadCompare(); return_flag = 1; break;
                 case 0x18: PWM_6_ClearFIFO(); break; 
                 case 0x19: PWM_6_Sleep(); break; 
                 case 0x1A: PWM_6_Wakeup(); break; 
-                case 0xFF: PWM_5_6_clk_SetDividerValue(val); result = PWM_5_6_clk_GetDividerRegister(); return_flag = 1; break;
+                case 0xFF: PWM_CLK_3_SetDividerValue(val); *result = PWM_CLK_3_GetDividerRegister(); return_flag = 1; break;
             }
             
-            if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                } 
+            return return_flag;
         }
         
     #endif
@@ -953,9 +1610,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *********************************************************************************************/
     
      #ifdef CY_PWM_PWM_7_H
-        void PWM_Control_6(uint8 cmd, uint16 val)
+        bool PWM_Control_6(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -963,23 +1620,16 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                 case 0x00: PWM_7_Start(); break;
                 case 0x01: PWM_7_Stop(); break;
                 case 0x0C: PWM_7_WritePeriod(val); break;
-                case 0x0D: result = PWM_7_ReadPeriod(); return_flag = 1; break;
+                case 0x0D: *result = PWM_7_ReadPeriod(); return_flag = 1; break;
                 case 0x0E: PWM_7_WriteCompare(val); break;
-                case 0x0F: result  = PWM_7_ReadCompare(); return_flag = 1; break;
-                //case 0x14: PWM_7_WriteDeadTime(val); break;
-                //case 0x15: result = PWM_7_ReadDeadTime(); break; 
-                // 0x16: PWM_7_WriteKillTime(val); break;
-                //case 0x17: result = PWM_7_ReadKillTime(); break; 
+                case 0x0F: *result  = PWM_7_ReadCompare(); return_flag = 1; break;
                 case 0x18: PWM_7_ClearFIFO(); break; 
                 case 0x19: PWM_7_Sleep(); break; 
                 case 0x1A: PWM_7_Wakeup(); break; 
-                case 0xFF: PWM_7_8_clk_SetDividerValue(val); result = PWM_7_8_clk_GetDividerRegister(); return_flag = 1; break;
+                case 0xFF: PWM_CLK_4_SetDividerValue(val); *result = PWM_CLK_4_GetDividerRegister(); return_flag = 1; break;
             }
             
-            if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                }
+            return return_flag;
         }
     #endif
 /****************************************************************************************//**
@@ -992,9 +1642,9 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
 *
 *********************************************************************************************/
      #ifdef CY_PWM_PWM_8_H
-        void PWM_Control_7(uint8 cmd, uint16 val)
+        bool PWM_Control_7(uint8 cmd, uint16 val, uint32 *result)
         {
-            uint32 result = MAX_32;
+            *result = MAX_32;
             bool return_flag = 0;
             
             switch(cmd)
@@ -1002,27 +1652,118 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                 case 0x00: PWM_8_Start(); break;
                 case 0x01: PWM_8_Stop(); break;
                 case 0x0C: PWM_8_WritePeriod(val); break;
-                case 0x0D: result = PWM_8_ReadPeriod(); return_flag = 1; break;
+                case 0x0D: *result = PWM_8_ReadPeriod(); return_flag = 1; break;
                 case 0x0E: PWM_8_WriteCompare(val); break;
-                case 0x0F: result  = PWM_8_ReadCompare(); return_flag = 1; break;
-                //case 0x14: PWM_8_WriteDeadTime(val); break;
-                //case 0x15: result = PWM_8_ReadDeadTime(); break; 
-                // 0x16: PWM_8_WriteKillTime(val); break;
-                //case 0x17: result = PWM_8_ReadKillTime(); break; 
+                case 0x0F: *result  = PWM_8_ReadCompare(); return_flag = 1; break;
                 case 0x18: PWM_8_ClearFIFO(); break; 
                 case 0x19: PWM_8_Sleep(); break; 
                 case 0x1A: PWM_8_Wakeup(); break;
-                case 0xFF: PWM_7_8_clk_SetDividerValue(val); result = PWM_7_8_clk_GetDividerRegister(); return_flag = 1; break;
+                case 0xFF: PWM_CLK_4_SetDividerValue(val); *result = PWM_CLK_4_GetDividerRegister(); return_flag = 1; break;
             }
             
-            if (return_flag)
-                {
-                    WriteTo_Pi(result);
-                }
+            return return_flag;
+        }
+    #endif
+    
+    
+    #ifdef CY_PWM_PWM_9_H
+        bool PWM_Control_8(uint8 cmd, uint16 val, uint32 *result)
+        {
+            *result = MAX_32;
+            bool return_flag = 0;
+            
+            switch(cmd)
+            {
+                case 0x00: PWM_9_Start(); break;
+                case 0x01: PWM_9_Stop(); break;
+                case 0x0C: PWM_9_WritePeriod(val); break;
+                case 0x0D: *result = PWM_9_ReadPeriod(); return_flag = 1; break;
+                case 0x0E: PWM_9_WriteCompare(val); break;
+                case 0x0F: *result  = PWM_9_ReadCompare(); return_flag = 1; break;
+                case 0x18: PWM_9_ClearFIFO(); break; 
+                case 0x19: PWM_9_Sleep(); break; 
+                case 0x1A: PWM_9_Wakeup(); break;
+                case 0xFF: PWM_CLK_5_SetDividerValue(val); *result = PWM_CLK_5_GetDividerRegister(); return_flag = 1; break;
+            }
+            
+            return return_flag;
+        }
+    #endif
+    
+    #ifdef CY_PWM_PWM_10_H
+        bool PWM_Control_9(uint8 cmd, uint16 val, uint32 *result)
+        {
+            *result = MAX_32;
+            bool return_flag = 0;
+            
+            switch(cmd)
+            {
+                case 0x00: PWM_10_Start(); break;
+                case 0x01: PWM_10_Stop(); break;
+                case 0x0C: PWM_10_WritePeriod(val); break;
+                case 0x0D: *result = PWM_10_ReadPeriod(); return_flag = 1; break;
+                case 0x0E: PWM_10_WriteCompare(val); break;
+                case 0x0F: *result  = PWM_10_ReadCompare(); return_flag = 1; break;
+                case 0x18: PWM_10_ClearFIFO(); break; 
+                case 0x19: PWM_10_Sleep(); break; 
+                case 0x1A: PWM_10_Wakeup(); break;
+                case 0xFF: PWM_CLK_5_SetDividerValue(val); *result = PWM_CLK_5_GetDividerRegister(); return_flag = 1; break;
+            }
+            
+            return return_flag;
+        }
+    #endif
+    
+    #ifdef CY_PWM_PWM_11_H
+        bool PWM_Control_10(uint8 cmd, uint16 val, uint32 *result)
+        {
+            *result = MAX_32;
+            bool return_flag = 0;
+            
+            switch(cmd)
+            {
+                case 0x00: PWM_11_Start(); break;
+                case 0x01: PWM_11_Stop(); break;
+                case 0x0C: PWM_11_WritePeriod(val); break;
+                case 0x0D: *result = PWM_11_ReadPeriod(); return_flag = 1; break;
+                case 0x0E: PWM_11_WriteCompare(val); break;
+                case 0x0F: *result  = PWM_11_ReadCompare(); return_flag = 1; break;
+                case 0x18: PWM_11_ClearFIFO(); break; 
+                case 0x19: PWM_11_Sleep(); break; 
+                case 0x1A: PWM_11_Wakeup(); break;
+                case 0xFF: PWM_CLK_5_SetDividerValue(val); *result = PWM_CLK_5_GetDividerRegister(); return_flag = 1; break;
+            }
+            
+            return return_flag;
+        }
+    #endif
+    
+    #ifdef CY_PWM_PWM_12_H
+        bool PWM_Control_11(uint8 cmd, uint16 val, uint32 *result)
+        {
+            *result = MAX_32;
+            bool return_flag = 0;
+            
+            switch(cmd)
+            {
+                case 0x00: PWM_12_Start(); break;
+                case 0x01: PWM_12_Stop(); break;
+                case 0x0C: PWM_12_WritePeriod(val); break;
+                case 0x0D: *result = PWM_12_ReadPeriod(); return_flag = 1; break;
+                case 0x0E: PWM_12_WriteCompare(val); break;
+                case 0x0F: *result  = PWM_12_ReadCompare(); return_flag = 1; break;
+                case 0x18: PWM_12_ClearFIFO(); break; 
+                case 0x19: PWM_12_Sleep(); break; 
+                case 0x1A: PWM_12_Wakeup(); break;
+                case 0xFF: PWM_CLK_5_SetDividerValue(val); *result = PWM_CLK_5_GetDividerRegister(); return_flag = 1; break;
+            }
+            
+            return return_flag;
         }
     #endif
     
     bool GPIO_Control(uint8 cmd, uint16 dat, uint32 *result)
+    //port, pin, value
     {
         uint8 val = dat&0x0001;
         uint8 pin = (dat>>1)&0x0007;
@@ -1033,84 +1774,506 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
         
         *result = MAX_32; 
         bool return_flag = 0;
-        uint8 new_reg_status = 0;
-        uint8 prev_reg_status = 0;
         
         switch(cmd)
                 {
                     
-                    case 0x00: //Read
-                            switch(port)
+                    case 0x00://Read
+                    
+                        switch(port)
                             {
-                                #ifdef CY_STATUS_REG_Port_2_Status_H
-                                    case 0x02: *result = Port_2_Status_Read(); return_flag = 1; break;
-                                #endif
-                                #ifdef CY_STATUS_REG_Port_4_Status_H
-                                    case 0x04: *result = Port_4_Status_Read(); return_flag = 1; break;
-                                #endif
-                                #ifdef CY_STATUS_REG_Port_5_Status_H
-                                    case 0x05: *result = Port_5_Status_Read(); return_flag = 1; break;
-                                #endif
-                                #ifdef CY_STATUS_REG_Port_6_Status_H
-                                    case 0x06: *result = Port_6_Status_Read(); return_flag = 1; break;
-                                #endif
-                                #ifdef CY_STATUS_REG_Port_12_Status_H
-                                    case 0x0C: *result = Port_12_Status_Read(); return_flag = 1; break;
-                                #endif
-                             }
-                            break;
-                            
-                    case 0x01: //Write
-                            
-                            switch(port)
-                            {
-                                #ifdef CY_CONTROL_REG_Port_2_Control_H
-                                    case 0x02: prev_reg_status = Port_2_Control_Read(); break;
-                                #endif
-                                #ifdef CY_CONTROL_REG_Port_4_Control_H
-                                    case 0x04: prev_reg_status = Port_4_Control_Read(); break;
-                                #endif
-                                #ifdef CY_CONTROL_REG_Port_5_Control_H
-                                    case 0x05: prev_reg_status = Port_5_Control_Read(); break;
-                                #endif
-                                #ifdef CY_CONTROL_REG_Port_6_Control_H
-                                    case 0x06: prev_reg_status = Port_6_Control_Read(); break;
-                                #endif
-                                #ifdef CY_CONTROL_REG_Port_12_Control_H
-                                    case 0x0C: prev_reg_status = Port_12_Control_Read(); break;
-                                #endif
-                            }
-                               
-                            if (val == 1)
-                            {
-                                new_reg_status = prev_reg_status | (0x01<<pin);
-                            }
-                            else if (val == 0)
-                            {
-                                new_reg_status = (prev_reg_status&(~(0x01<<pin)));
-                            }
-                            
-                           switch(port)
-                            {
-                                #ifdef CY_CONTROL_REG_Port_2_Control_H
-                                    case 0x02: Port_2_Control_Write(new_reg_status); break;
-                                #endif
-                                #ifdef CY_CONTROL_REG_Port_4_Control_H
-                                    case 0x04: Port_4_Control_Write(new_reg_status); break;
-                                #endif
-                                #ifdef CY_CONTROL_REG_Port_5_Control_H
-                                    case 0x05: Port_5_Control_Write(new_reg_status); break;
-                                #endif
-                                #ifdef CY_CONTROL_REG_Port_6_Control_H
-                                    case 0x06: Port_6_Control_Write(new_reg_status); break;
-                                #endif
-                                #ifdef CY_CONTROL_REG_Port_12_Control_H
-                                    case 0x0C: Port_12_Control_Write(new_reg_status); break;
-                                #endif
+                                case 0x00: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_0_0_H 
+                                                case 0x00: *result = GPIO_0_0_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_1_H 
+                                                case 0x01: *result = GPIO_0_1_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_2_H 
+                                                case 0x02: *result = GPIO_0_2_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_3_H 
+                                                case 0x03: *result = GPIO_0_3_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_4_H 
+                                                case 0x04: *result = GPIO_0_4_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_5_H 
+                                                case 0x05: *result = GPIO_0_5_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_6_H 
+                                                case 0x06: *result = GPIO_0_6_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_7_H 
+                                                case 0x07: *result = GPIO_0_7_Read(); return_flag = 1; break;
+                                            #endif
+                                        }
+                                        break;
+                                
+                                case 0x02: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_2_0_H 
+                                                case 0x00: *result = GPIO_2_0_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_1_H 
+                                                case 0x01: *result = GPIO_2_1_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_2_H 
+                                                case 0x02: *result = GPIO_2_2_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_3_H 
+                                                case 0x03: *result = GPIO_2_3_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_4_H 
+                                                case 0x04: *result = GPIO_2_4_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_5_H 
+                                                case 0x05: *result = GPIO_2_5_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_6_H 
+                                                case 0x06: *result = GPIO_2_6_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_7_H 
+                                                case 0x07: *result = GPIO_2_7_Read(); return_flag = 1; break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                case 0x03: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_3_0_H 
+                                                case 0x00: *result = GPIO_3_0_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_1_H 
+                                                case 0x01: *result = GPIO_3_1_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_2_H 
+                                                case 0x02: *result = GPIO_3_2_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_3_H 
+                                                case 0x03: *result = GPIO_3_3_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_4_H 
+                                                case 0x04: *result = GPIO_3_4_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_5_H 
+                                                case 0x05: *result = GPIO_3_5_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_6_H 
+                                                case 0x06: *result = GPIO_3_6_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_7_H 
+                                                case 0x07: *result = GPIO_3_7_Read(); return_flag = 1; break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                case 0x04: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_4_0_H 
+                                                case 0x00: *result = GPIO_2_0_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_1_H 
+                                                case 0x01: *result = GPIO_4_1_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_2_H 
+                                                case 0x02: *result = GPIO_4_2_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_3_H 
+                                                case 0x03: *result = GPIO_4_3_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_4_H 
+                                                case 0x04: *result = GPIO_4_4_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_5_H 
+                                                case 0x05: *result = GPIO_4_5_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_6_H 
+                                                case 0x06: *result = GPIO_4_6_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_7_H 
+                                                case 0x07: *result = GPIO_4_7_Read(); return_flag = 1; break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                case 0x05: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_5_0_H 
+                                                case 0x00: *result = GPIO_5_0_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_1_H 
+                                                case 0x01: *result = GPIO_5_1_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_2_H 
+                                                case 0x02: *result = GPIO_5_2_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_3_H 
+                                                case 0x03: *result = GPIO_5_3_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_4_H 
+                                                case 0x04: *result = GPIO_5_4_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_5_H 
+                                                case 0x05: *result = GPIO_5_5_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_6_H 
+                                                case 0x06: *result = GPIO_5_6_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_7_H 
+                                                case 0x07: *result = GPIO_5_7_Read(); return_flag = 1; break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                case 0x06: 
+                                        switch(pin)
+                                        {   
+                                           #ifdef CY_PINS_GPIO_6_0_H 
+                                                case 0x00: *result = GPIO_6_0_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_1_H 
+                                                case 0x01: *result = GPIO_6_1_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_2_H 
+                                                case 0x02: *result = GPIO_6_2_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_3_H 
+                                                case 0x03: *result = GPIO_6_3_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_4_H 
+                                                case 0x04: *result = GPIO_6_4_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_5_H 
+                                                case 0x05: *result = GPIO_6_5_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_6_H 
+                                                case 0x06: *result = GPIO_6_6_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_7_H 
+                                                case 0x07: *result = GPIO_6_7_Read(); return_flag = 1; break;
+                                            #endif
+                                        }
+                                        break;
+                                
+                                case 0x0C: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_12_0_H 
+                                                case 0x00: *result = GPIO_12_0_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_1_H 
+                                                case 0x01: *result = GPIO_12_1_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_2_H 
+                                                case 0x02: *result = GPIO_12_2_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_3_H 
+                                                case 0x03: *result = GPIO_12_3_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_4_H 
+                                                case 0x04: *result = GPIO_12_4_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_5_H 
+                                                case 0x05: *result = GPIO_12_5_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_6_H 
+                                                case 0x06: *result = GPIO_12_6_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_7_H 
+                                                case 0x07: *result = GPIO_12_7_Read(); return_flag = 1; break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                    case 0x0F: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_15_0_H 
+                                                case 0x00: *result = GPIO_15_0_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_1_H 
+                                                case 0x01: *result = GPIO_15_1_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_2_H 
+                                                case 0x02: *result = GPIO_15_2_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_3_H 
+                                                case 0x03: *result = GPIO_15_3_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_4_H 
+                                                case 0x04: *result = GPIO_15_4_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_5_H 
+                                                case 0x05: *result = GPIO_15_5_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_6_H 
+                                                case 0x06: *result = GPIO_15_6_Read(); return_flag = 1; break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_7_H 
+                                                case 0x07: *result = GPIO_15_7_Read(); return_flag = 1; break;
+                                            #endif
+                                        }
+                                        break;
                                 
                             }
-                            break;
-                            
+                            break;     
+                    
+                    
+                    case 0x01://Write
+                    
+                       switch(port)
+                            {
+                                case 0x00: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_0_0_H 
+                                                case 0x00: GPIO_0_0_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_1_H 
+                                                case 0x01: GPIO_0_1_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_2_H 
+                                                case 0x02: GPIO_0_2_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_3_H 
+                                                case 0x03: GPIO_0_3_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_4_H 
+                                                case 0x04: GPIO_0_4_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_5_H 
+                                                case 0x05: GPIO_0_5_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_6_H 
+                                                case 0x06: GPIO_0_6_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_7_H 
+                                                case 0x07: GPIO_0_7_Write(val); break;
+                                            #endif
+                                        }
+                                        break;
+                                
+                                case 0x02: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_2_0_H 
+                                                case 0x00: GPIO_2_0_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_1_H 
+                                                case 0x01: GPIO_2_1_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_2_H 
+                                                case 0x02: GPIO_2_2_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_3_H 
+                                                case 0x03: GPIO_2_3_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_4_H 
+                                                case 0x04: GPIO_2_4_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_5_H 
+                                                case 0x05: GPIO_2_5_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_6_H 
+                                                case 0x06: GPIO_2_6_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_2_7_H 
+                                                case 0x07: GPIO_2_7_Write(val); break;
+                                            #endif
+                                        }
+                                        break;
+                                
+                                case 0x03: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_3_0_H 
+                                                case 0x00: GPIO_3_0_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_1_H 
+                                                case 0x01: GPIO_3_1_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_2_H 
+                                                case 0x02: GPIO_3_2_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_3_H 
+                                                case 0x03: GPIO_3_3_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_4_H 
+                                                case 0x04: GPIO_3_4_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_5_H 
+                                                case 0x05: GPIO_3_5_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_6_H 
+                                                case 0x06: GPIO_3_6_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_7_H 
+                                                case 0x07: GPIO_3_7_Write(val); break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                case 0x04: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_4_0_H 
+                                                case 0x00: GPIO_4_0_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_1_H 
+                                                case 0x01: GPIO_4_1_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_2_H 
+                                                case 0x02: GPIO_4_2_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_3_H 
+                                                case 0x03: GPIO_4_3_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_4_H 
+                                                case 0x04: GPIO_4_4_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_5_H 
+                                                case 0x05: GPIO_4_5_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_6_H 
+                                                case 0x06: GPIO_4_6_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_4_7_H 
+                                                case 0x07: GPIO_4_7_Write(val); break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                case 0x05: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_5_0_H 
+                                                case 0x00: GPIO_5_0_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_1_H 
+                                                case 0x01: GPIO_5_1_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_2_H 
+                                                case 0x02: GPIO_5_2_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_3_H 
+                                                case 0x03: GPIO_5_3_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_4_H 
+                                                case 0x04: GPIO_5_4_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_5_H 
+                                                case 0x05: GPIO_5_5_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_6_H 
+                                                case 0x06: GPIO_5_6_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_5_7_H 
+                                                case 0x07: GPIO_5_7_Write(val); break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                case 0x06: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_6_0_H 
+                                                case 0x00: GPIO_6_0_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_1_H 
+                                                case 0x01: GPIO_6_1_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_2_H 
+                                                case 0x02: GPIO_6_2_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_3_H 
+                                                case 0x03: GPIO_6_3_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_4_H 
+                                                case 0x04: GPIO_6_4_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_5_H 
+                                                case 0x05: GPIO_6_5_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_6_H 
+                                                case 0x06: GPIO_6_6_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_6_7_H 
+                                                case 0x07: GPIO_6_7_Write(val); break;
+                                            #endif
+                                        }
+                                        break;
+                                
+                                case 0x0C: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_12_0_H 
+                                                case 0x00: GPIO_12_0_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_1_H 
+                                                case 0x01: GPIO_12_1_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_2_H 
+                                                case 0x02: GPIO_12_2_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_3_H 
+                                                case 0x03: GPIO_12_3_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_4_H 
+                                                case 0x04: GPIO_12_4_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_5_H 
+                                                case 0x05: GPIO_12_5_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_6_H 
+                                                case 0x06: GPIO_12_6_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_12_7_H 
+                                                case 0x07: GPIO_12_7_Write(val); break;
+                                            #endif
+                                        }
+                                        break;
+                                        
+                                case 0x0F: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_15_0_H 
+                                                case 0x00: GPIO_15_0_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_1_H 
+                                                case 0x01: GPIO_15_1_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_2_H 
+                                                case 0x02: GPIO_15_2_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_3_H 
+                                                case 0x03: GPIO_15_3_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_4_H 
+                                                case 0x04: GPIO_15_4_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_5_H 
+                                                case 0x05: GPIO_15_5_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_6_H 
+                                                case 0x06: GPIO_15_6_Write(val); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_7_H 
+                                                case 0x07: GPIO_15_7_Write(val); break;
+                                            #endif
+                                        }
+                                        break;
+                                
+                            }
+                            break;      
+                    
+                    
                     case 0x03: //set drive mode
                             switch(config)
                             {
@@ -1128,6 +2291,36 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                             
                             switch(port)
                             {
+                                case 0x00: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_0_0_H 
+                                                case 0x00: GPIO_0_0_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_1_H 
+                                                case 0x01: GPIO_0_1_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_2_H 
+                                                case 0x02: GPIO_0_2_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_3_H 
+                                                case 0x03: GPIO_0_3_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_4_H 
+                                                case 0x04: GPIO_0_4_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_5_H 
+                                                case 0x05: GPIO_0_5_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_6_H 
+                                                case 0x06: GPIO_0_6_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_0_7_H 
+                                                case 0x07: GPIO_0_7_SetDriveMode(config_MASK); break;
+                                            #endif
+                                        }
+                                        break;
+                                        
                                 case 0x02: 
                                         switch(pin)
                                         {   
@@ -1154,6 +2347,35 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                                             #endif
                                             #ifdef CY_PINS_GPIO_2_7_H 
                                                 case 0x07: GPIO_2_7_SetDriveMode(config_MASK); break;
+                                            #endif
+                                        }
+                                        break;
+                                case 0x03: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_3_0_H 
+                                                case 0x00: GPIO_3_0_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_1_H 
+                                                case 0x01: GPIO_3_1_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_2_H 
+                                                case 0x02: GPIO_3_2_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_3_H 
+                                                case 0x03: GPIO_3_3_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_4_H 
+                                                case 0x04: GPIO_3_4_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_5_H 
+                                                case 0x05: GPIO_3_5_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_6_H 
+                                                case 0x06: GPIO_3_6_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_3_7_H 
+                                                case 0x07: GPIO_3_7_SetDriveMode(config_MASK); break;
                                             #endif
                                         }
                                         break;
@@ -1275,6 +2497,36 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                                         }
                                         break;
                                 
+                                case 0x0F: 
+                                        switch(pin)
+                                        {   
+                                            #ifdef CY_PINS_GPIO_15_0_H 
+                                                case 0x00: GPIO_15_0_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_1_H 
+                                                case 0x01: GPIO_15_1_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_2_H 
+                                                case 0x02: GPIO_15_2_SetDriveMode(config_MASK); break; 
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_3_H 
+                                                case 0x03: GPIO_15_3_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_4_H 
+                                                case 0x04: GPIO_15_4_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_5_H 
+                                                case 0x05: GPIO_15_5_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_6_H 
+                                                case 0x06: GPIO_15_6_SetDriveMode(config_MASK); break;
+                                            #endif
+                                            #ifdef CY_PINS_GPIO_15_7_H 
+                                                case 0x07: GPIO_15_7_SetDriveMode(config_MASK); break;
+                                            #endif
+                                        }
+                                        break;
+                                
                             }
                             break;        
                             
@@ -1315,8 +2567,48 @@ bool readData(uint8 addr, uint8 cmd, uint16 dat, uint32 *result)
                     ADC_SAR_Seq_1_Stop();
                     break;
             }
-
+            
             return return_flag;
+        }
+    #endif
+    
+    #ifdef CY_CAPSENSE_CSD_CapSense_1_H
+        bool CapSense_Read(uint8 cmd, uint16 dat, uint32 *result)
+        {
+             *result = MAX_32;
+             bool return_flag = 0;
+
+                    switch(cmd)
+                    {
+                        case 0x00: CapSense_1_Start(); CapSense_1_InitializeAllBaselines(); break;
+                        case 0x01: CapSense_1_Stop(); break;
+                        case 0x02: CapSense_1_Sleep(); break;
+                        case 0x03: CapSense_1_Wakeup(); break;
+                        case 0x18:
+                            /* Update all baselines */
+                            CapSense_1_UpdateEnabledBaselines();
+                       		/* Start scanning all enabled sensors */
+                        	CapSense_1_ScanEnabledWidgets();
+                            /* Wait for scanning to complete */
+                    		while(CapSense_1_IsBusy() != 0);
+                            *result = CapSense_1_CheckIsWidgetActive(dat); return_flag = 1;
+                            /*
+                            switch(dat)
+                            {
+                               
+                                case 0x00: result = CapSense_1_CheckIsWidgetActive(CapSense_1_BUTTON0__BTN); return_flag = 1; break;
+                                case 0x01: result = CapSense_1_CheckIsWidgetActive(CapSense_1_BUTTON1__BTN); return_flag = 1; break;
+                                case 0x02: result = CapSense_1_CheckIsWidgetActive(CapSense_1_BUTTON2__BTN); return_flag = 1; break;
+                                case 0x03: result = CapSense_1_CheckIsWidgetActive(CapSense_1_BUTTON3__BTN); return_flag = 1; break;
+                                case 0x04: result = CapSense_1_CheckIsWidgetActive(CapSense_1_BUTTON4__BTN); return_flag = 1; break;
+                                case 0x05: result = CapSense_1_CheckIsWidgetActive(CapSense_1_BUTTON5__BTN); return_flag = 1; break;
+                     
+                            }*/
+                              break;
+
+                    }
+
+                    return return_flag;
         }
     #endif
 

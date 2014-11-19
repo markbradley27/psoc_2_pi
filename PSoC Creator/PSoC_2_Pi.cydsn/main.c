@@ -4,7 +4,7 @@
 *   to mem1.c where data will be returned to the SPI Master when applicable
 *   
 *
-* Version 1.1.2
+* Version 1.2.1
 *
 * \author Brian Bradley
 *
@@ -115,22 +115,22 @@ int main()
         uint8 dat_hi = 0;
         
         /* SPI READ HANDLER */
-//        #ifdef CY_SPIS_SPIS_1_H
-//            while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
-//                addr = SPIS_1_ReadRxData();
-//    	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
-//    	        cmd = SPIS_1_ReadRxData();
-//    	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
-//    	        dat_lo = SPIS_1_ReadRxData();
-//            while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
-//    	        dat_hi = SPIS_1_ReadRxData();
-//        #endif
+        #ifdef USE_SPI
+            while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+                addr = SPIS_1_ReadRxData();
+    	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+    	        cmd = SPIS_1_ReadRxData();
+    	    while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+    	        dat_lo = SPIS_1_ReadRxData();
+            while(!SPIS_1_GetRxBufferSize()){/* Wait until the Rx buffer isn't empty */}
+    	        dat_hi = SPIS_1_ReadRxData();
+        #endif
       
         /* I2C READ HANDLER */
- /*       #ifdef CY_I2C_I2C_1_H
+        #ifdef USE_I2C
             while (!I2C_1_SlaveGetWriteBufSize()){}
- */           /* wait until I2C master is not writing or reading from the Buffer */
- /*           while (!(I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_CMPLT)){}         
+            /* wait until I2C master is not writing or reading from the Buffer */
+            while (!(I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_CMPLT)){}         
                 uint8 byteCount = I2C_1_SlaveGetWriteBufSize(); 
            
                 addr = WR_buf[0];
@@ -142,7 +142,7 @@ int main()
                 I2C_1_SlaveClearWriteBuf();
                 
         #endif
-  */
+ 
         
         uint32 input = (((addr<<24)|(cmd<<16))|(dat_lo<<8))|(dat_hi);
         return input;
